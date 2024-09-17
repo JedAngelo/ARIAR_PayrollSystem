@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace ARIAR_PayrollSystem.Forms
 {
-    public partial class BiometricAttendance : Form
+    public partial class EmployeeInformation : Form
     {
         MainForm _mainForm;
-        public BiometricAttendance(MainForm mainForm)
+        public EmployeeInformation(MainForm mainForm)
         {
             InitializeComponent();
             _mainForm = mainForm;
         }
 
-        private void BiometricAttPanel_Paint(object sender, PaintEventArgs e)
+        private void EmployeeInfoPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CreateNewBtn_Click(object sender, EventArgs e)
         {
 
         }

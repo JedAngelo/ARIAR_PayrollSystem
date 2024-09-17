@@ -13,14 +13,16 @@ namespace ARIAR_PayrollSystem.Forms
 {
     public partial class MainForm : Form
     {
-        private BiometricAttendance _BiometricAttendance;
+        private BiometricAttendance _biometricAttendance;
+        private EmployeeInformation _employeeInformation;
         private bool _isSidebarCol = false;
         private bool isFullscreen = true;
         public MainForm()
         {
             InitializeComponent();
-            _BiometricAttendance = new BiometricAttendance(this);
-            Switcher.SwitchPanel(MainPanel, _BiometricAttendance.BiometricAttPanel);
+            _biometricAttendance = new BiometricAttendance(this);
+            _employeeInformation = new EmployeeInformation(this);
+            Switcher.SwitchPanel(MainPanel, _employeeInformation.EmployeeInfoPanel);
         }
 
         private void MenuBtn_Click(object sender, EventArgs e)
@@ -88,6 +90,16 @@ namespace ARIAR_PayrollSystem.Forms
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void EmployeeInformationBtn_Click(object sender, EventArgs e)
+        {
+            Switcher.SwitchPanel(MainPanel, _employeeInformation.EmployeeInfoPanel);
+        }
+
+        private void BiometricAttendanceBtn_Click(object sender, EventArgs e)
+        {
+            Switcher.SwitchPanel(MainPanel, _biometricAttendance.BiometricAttPanel);
         }
     }
 }

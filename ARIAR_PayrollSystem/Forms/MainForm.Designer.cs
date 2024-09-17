@@ -53,8 +53,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 302F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 996F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 311F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1312F));
             this.tableLayoutPanel1.Controls.Add(this.SidebarPanel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.MainPanel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,8 +63,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 710F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1298, 710);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 888F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1622, 888);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SidebarPanel
@@ -76,7 +76,7 @@
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Margin = new System.Windows.Forms.Padding(0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(302, 710);
+            this.SidebarPanel.Size = new System.Drawing.Size(311, 888);
             this.SidebarPanel.TabIndex = 0;
             // 
             // LogoutBtn
@@ -88,10 +88,10 @@
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
             this.LogoutBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.logout_logo;
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 662);
+            this.LogoutBtn.Location = new System.Drawing.Point(0, 828);
             this.LogoutBtn.Margin = new System.Windows.Forms.Padding(0);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(302, 48);
+            this.LogoutBtn.Size = new System.Drawing.Size(311, 60);
             this.LogoutBtn.TabIndex = 8;
             this.LogoutBtn.Text = "            Logout";
             this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,7 +112,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(302, 659);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(311, 824);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // MenuBtn
@@ -127,7 +127,7 @@
             this.MenuBtn.Location = new System.Drawing.Point(0, 0);
             this.MenuBtn.Margin = new System.Windows.Forms.Padding(0);
             this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(302, 55);
+            this.MenuBtn.Size = new System.Drawing.Size(310, 69);
             this.MenuBtn.TabIndex = 0;
             this.MenuBtn.UseVisualStyleBackColor = true;
             this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
@@ -138,17 +138,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LogoPanel.Controls.Add(this.pictureBox1);
             this.LogoPanel.Controls.Add(this.label1);
-            this.LogoPanel.Location = new System.Drawing.Point(3, 58);
+            this.LogoPanel.Location = new System.Drawing.Point(4, 73);
+            this.LogoPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(299, 112);
+            this.LogoPanel.Size = new System.Drawing.Size(374, 140);
             this.LogoPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ARIAR_PayrollSystem.Properties.Resources.New_Project__5_;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(310, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -158,11 +160,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 65);
+            this.label1.Location = new System.Drawing.Point(-4, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 37);
+            this.label1.Size = new System.Drawing.Size(314, 46);
             this.label1.TabIndex = 1;
-            this.label1.Text = "_________________________";
+            this.label1.Text = "_____________________";
             // 
             // EmployeeInformationBtn
             // 
@@ -173,15 +176,16 @@
             this.EmployeeInformationBtn.ForeColor = System.Drawing.Color.White;
             this.EmployeeInformationBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.group_logo;
             this.EmployeeInformationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeeInformationBtn.Location = new System.Drawing.Point(0, 173);
+            this.EmployeeInformationBtn.Location = new System.Drawing.Point(0, 217);
             this.EmployeeInformationBtn.Margin = new System.Windows.Forms.Padding(0);
             this.EmployeeInformationBtn.Name = "EmployeeInformationBtn";
-            this.EmployeeInformationBtn.Size = new System.Drawing.Size(302, 55);
+            this.EmployeeInformationBtn.Size = new System.Drawing.Size(310, 69);
             this.EmployeeInformationBtn.TabIndex = 2;
             this.EmployeeInformationBtn.Text = "   Employee Information";
             this.EmployeeInformationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EmployeeInformationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EmployeeInformationBtn.UseVisualStyleBackColor = true;
+            this.EmployeeInformationBtn.Click += new System.EventHandler(this.EmployeeInformationBtn_Click);
             // 
             // BiometricAttendanceBtn
             // 
@@ -192,15 +196,16 @@
             this.BiometricAttendanceBtn.ForeColor = System.Drawing.Color.White;
             this.BiometricAttendanceBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.fingerprint_logo;
             this.BiometricAttendanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BiometricAttendanceBtn.Location = new System.Drawing.Point(0, 228);
+            this.BiometricAttendanceBtn.Location = new System.Drawing.Point(0, 286);
             this.BiometricAttendanceBtn.Margin = new System.Windows.Forms.Padding(0);
             this.BiometricAttendanceBtn.Name = "BiometricAttendanceBtn";
-            this.BiometricAttendanceBtn.Size = new System.Drawing.Size(302, 55);
+            this.BiometricAttendanceBtn.Size = new System.Drawing.Size(310, 69);
             this.BiometricAttendanceBtn.TabIndex = 3;
             this.BiometricAttendanceBtn.Text = "   Biometric Attendance";
             this.BiometricAttendanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BiometricAttendanceBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BiometricAttendanceBtn.UseVisualStyleBackColor = true;
+            this.BiometricAttendanceBtn.Click += new System.EventHandler(this.BiometricAttendanceBtn_Click);
             // 
             // AttendanceManagementBtn
             // 
@@ -211,10 +216,10 @@
             this.AttendanceManagementBtn.ForeColor = System.Drawing.Color.White;
             this.AttendanceManagementBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.schedule_logo;
             this.AttendanceManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AttendanceManagementBtn.Location = new System.Drawing.Point(0, 283);
+            this.AttendanceManagementBtn.Location = new System.Drawing.Point(0, 355);
             this.AttendanceManagementBtn.Margin = new System.Windows.Forms.Padding(0);
             this.AttendanceManagementBtn.Name = "AttendanceManagementBtn";
-            this.AttendanceManagementBtn.Size = new System.Drawing.Size(302, 55);
+            this.AttendanceManagementBtn.Size = new System.Drawing.Size(310, 69);
             this.AttendanceManagementBtn.TabIndex = 4;
             this.AttendanceManagementBtn.Text = "   Attendance Management";
             this.AttendanceManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,10 +235,10 @@
             this.PayrollCalculationBtn.ForeColor = System.Drawing.Color.White;
             this.PayrollCalculationBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.calculate_logo;
             this.PayrollCalculationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PayrollCalculationBtn.Location = new System.Drawing.Point(0, 338);
+            this.PayrollCalculationBtn.Location = new System.Drawing.Point(0, 424);
             this.PayrollCalculationBtn.Margin = new System.Windows.Forms.Padding(0);
             this.PayrollCalculationBtn.Name = "PayrollCalculationBtn";
-            this.PayrollCalculationBtn.Size = new System.Drawing.Size(302, 55);
+            this.PayrollCalculationBtn.Size = new System.Drawing.Size(310, 69);
             this.PayrollCalculationBtn.TabIndex = 5;
             this.PayrollCalculationBtn.Text = "   Payroll Calculation";
             this.PayrollCalculationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,10 +254,10 @@
             this.ReportBtn.ForeColor = System.Drawing.Color.White;
             this.ReportBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.description_logo;
             this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReportBtn.Location = new System.Drawing.Point(0, 393);
+            this.ReportBtn.Location = new System.Drawing.Point(0, 493);
             this.ReportBtn.Margin = new System.Windows.Forms.Padding(0);
             this.ReportBtn.Name = "ReportBtn";
-            this.ReportBtn.Size = new System.Drawing.Size(302, 55);
+            this.ReportBtn.Size = new System.Drawing.Size(310, 69);
             this.ReportBtn.TabIndex = 6;
             this.ReportBtn.Text = "   Report";
             this.ReportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -268,10 +273,10 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = global::ARIAR_PayrollSystem.Properties.Resources.menu_logo;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 448);
+            this.button6.Location = new System.Drawing.Point(0, 562);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(302, 55);
+            this.button6.Size = new System.Drawing.Size(310, 69);
             this.button6.TabIndex = 7;
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -281,21 +286,23 @@
             // MainPanel
             // 
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(305, 3);
+            this.MainPanel.Location = new System.Drawing.Point(315, 4);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(990, 704);
+            this.MainPanel.Size = new System.Drawing.Size(1304, 880);
             this.MainPanel.TabIndex = 1;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1298, 710);
+            this.ClientSize = new System.Drawing.Size(1622, 888);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(1094, 597);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1368, 746);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeInformation";
