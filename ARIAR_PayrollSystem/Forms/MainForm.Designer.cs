@@ -86,7 +86,7 @@
             this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogoutBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.logout_logo;
+            this.LogoutBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.logout_logo1;
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LogoutBtn.Location = new System.Drawing.Point(0, 828);
             this.LogoutBtn.Margin = new System.Windows.Forms.Padding(0);
@@ -122,7 +122,7 @@
             this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MenuBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuBtn.ForeColor = System.Drawing.Color.White;
-            this.MenuBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.menu_logo;
+            this.MenuBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.menu_logo1;
             this.MenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MenuBtn.Location = new System.Drawing.Point(0, 0);
             this.MenuBtn.Margin = new System.Windows.Forms.Padding(0);
@@ -174,14 +174,14 @@
             this.EmployeeInformationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EmployeeInformationBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeInformationBtn.ForeColor = System.Drawing.Color.White;
-            this.EmployeeInformationBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.group_logo;
+            this.EmployeeInformationBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.group_logo4;
             this.EmployeeInformationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EmployeeInformationBtn.Location = new System.Drawing.Point(0, 217);
             this.EmployeeInformationBtn.Margin = new System.Windows.Forms.Padding(0);
             this.EmployeeInformationBtn.Name = "EmployeeInformationBtn";
             this.EmployeeInformationBtn.Size = new System.Drawing.Size(310, 69);
             this.EmployeeInformationBtn.TabIndex = 2;
-            this.EmployeeInformationBtn.Text = "   Employee Information";
+            this.EmployeeInformationBtn.Text = "   Employee Dashboard";
             this.EmployeeInformationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EmployeeInformationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EmployeeInformationBtn.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             this.BiometricAttendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiometricAttendanceBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BiometricAttendanceBtn.ForeColor = System.Drawing.Color.White;
-            this.BiometricAttendanceBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.fingerprint_logo;
+            this.BiometricAttendanceBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.fingerprint_logo1;
             this.BiometricAttendanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BiometricAttendanceBtn.Location = new System.Drawing.Point(0, 286);
             this.BiometricAttendanceBtn.Margin = new System.Windows.Forms.Padding(0);
@@ -214,7 +214,7 @@
             this.AttendanceManagementBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AttendanceManagementBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AttendanceManagementBtn.ForeColor = System.Drawing.Color.White;
-            this.AttendanceManagementBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.schedule_logo;
+            this.AttendanceManagementBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.schedule_logo1;
             this.AttendanceManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AttendanceManagementBtn.Location = new System.Drawing.Point(0, 355);
             this.AttendanceManagementBtn.Margin = new System.Windows.Forms.Padding(0);
@@ -233,7 +233,7 @@
             this.PayrollCalculationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PayrollCalculationBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayrollCalculationBtn.ForeColor = System.Drawing.Color.White;
-            this.PayrollCalculationBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.calculate_logo;
+            this.PayrollCalculationBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.calculate_logo1;
             this.PayrollCalculationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PayrollCalculationBtn.Location = new System.Drawing.Point(0, 424);
             this.PayrollCalculationBtn.Margin = new System.Windows.Forms.Padding(0);
@@ -252,7 +252,7 @@
             this.ReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReportBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportBtn.ForeColor = System.Drawing.Color.White;
-            this.ReportBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.description_logo;
+            this.ReportBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.description_logo1;
             this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReportBtn.Location = new System.Drawing.Point(0, 493);
             this.ReportBtn.Margin = new System.Windows.Forms.Padding(0);
@@ -271,7 +271,6 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::ARIAR_PayrollSystem.Properties.Resources.menu_logo;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(0, 562);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
@@ -302,7 +301,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1368, 746);
+            this.MinimumSize = new System.Drawing.Size(1622, 888);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeInformation";

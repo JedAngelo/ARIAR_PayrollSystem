@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ARIAR_PayrollSystem.Forms.ChildrenForm;
+using ARIAR_PayrollSystem.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +15,14 @@ namespace ARIAR_PayrollSystem.Forms
     public partial class EmployeeInformation : Form
     {
         MainForm _mainForm;
+        EmployeeDetails _employeeDetails;
         public EmployeeInformation(MainForm mainForm)
         {
             InitializeComponent();
             _mainForm = mainForm;
+            _employeeDetails = new EmployeeDetails();
+            Switcher.SwitchGunaTabGroup(guna2TabControl1, _employeeDetails.guna2TabControl2);
+
         }
 
         private void EmployeeInfoPanel_Paint(object sender, PaintEventArgs e)
@@ -25,6 +31,11 @@ namespace ARIAR_PayrollSystem.Forms
         }
 
         private void CreateNewBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
         }

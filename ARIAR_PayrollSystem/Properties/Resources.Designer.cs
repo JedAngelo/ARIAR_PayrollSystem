@@ -63,9 +63,9 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calculate_logo {
+        internal static System.Drawing.Bitmap arrow_right_logo1 {
             get {
-                object obj = ResourceManager.GetObject("calculate_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_right_logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap description_logo {
+        internal static System.Drawing.Bitmap calculate_logo1 {
             get {
-                object obj = ResourceManager.GetObject("description_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("calculate_logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,49 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fingerprint_logo {
+        internal static System.Drawing.Bitmap cancel_logo {
             get {
-                object obj = ResourceManager.GetObject("fingerprint_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("cancel_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CHECK_logo {
+            get {
+                object obj = ResourceManager.GetObject("CHECK_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CLOSE_logo {
+            get {
+                object obj = ResourceManager.GetObject("CLOSE_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap description_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("description_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fingerprint_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("fingerprint_logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +143,9 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout_logo {
+        internal static System.Drawing.Bitmap group_logo4 {
             get {
-                object obj = ResourceManager.GetObject("logout_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("group_logo4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +153,29 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap menu_logo {
+        internal static System.Drawing.Bitmap location_away_logo {
             get {
-                object obj = ResourceManager.GetObject("menu_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("location_away_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("logout_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("menu_logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +193,39 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap schedule_logo {
+        internal static System.Drawing.Bitmap right_arrow_dark_logo {
             get {
-                object obj = ResourceManager.GetObject("schedule_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("right_arrow_dark_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap schedule_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("schedule_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search1_logo {
+            get {
+                object obj = ResourceManager.GetObject("search1_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap task_check_logo {
+            get {
+                object obj = ResourceManager.GetObject("task_check_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

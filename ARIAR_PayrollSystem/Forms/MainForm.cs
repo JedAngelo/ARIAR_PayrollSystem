@@ -23,6 +23,7 @@ namespace ARIAR_PayrollSystem.Forms
             _biometricAttendance = new BiometricAttendance(this);
             _employeeInformation = new EmployeeInformation(this);
             Switcher.SwitchPanel(MainPanel, _employeeInformation.EmployeeInfoPanel);
+            this.MinimumSize = new Size(1422, 888);
         }
 
         private void MenuBtn_Click(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace ARIAR_PayrollSystem.Forms
                     this.FormBorderStyle = FormBorderStyle.None;
                     this.WindowState = FormWindowState.Normal;
                     this.Bounds = Screen.FromControl(this).Bounds;
+                    
                     isFullscreen = true;
                 }
             }
