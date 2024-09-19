@@ -15,6 +15,16 @@ namespace ARIAR_PayrollSystem.Helpers
             currentPanel.Controls.Clear();
             currentPanel.Controls.Add(switchPanel);
         }
+
+        public static async void ShowTableLayout(TableLayoutPanel currentTableLayout, TableLayoutPanel switchTableLayout)
+        {
+            //currentTableLayout.Controls.Clear();
+            //currentTableLayout.Controls.Add(switchTableLayout);
+
+            currentTableLayout.Visible = false;
+            switchTableLayout.Visible = true;
+        }
+
         public static void SwitchGunaTabGroup(Guna2TabControl currentTabGroup, Guna2TabControl switchTabGroup)
         {
             currentTabGroup.TabPages.Clear();
@@ -24,5 +34,6 @@ namespace ARIAR_PayrollSystem.Helpers
                 currentTabGroup.TabPages.Add(tabPage);
             }
         }
+
     }
 }

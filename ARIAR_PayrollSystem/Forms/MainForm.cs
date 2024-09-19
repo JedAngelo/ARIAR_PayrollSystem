@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,14 +16,19 @@ namespace ARIAR_PayrollSystem.Forms
     {
         private BiometricAttendance _biometricAttendance;
         private EmployeeInformation _employeeInformation;
+        private SplashScreen _splashScreen;
         private bool _isSidebarCol = false;
         private bool isFullscreen = true;
         public MainForm()
         {
             InitializeComponent();
+            
             _biometricAttendance = new BiometricAttendance(this);
             _employeeInformation = new EmployeeInformation(this);
-            Switcher.SwitchPanel(MainPanel, _employeeInformation.EmployeeInfoPanel);
+            _splashScreen = new SplashScreen();
+            //this.Controls.Add(_splashScreen.SplashScreenTLP);
+            //this.tableLayoutPanel1.Visible = false;
+            
             this.MinimumSize = new Size(1422, 888);
         }
 
@@ -66,7 +72,14 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             this.Bounds = Screen.PrimaryScreen.Bounds;
+            Switcher.SwitchPanel(MainPanel, _employeeInformation.EmployeeInfoPanel);
+
+            //await Task.Delay(5000);
+            //_splashScreen.SplashScreenTLP.Visible = false;
+            //this.tableLayoutPanel1.Visible = true;
+            //this.Controls.Remove(_splashScreen.SplashScreenTLP);
             //_BiometricAttendance.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
         }
 
