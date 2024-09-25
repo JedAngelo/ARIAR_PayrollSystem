@@ -30,19 +30,21 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarPanel = new System.Windows.Forms.Panel();
-            this.LogoutBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MenuBtn = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.LogoutBtn = new System.Windows.Forms.Button();
+            this.MenuBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.EmployeeInformationBtn = new System.Windows.Forms.Button();
             this.BiometricAttendanceBtn = new System.Windows.Forms.Button();
             this.AttendanceManagementBtn = new System.Windows.Forms.Button();
             this.PayrollCalculationBtn = new System.Windows.Forms.Button();
             this.ReportBtn = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.MainPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SystemMaintenanceBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -79,6 +81,75 @@
             this.SidebarPanel.Size = new System.Drawing.Size(311, 888);
             this.SidebarPanel.TabIndex = 0;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.MenuBtn);
+            this.flowLayoutPanel1.Controls.Add(this.LogoPanel);
+            this.flowLayoutPanel1.Controls.Add(this.EmployeeInformationBtn);
+            this.flowLayoutPanel1.Controls.Add(this.BiometricAttendanceBtn);
+            this.flowLayoutPanel1.Controls.Add(this.AttendanceManagementBtn);
+            this.flowLayoutPanel1.Controls.Add(this.PayrollCalculationBtn);
+            this.flowLayoutPanel1.Controls.Add(this.ReportBtn);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.SystemMaintenanceBtn);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(311, 824);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // LogoPanel
+            // 
+            this.LogoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogoPanel.Controls.Add(this.pictureBox1);
+            this.LogoPanel.Controls.Add(this.label1);
+            this.LogoPanel.Location = new System.Drawing.Point(4, 73);
+            this.LogoPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.LogoPanel.Name = "LogoPanel";
+            this.LogoPanel.Size = new System.Drawing.Size(374, 140);
+            this.LogoPanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-4, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(314, 46);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "_____________________";
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 700);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(310, 69);
+            this.button2.TabIndex = 10;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(311, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1312, 888);
+            this.MainPanel.TabIndex = 1;
+            // 
             // LogoutBtn
             // 
             this.LogoutBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -98,23 +169,6 @@
             this.LogoutBtn.UseVisualStyleBackColor = true;
             this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.MenuBtn);
-            this.flowLayoutPanel1.Controls.Add(this.LogoPanel);
-            this.flowLayoutPanel1.Controls.Add(this.EmployeeInformationBtn);
-            this.flowLayoutPanel1.Controls.Add(this.BiometricAttendanceBtn);
-            this.flowLayoutPanel1.Controls.Add(this.AttendanceManagementBtn);
-            this.flowLayoutPanel1.Controls.Add(this.PayrollCalculationBtn);
-            this.flowLayoutPanel1.Controls.Add(this.ReportBtn);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(311, 824);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
             // MenuBtn
             // 
             this.MenuBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -132,18 +186,6 @@
             this.MenuBtn.UseVisualStyleBackColor = true;
             this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
             // 
-            // LogoPanel
-            // 
-            this.LogoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogoPanel.Controls.Add(this.pictureBox1);
-            this.LogoPanel.Controls.Add(this.label1);
-            this.LogoPanel.Location = new System.Drawing.Point(4, 73);
-            this.LogoPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(374, 140);
-            this.LogoPanel.TabIndex = 1;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ARIAR_PayrollSystem.Properties.Resources.New_Project__5_;
@@ -154,18 +196,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-4, 81);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "_____________________";
             // 
             // EmployeeInformationBtn
             // 
@@ -264,38 +294,53 @@
             this.ReportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ReportBtn.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // button1
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 562);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(310, 69);
-            this.button6.TabIndex = 7;
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::ARIAR_PayrollSystem.Properties.Resources.database_logo;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 562);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(310, 69);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "   Backup";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // MainPanel
+            // SystemMaintenanceBtn
             // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(315, 4);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1304, 880);
-            this.MainPanel.TabIndex = 1;
+            this.SystemMaintenanceBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SystemMaintenanceBtn.FlatAppearance.BorderSize = 0;
+            this.SystemMaintenanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SystemMaintenanceBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SystemMaintenanceBtn.ForeColor = System.Drawing.Color.White;
+            this.SystemMaintenanceBtn.Image = global::ARIAR_PayrollSystem.Properties.Resources.config_logo1;
+            this.SystemMaintenanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SystemMaintenanceBtn.Location = new System.Drawing.Point(0, 631);
+            this.SystemMaintenanceBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.SystemMaintenanceBtn.Name = "SystemMaintenanceBtn";
+            this.SystemMaintenanceBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.SystemMaintenanceBtn.Size = new System.Drawing.Size(310, 69);
+            this.SystemMaintenanceBtn.TabIndex = 11;
+            this.SystemMaintenanceBtn.Text = "   System Maintenance";
+            this.SystemMaintenanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SystemMaintenanceBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SystemMaintenanceBtn.UseVisualStyleBackColor = true;
+            this.SystemMaintenanceBtn.Click += new System.EventHandler(this.SystemMaintenanceBtn_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1622, 888);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -307,6 +352,7 @@
             this.Text = "EmployeeInformation";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.SidebarPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -331,8 +377,10 @@
         private System.Windows.Forms.Button AttendanceManagementBtn;
         private System.Windows.Forms.Button PayrollCalculationBtn;
         private System.Windows.Forms.Button ReportBtn;
-        private System.Windows.Forms.Button button6;
         internal System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button LogoutBtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SystemMaintenanceBtn;
     }
 }

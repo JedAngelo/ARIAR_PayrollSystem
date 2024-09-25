@@ -1,5 +1,6 @@
 ﻿using ARIAR_PayrollSystem.Forms.ChildrenForm;
 using ARIAR_PayrollSystem.Helpers;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace ARIAR_PayrollSystem.Forms
             _mainForm = mainForm;
             _employeeDetails = new EmployeeDetails();
             Switcher.SwitchGunaTabGroup(guna2TabControl1, _employeeDetails.guna2TabControl2);
+            
 
         }
 

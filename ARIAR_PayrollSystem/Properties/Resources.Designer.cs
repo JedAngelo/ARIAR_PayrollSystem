@@ -113,6 +113,46 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap config_logo {
+            get {
+                object obj = ResourceManager.GetObject("config_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap config_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("config_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap config_logo2 {
+            get {
+                object obj = ResourceManager.GetObject("config_logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database_logo {
+            get {
+                object obj = ResourceManager.GetObject("database_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap description_logo1 {
             get {
                 object obj = ResourceManager.GetObject("description_logo1", resourceCulture);
@@ -196,6 +236,36 @@ namespace ARIAR_PayrollSystem.Properties {
         internal static System.Drawing.Bitmap New_Project__5_ {
             get {
                 object obj = ResourceManager.GetObject("New Project (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_logo {
+            get {
+                object obj = ResourceManager.GetObject("person_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_logo_dark {
+            get {
+                object obj = ResourceManager.GetObject("person_logo_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_logo_large {
+            get {
+                object obj = ResourceManager.GetObject("person_logo_large", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

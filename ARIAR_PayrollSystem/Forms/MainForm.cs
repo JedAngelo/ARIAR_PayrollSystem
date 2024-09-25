@@ -16,6 +16,9 @@ namespace ARIAR_PayrollSystem.Forms
     {
         private BiometricAttendance _biometricAttendance;
         private EmployeeInformation _employeeInformation;
+        private SystemMaintenance _systemMaintenance;
+
+
         private SplashScreen _splashScreen;
         private bool _isSidebarCol = false;
         private bool isFullscreen = true;
@@ -25,6 +28,7 @@ namespace ARIAR_PayrollSystem.Forms
             
             _biometricAttendance = new BiometricAttendance(this);
             _employeeInformation = new EmployeeInformation(this);
+            _systemMaintenance = new SystemMaintenance(this);
             _splashScreen = new SplashScreen();
             //this.Controls.Add(_splashScreen.SplashScreenTLP);
             //this.tableLayoutPanel1.Visible = false;
@@ -74,7 +78,7 @@ namespace ARIAR_PayrollSystem.Forms
         {
 
             this.Bounds = Screen.PrimaryScreen.Bounds;
-            Switcher.SwitchPanel(MainPanel, _employeeInformation.EmployeeInfoPanel);
+            Switcher.SwitchPanel(MainPanel, _employeeInformation);
 
             //await Task.Delay(5000);
             //_splashScreen.SplashScreenTLP.Visible = false;
@@ -109,12 +113,24 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void EmployeeInformationBtn_Click(object sender, EventArgs e)
         {
-            Switcher.SwitchPanel(MainPanel, _employeeInformation.EmployeeInfoPanel);
+            Switcher.SwitchPanel(MainPanel, _employeeInformation);
+        }
+
+        
+
+        private void MainForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
 
         private void BiometricAttendanceBtn_Click(object sender, EventArgs e)
         {
-            Switcher.SwitchPanel(MainPanel, _biometricAttendance.BiometricAttPanel);
+            Switcher.SwitchPanel(MainPanel, _biometricAttendance);
+        }
+
+        private void SystemMaintenanceBtn_Click(object sender, EventArgs e)
+        {
+            Switcher.SwitchPanel(MainPanel, _systemMaintenance);
         }
     }
 }
