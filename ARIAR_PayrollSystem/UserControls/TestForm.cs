@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ARIAR_PayrollSystem.Forms
+namespace ARIAR_PayrollSystem.UserControls
 {
-    public partial class Test : Form
+    public partial class TestForm : UserControl
     {
-        private readonly MainForm _mainForm;
-
-        public Test(MainForm mainForm)
+        public TestForm()
         {
             InitializeComponent();
-            _mainForm = mainForm;
-        }
-
-        private void Test_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

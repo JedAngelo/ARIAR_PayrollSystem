@@ -22,7 +22,7 @@ namespace ARIAR_PayrollSystem.Helpers
 
             if (!show)
             {
-                tableLayoutPanel.ColumnStyles[0].Width = 53;
+                tableLayoutPanel.ColumnStyles[0].Width = 50;
             }
             else
             {

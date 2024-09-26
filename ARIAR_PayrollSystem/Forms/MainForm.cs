@@ -1,4 +1,5 @@
 ﻿using ARIAR_PayrollSystem.Helpers;
+using ARIAR_PayrollSystem.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace ARIAR_PayrollSystem.Forms
         private BiometricAttendance _biometricAttendance;
         private EmployeeInformation _employeeInformation;
         private SystemMaintenance _systemMaintenance;
+        private Test _testForm;
 
 
         private SplashScreen _splashScreen;
@@ -25,7 +27,8 @@ namespace ARIAR_PayrollSystem.Forms
         public MainForm()
         {
             InitializeComponent();
-            
+
+            _testForm = new Test(this);
             _biometricAttendance = new BiometricAttendance(this);
             _employeeInformation = new EmployeeInformation(this);
             _systemMaintenance = new SystemMaintenance(this);
@@ -50,6 +53,7 @@ namespace ARIAR_PayrollSystem.Forms
                 LogoPanel.Height = 112;
                 _isSidebarCol = false;
             }
+            transition.Show(SwitchPanel);
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -72,13 +76,20 @@ namespace ARIAR_PayrollSystem.Forms
                     isFullscreen = true;
                 }
             }
+            transition.Show(SwitchPanel);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
             this.Bounds = Screen.PrimaryScreen.Bounds;
-            Switcher.SwitchPanel(MainPanel, _employeeInformation);
+
+
+            Switcher.SwitchPanel(SwitchPanel, _employeeInformation);
+            transition.Show(SwitchPanel);
+       
+
+            //waitScreen1.Visible = false;
 
             //await Task.Delay(5000);
             //_splashScreen.SplashScreenTLP.Visible = false;
@@ -111,9 +122,14 @@ namespace ARIAR_PayrollSystem.Forms
             Application.Exit();
         }
 
+
         private void EmployeeInformationBtn_Click(object sender, EventArgs e)
         {
-            Switcher.SwitchPanel(MainPanel, _employeeInformation);
+
+            Switcher.SwitchPanel(SwitchPanel, _employeeInformation);
+            transition.Show(SwitchPanel);
+            //elapsedTick = 0;
+            //waitClock.Start();
         }
 
         
@@ -125,12 +141,29 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void BiometricAttendanceBtn_Click(object sender, EventArgs e)
         {
-            Switcher.SwitchPanel(MainPanel, _biometricAttendance);
+            Switcher.SwitchPanel(SwitchPanel, _biometricAttendance);
+            transition.Show(SwitchPanel);
+
         }
 
         private void SystemMaintenanceBtn_Click(object sender, EventArgs e)
         {
-            Switcher.SwitchPanel(MainPanel, _systemMaintenance);
+            Switcher.SwitchPanel(SwitchPanel, _systemMaintenance);
+            transition.Show(SwitchPanel);
+        }
+
+        private void ReportBtn_Click(object sender, EventArgs e)
+        {
+            Switcher.SwitchPanel(SwitchPanel, _testForm);
+            transition.Show(SwitchPanel);
+
+        }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

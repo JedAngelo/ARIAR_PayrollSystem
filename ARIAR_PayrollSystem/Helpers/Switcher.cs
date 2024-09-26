@@ -20,6 +20,10 @@ namespace ARIAR_PayrollSystem.Helpers
                 throw new ArgumentNullException("Panel or Form cannot be null.");
 
             }
+
+
+            currentPanel.Dock = DockStyle.Fill;
+            currentPanel.Visible = false;
             // Set the form properties to allow embedding
             formToEmbed.TopLevel = false; // Make the form not a top-level window
             formToEmbed.FormBorderStyle = FormBorderStyle.None; // Optional: Remove borders
@@ -31,6 +35,7 @@ namespace ARIAR_PayrollSystem.Helpers
             // Add the form to the panel's controls
             currentPanel.Controls.Add(formToEmbed);
             formToEmbed.Show(); // Show the form
+
         }
 
 
@@ -38,7 +43,7 @@ namespace ARIAR_PayrollSystem.Helpers
 
 
 
-        public static async void ShowTableLayout(TableLayoutPanel currentTableLayout, TableLayoutPanel switchTableLayout)
+        public static void ShowTableLayout(TableLayoutPanel currentTableLayout, TableLayoutPanel switchTableLayout)
         {
             //currentTableLayout.Controls.Clear();
             //currentTableLayout.Controls.Add(switchTableLayout);

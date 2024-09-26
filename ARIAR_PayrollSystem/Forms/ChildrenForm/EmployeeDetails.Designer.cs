@@ -165,6 +165,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
@@ -173,7 +174,6 @@
             this.tabPage2.Size = new System.Drawing.Size(512, 546);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employment Details";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -771,6 +771,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
@@ -779,7 +780,6 @@
             this.tabPage1.Size = new System.Drawing.Size(512, 546);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Info";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 

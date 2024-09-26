@@ -148,6 +148,18 @@
     <Compile Include="UserControls\SearchBar.Designer.cs">
       <DependentUpon>SearchBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TestForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WaitScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\WaitScreen.Designer.cs">
+      <DependentUpon>WaitScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\BiometricAttendance.resx">
       <DependentUpon>BiometricAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\WaitScreen.resx">
+      <DependentUpon>WaitScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
