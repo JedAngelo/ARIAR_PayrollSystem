@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.AnimatorNS.Animation animation6 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarPanel = new System.Windows.Forms.Panel();
@@ -47,8 +47,8 @@
             this.SystemMaintenanceBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.transition = new Guna.UI2.WinForms.Guna2Transition();
             this.SwitchPanel = new System.Windows.Forms.Panel();
+            this.transition = new Guna.UI2.WinForms.Guna2Transition();
             this.tableLayoutPanel1.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -360,36 +360,36 @@
             this.MainPanel.Size = new System.Drawing.Size(1613, 1084);
             this.MainPanel.TabIndex = 1;
             // 
+            // SwitchPanel
+            // 
+            this.transition.SetDecoration(this.SwitchPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
+            this.SwitchPanel.Name = "SwitchPanel";
+            this.SwitchPanel.Size = new System.Drawing.Size(1613, 1084);
+            this.SwitchPanel.TabIndex = 0;
+            // 
             // transition
             // 
             this.transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
             this.transition.Cursor = null;
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 0;
-            animation6.Padding = new System.Windows.Forms.Padding(0);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 0F;
-            animation6.TransparencyCoeff = 1F;
-            this.transition.DefaultAnimation = animation6;
-            this.transition.Interval = 1;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.transition.DefaultAnimation = animation1;
             this.transition.TimeStep = 0.05F;
-            // 
-            // SwitchPanel
-            // 
-            this.transition.SetDecoration(this.SwitchPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.SwitchPanel.Location = new System.Drawing.Point(83, 88);
-            this.SwitchPanel.Name = "SwitchPanel";
-            this.SwitchPanel.Size = new System.Drawing.Size(978, 567);
-            this.SwitchPanel.TabIndex = 0;
             // 
             // MainForm
             // 
