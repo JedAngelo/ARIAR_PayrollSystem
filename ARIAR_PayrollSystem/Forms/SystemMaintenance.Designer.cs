@@ -1048,6 +1048,7 @@
             this.FirstnameTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.FirstnameTextBox.Size = new System.Drawing.Size(270, 42);
             this.FirstnameTextBox.TabIndex = 5;
+            this.FirstnameTextBox.Enter += new System.EventHandler(this.FirstnameTextBox_Enter);
             // 
             // panel4
             // 
@@ -1349,6 +1350,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "SystemMaintenance";
             this.Text = "SystemMaintenance";
+            this.Load += new System.EventHandler(this.SystemMaintenance_Load);
             this.panel1.ResumeLayout(false);
             this.guna2TabControl1.ResumeLayout(false);
             this.EmployeeTab.ResumeLayout(false);

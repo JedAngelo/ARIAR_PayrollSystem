@@ -24,6 +24,23 @@ namespace ARIAR_PayrollSystem.Helpers
             }
         }
 
+        public static void SendtoFront(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is Label)
+                {
+
+                    //((Label)control).SendToBack();
+                    ((Label)control).BringToFront();
+                }
+                else if (control.HasChildren)
+                {
+                    SendtoFront(control); // Recursively call the method for nested controls
+                }
+            }
+        }
+
 
 
     }

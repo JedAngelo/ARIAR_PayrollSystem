@@ -90,5 +90,15 @@ namespace ARIAR_PayrollSystem.Forms
                 ControlsHelper.ClearAllTextBoxes(this);
             }
         }
+
+        private void SystemMaintenance_Load(object sender, EventArgs e)
+        {
+            ControlsHelper.SendtoFront(this);
+
+        }
+
+        private void FirstnameTextBox_Enter(object sender, EventArgs e)
+        {
+        }
     }
 }
