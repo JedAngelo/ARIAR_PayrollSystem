@@ -119,6 +119,12 @@
     <Compile Include="Forms\Modals\AnotherTestMF.Designer.cs">
       <DependentUpon>AnotherTestMF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modals\TestModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,7 @@
     <Compile Include="Forms\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\ControlsHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Helpers\SidebarHelper.cs" />
@@ -212,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\AnotherTestMF.resx">
       <DependentUpon>AnotherTestMF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\TestModal.resx">
       <DependentUpon>TestModal.cs</DependentUpon>

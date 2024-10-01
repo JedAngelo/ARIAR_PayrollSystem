@@ -21,7 +21,6 @@ namespace ARIAR_PayrollSystem.Forms
        
         MainForm _mainForm;
         //TestModal _testModal;
-        public string _apiInsert = "/api/Employee/AddOrUpdateEmployeeInfo";
         public readonly HttpClient client = new HttpClient();
         private Dictionary<Guna2TextBox, Tuple<Label, int>> textBoxLabelMap;
 
@@ -97,7 +96,7 @@ namespace ARIAR_PayrollSystem.Forms
                     CreatedDate = DateTime.Now
                     
                 };
-                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(_apiInsert, _employeeInfo);
+                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.ApiAddEmployeeInfo, _employeeInfo);
                 if (_result.isSuccess)
                 {
                     MessageBox.Show(_result.Data);

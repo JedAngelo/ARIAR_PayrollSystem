@@ -21,5 +21,10 @@ namespace ARIAR_PayrollSystem.Forms.ChildrenForm
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

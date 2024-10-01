@@ -1,5 +1,7 @@
 ﻿using ARIAR_PayrollSystem.Forms.ChildrenForm;
+using ARIAR_PayrollSystem.Forms.Modals;
 using ARIAR_PayrollSystem.Helpers;
+using ARIAR_PayrollSystem.Models;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -17,14 +19,40 @@ namespace ARIAR_PayrollSystem.Forms
     {
         MainForm _mainForm;
         EmployeeDetails _employeeDetails;
+        CustomMessageBox _MessageBox;
+
         public EmployeeInformation(MainForm mainForm)
         {
             InitializeComponent();
             _mainForm = mainForm;
             _employeeDetails = new EmployeeDetails();
             Switcher.SwitchGunaTabGroup(guna2TabControl1, _employeeDetails.guna2TabControl2);
-            
+            DisplayPersonalInfo();  
 
+        }
+
+
+        private async void DisplayPersonalInfo()
+        {
+            try
+            {
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.ApiDisplayPersonalInfo);
+
+                var personaInfo = _employeeInfo.Data.Select(e => new
+                {
+                    Fullname = $"{e.FirstName} {e.MiddleName[0]}, {e.LastName}",
+
+                }).ToList();
+                
+                EmployeeDataGrid.DataSource = personaInfo;
+                EmployeeDataGrid.ClearSelection();
+
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show(ex.Message);
+                
+            }
         }
 
         private void EmployeeInfoPanel_Paint(object sender, PaintEventArgs e)
