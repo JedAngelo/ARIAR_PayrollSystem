@@ -109,6 +109,5 @@ namespace ARIAR_PayrollSystem.Helpers
             }
         }
 
-        public static void CustomMessageBox()
     }
 }
