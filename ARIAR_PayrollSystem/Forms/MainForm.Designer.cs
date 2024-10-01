@@ -32,12 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarPanel = new System.Windows.Forms.Panel();
-            this.LogoutBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MenuBtn = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.SwitchPanel = new System.Windows.Forms.Panel();
+            this.transition = new Guna.UI2.WinForms.Guna2Transition();
+            this.LogoutBtn = new System.Windows.Forms.Button();
+            this.MenuBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.EmployeeInformationBtn = new System.Windows.Forms.Button();
             this.BiometricAttendanceBtn = new System.Windows.Forms.Button();
             this.AttendanceManagementBtn = new System.Windows.Forms.Button();
@@ -45,23 +49,19 @@
             this.ReportBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SystemMaintenanceBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.SwitchPanel = new System.Windows.Forms.Panel();
-            this.transition = new Guna.UI2.WinForms.Guna2Transition();
             this.tableLayoutPanel1.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.LogoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 311F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1312F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1613F));
             this.tableLayoutPanel1.Controls.Add(this.SidebarPanel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.MainPanel, 1, 0);
             this.transition.SetDecoration(this.tableLayoutPanel1, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -71,7 +71,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 888F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1084F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1924, 1084);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -87,26 +87,6 @@
             this.SidebarPanel.Name = "SidebarPanel";
             this.SidebarPanel.Size = new System.Drawing.Size(311, 1084);
             this.SidebarPanel.TabIndex = 0;
-            // 
-            // LogoutBtn
-            // 
-            this.transition.SetDecoration(this.LogoutBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.LogoutBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LogoutBtn.FlatAppearance.BorderSize = 0;
-            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogoutBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
-            this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 1024);
-            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(311, 60);
-            this.LogoutBtn.TabIndex = 8;
-            this.LogoutBtn.Text = "            Logout";
-            this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.UseVisualStyleBackColor = true;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -128,6 +108,112 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(311, 1042);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // LogoPanel
+            // 
+            this.LogoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogoPanel.Controls.Add(this.pictureBox1);
+            this.LogoPanel.Controls.Add(this.label1);
+            this.transition.SetDecoration(this.LogoPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.LogoPanel.Location = new System.Drawing.Point(4, 73);
+            this.LogoPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.LogoPanel.Name = "LogoPanel";
+            this.LogoPanel.Size = new System.Drawing.Size(374, 140);
+            this.LogoPanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.transition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-4, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(314, 46);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "_____________________";
+            // 
+            // button2
+            // 
+            this.transition.SetDecoration(this.button2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 700);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(310, 69);
+            this.button2.TabIndex = 10;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Controls.Add(this.SwitchPanel);
+            this.transition.SetDecoration(this.MainPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(311, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1613, 1084);
+            this.MainPanel.TabIndex = 1;
+            // 
+            // SwitchPanel
+            // 
+            this.transition.SetDecoration(this.SwitchPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
+            this.SwitchPanel.Name = "SwitchPanel";
+            this.SwitchPanel.Size = new System.Drawing.Size(1613, 1084);
+            this.SwitchPanel.TabIndex = 0;
+            // 
+            // transition
+            // 
+            this.transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
+            this.transition.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.transition.DefaultAnimation = animation1;
+            this.transition.TimeStep = 0.1F;
+            // 
+            // LogoutBtn
+            // 
+            this.transition.SetDecoration(this.LogoutBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.LogoutBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LogoutBtn.FlatAppearance.BorderSize = 0;
+            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoutBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
+            this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
+            this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogoutBtn.Location = new System.Drawing.Point(0, 1024);
+            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.LogoutBtn.Name = "LogoutBtn";
+            this.LogoutBtn.Size = new System.Drawing.Size(311, 60);
+            this.LogoutBtn.TabIndex = 8;
+            this.LogoutBtn.Text = "            Logout";
+            this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            // 
             // MenuBtn
             // 
             this.transition.SetDecoration(this.MenuBtn, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -146,19 +232,6 @@
             this.MenuBtn.UseVisualStyleBackColor = true;
             this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
             // 
-            // LogoPanel
-            // 
-            this.LogoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogoPanel.Controls.Add(this.pictureBox1);
-            this.LogoPanel.Controls.Add(this.label1);
-            this.transition.SetDecoration(this.LogoPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.LogoPanel.Location = new System.Drawing.Point(4, 73);
-            this.LogoPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(374, 140);
-            this.LogoPanel.TabIndex = 1;
-            // 
             // pictureBox1
             // 
             this.transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -170,19 +243,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.transition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-4, 81);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "_____________________";
             // 
             // EmployeeInformationBtn
             // 
@@ -331,66 +391,6 @@
             this.SystemMaintenanceBtn.UseVisualStyleBackColor = true;
             this.SystemMaintenanceBtn.Click += new System.EventHandler(this.SystemMaintenanceBtn_Click);
             // 
-            // button2
-            // 
-            this.transition.SetDecoration(this.button2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 700);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(310, 69);
-            this.button2.TabIndex = 10;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Controls.Add(this.SwitchPanel);
-            this.transition.SetDecoration(this.MainPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(311, 0);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1613, 1084);
-            this.MainPanel.TabIndex = 1;
-            // 
-            // SwitchPanel
-            // 
-            this.transition.SetDecoration(this.SwitchPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
-            this.SwitchPanel.Name = "SwitchPanel";
-            this.SwitchPanel.Size = new System.Drawing.Size(1613, 1084);
-            this.SwitchPanel.TabIndex = 0;
-            // 
-            // transition
-            // 
-            this.transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
-            this.transition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.transition.DefaultAnimation = animation1;
-            this.transition.TimeStep = 0.05F;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -415,8 +415,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             this.LogoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

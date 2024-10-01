@@ -113,6 +113,24 @@
     <Compile Include="Forms\Maintenance.Designer.cs">
       <DependentUpon>Maintenance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\AnotherTestMF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AnotherTestMF.Designer.cs">
+      <DependentUpon>AnotherTestMF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\TestModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\TestModal.Designer.cs">
+      <DependentUpon>TestModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OverlayForm.Designer.cs">
+      <DependentUpon>OverlayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +164,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EmployeeDetailsTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\EmployeeDetailsTest.Designer.cs">
+      <DependentUpon>EmployeeDetailsTest.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CustomTextBox.cs">
       <SubType>UserControl</SubType>
@@ -186,6 +210,15 @@
     <EmbeddedResource Include="Forms\Maintenance.resx">
       <DependentUpon>Maintenance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AnotherTestMF.resx">
+      <DependentUpon>AnotherTestMF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\TestModal.resx">
+      <DependentUpon>TestModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OverlayForm.resx">
+      <DependentUpon>OverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +232,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\EmployeeDetailsTest.resx">
+      <DependentUpon>EmployeeDetailsTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
@@ -228,7 +264,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Tests\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu_logo1.png" />
@@ -313,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\person_logo_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-line %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

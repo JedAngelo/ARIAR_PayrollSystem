@@ -293,6 +293,16 @@ namespace ARIAR_PayrollSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_line__1_ {
+            get {
+                object obj = ResourceManager.GetObject("search-line (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_logo_alternative {
             get {
                 object obj = ResourceManager.GetObject("search_logo_alternative", resourceCulture);

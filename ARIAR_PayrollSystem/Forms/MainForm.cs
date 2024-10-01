@@ -19,6 +19,7 @@ namespace ARIAR_PayrollSystem.Forms
         private EmployeeInformation _employeeInformation;
         private SystemMaintenance _systemMaintenance;
         private Test _testForm;
+        private Panel overlayPanel;
 
 
         private SplashScreen _splashScreen;
@@ -37,7 +38,33 @@ namespace ARIAR_PayrollSystem.Forms
             //this.tableLayoutPanel1.Visible = false;
             
             this.MinimumSize = new Size(1422, 888);
+
         }
+
+        public void ShowOverlay()
+        {
+            // Create and configure the overlay panel
+            overlayPanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                BackColor = Color.FromArgb(128, 0, 0, 0), // Semi-transparent black
+                Visible = true
+            };
+            this.Controls.Add(overlayPanel);
+            overlayPanel.BringToFront(); // Ensure overlay is on top
+        }
+
+        public void HideOverlay()
+        {
+            // Remove the overlay panel
+            if (overlayPanel != null)
+            {
+                this.Controls.Remove(overlayPanel);
+                overlayPanel.Dispose(); // Clean up resources
+                overlayPanel = null; // Set to null for safety
+            }
+        }
+
 
         private void MenuBtn_Click(object sender, EventArgs e)
         {
@@ -87,7 +114,7 @@ namespace ARIAR_PayrollSystem.Forms
 
             Switcher.SwitchPanel(SwitchPanel, _employeeInformation);
             transition.Show(SwitchPanel);
-       
+
 
             //waitScreen1.Visible = false;
 
