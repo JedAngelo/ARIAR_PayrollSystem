@@ -27,7 +27,7 @@ namespace ARIAR_PayrollSystem.Forms
             _mainForm = mainForm;
             _employeeDetails = new EmployeeDetails();
             Switcher.SwitchGunaTabGroup(guna2TabControl1, _employeeDetails.guna2TabControl2);
-            //DisplayPersonalInfo();  
+            DisplayPersonalInfo();
 
         }
 
@@ -40,10 +40,9 @@ namespace ARIAR_PayrollSystem.Forms
 
                 var personaInfo = _employeeInfo.Data.Select(e => new
                 {
-                    Fullname = $"{e.FirstName} {e.MiddleName[0]}, {e.LastName}",
-
+                    Fullname = $"{e.FirstName} {(string.IsNullOrEmpty(e.MiddleName) ? "" : $"{e.MiddleName[0]}. ")}{e.LastName}"
                 }).ToList();
-                
+
                 EmployeeDataGrid.DataSource = personaInfo;
                 //EmployeeDataGrid.ClearSelection();
 

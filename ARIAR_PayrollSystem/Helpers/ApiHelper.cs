@@ -9,7 +9,8 @@ namespace ARIAR_PayrollSystem.Helpers
     public class ApiHelper
     {
         public static string ApiDisplayPersonalInfo = "/api/Employee/DisplayPersonalInfo";
-        public static string ApiAddEmployeeInfo = "/api/Employee/DisplayPersonalInfo";
+        public static string ApiAddEmployeeInfo = "/api/Employee/AddOrUpdateEmployeeInfo";
+        public static string ApiLogin = "/api/UserAuthentication/Login";
 
 
     }

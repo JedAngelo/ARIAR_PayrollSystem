@@ -28,6 +28,11 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             // Display it as a modal dialog
             return customMessageBox.ShowDialog();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
     

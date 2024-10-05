@@ -44,20 +44,25 @@
             this.guna2ControlBox1.CustomIconSize = 13F;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2ControlBox1.Location = new System.Drawing.Point(467, 12);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(397, 12);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 0;
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 8;
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.Message);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(12, 47);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(500, 225);
+            this.guna2Panel1.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel1.ShadowDecoration.Depth = 15;
+            this.guna2Panel1.ShadowDecoration.Enabled = true;
+            this.guna2Panel1.Size = new System.Drawing.Size(425, 160);
             this.guna2Panel1.TabIndex = 1;
             // 
             // Message
@@ -69,10 +74,10 @@
             this.Message.Location = new System.Drawing.Point(0, 0);
             this.Message.Name = "Message";
             this.Message.Padding = new System.Windows.Forms.Padding(8);
-            this.Message.Size = new System.Drawing.Size(500, 225);
+            this.Message.Size = new System.Drawing.Size(425, 160);
             this.Message.TabIndex = 0;
             this.Message.Text = "This is a sample Message";
-            this.Message.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2BorderlessForm1
             // 
@@ -97,25 +102,25 @@
             this.guna2Button1.FillColor = System.Drawing.Color.SteelBlue;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(194, 289);
+            this.guna2Button1.Location = new System.Drawing.Point(336, 221);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(136, 38);
+            this.guna2Button1.Size = new System.Drawing.Size(101, 38);
             this.guna2Button1.TabIndex = 2;
             this.guna2Button1.Text = "Close";
             this.guna2Button1.UseTransparentBackground = true;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // CustomMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 349);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(454, 270);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2ControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(524, 349);
-            this.MinimumSize = new System.Drawing.Size(524, 349);
             this.Name = "CustomMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CustomMessageBox";

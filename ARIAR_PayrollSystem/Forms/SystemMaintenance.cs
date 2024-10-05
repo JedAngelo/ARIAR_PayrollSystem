@@ -99,11 +99,11 @@ namespace ARIAR_PayrollSystem.Forms
                 var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.ApiAddEmployeeInfo, _employeeInfo);
                 if (_result.isSuccess)
                 {
-                    MessageBox.Show(_result.Data);
+                    CustomMessageBox.Show(_result.Data);
                 }
                 else
                 {
-                    MessageBox.Show(_result.ErrorMessage);
+                    CustomMessageBox.Show(_result.ErrorMessage);
                 }
 
             }
@@ -164,6 +164,11 @@ namespace ARIAR_PayrollSystem.Forms
             }
             overlayForm.Close();
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show(HttpHelper.GetAccessToken());
         }
     }
 }

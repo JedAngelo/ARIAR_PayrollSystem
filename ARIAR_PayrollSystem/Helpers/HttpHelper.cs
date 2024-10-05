@@ -13,7 +13,26 @@ namespace ARIAR_PayrollSystem.Helpers
 {
     public static class HttpHelper
     {
-        private static string apiBasicUri = "https://localhost:44376";
+        private static readonly string apiBasicUri = "https://localhost:44376";
+        private static readonly string accessToken;  // Store the access token
+        private static readonly string secretKey = "TheTreesMightLongForPeaceButTheWindWillNeverCeaseTheQuickBrownFoxJumpsOverTheLazyDog";
+
+        public static void SetToken(string token)
+        {
+            accessToken = token;
+        }
+
+        // Method to set the access token after login
+        //public static void SetAccessToken(string token)
+        //{
+        //    accessToken = token;
+        //}
+
+        public static string GetAccessToken()
+        {
+            return accessToken;
+        }
+
         public static async Task<T> PostAsync<T, U>(string url, U contentValue)
         {
             var httpClient = new HttpClient();
@@ -24,8 +43,8 @@ namespace ARIAR_PayrollSystem.Helpers
                 var serializedContent = JsonConvert.SerializeObject(contentValue);
                 Console.WriteLine("Serialized Content: " + serializedContent);
                 var content = new StringContent(JsonConvert.SerializeObject(contentValue), Encoding.UTF8, "application/json");
-                httpClient.DefaultRequestHeaders.Add("AccessToken", "");
-                httpClient.DefaultRequestHeaders.Add("secretKey", "");
+                httpClient.DefaultRequestHeaders.Add("AccessToken", accessToken);
+                httpClient.DefaultRequestHeaders.Add("secretKey", secretKey);
                 httpClient.DefaultRequestHeaders.Authorization =
                     new AuthenticationHeaderValue("Bearer", "");
                 httpClient.Timeout = TimeSpan.FromMinutes(10);
@@ -66,8 +85,8 @@ namespace ARIAR_PayrollSystem.Helpers
             try
             {
                 httpClient.BaseAddress = new Uri(apiBasicUri);
-                httpClient.DefaultRequestHeaders.Add("AccessToken", "");
-                httpClient.DefaultRequestHeaders.Add("secretKey", "");
+                httpClient.DefaultRequestHeaders.Add("AccessToken", accessToken);
+                httpClient.DefaultRequestHeaders.Add("secretKey", secretKey);
                 httpClient.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 httpClient.DefaultRequestHeaders.Authorization =
@@ -101,8 +120,8 @@ namespace ARIAR_PayrollSystem.Helpers
             try
             {
                 httpClient.BaseAddress = new Uri(apiBasicUri);
-                httpClient.DefaultRequestHeaders.Add("AccessToken", "");
-                httpClient.DefaultRequestHeaders.Add("secretKey", "");
+                httpClient.DefaultRequestHeaders.Add("AccessToken", accessToken);
+                httpClient.DefaultRequestHeaders.Add("secretKey", secretKey);
                 httpClient.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 httpClient.DefaultRequestHeaders.Authorization =
