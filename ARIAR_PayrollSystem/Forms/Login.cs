@@ -71,13 +71,19 @@ namespace ARIAR_PayrollSystem.Forms
                 if (_loginResult.isSuccess)
                 {                   
                     HttpHelper.SetAccessToken(_loginResult.Data.Token);
-                    CustomMessageBox.Show("Successfully login!");
+
+                    GunaMessage.Icon = MessageDialogIcon.Information;
+                    GunaMessage.Show("Successfully login", "Success");
+
+                    //CustomMessageBox.Show("Successfully login!");//TBD
                     mainForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    CustomMessageBox.Show(_loginResult.ErrorMessage);
+                    //CustomMessageBox.Show(_loginResult.ErrorMessage);
+                    GunaMessage.Icon = MessageDialogIcon.Warning;
+                    GunaMessage.Show(_loginResult.ErrorMessage, "Error");
                 }
 
 

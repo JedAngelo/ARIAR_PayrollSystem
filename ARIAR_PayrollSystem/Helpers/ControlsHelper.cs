@@ -109,5 +109,44 @@ namespace ARIAR_PayrollSystem.Helpers
             }
         }
 
+        public static Point GetFormLocationInScreen(Form form)
+        {
+            // Get the screen where the form is located
+            Screen screen = Screen.FromControl(form);
+
+            // Get the form's location relative to the entire screen
+            Point formLocation = form.Location;
+
+            // Get the screen's bounds (size and location of the screen)
+            Rectangle screenBounds = screen.Bounds;
+
+            // Calculate the form's position relative to the screen it's on
+            int relativeX = formLocation.X - screenBounds.X;
+            int relativeY = formLocation.Y - screenBounds.Y;
+
+            // Return the form's location relative to the screen
+            return new Point(relativeX, relativeY);
+        }
+
+        public static void SetOverlayFormLocation(Form parentForm, Form overlayForm)
+        {
+            // Get the relative location of the parent form on the current screen
+            Point relativeLocation = GetFormLocationInScreen(parentForm);
+
+            // Get the screen bounds of the screen where the parent form is located
+            Screen parentScreen = Screen.FromControl(parentForm);
+            Rectangle screenBounds = parentScreen.Bounds;
+
+            // Calculate the absolute position on the screen based on the relative position
+            int absoluteX = screenBounds.X + relativeLocation.X;
+            int absoluteY = screenBounds.Y + relativeLocation.Y;
+
+            // Set the overlay form's location to match the parent's absolute location on the screen
+            overlayForm.Location = new Point(absoluteX, absoluteY);
+
+            // Optionally, set the size of the overlay form to match the parent form if needed
+            overlayForm.Size = parentForm.Size;
+        }
+
     }
 }

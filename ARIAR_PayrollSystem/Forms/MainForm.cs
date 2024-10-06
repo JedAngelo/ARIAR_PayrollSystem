@@ -36,7 +36,7 @@ namespace ARIAR_PayrollSystem.Forms
             //this.Controls.Add(_splashScreen.SplashScreenTLP);
             //this.tableLayoutPanel1.Visible = false;
             
-            this.MinimumSize = new Size(1422, 888);
+            //this.MinimumSize = new Size(1422, 888);
 
         }
 
@@ -65,7 +65,7 @@ namespace ARIAR_PayrollSystem.Forms
                 if (isFullscreen)
                 {
 
-                    this.FormBorderStyle = FormBorderStyle.Sizable;
+                    //this.FormBorderStyle = FormBorderStyle.Sizable;
                     this.WindowState = FormWindowState.Maximized;
                     isFullscreen = false;
                 }
@@ -73,7 +73,7 @@ namespace ARIAR_PayrollSystem.Forms
                 {
                     this.FormBorderStyle = FormBorderStyle.None;
                     this.WindowState = FormWindowState.Normal;
-                    this.Bounds = Screen.FromControl(this).Bounds;
+                    //this.Bounds = Screen.FromControl(this).Bounds;
                     
                     isFullscreen = true;
                 }
@@ -84,7 +84,7 @@ namespace ARIAR_PayrollSystem.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-            this.Bounds = Screen.PrimaryScreen.Bounds;
+            //this.Bounds = Screen.PrimaryScreen.Bounds;
 
 
             Switcher.SwitchPanel(SwitchPanel, _employeeInformation);
@@ -106,7 +106,7 @@ namespace ARIAR_PayrollSystem.Forms
                 if (isFullscreen)
                 {
 
-                    this.FormBorderStyle = FormBorderStyle.Sizable;
+                    //this.FormBorderStyle = FormBorderStyle.Sizable;
                     this.WindowState = FormWindowState.Maximized;
                     isFullscreen = false;
                 }

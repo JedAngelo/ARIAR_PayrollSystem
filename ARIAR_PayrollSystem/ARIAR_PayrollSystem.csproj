@@ -146,6 +146,7 @@
     <Compile Include="Forms\Modals\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\ModalHelpers\ModalHelper.cs" />
     <Compile Include="Forms\Modals\TestModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,7 +208,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Tests\EmployeeDetailsTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,19 +417,6 @@
     <None Include="Resources\user-3-fill.png" />
     <None Include="Resources\user-3-fill %281%29.png" />
     <None Include="Resources\lock-2-line.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

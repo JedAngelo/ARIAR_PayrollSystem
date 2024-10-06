@@ -15,6 +15,12 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         public TestModal()
         {
             InitializeComponent();
+            this.ShowInTaskbar = false;
+        }
+
+        private void TestModal_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

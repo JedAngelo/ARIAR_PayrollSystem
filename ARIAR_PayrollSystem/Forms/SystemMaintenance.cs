@@ -1,4 +1,5 @@
 ﻿using ARIAR_PayrollSystem.Forms.Modals;
+using ARIAR_PayrollSystem.Forms.Modals.ModalHelpers;
 using ARIAR_PayrollSystem.Helpers;
 using ARIAR_PayrollSystem.Models;
 using Guna.UI2.WinForms;
@@ -155,20 +156,23 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            OverlayForm overlayForm = new OverlayForm();
-            overlayForm.Show();
+            OverlayForm overlayForm = new OverlayForm(_mainForm);
+            overlayForm.Show(_mainForm);
 
             using (TestModal _testModal = new TestModal())
             {
-                _testModal.ShowDialog();
+                _testModal.ShowDialog(_mainForm);
             }
             overlayForm.Close();
+
+
 
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            CustomMessageBox.Show(HttpHelper.GetAccessToken());
+            //CustomMessageBox.Show(HttpHelper.GetAccessToken());
+            guna2MessageDialog1.Show("Sample");
         }
     }
 }

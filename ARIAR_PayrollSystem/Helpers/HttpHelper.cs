@@ -8,18 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace ARIAR_PayrollSystem.Helpers
 {
     public static class HttpHelper
     {
         private static readonly string apiBasicUri = "https://localhost:44376";
-        private static readonly string accessToken;  // Store the access token
+        private static string accessToken;  // Store the access token
         private static readonly string secretKey = "TheTreesMightLongForPeaceButTheWindWillNeverCeaseTheQuickBrownFoxJumpsOverTheLazyDog";
 
-        public static void SetToken(string token)
+        public static string AccessToken
         {
-            accessToken = token;
+            get { return accessToken; }
+            private set { accessToken = value; }
+        }
+
+
+        public static void SetAccessToken(string token)
+        {
+
+            if (accessToken == null)
+            {
+                accessToken = token;
+            }
+            else
+            {
+                throw new InvalidOperationException("Access token has already been set and cannot be modified.");
+            }
         }
 
         // Method to set the access token after login
