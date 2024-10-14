@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Helpers
 {
-    public class ApiHelper
+    public static class ApiHelper
     {
-        public static string ApiDisplayPersonalInfo = "/api/Employee/DisplayPersonalInfo";
-        public static string ApiAddEmployeeInfo = "/api/Employee/AddOrUpdateEmployeeInfo";
-        public static string ApiLogin = "/api/UserAuthentication/Login";
+        public const string ApiGetPersonalInfo = "/api/Employee/DisplayPersonalInfo";
+        public const string ApiAddEmployeeInfo = "/api/Employee/AddOrUpdateEmployeeInfo";
+        public const string ApiLogin = "/api/UserAuthentication/Login";
+        public const string ApiAddBiometric = "/api/Biometric/AddBiometricData";
+        public const string ApiGetBiometric = "/api/Biometric/DisplayEmployeeBiometric";
 
 
     }

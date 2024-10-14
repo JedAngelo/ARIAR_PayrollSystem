@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
+            this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarPanel = new System.Windows.Forms.Panel();
@@ -49,6 +50,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.SwitchPanel = new System.Windows.Forms.Panel();
             this.transition = new Guna.UI2.WinForms.Guna2Transition();
+            this.ReaderDetector = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -60,8 +62,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1087F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 309F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1359F));
             this.tableLayoutPanel1.Controls.Add(this.SidebarPanel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.MainPanel, 1, 0);
             this.transition.SetDecoration(this.tableLayoutPanel1, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -71,7 +73,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1334, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1668, 826);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SidebarPanel
@@ -84,7 +86,7 @@
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Margin = new System.Windows.Forms.Padding(0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(247, 661);
+            this.SidebarPanel.Size = new System.Drawing.Size(309, 826);
             this.SidebarPanel.TabIndex = 0;
             // 
             // LogoutBtn
@@ -97,10 +99,10 @@
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
             this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 613);
+            this.LogoutBtn.Location = new System.Drawing.Point(0, 766);
             this.LogoutBtn.Margin = new System.Windows.Forms.Padding(0);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(247, 48);
+            this.LogoutBtn.Size = new System.Drawing.Size(309, 60);
             this.LogoutBtn.TabIndex = 8;
             this.LogoutBtn.Text = "            Logout";
             this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,7 +126,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(247, 834);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(309, 1042);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // MenuBtn
@@ -140,7 +142,7 @@
             this.MenuBtn.Location = new System.Drawing.Point(0, 0);
             this.MenuBtn.Margin = new System.Windows.Forms.Padding(0);
             this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(248, 55);
+            this.MenuBtn.Size = new System.Drawing.Size(310, 69);
             this.MenuBtn.TabIndex = 0;
             this.MenuBtn.UseVisualStyleBackColor = true;
             this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
@@ -152,18 +154,20 @@
             this.LogoPanel.Controls.Add(this.pictureBox1);
             this.LogoPanel.Controls.Add(this.label1);
             this.transition.SetDecoration(this.LogoPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.LogoPanel.Location = new System.Drawing.Point(3, 58);
+            this.LogoPanel.Location = new System.Drawing.Point(4, 73);
+            this.LogoPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(299, 112);
+            this.LogoPanel.Size = new System.Drawing.Size(374, 140);
             this.LogoPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(310, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -174,9 +178,10 @@
             this.transition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-3, 65);
+            this.label1.Location = new System.Drawing.Point(-4, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 37);
+            this.label1.Size = new System.Drawing.Size(314, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "_____________________";
             // 
@@ -190,10 +195,10 @@
             this.EmployeeInformationBtn.ForeColor = System.Drawing.Color.White;
             this.EmployeeInformationBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeInformationBtn.Image")));
             this.EmployeeInformationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeeInformationBtn.Location = new System.Drawing.Point(0, 173);
+            this.EmployeeInformationBtn.Location = new System.Drawing.Point(0, 217);
             this.EmployeeInformationBtn.Margin = new System.Windows.Forms.Padding(0);
             this.EmployeeInformationBtn.Name = "EmployeeInformationBtn";
-            this.EmployeeInformationBtn.Size = new System.Drawing.Size(248, 55);
+            this.EmployeeInformationBtn.Size = new System.Drawing.Size(310, 69);
             this.EmployeeInformationBtn.TabIndex = 2;
             this.EmployeeInformationBtn.Text = "   Employee Dashboard";
             this.EmployeeInformationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -211,10 +216,10 @@
             this.BiometricAttendanceBtn.ForeColor = System.Drawing.Color.White;
             this.BiometricAttendanceBtn.Image = ((System.Drawing.Image)(resources.GetObject("BiometricAttendanceBtn.Image")));
             this.BiometricAttendanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BiometricAttendanceBtn.Location = new System.Drawing.Point(0, 228);
+            this.BiometricAttendanceBtn.Location = new System.Drawing.Point(0, 286);
             this.BiometricAttendanceBtn.Margin = new System.Windows.Forms.Padding(0);
             this.BiometricAttendanceBtn.Name = "BiometricAttendanceBtn";
-            this.BiometricAttendanceBtn.Size = new System.Drawing.Size(248, 55);
+            this.BiometricAttendanceBtn.Size = new System.Drawing.Size(310, 69);
             this.BiometricAttendanceBtn.TabIndex = 3;
             this.BiometricAttendanceBtn.Text = "   Biometric Attendance";
             this.BiometricAttendanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,10 +237,10 @@
             this.AttendanceManagementBtn.ForeColor = System.Drawing.Color.White;
             this.AttendanceManagementBtn.Image = ((System.Drawing.Image)(resources.GetObject("AttendanceManagementBtn.Image")));
             this.AttendanceManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AttendanceManagementBtn.Location = new System.Drawing.Point(0, 283);
+            this.AttendanceManagementBtn.Location = new System.Drawing.Point(0, 355);
             this.AttendanceManagementBtn.Margin = new System.Windows.Forms.Padding(0);
             this.AttendanceManagementBtn.Name = "AttendanceManagementBtn";
-            this.AttendanceManagementBtn.Size = new System.Drawing.Size(248, 55);
+            this.AttendanceManagementBtn.Size = new System.Drawing.Size(310, 69);
             this.AttendanceManagementBtn.TabIndex = 4;
             this.AttendanceManagementBtn.Text = "   Attendance Management";
             this.AttendanceManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,10 +257,10 @@
             this.PayrollCalculationBtn.ForeColor = System.Drawing.Color.White;
             this.PayrollCalculationBtn.Image = ((System.Drawing.Image)(resources.GetObject("PayrollCalculationBtn.Image")));
             this.PayrollCalculationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PayrollCalculationBtn.Location = new System.Drawing.Point(0, 338);
+            this.PayrollCalculationBtn.Location = new System.Drawing.Point(0, 424);
             this.PayrollCalculationBtn.Margin = new System.Windows.Forms.Padding(0);
             this.PayrollCalculationBtn.Name = "PayrollCalculationBtn";
-            this.PayrollCalculationBtn.Size = new System.Drawing.Size(248, 55);
+            this.PayrollCalculationBtn.Size = new System.Drawing.Size(310, 69);
             this.PayrollCalculationBtn.TabIndex = 5;
             this.PayrollCalculationBtn.Text = "   Payroll Calculation";
             this.PayrollCalculationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,10 +277,10 @@
             this.ReportBtn.ForeColor = System.Drawing.Color.White;
             this.ReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportBtn.Image")));
             this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReportBtn.Location = new System.Drawing.Point(0, 393);
+            this.ReportBtn.Location = new System.Drawing.Point(0, 493);
             this.ReportBtn.Margin = new System.Windows.Forms.Padding(0);
             this.ReportBtn.Name = "ReportBtn";
-            this.ReportBtn.Size = new System.Drawing.Size(248, 55);
+            this.ReportBtn.Size = new System.Drawing.Size(310, 69);
             this.ReportBtn.TabIndex = 6;
             this.ReportBtn.Text = "   Report";
             this.ReportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -293,11 +298,11 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 448);
+            this.button1.Location = new System.Drawing.Point(0, 562);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(248, 55);
+            this.button1.Size = new System.Drawing.Size(310, 69);
             this.button1.TabIndex = 8;
             this.button1.Text = "   Backup";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -315,11 +320,11 @@
             this.SystemMaintenanceBtn.ForeColor = System.Drawing.Color.White;
             this.SystemMaintenanceBtn.Image = ((System.Drawing.Image)(resources.GetObject("SystemMaintenanceBtn.Image")));
             this.SystemMaintenanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SystemMaintenanceBtn.Location = new System.Drawing.Point(0, 503);
+            this.SystemMaintenanceBtn.Location = new System.Drawing.Point(0, 631);
             this.SystemMaintenanceBtn.Margin = new System.Windows.Forms.Padding(0);
             this.SystemMaintenanceBtn.Name = "SystemMaintenanceBtn";
-            this.SystemMaintenanceBtn.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.SystemMaintenanceBtn.Size = new System.Drawing.Size(248, 55);
+            this.SystemMaintenanceBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.SystemMaintenanceBtn.Size = new System.Drawing.Size(310, 69);
             this.SystemMaintenanceBtn.TabIndex = 11;
             this.SystemMaintenanceBtn.Text = "   System Maintenance";
             this.SystemMaintenanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -336,10 +341,10 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 558);
+            this.button2.Location = new System.Drawing.Point(0, 700);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(248, 55);
+            this.button2.Size = new System.Drawing.Size(310, 69);
             this.button2.TabIndex = 10;
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -350,10 +355,10 @@
             this.MainPanel.Controls.Add(this.SwitchPanel);
             this.transition.SetDecoration(this.MainPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(247, 0);
+            this.MainPanel.Location = new System.Drawing.Point(309, 0);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1087, 661);
+            this.MainPanel.Size = new System.Drawing.Size(1359, 826);
             this.MainPanel.TabIndex = 1;
             // 
             // SwitchPanel
@@ -362,48 +367,56 @@
             this.transition.SetDecoration(this.SwitchPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
-            this.SwitchPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.SwitchPanel.Margin = new System.Windows.Forms.Padding(0);
             this.SwitchPanel.Name = "SwitchPanel";
-            this.SwitchPanel.Size = new System.Drawing.Size(1087, 661);
+            this.SwitchPanel.Size = new System.Drawing.Size(1359, 826);
             this.SwitchPanel.TabIndex = 0;
+            this.SwitchPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.SwitchPanel_ControlAdded);
             // 
             // transition
             // 
             this.transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
             this.transition.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 1F;
-            this.transition.DefaultAnimation = animation5;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.transition.DefaultAnimation = animation1;
             this.transition.TimeStep = 0.1F;
+            // 
+            // ReaderDetector
+            // 
+            this.ReaderDetector.Interval = 1000;
+            this.ReaderDetector.Tick += new System.EventHandler(this.ReaderDetector_Tick);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1334, 661);
+            this.ClientSize = new System.Drawing.Size(1668, 826);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.transition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(1091, 589);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1364, 736);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeInformation";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
@@ -438,5 +451,6 @@
         internal System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Panel SwitchPanel;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.Timer ReaderDetector;
     }
 }

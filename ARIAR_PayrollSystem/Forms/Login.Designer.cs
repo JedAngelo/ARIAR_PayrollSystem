@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.LabelTransition = new Guna.UI2.WinForms.Guna2Transition();
             this.LoginPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -40,7 +40,6 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.GunaMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.LoginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,22 +48,22 @@
             // 
             this.LabelTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
             this.LabelTransition.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 1F;
-            this.LabelTransition.DefaultAnimation = animation4;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.LabelTransition.DefaultAnimation = animation2;
             this.LabelTransition.Interval = 11;
             this.LabelTransition.TimeStep = 0.1F;
             // 
@@ -79,13 +78,13 @@
             this.LabelTransition.SetDecoration(this.LoginPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.LoginPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.LoginPanel.FillColor = System.Drawing.Color.White;
-            this.LoginPanel.Location = new System.Drawing.Point(471, 10);
-            this.LoginPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.LoginPanel.Location = new System.Drawing.Point(589, 12);
+            this.LoginPanel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.ShadowDecoration.BorderRadius = 8;
             this.LoginPanel.ShadowDecoration.Depth = 25;
             this.LoginPanel.ShadowDecoration.Enabled = true;
-            this.LoginPanel.Size = new System.Drawing.Size(299, 440);
+            this.LoginPanel.Size = new System.Drawing.Size(374, 551);
             this.LoginPanel.TabIndex = 1;
             this.LoginPanel.UseTransparentBackground = true;
             // 
@@ -102,10 +101,10 @@
             this.LoginButton.FillColor = System.Drawing.Color.LightSeaGreen;
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginButton.ForeColor = System.Drawing.Color.White;
-            this.LoginButton.Location = new System.Drawing.Point(82, 310);
+            this.LoginButton.Location = new System.Drawing.Point(102, 389);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(144, 36);
+            this.LoginButton.Size = new System.Drawing.Size(180, 45);
             this.LoginButton.TabIndex = 12;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseTransparentBackground = true;
@@ -122,11 +121,11 @@
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButton1.IndicateFocus = true;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(264, 3);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(330, 4);
             this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(40, 40);
             this.guna2ImageButton1.TabIndex = 11;
             this.guna2ImageButton1.UseTransparentBackground = true;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
@@ -148,8 +147,8 @@
             this.PasswordTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PasswordTextBox.IconLeft = global::ARIAR_PayrollSystem.Properties.Resources.lock_2_line;
             this.PasswordTextBox.IconLeftOffset = new System.Drawing.Point(8, 0);
-            this.PasswordTextBox.Location = new System.Drawing.Point(30, 202);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PasswordTextBox.Location = new System.Drawing.Point(38, 252);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '●';
             this.PasswordTextBox.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -159,7 +158,7 @@
             this.PasswordTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.PasswordTextBox.ShadowDecoration.Depth = 15;
             this.PasswordTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.PasswordTextBox.Size = new System.Drawing.Size(250, 42);
+            this.PasswordTextBox.Size = new System.Drawing.Size(312, 52);
             this.PasswordTextBox.TabIndex = 9;
             this.PasswordTextBox.TextOffset = new System.Drawing.Point(5, 0);
             this.PasswordTextBox.UseSystemPasswordChar = true;
@@ -182,8 +181,8 @@
             this.UsernameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.UsernameTextBox.IconLeft = global::ARIAR_PayrollSystem.Properties.Resources.user_line;
             this.UsernameTextBox.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.UsernameTextBox.Location = new System.Drawing.Point(30, 137);
-            this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UsernameTextBox.Location = new System.Drawing.Point(38, 171);
+            this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.PasswordChar = '\0';
             this.UsernameTextBox.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -193,7 +192,7 @@
             this.UsernameTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.UsernameTextBox.ShadowDecoration.Depth = 15;
             this.UsernameTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.UsernameTextBox.Size = new System.Drawing.Size(250, 42);
+            this.UsernameTextBox.Size = new System.Drawing.Size(312, 52);
             this.UsernameTextBox.TabIndex = 7;
             this.UsernameTextBox.TextOffset = new System.Drawing.Point(5, 0);
             this.UsernameTextBox.TextChanged += new System.EventHandler(this.UsernameTextBox_TextChanged);
@@ -206,10 +205,10 @@
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::ARIAR_PayrollSystem.Properties.Resources.New_Project__5_;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(10, 10);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 12);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(453, 440);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(566, 551);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
@@ -227,22 +226,13 @@
             this.guna2DragControl1.TargetControl = this.guna2PictureBox1;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // GunaMessage
-            // 
-            this.GunaMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.GunaMessage.Caption = null;
-            this.GunaMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.GunaMessage.Parent = this;
-            this.GunaMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.GunaMessage.Text = null;
-            // 
             // Login
             // 
             this.AcceptButton = this.LoginButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(30)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(780, 460);
+            this.ClientSize = new System.Drawing.Size(975, 575);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.LoginPanel);
             this.LabelTransition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -250,10 +240,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(780, 460);
-            this.MinimumSize = new System.Drawing.Size(780, 460);
+            this.MaximumSize = new System.Drawing.Size(975, 575);
+            this.MinimumSize = new System.Drawing.Size(975, 575);
             this.Name = "Login";
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.LoginPanel.ResumeLayout(false);
@@ -272,6 +262,5 @@
         private Guna.UI2.WinForms.Guna2TextBox UsernameTextBox;
         private Guna.UI2.WinForms.Guna2Button LoginButton;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna.UI2.WinForms.Guna2MessageDialog GunaMessage;
     }
 }

@@ -12,7 +12,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static DPFP.Verification.Verification;
 
 namespace ARIAR_PayrollSystem.Forms
 {
@@ -69,11 +68,9 @@ namespace ARIAR_PayrollSystem.Forms
 
                 var _loginResult = await HttpHelper.PostAsync<ApiResponse<LoginModel>, dynamic>(ApiHelper.ApiLogin, _loginInfo);
                 if (_loginResult.isSuccess)
-                {                   
+                {
                     HttpHelper.SetAccessToken(_loginResult.Data.Token);
-
-                    GunaMessage.Icon = MessageDialogIcon.Information;
-                    GunaMessage.Show("Successfully login", "Success");
+                    GunaMessage.InfoMessage(this, "Successfully login!", "SUCCESS");
 
                     //CustomMessageBox.Show("Successfully login!");//TBD
                     mainForm.Show();
@@ -81,17 +78,14 @@ namespace ARIAR_PayrollSystem.Forms
                 }
                 else
                 {
+                    GunaMessage.ErrorMessage(this, _loginResult.ErrorMessage, "ERROR");
                     //CustomMessageBox.Show(_loginResult.ErrorMessage);
-                    GunaMessage.Icon = MessageDialogIcon.Warning;
-                    GunaMessage.Show(_loginResult.ErrorMessage, "Error");
+
                 }
-
-
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Error: {ex.Message}");
-
+                GunaMessage.WarningMessage(this,ex.Message, "ERROR");
             }
         }
 

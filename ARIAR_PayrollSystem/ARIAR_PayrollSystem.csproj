@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,21 +38,33 @@
   <PropertyGroup>
     <StartupObject>ARIAR_PayrollSystem.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DPFPDevNET">
-      <HintPath>..\..\..\..\..\Downloads\digital-persona\Digital Pesonal SDK\dll\DPFPDevNET.dll</HintPath>
+    <Reference Include="DPCtlUruNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\DigitalPersona\U.are.U SDK\Windows\Lib\.NET\DPCtlUruNet.dll</HintPath>
     </Reference>
-    <Reference Include="DPFPEngNET">
-      <HintPath>..\..\..\..\..\Downloads\digital-persona\Digital Pesonal SDK\dll\DPFPEngNET.dll</HintPath>
-    </Reference>
-    <Reference Include="DPFPGuiNET">
-      <HintPath>..\..\..\..\..\Downloads\digital-persona\Digital Pesonal SDK\dll\DPFPGuiNET.dll</HintPath>
-    </Reference>
-    <Reference Include="DPFPShrNET">
-      <HintPath>..\..\..\..\..\Downloads\digital-persona\Digital Pesonal SDK\dll\DPFPShrNET.dll</HintPath>
-    </Reference>
-    <Reference Include="DPFPVerNET">
-      <HintPath>..\..\..\..\..\Downloads\digital-persona\Digital Pesonal SDK\dll\DPFPVerNET.dll</HintPath>
+    <Reference Include="DPUruNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <HintPath>..\packages\DPUruNet.1.0.0.1\lib\DPUruNet.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
@@ -146,6 +159,13 @@
     <Compile Include="Forms\Modals\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\FingerPrintEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\FingerPrintEnrollment.Designer.cs">
+      <DependentUpon>FingerPrintEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\GunaMessage.cs" />
     <Compile Include="Forms\Modals\ModalHelpers\ModalHelper.cs" />
     <Compile Include="Forms\Modals\TestModal.cs">
       <SubType>Form</SubType>
@@ -197,6 +217,7 @@
     <Compile Include="Helpers\TabcontrolHelper.cs" />
     <Compile Include="Models\ApiResponse.cs" />
     <Compile Include="Models\ContactInformation.cs" />
+    <Compile Include="Models\EmployeeBiometrics.cs" />
     <Compile Include="Models\EmploymentDetail.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\PersonalInformation.cs" />
@@ -261,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\FingerPrintEnrollment.resx">
+      <DependentUpon>FingerPrintEnrollment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\TestModal.resx">
       <DependentUpon>TestModal.cs</DependentUpon>

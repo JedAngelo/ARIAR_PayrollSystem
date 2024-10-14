@@ -15,14 +15,12 @@ namespace ARIAR_PayrollSystem.Helpers
         public static void SwitchPanel(Panel currentPanel, Form formToEmbed)
         {
             // Ensure the panel is not null
-            if (currentPanel == null || formToEmbed == null)
-            {
-                throw new ArgumentNullException("Panel or Form cannot be null.");
+            //if (currentPanel == null || formToEmbed == null)
+            //{
+            //    throw new ArgumentNullException("Panel or Form cannot be null.");
 
-            }
+            //}
 
-
-            currentPanel.Dock = DockStyle.Fill;
             currentPanel.Visible = false;
             // Set the form properties to allow embedding
             formToEmbed.TopLevel = false; // Make the form not a top-level window

@@ -36,7 +36,7 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.ApiDisplayPersonalInfo);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.ApiGetPersonalInfo);
 
                 var personaInfo = _employeeInfo.Data.Select(e => new
                 {

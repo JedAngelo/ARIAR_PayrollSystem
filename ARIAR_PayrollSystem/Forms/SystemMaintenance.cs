@@ -159,10 +159,16 @@ namespace ARIAR_PayrollSystem.Forms
             OverlayForm overlayForm = new OverlayForm(_mainForm);
             overlayForm.Show(_mainForm);
 
-            using (TestModal _testModal = new TestModal())
+            //using (TestModal _testModal = new TestModal())
+            //{
+            //    _testModal.ShowDialog(_mainForm);
+            //}
+
+            using (FingerPrintEnrollment _enrollmentModal = new FingerPrintEnrollment(_mainForm)) 
             {
-                _testModal.ShowDialog(_mainForm);
+                _enrollmentModal.ShowDialog(_mainForm);
             }
+
             overlayForm.Close();
 
 
