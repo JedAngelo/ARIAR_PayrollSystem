@@ -231,6 +231,14 @@ namespace ARIAR_PayrollSystem.Forms
         {
             Constants.ResultCode result = Constants.ResultCode.DP_DEVICE_FAILURE;
             // Open reader
+            
+
+            if (currentReader == null)
+            {
+                GunaMessage.ErrorMessage(this, "Can't initialized fingerprint reader!", "ERROR");
+                return false;
+            }
+            
             result = currentReader.Open(Constants.CapturePriority.DP_PRIORITY_COOPERATIVE);
 
             if (result != Constants.ResultCode.DP_SUCCESS)
@@ -244,6 +252,10 @@ namespace ARIAR_PayrollSystem.Forms
 
         public bool StartCaptureAsync(Reader.CaptureCallback OnCaptured)
         {
+            if (currentReader == null)
+            {
+                return false;
+            }
             // Activate capture handler
             currentReader.On_Captured += new Reader.CaptureCallback(OnCaptured);
 
@@ -261,11 +273,8 @@ namespace ARIAR_PayrollSystem.Forms
             if (currentReader != null)
             {
                 currentReader.CancelCapture();
-
                 // Dispose of reader handle and unhook reader events.
                 currentReader.Dispose();
-
-
             }
         }
 

@@ -179,7 +179,9 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             SetPrompt("Place a finger on the scanner");
             if (!_mainForm.OpenReader())
             {
-                SetStatus("No fingerprint scanner found.");
+                //SetStatus("No fingerprint scanner found.");
+                //GunaMessage.ErrorMessage(this, "Can't initialized fingerprint reader!", "ERROR");
+                this.Close();
             }
             if (!_mainForm.StartCaptureAsync(this.OnCaptured))
             {

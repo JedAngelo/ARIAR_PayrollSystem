@@ -38,6 +38,13 @@ namespace ARIAR_PayrollSystem.Forms
             {
                 var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.ApiGetPersonalInfo);
 
+                if (_employeeInfo == null)
+                {
+                    GunaMessage.ErrorMessage(_mainForm, "Cannot retrieve employee information!", "ERROR");
+                    return;
+                }
+
+
                 var personaInfo = _employeeInfo.Data.Select(e => new
                 {
                     Fullname = $"{e.FirstName} {(string.IsNullOrEmpty(e.MiddleName) ? "" : $"{e.MiddleName[0]}. ")}{e.LastName}"

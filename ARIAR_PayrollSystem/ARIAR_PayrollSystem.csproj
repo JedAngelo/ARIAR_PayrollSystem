@@ -111,6 +111,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AttendanceLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AttendanceLog.Designer.cs">
+      <DependentUpon>AttendanceLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BiometricAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     <Compile Include="UserControls\WaitScreen.Designer.cs">
       <DependentUpon>WaitScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AttendanceLog.resx">
+      <DependentUpon>AttendanceLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BiometricAttendance.resx">
       <DependentUpon>BiometricAttendance.cs</DependentUpon>
     </EmbeddedResource>
