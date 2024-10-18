@@ -10,12 +10,15 @@ using static System.Net.WebRequestMethods;
 using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using ARIAR_PayrollSystem.Forms.Modals;
 
 namespace ARIAR_PayrollSystem.Helpers
 {
     public static class HttpHelper
     {
-        private static readonly string apiBasicUri = "https://localhost:44376";
+        //private static readonly string apiBasicUri = "https://localhost:44376";
+        private static readonly string apiBasicUri = "https://localhost:5000";
+
         private static string accessToken;  // Store the access token
         private static readonly string secretKey = "TheTreesMightLongForPeaceButTheWindWillNeverCeaseTheQuickBrownFoxJumpsOverTheLazyDog";
 

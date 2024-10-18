@@ -43,6 +43,12 @@ namespace ARIAR_PayrollSystem.Forms
             {
                 var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometrics>>>(ApiHelper.ApiGetBiometric);
 
+                if (_employeeInfo == null)
+                {
+                    GunaMessage.ErrorMessage(_mainForm, "Can't retrieve employee info!", "ERROR");
+                    return;
+                }
+
                 // Initialize the dictionary to hold Fmd objects
                 employeeFmds = new Dictionary<Guid?, Fmd>();
 
@@ -89,6 +95,12 @@ namespace ARIAR_PayrollSystem.Forms
 
                 // See the SDK documentation for an explanation on threshold scores.
                 int thresholdScore = DPFJ_PROBABILITY_ONE * 1 / 100000;
+
+                if (employeeFmds == null)
+                {
+                    MakeReport("No employee biometrics data found");
+                    return;
+                }
 
                 IdentifyResult identifyResult = Comparison.Identify(attendanceFmd, 0, employeeFmds.Values.ToList(), thresholdScore, 2);
 
