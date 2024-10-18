@@ -27,6 +27,9 @@ namespace ARIAR_PayrollSystem.Forms
         private Test _testForm;
 
         private SplashScreen _splashScreen;
+
+        public System.Threading.Timer _ReaderDetection;
+
         private bool _isSidebarCol = false;
         private bool isFullscreen = true;
         private bool _isReaderReset = false;
@@ -42,6 +45,9 @@ namespace ARIAR_PayrollSystem.Forms
             _splashScreen = new SplashScreen();
 
             ReaderDetector.Start();
+
+            _ReaderDetection = new System.Threading.Timer(ReaderDetectionEvent, null, 2000, 1000);
+
             //SetCurrentReader();
             //this.Controls.Add(_splashScreen.SplashScreenTLP);
             //this.tableLayoutPanel1.Visible = false;
@@ -51,6 +57,23 @@ namespace ARIAR_PayrollSystem.Forms
 
         }
 
+
+        private void ReaderDetectionEvent(object state)
+        {
+            if (currentReader == null)
+            {
+                this.Invoke((Action)(() =>
+                {
+                    SetCurrentReader();
+                }));
+
+            }
+            if (ReaderCollection.GetReaders().Count == 0)
+            {
+                currentReader = null;
+                //check here if there is a problem in the reader and reset it to null if there is
+            }
+        }
       
         private void MenuBtn_Click(object sender, EventArgs e)
         {
@@ -99,7 +122,7 @@ namespace ARIAR_PayrollSystem.Forms
 
 
             Switcher.SwitchPanel(SwitchPanel, _employeeInformation);
-            Switcher.SwitchPanel(SwitchPanel, _systemMaintenance);
+            //Switcher.SwitchPanel(SwitchPanel, _systemMaintenance);
             //Switcher.SwitchPanel(SwitchPanel, _biometricAttendance);
             transition.Show(SwitchPanel);
             
@@ -154,17 +177,22 @@ namespace ARIAR_PayrollSystem.Forms
 
         }
 
-        private void BiometricAttendanceBtn_Click(object sender, EventArgs e)
+        private async void BiometricAttendanceBtn_Click(object sender, EventArgs e)
         {
+            Switcher.SwitchPanel(SwitchPanel, _biometricAttendance);
+            transition.Show(SwitchPanel);
             if (currentReader == null)
             {
                 GunaMessage.WarningMessage(this, "Please connect a fingerprint reader first!", "WARNING");
             }
             else
             {
-                Switcher.SwitchPanel(SwitchPanel, _biometricAttendance);
-                transition.Show(SwitchPanel);
+                await Task.Delay(2000);
+                _biometricAttendance.StartCapture();
+
             }
+
+
 
 
         }
@@ -215,14 +243,17 @@ namespace ARIAR_PayrollSystem.Forms
             if (readers.Count > 0)
             {
                 CurrentReader = readers[0]; // Set the first available reader
+
+                GunaMessage.InfoMessage(this, "Fingerprint reader connected successfully", "INFO");
+
                 _isReaderReset = false; // Reset the flag if a reader is found
             }
             else
             {
                 if (!_isReaderReset)
                 {
-                    GunaMessage.ErrorMessage(this, "No fingerprint readers found, please connect a reader.", "Reader Error");
                     _isReaderReset = true; // Set the flag to true to prevent further messages
+                    GunaMessage.WarningMessage(this, "No fingerprint readers found, please connect a reader.", "Reader Error");
                 }
             }
         }
@@ -235,7 +266,8 @@ namespace ARIAR_PayrollSystem.Forms
 
             if (result != Constants.ResultCode.DP_SUCCESS)
             {
-                GunaMessage.ErrorMessage(ParentForm, $"Error: {result}", "ERROR");
+                
+                GunaMessage.ErrorMessage(this, $"Error: {result}", "ERROR");
                 return false;
             }
 
@@ -394,6 +426,7 @@ namespace ARIAR_PayrollSystem.Forms
 
 
         private bool isReaderDetectionInProgress = false;
+
 
         private void ReaderDetector_Tick(object sender, EventArgs e)
         {
