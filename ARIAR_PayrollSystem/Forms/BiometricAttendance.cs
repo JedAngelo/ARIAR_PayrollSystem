@@ -24,7 +24,7 @@ namespace ARIAR_PayrollSystem.Forms
         MainForm _mainForm;
         public readonly HttpClient client = new HttpClient();
         private const int DPFJ_PROBABILITY_ONE = 0x7fffffff;
-        private List<Fmd> employeeFmds;
+        private Dictionary<Guid?, Fmd> employeeFmds;
         private Fmd attendanceFmd;
         private int count;
 
@@ -35,7 +35,7 @@ namespace ARIAR_PayrollSystem.Forms
             _mainForm = mainForm;
         }
 
-        
+
 
         private async void GetEmployeeBiometrics()
         {
@@ -43,8 +43,8 @@ namespace ARIAR_PayrollSystem.Forms
             {
                 var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometrics>>>(ApiHelper.ApiGetBiometric);
 
-                // Initialize the list to hold Fmd objects
-                employeeFmds = new List<Fmd>();
+                // Initialize the dictionary to hold Fmd objects
+                employeeFmds = new Dictionary<Guid?, Fmd>();
 
                 // Iterate through the retrieved employee biometric data
                 foreach (var employee in _employeeInfo.Data)
@@ -56,9 +56,8 @@ namespace ARIAR_PayrollSystem.Forms
 
                     Fmd fmd = new Fmd(biometricData, ConversionFormate, Constants.WRAPPER_VERSION);
 
-                    // Add the Fmd object to the list
-                    employeeFmds.Add(fmd);
-
+                    // Add the personal ID and Fmd object to the dictionary
+                    employeeFmds[employee.PersonalId] = fmd; // Assuming employee.PersonalId is the property holding the ID
                 }
             }
             catch (Exception ex)
@@ -69,7 +68,8 @@ namespace ARIAR_PayrollSystem.Forms
         }
 
 
-        
+
+
         private void OnCaptured(CaptureResult captureResult)
         {
             try
@@ -90,7 +90,11 @@ namespace ARIAR_PayrollSystem.Forms
                 // See the SDK documentation for an explanation on threshold scores.
                 int thresholdScore = DPFJ_PROBABILITY_ONE * 1 / 100000;
 
-                IdentifyResult identifyResult = Comparison.Identify(attendanceFmd, 0, employeeFmds, thresholdScore, 2);
+                IdentifyResult identifyResult = Comparison.Identify(attendanceFmd, 0, employeeFmds.Values.ToList(), thresholdScore, 2);
+
+                //MakeReport($"Matched indexes: {string.Join(", ", identifyResult.Indexes.SelectMany(index => index).Select(i => i.ToString()))}");
+
+
                 if (identifyResult.ResultCode != Constants.ResultCode.DP_SUCCESS)
                 {
                     throw new Exception(identifyResult.ResultCode.ToString());
@@ -99,18 +103,34 @@ namespace ARIAR_PayrollSystem.Forms
 
                 if (identifyResult.Indexes.Length > 0)
                 {
-                    MakeReport("Fingerprint matched with one of the employee");
+                    var matchedEmployeeIds = new List<Guid?>();
+                    foreach (var index in identifyResult.Indexes)
+                    {
+                        matchedEmployeeIds.Add(employeeFmds.Keys.ElementAt(index[0])); // Assuming index[0] is the index in the employeeFmds
+                    }
+
+                    MakeReport($"Matched employee IDs: {string.Join(", ", matchedEmployeeIds.Select(id => id.ToString()))}");
                 }
                 else
                 {
-                    MakeReport("No employee matched with fingerprint data");
+                    MakeReport("No employee matched with fingerprint data.");
                 }
+
 
             }
             catch (Exception ex)
             {
-                MakeReport(ex.Message);
                 
+                if(ex.Message == "DP_DEVICE_FAILURE")
+                {
+                    _mainForm.CancelCaptureAndCloseReader(this.OnCaptured);
+                    _mainForm.CurrentReader = null; 
+                    //_mainForm._timer.Change(100, 1000);
+                }
+                else
+                {
+                    MakeReport(ex.Message);
+                }
                 //_mainForm.ReaderDetector.Start();
                 // Send error message, then close form
             }
@@ -118,7 +138,7 @@ namespace ARIAR_PayrollSystem.Forms
         }
 
 
-        private void StartCapture()
+        public void StartCapture()
         {
             GetEmployeeBiometrics();
             SetPrompt("Place a finger on the scanner");
@@ -164,7 +184,7 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void BiometricAttendance_Load(object sender, EventArgs e)
         {
-            StartCapture();
+            //StartCapture();
         }
 
         private void ReportLabel_TextChanged(object sender, EventArgs e)
@@ -183,6 +203,11 @@ namespace ARIAR_PayrollSystem.Forms
         private void BiometricAttendance_FormClosing(object sender, FormClosingEventArgs e)
         {
             _mainForm.CancelCaptureAndCloseReader(this.OnCaptured);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            StartCapture();
         }
     }
 }

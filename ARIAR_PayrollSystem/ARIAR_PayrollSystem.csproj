@@ -215,6 +215,12 @@
     <Compile Include="Forms\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ToastNotify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToastNotify.Designer.cs">
+      <DependentUpon>ToastNotify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\ControlsHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToastNotify.resx">
+      <DependentUpon>ToastNotify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -450,6 +459,12 @@
     <None Include="Resources\user-3-fill.png" />
     <None Include="Resources\user-3-fill %281%29.png" />
     <None Include="Resources\lock-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-circle-fill %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
