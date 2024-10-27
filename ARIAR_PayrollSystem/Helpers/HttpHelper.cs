@@ -17,7 +17,17 @@ namespace ARIAR_PayrollSystem.Helpers
     public static class HttpHelper
     {
         //private static readonly string apiBasicUri = "https://localhost:44376";
-        private static readonly string apiBasicUri = "https://localhost:5000";
+        //private static readonly string apiBasicUri = "http://localhost:5292";
+        private static readonly string apiBasicUri = "https://localhost:2428";
+
+        #region api endpoints
+        public const string ApiGetPersonalInfo = "/api/Employee/DisplayPersonalInfo";
+        public const string ApiAddEmployeeInfo = "/api/Employee/AddOrUpdateEmployeeInfo";
+        public const string ApiLogin = "/api/UserAuthentication/Login";
+        public const string ApiAddBiometric = "/api/Biometric/AddBiometricData";
+        public const string ApiGetBiometric = "/api/Biometric/DisplayEmployeeBiometric";
+
+        #endregion
 
         private static string accessToken;  // Store the access token
         private static readonly string secretKey = "TheTreesMightLongForPeaceButTheWindWillNeverCeaseTheQuickBrownFoxJumpsOverTheLazyDog";

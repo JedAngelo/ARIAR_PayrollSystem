@@ -28,6 +28,9 @@ namespace ARIAR_PayrollSystem.Forms
             _employeeDetails = new EmployeeDetails();
             Switcher.SwitchGunaTabGroup(guna2TabControl1, _employeeDetails.guna2TabControl2);
             DisplayPersonalInfo();
+            TimeLabel.Text = DateTime.Now.ToString("hh:mm tt");
+            DateLabel.Text = DateTime.Now.Date.ToString("MMMM d, yyyy");
+            TimerProcess.Start();
 
         }
 
@@ -36,11 +39,12 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.ApiGetPersonalInfo);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.Employee.GetPersonalInfo);
 
                 if (_employeeInfo == null)
                 {
-                    GunaMessage.ErrorMessage(_mainForm, "Cannot retrieve employee information!", "ERROR");
+                    //GunaMessage.ErrorMessage(_mainForm, "Cannot retrieve employee information!", "ERROR");
+                    ToastNotify.Error("No employee record found!");
                     return;
                 }
 
@@ -74,6 +78,11 @@ namespace ARIAR_PayrollSystem.Forms
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void TimerProcess_Tick(object sender, EventArgs e)
+        {
+            TimeLabel.Text = DateTime.Now.ToString("hh:mm tt");
         }
     }
 }

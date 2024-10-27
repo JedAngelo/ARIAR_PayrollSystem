@@ -12,16 +12,11 @@ namespace ARIAR_PayrollSystem.Helpers
     internal static class Switcher
     {
 
-        public static void SwitchPanel(Panel currentPanel, Form formToEmbed)
-        {
-            // Ensure the panel is not null
-            //if (currentPanel == null || formToEmbed == null)
-            //{
-            //    throw new ArgumentNullException("Panel or Form cannot be null.");
-
-            //}
-
+        public static async Task SwitchPanelAsync(Panel currentPanel, Form formToEmbed)
+        { 
+            // Hide the current panel's contents asynchronously
             currentPanel.Visible = false;
+
             // Set the form properties to allow embedding
             formToEmbed.TopLevel = false; // Make the form not a top-level window
             formToEmbed.FormBorderStyle = FormBorderStyle.None; // Optional: Remove borders
@@ -30,11 +25,14 @@ namespace ARIAR_PayrollSystem.Helpers
             // Clear the current controls in the panel (if needed)
             currentPanel.Controls.Clear();
 
+            // Allow the UI to update before continuing
+            await Task.Yield();
+
             // Add the form to the panel's controls
             currentPanel.Controls.Add(formToEmbed);
             formToEmbed.Show(); // Show the form
-
         }
+
 
 
 

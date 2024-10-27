@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -147,6 +149,32 @@ namespace ARIAR_PayrollSystem.Helpers
             // Optionally, set the size of the overlay form to match the parent form if needed
             overlayForm.Size = parentForm.Size;
         }
+
+        public static async Task<byte[]> ConvertImageToByteAsync(PictureBox pictureBox)
+        {
+            if (pictureBox.Image == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Use Task.Run to run the synchronous operation asynchronously
+                await Task.Run(() => pictureBox.Image.Save(ms, ImageFormat.Jpeg)); // You can change ImageFormat to another format if needed
+                return ms.ToArray();
+            }
+        }
+
+        public static async Task ConvertByteToImageAsync(byte[] imageBytes, PictureBox pictureBox)
+        {
+            if (imageBytes == null || imageBytes.Length == 0)
+                return;
+
+            using (MemoryStream ms = new MemoryStream(imageBytes))
+            {
+                // Use Task.Run to run the synchronous operation asynchronously
+                await Task.Run(() => pictureBox.Image = Image.FromStream(ms));
+            }
+        }
+
 
     }
 }

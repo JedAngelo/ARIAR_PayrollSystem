@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ARIAR_PayrollSystem.Forms
 {
-    public partial class AttendanceLog : Form
+    public partial class AttendanceManagement : Form
     {
-        public AttendanceLog()
+        public AttendanceManagement()
         {
             InitializeComponent();
         }

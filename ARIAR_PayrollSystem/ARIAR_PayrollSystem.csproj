@@ -90,10 +90,26 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Portable.System.DateTimeOnly, Version=8.0.1.0, Culture=neutral, PublicKeyToken=16fb7a27ac3b9689, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.System.DateTimeOnly.8.0.1\lib\net462\Portable.System.DateTimeOnly.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -111,11 +127,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AttendanceLog.cs">
+    <Compile Include="Forms\AttendanceManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AttendanceLog.Designer.cs">
-      <DependentUpon>AttendanceLog.cs</DependentUpon>
+    <Compile Include="Forms\AttendanceManagement.Designer.cs">
+      <DependentUpon>AttendanceManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BiometricAttendance.cs">
       <SubType>Form</SubType>
@@ -228,6 +244,8 @@
     <Compile Include="Helpers\Switcher.cs" />
     <Compile Include="Helpers\TabcontrolHelper.cs" />
     <Compile Include="Models\ApiResponse.cs" />
+    <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\AttendanceDataLog.cs" />
     <Compile Include="Models\ContactInformation.cs" />
     <Compile Include="Models\EmployeeBiometrics.cs" />
     <Compile Include="Models\EmploymentDetail.cs" />
@@ -271,8 +289,8 @@
     <Compile Include="UserControls\WaitScreen.Designer.cs">
       <DependentUpon>WaitScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\AttendanceLog.resx">
-      <DependentUpon>AttendanceLog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AttendanceManagement.resx">
+      <DependentUpon>AttendanceManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BiometricAttendance.resx">
       <DependentUpon>BiometricAttendance.cs</DependentUpon>
@@ -465,6 +483,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkbox-circle-fill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error-warning-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payroll_logo%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

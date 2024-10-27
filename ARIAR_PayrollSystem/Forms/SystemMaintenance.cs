@@ -24,6 +24,13 @@ namespace ARIAR_PayrollSystem.Forms
         //TestModal _testModal;
         public readonly HttpClient client = new HttpClient();
         private Dictionary<Guna2TextBox, Tuple<Label, int>> textBoxLabelMap;
+        private Guid selectedId;
+        public class Employee
+        {
+            public Guid PersonalId { get; set; }
+            public string Fullname { get; set; }
+        }
+        private Employee _employee;
 
 
 
@@ -32,8 +39,6 @@ namespace ARIAR_PayrollSystem.Forms
         {
             InitializeComponent();
             _mainForm = mainForm;
-            DoBDatePicker.CustomFormat = "MMMM d, yyyy";
-            HiredDatePicker.CustomFormat = "MMMM d, yyyy";
 
             textBoxLabelMap = new Dictionary<Guna2TextBox, Tuple<Label, int>>
             {
@@ -62,42 +67,40 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
+
+
                 var _employeeInfo = new PersonalInformation()
                 {
                     PersonalId = null,
                     FirstName = FirstnameTextBox.Text,
                     MiddleName = MiddlenameTextBox.Text,
                     LastName = LastnameTextBox.Text,
-                    DateOfBirth = DoBDatePicker.Value.Date,
+                    DateOfBirth = DoBDatePicker.Value.Date.ToString("yyyy-MM-dd"),
                     Gender = "Male",
                     Age = byte.Parse(AgeTextBox.Text),
-                    ContactInformationDtos = new List<ContactInformation>
+                    EmployeeImage = await ControlsHelper.ConvertImageToByteAsync(EmployeePictureBox),
+                    ContactInformationDtos = new ContactInformation
                     {
-                        new ContactInformation
-                        {
                         Address = AddressTextBox.Text,
                         Email = EmailTextBox.Text,
                         PhoneNumber = ContactNoTextBox.Text,
-                        }
+
                     },
-                    EmploymentDetailDtos = new List<EmploymentDetail>
+                    EmploymentDetailDtos = new EmploymentDetail
                     {
-                        new EmploymentDetail
-                        {
-                            HireDate = HiredDatePicker.Value.Date,
-                            IncomeTaxRate = decimal.Parse(IncomeTextBox.Text),
-                            PayRate = decimal.Parse(PayrateTextBox.Text),
-                            SssEmployeeRate = decimal.Parse(SSSTextBox.Text),
-                            PhilhealthEmployeeRate = decimal.Parse(PhilhealthTextBox.Text),
-                            PagibigEmployeeRate = decimal.Parse(PagIbigTextBox.Text),
-                            PositionId = 1
-                        }
+                        HireDate = HiredDatePicker.Value.Date.ToString("yyyy-MM-dd"),
+                        IncomeTaxRate = decimal.Parse(IncomeTextBox.Text),
+                        PayRate = decimal.Parse(PayrateTextBox.Text),
+                        SssEmployeeRate = decimal.Parse(SSSTextBox.Text),
+                        PhilhealthEmployeeRate = decimal.Parse(PhilhealthTextBox.Text),
+                        PagibigEmployeeRate = decimal.Parse(PagIbigTextBox.Text),
+                        PositionId = 1
                     },
                     CreatedBy = "ASSHOLE",
                     CreatedDate = DateTime.Now
-                    
+
                 };
-                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.ApiAddEmployeeInfo, _employeeInfo);
+                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.Employee.AddOrUpdateEmployeeInfo, _employeeInfo);
                 if (_result.isSuccess)
                 {
                     CustomMessageBox.Show(_result.Data);
@@ -164,7 +167,7 @@ namespace ARIAR_PayrollSystem.Forms
             //    _testModal.ShowDialog(_mainForm);
             //}
 
-            using (FingerPrintEnrollment _enrollmentModal = new FingerPrintEnrollment(_mainForm)) 
+            using (FingerPrintEnrollment _enrollmentModal = new FingerPrintEnrollment(_mainForm, _employee)) 
             {
                 _enrollmentModal.ShowDialog(_mainForm);
             }
@@ -175,10 +178,102 @@ namespace ARIAR_PayrollSystem.Forms
 
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private async void UploadPhotoButton_Click(object sender, EventArgs e)
         {
-            //CustomMessageBox.Show(HttpHelper.GetAccessToken());
-            guna2MessageDialog1.Show("Sample");
+            OpenFile.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            OpenFile.Title = "Select Employee Picture";
+
+            if (OpenFile.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = OpenFile.FileName;
+
+                // Load image asynchronously
+                Image image = await Task.Run(() => Image.FromFile(filePath));
+
+                EmployeePictureBox.Image = image;
+            }
+        }
+
+
+        private void DoBDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = DoBDatePicker.Value;
+
+            // Calculate the age based on the selected date and today's date
+            int calculatedAge = DateTime.Now.Year - selectedDate.Year;
+
+            // Adjust if the birthday hasn't occurred yet this year
+            if (DateTime.Now < selectedDate.AddYears(calculatedAge))
+            {
+                calculatedAge--;
+            }
+            //AgeTextBox.Focus();
+            TextBox_Enter(AgeTextBox, EventArgs.Empty);
+            AgeTextBox.Text = calculatedAge.ToString();
+
+
+        }
+
+        private async void GetEmployeeInfo()
+        {
+            try
+            {
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.Employee.GetPersonalInfo);
+                
+                if (_employeeInfo == null)
+                {
+                    //GunaMessage.ErrorMessage(_mainForm, "Cannot retrieve employee information!", "ERROR");
+                    ToastNotify.Error("No employee record found!");
+                    return;
+                }
+                var employeeData = _employeeInfo.Data.Select(e => new Employee
+                {
+                    Fullname = $"{e.FirstName} {(string.IsNullOrEmpty(e.MiddleName) ? "" : $"{e.MiddleName[0]}. ")}{e.LastName}",
+                    PersonalId = (Guid)e.PersonalId
+                }).ToList();
+
+                EmployeeDataGrid.DataSource = employeeData;
+            }
+            catch (Exception ex)
+            {
+                GunaMessage.Error(_mainForm, $"Error: {ex.Message}", "ERROR");
+            }
+        }
+
+        private void Biometrics_Click(object sender, EventArgs e)
+        {
+            GetEmployeeInfo();
+        }
+
+        private void SystemMaintenanceTabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SystemMaintenanceTabs.SelectedTab.Text == "Biometrics")
+            {
+                GetEmployeeInfo();
+            }
+        }
+
+        private void EmployeeDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var fullName = EmployeeDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                if (Guid.TryParse(EmployeeDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString(), out Guid result))
+                {
+                    _employee = new Employee
+                    {
+                        PersonalId = result,
+                        Fullname = fullName
+                    };
+
+                    guna2Button6.Enabled = true;
+                }
+                else
+                {
+                    ToastNotify.Error("Invalid Personal ID");
+                }
+
+            }
         }
     }
 }

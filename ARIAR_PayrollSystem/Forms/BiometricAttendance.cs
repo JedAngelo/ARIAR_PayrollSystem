@@ -7,8 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Http;
 using System.Runtime.Remoting.Channels;
 using System.Text;
@@ -16,6 +18,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.WebSockets;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace ARIAR_PayrollSystem.Forms
 {
@@ -27,25 +30,85 @@ namespace ARIAR_PayrollSystem.Forms
         private Dictionary<Guid?, Fmd> employeeFmds;
         private Fmd attendanceFmd;
         private int count;
+        private ApiResponse<List<AttendanceDataLog>> attendanceLogs;
 
+
+        private TimeSpan _morningInStart = new TimeSpan(5, 0, 0);
+        private TimeSpan _morningInEnd = new TimeSpan(8, 30, 0);
+
+        private TimeSpan _afternoonInStart = new TimeSpan(11, 0, 0);
+        private TimeSpan _afternoonInEnd = new TimeSpan(13, 0, 0);
+
+        private TimeSpan _morningOutStart = new TimeSpan(11, 30, 0);
+        private TimeSpan _morningOutEnd = new TimeSpan(12, 30, 0);
+
+        private TimeSpan _afternoonOutStart = new TimeSpan(16, 30, 0);
+        private TimeSpan _afternoonOutEnd = new TimeSpan(17, 30, 0);
 
         public BiometricAttendance(MainForm mainForm)
         {
             InitializeComponent();
             _mainForm = mainForm;
+            TimeLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            GetAttendanceLogs();
+
+        }
+
+        private void FilterAttendanceLogs(string searchItem)
+        {
+            if (attendanceLogs.Data == null)
+            {
+                ToastNotify.Error("No item found with that keyword");
+                return;
+            }
+
+            var filteredLogs = attendanceLogs.Data
+                            .Where(x => x.Name.ToLower().Contains(searchItem.ToLower()))
+                            .ToList();
+
+            UpdateDataGrid(filteredLogs);
+
         }
 
 
+        private async void GetAttendanceLogs()
+        {
+            try
+            {
+                var DateNowString = DateTime.Now.Date.ToString("yyyy-MM-dd");
+                //GunaMessage.Info(_mainForm,$"{ApiHelper.Attendance.GetAttendanceLogShort}{DateTime.Now.Date.ToString("yyyy-MM-dd")}","DATA");
+                attendanceLogs = await HttpHelper.GetAsync<ApiResponse<List<AttendanceDataLog>>>($"{ApiHelper.Attendance.GetAttendanceLogShort}{DateNowString}");
+                //Console.Write(attendanceLogs.Data);
+                if (attendanceLogs == null)
+                {
+                    GunaMessage.Error(_mainForm, "Can't retrieve attendance logs!", "ERROR");
+                    return;
+                }
+                attendanceLogs.Data.ForEach(a =>
+                {
+                    a.Log = TimeOnly.Parse(a.Log).ToString("h:mm tt");
+                });
+
+
+                UpdateDataGrid(attendanceLogs.Data);
+                
+
+            }
+            catch (Exception ex)
+            {
+                GunaMessage.Error(_mainForm, ex.Message, "ERROR");
+            }
+        }
 
         private async void GetEmployeeBiometrics()
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometrics>>>(ApiHelper.ApiGetBiometric);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometrics>>>(ApiHelper.Biometric.GetBiometric);
 
                 if (_employeeInfo == null)
                 {
-                    GunaMessage.ErrorMessage(_mainForm, "Can't retrieve employee info!", "ERROR");
+                    GunaMessage.Error(_mainForm, "Can't retrieve employee info!", "ERROR");
                     return;
                 }
 
@@ -69,21 +132,149 @@ namespace ARIAR_PayrollSystem.Forms
             catch (Exception ex)
             {
                 // Handle the exception appropriately
-                GunaMessage.ErrorMessage(ParentForm, $"Error retrieving employee biometrics: {ex.Message}", "ERROR");
+                GunaMessage.Error(ParentForm, $"Error retrieving employee biometrics: {ex.Message}", "ERROR");
+            }
+        }
+
+        private async Task<bool> HasMorningIn(Guid personalId)
+        {
+            try
+            {
+                var attendanceData = new Attendance
+                {
+                    PersonalId = personalId,
+                    AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd")
+                };
+
+                var result = await HttpHelper.PostAsync<ApiResponse<bool>, dynamic>(ApiHelper.Attendance.HasMorningIn, attendanceData);
+                if (!result.isSuccess)            
+                {
+                    //MakeReport($"Error retrieving morning in data: {result.ErrorMessage}");
+                    MakeReport(result.ErrorMessage, "ERROR");
+                }
+
+                return result.Data;
+
+            }
+            catch (Exception ex)
+            {
+                SendStatus(ex.Message);
+                return false;
+            }
+        }
+
+        private async void LogAttendance(Guid personalId)
+        {
+            try
+            {
+                bool hasMorningIn = await HasMorningIn(personalId);
+                Attendance attendanceData = null;
+                var timeNow = DateTime.Now.TimeOfDay;
+
+                if (timeNow > _morningInStart && timeNow < _morningInEnd)
+                {
+                    attendanceData = new Attendance
+                    {
+                        PersonalId = personalId,
+                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                        MorningIn = DateTime.Now.TimeOfDay.ToString()
+                    };
+
+                }
+
+                if (timeNow > _afternoonOutStart && timeNow < _afternoonOutEnd)
+                {
+                    attendanceData = new Attendance
+                    {
+                        PersonalId = personalId,
+                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                        AfternoonOut = DateTime.Now.TimeOfDay.ToString()
+                    };
+                }
+
+                if (!hasMorningIn && timeNow > _afternoonInStart && timeNow < _afternoonInEnd)
+                {
+                    attendanceData = new Attendance
+                    {
+                        PersonalId = personalId,
+                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                        AfternoonIn = DateTime.Now.TimeOfDay.ToString()
+                    };
+                }
+
+                if (hasMorningIn && timeNow > _morningOutStart && timeNow < _morningOutEnd)
+                {
+                    attendanceData = new Attendance
+                    {
+                        PersonalId = personalId,
+                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                        MorningOut = DateTime.Now.TimeOfDay.ToString()
+                    };
+                }
+
+
+                if (attendanceData != null)
+                {
+                    var result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.Attendance.LogAttendance, attendanceData);
+
+                    if (result.isSuccess)
+                    {
+                        ToastNotify.Info(result.Data);
+                        //MakeReport(result.Data, "INFO");
+                        var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<PersonalInformation>>(ApiHelper.Employee.GetPersonalInfoById + personalId);
+                        if (_employeeInfo != null)
+                        {
+                            await ControlsHelper.ConvertByteToImageAsync(_employeeInfo.Data.EmployeeImage, pictureBox2);
+                            Invoke((Action)(() =>
+                            {
+                                NameLabel.Text = $"{_employeeInfo.Data.FirstName} {(string.IsNullOrEmpty(_employeeInfo.Data.MiddleName) ? "" : $"{_employeeInfo.Data.MiddleName[0]}. ")}{_employeeInfo.Data.LastName}";
+                            }));
+                            GetAttendanceLogs();
+                        }
+
+                        //GunaMessage.InfoMessage(_mainForm, result.Data, "Attendance Logged");
+                    }
+                    else
+                    {
+                        //MakeReport($"Attendance not logged: {result.ErrorMessage}");
+                        //MakeReport(result.ErrorMessage, "ERROR");
+                        ToastNotify.Error(result.ErrorMessage);
+                        //GunaMessage.ErrorMessage(_mainForm, result.ErrorMessage, "Attendance not logged!");
+                    }
+                }
+                else
+                {
+                    //MakeReport("INVALID: Time does not match time in or out range");
+                    //MakeReport("Time does not match time in or out range", "ERROR");
+                    ToastNotify.Error("Time does not match time in or out range");
+                }
+
+
+
+
+               
+
+
+
+            }
+            catch (Exception ex)
+            {
+                //GunaMessage.ErrorMessage(_mainForm, ex.Message, "ERROR");
+                SendStatus(ex.Message);
             }
         }
 
 
 
-
-        private void OnCaptured(CaptureResult captureResult)
+        public void OnCaptured(CaptureResult captureResult)
         {
             try
             {
                 // Check capture quality and throw an error if bad.
                 if (!_mainForm.CheckCaptureResult(captureResult)) return;
 
-                MakeReport("A finger was captured.");
+                //MakeReport("A finger was captured.");
+                //MakeReport("A finger was captured", "INFO");
 
                 DataResult<Fmd> resultConversion = FeatureExtraction.CreateFmdFromFid(captureResult.Data, Constants.Formats.Fmd.ANSI);
                 if (captureResult.ResultCode != Constants.ResultCode.DP_SUCCESS)
@@ -96,9 +287,10 @@ namespace ARIAR_PayrollSystem.Forms
                 // See the SDK documentation for an explanation on threshold scores.
                 int thresholdScore = DPFJ_PROBABILITY_ONE * 1 / 100000;
 
-                if (employeeFmds == null)
+                if (employeeFmds == null || employeeFmds.Count == 0)
                 {
-                    MakeReport("No employee biometrics data found");
+                    //MakeReport("No employee biometrics data found");
+                    MakeReport("No employee biometrics found", "WARNING");
                     return;
                 }
 
@@ -118,14 +310,20 @@ namespace ARIAR_PayrollSystem.Forms
                     var matchedEmployeeIds = new List<Guid?>();
                     foreach (var index in identifyResult.Indexes)
                     {
-                        matchedEmployeeIds.Add(employeeFmds.Keys.ElementAt(index[0])); // Assuming index[0] is the index in the employeeFmds
+                        matchedEmployeeIds.Add(employeeFmds.Keys.ElementAt(index[0])); // Assuming index[0] is the index in the 
                     }
+                    var personalId = matchedEmployeeIds.FirstOrDefault().ToString();
+                    LogAttendance(Guid.Parse(personalId));
 
-                    MakeReport($"Matched employee IDs: {string.Join(", ", matchedEmployeeIds.Select(id => id.ToString()))}");
+
+
+                    //MakeReport($"Matched employee IDs: {matchedEmployeeIds.FirstOrDefault().ToString()}");
+
                 }
                 else
                 {
-                    MakeReport("No employee matched with fingerprint data.");
+                    //MakeReport("No employee matched with fingerprint data.");
+                    MakeReport("No employee matched with fingerprint data", "WARNING");
                 }
 
 
@@ -141,7 +339,8 @@ namespace ARIAR_PayrollSystem.Forms
                 }
                 else
                 {
-                    MakeReport(ex.Message);
+                    //MakeReport($"OnCapture Error: {ex.Message}");
+                    Console.WriteLine($"OnCapture Error: {ex.Message}");
                 }
                 //_mainForm.ReaderDetector.Start();
                 // Send error message, then close form
@@ -152,15 +351,14 @@ namespace ARIAR_PayrollSystem.Forms
 
         public void StartCapture()
         {
-            GetEmployeeBiometrics();
             SetPrompt("Place a finger on the scanner");
             if (!_mainForm.OpenReader())
             {
-                GunaMessage.WarningMessage(ParentForm,"No fingerprint scanner found.","WARNING");
+                GunaMessage.Warning(ParentForm,"No fingerprint scanner found.","WARNING");
             }
-            if (!_mainForm.StartCaptureAsync(this.OnCaptured))
+            if (this.IsHandleCreated && !_mainForm.StartCaptureAsync(this.OnCaptured))
             {
-                GunaMessage.WarningMessage(ParentForm, "No fingers captures.", "WARNING");
+                GunaMessage.Warning(ParentForm, "No fingers captured.", "WARNING");
             }
         }
 
@@ -169,14 +367,25 @@ namespace ARIAR_PayrollSystem.Forms
             Invoke((Action)(() => PromptLabel.Text = prompt));
         }
 
-        protected void MakeReport(string message)
+        protected void MakeReport(string message, string type)
         {
-            Invoke((Action)(() => ReportLabel.Text += $"{message} \r\n")); 
+            Invoke((Action)(() => ToastNotify.ShowToastr(message, type)));
+            //Invoke((Action)(() => ReportLabel.Text += $"{message} \r\n")); 
         }
+
 
         protected void SendStatus(string status)
         {
-            Invoke((Action)((() => GunaMessage.ErrorMessage(ParentForm, status, "ERROR"))));
+            Invoke((Action)((() => GunaMessage.Error(ParentForm, status, "ERROR"))));
+        }
+
+        private void UpdateDataGrid<T>(T data)
+        {
+            Invoke((Action)(() =>
+            {
+                AttendanceDataGrid.DataSource = data;
+                AttendanceDataGrid.ClearSelection();
+            }));
         }
 
         private void BiometricAttPanel_Paint(object sender, PaintEventArgs e)
@@ -186,18 +395,23 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            TimerProcess.Start();
         }
 
         private void TimerProcess_Tick(object sender, EventArgs e)
         {
-            //StartCapture();
+            TimeLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void BiometricAttendance_Load(object sender, EventArgs e)
         {
+            GetEmployeeBiometrics();
             //StartCapture();
+            TimerProcess.Start();
+            DateLabel.Text = DateTime.Now.Date.ToString("MMMM d, yyyy");
+            
+
         }
+
 
         private void ReportLabel_TextChanged(object sender, EventArgs e)
         {
@@ -217,9 +431,18 @@ namespace ARIAR_PayrollSystem.Forms
             _mainForm.CancelCaptureAndCloseReader(this.OnCaptured);
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void AttendanceDataGrid_Leave(object sender, EventArgs e)
         {
-            StartCapture();
+            AttendanceDataGrid.ClearSelection();
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterAttendanceLogs(SearchBox.Text);
+            if (String.IsNullOrEmpty(SearchBox.Text))
+            {
+                UpdateDataGrid(attendanceLogs.Data);
+            }
         }
     }
 }

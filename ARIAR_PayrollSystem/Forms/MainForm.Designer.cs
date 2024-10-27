@@ -33,37 +33,36 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarPanel = new System.Windows.Forms.Panel();
-            this.LogoutBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MenuBtn = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.EmployeeInformationBtn = new System.Windows.Forms.Button();
-            this.BiometricAttendanceBtn = new System.Windows.Forms.Button();
-            this.AttendanceManagementBtn = new System.Windows.Forms.Button();
-            this.PayrollCalculationBtn = new System.Windows.Forms.Button();
-            this.ReportBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SystemMaintenanceBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.SwitchPanel = new System.Windows.Forms.Panel();
             this.transition = new Guna.UI2.WinForms.Guna2Transition();
             this.ReaderDetector = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BackupButton = new Guna.UI2.WinForms.Guna2Button();
+            this.ReportButton = new Guna.UI2.WinForms.Guna2Button();
+            this.PayrollButton = new Guna.UI2.WinForms.Guna2Button();
+            this.AttendanceButton = new Guna.UI2.WinForms.Guna2Button();
+            this.BiometricButton = new Guna.UI2.WinForms.Guna2Button();
+            this.EmployeeButton = new Guna.UI2.WinForms.Guna2Button();
+            this.SystemButton = new Guna.UI2.WinForms.Guna2Button();
+            this.LogoutButton = new Guna.UI2.WinForms.Guna2Button();
+            this.MenuButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.tableLayoutPanel1.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.LogoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 309F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1359F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1087F));
             this.tableLayoutPanel1.Controls.Add(this.SidebarPanel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.MainPanel, 1, 0);
             this.transition.SetDecoration(this.tableLayoutPanel1, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -73,292 +72,64 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1668, 826);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1091, 788);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SidebarPanel
             // 
             this.SidebarPanel.BackColor = System.Drawing.Color.SteelBlue;
-            this.SidebarPanel.Controls.Add(this.LogoutBtn);
             this.SidebarPanel.Controls.Add(this.flowLayoutPanel1);
+            this.SidebarPanel.Controls.Add(this.LogoutButton);
             this.transition.SetDecoration(this.SidebarPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.SidebarPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Margin = new System.Windows.Forms.Padding(0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(309, 826);
+            this.SidebarPanel.Size = new System.Drawing.Size(247, 788);
             this.SidebarPanel.TabIndex = 0;
-            // 
-            // LogoutBtn
-            // 
-            this.transition.SetDecoration(this.LogoutBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.LogoutBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LogoutBtn.FlatAppearance.BorderSize = 0;
-            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogoutBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
-            this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 766);
-            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(309, 60);
-            this.LogoutBtn.TabIndex = 8;
-            this.LogoutBtn.Text = "            Logout";
-            this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutBtn.UseVisualStyleBackColor = true;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.MenuBtn);
+            this.flowLayoutPanel1.Controls.Add(this.MenuButton);
             this.flowLayoutPanel1.Controls.Add(this.LogoPanel);
-            this.flowLayoutPanel1.Controls.Add(this.EmployeeInformationBtn);
-            this.flowLayoutPanel1.Controls.Add(this.BiometricAttendanceBtn);
-            this.flowLayoutPanel1.Controls.Add(this.AttendanceManagementBtn);
-            this.flowLayoutPanel1.Controls.Add(this.PayrollCalculationBtn);
-            this.flowLayoutPanel1.Controls.Add(this.ReportBtn);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.SystemMaintenanceBtn);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.EmployeeButton);
+            this.flowLayoutPanel1.Controls.Add(this.BiometricButton);
+            this.flowLayoutPanel1.Controls.Add(this.AttendanceButton);
+            this.flowLayoutPanel1.Controls.Add(this.PayrollButton);
+            this.flowLayoutPanel1.Controls.Add(this.ReportButton);
+            this.flowLayoutPanel1.Controls.Add(this.BackupButton);
+            this.flowLayoutPanel1.Controls.Add(this.SystemButton);
             this.transition.SetDecoration(this.flowLayoutPanel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(309, 1042);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(247, 700);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // MenuBtn
-            // 
-            this.transition.SetDecoration(this.MenuBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.MenuBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MenuBtn.FlatAppearance.BorderSize = 0;
-            this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuBtn.ForeColor = System.Drawing.Color.White;
-            this.MenuBtn.Image = ((System.Drawing.Image)(resources.GetObject("MenuBtn.Image")));
-            this.MenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MenuBtn.Location = new System.Drawing.Point(0, 0);
-            this.MenuBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(310, 69);
-            this.MenuBtn.TabIndex = 0;
-            this.MenuBtn.UseVisualStyleBackColor = true;
-            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
             // 
             // LogoPanel
             // 
             this.LogoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogoPanel.Controls.Add(this.guna2Separator1);
             this.LogoPanel.Controls.Add(this.pictureBox1);
-            this.LogoPanel.Controls.Add(this.label1);
             this.transition.SetDecoration(this.LogoPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.LogoPanel.Location = new System.Drawing.Point(4, 73);
-            this.LogoPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.LogoPanel.Location = new System.Drawing.Point(3, 49);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(374, 140);
+            this.LogoPanel.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.LogoPanel.Size = new System.Drawing.Size(245, 112);
             this.LogoPanel.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(310, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.transition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-4, 81);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "_____________________";
-            // 
-            // EmployeeInformationBtn
-            // 
-            this.transition.SetDecoration(this.EmployeeInformationBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.EmployeeInformationBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EmployeeInformationBtn.FlatAppearance.BorderSize = 0;
-            this.EmployeeInformationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmployeeInformationBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeInformationBtn.ForeColor = System.Drawing.Color.White;
-            this.EmployeeInformationBtn.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeInformationBtn.Image")));
-            this.EmployeeInformationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeeInformationBtn.Location = new System.Drawing.Point(0, 217);
-            this.EmployeeInformationBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.EmployeeInformationBtn.Name = "EmployeeInformationBtn";
-            this.EmployeeInformationBtn.Size = new System.Drawing.Size(310, 69);
-            this.EmployeeInformationBtn.TabIndex = 2;
-            this.EmployeeInformationBtn.Text = "   Employee Dashboard";
-            this.EmployeeInformationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeeInformationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.EmployeeInformationBtn.UseVisualStyleBackColor = true;
-            this.EmployeeInformationBtn.Click += new System.EventHandler(this.EmployeeInformationBtn_Click);
-            // 
-            // BiometricAttendanceBtn
-            // 
-            this.transition.SetDecoration(this.BiometricAttendanceBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.BiometricAttendanceBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BiometricAttendanceBtn.FlatAppearance.BorderSize = 0;
-            this.BiometricAttendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BiometricAttendanceBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BiometricAttendanceBtn.ForeColor = System.Drawing.Color.White;
-            this.BiometricAttendanceBtn.Image = ((System.Drawing.Image)(resources.GetObject("BiometricAttendanceBtn.Image")));
-            this.BiometricAttendanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BiometricAttendanceBtn.Location = new System.Drawing.Point(0, 286);
-            this.BiometricAttendanceBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.BiometricAttendanceBtn.Name = "BiometricAttendanceBtn";
-            this.BiometricAttendanceBtn.Size = new System.Drawing.Size(310, 69);
-            this.BiometricAttendanceBtn.TabIndex = 3;
-            this.BiometricAttendanceBtn.Text = "   Biometric Attendance";
-            this.BiometricAttendanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BiometricAttendanceBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BiometricAttendanceBtn.UseVisualStyleBackColor = true;
-            this.BiometricAttendanceBtn.Click += new System.EventHandler(this.BiometricAttendanceBtn_Click);
-            // 
-            // AttendanceManagementBtn
-            // 
-            this.transition.SetDecoration(this.AttendanceManagementBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.AttendanceManagementBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AttendanceManagementBtn.FlatAppearance.BorderSize = 0;
-            this.AttendanceManagementBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AttendanceManagementBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttendanceManagementBtn.ForeColor = System.Drawing.Color.White;
-            this.AttendanceManagementBtn.Image = ((System.Drawing.Image)(resources.GetObject("AttendanceManagementBtn.Image")));
-            this.AttendanceManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AttendanceManagementBtn.Location = new System.Drawing.Point(0, 355);
-            this.AttendanceManagementBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.AttendanceManagementBtn.Name = "AttendanceManagementBtn";
-            this.AttendanceManagementBtn.Size = new System.Drawing.Size(310, 69);
-            this.AttendanceManagementBtn.TabIndex = 4;
-            this.AttendanceManagementBtn.Text = "   Attendance Management";
-            this.AttendanceManagementBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AttendanceManagementBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AttendanceManagementBtn.UseVisualStyleBackColor = true;
-            // 
-            // PayrollCalculationBtn
-            // 
-            this.transition.SetDecoration(this.PayrollCalculationBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.PayrollCalculationBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PayrollCalculationBtn.FlatAppearance.BorderSize = 0;
-            this.PayrollCalculationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PayrollCalculationBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PayrollCalculationBtn.ForeColor = System.Drawing.Color.White;
-            this.PayrollCalculationBtn.Image = ((System.Drawing.Image)(resources.GetObject("PayrollCalculationBtn.Image")));
-            this.PayrollCalculationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PayrollCalculationBtn.Location = new System.Drawing.Point(0, 424);
-            this.PayrollCalculationBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.PayrollCalculationBtn.Name = "PayrollCalculationBtn";
-            this.PayrollCalculationBtn.Size = new System.Drawing.Size(310, 69);
-            this.PayrollCalculationBtn.TabIndex = 5;
-            this.PayrollCalculationBtn.Text = "   Payroll Calculation";
-            this.PayrollCalculationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PayrollCalculationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.PayrollCalculationBtn.UseVisualStyleBackColor = true;
-            // 
-            // ReportBtn
-            // 
-            this.transition.SetDecoration(this.ReportBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.ReportBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ReportBtn.FlatAppearance.BorderSize = 0;
-            this.ReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReportBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportBtn.ForeColor = System.Drawing.Color.White;
-            this.ReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportBtn.Image")));
-            this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReportBtn.Location = new System.Drawing.Point(0, 493);
-            this.ReportBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.ReportBtn.Name = "ReportBtn";
-            this.ReportBtn.Size = new System.Drawing.Size(310, 69);
-            this.ReportBtn.TabIndex = 6;
-            this.ReportBtn.Text = "   Report";
-            this.ReportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ReportBtn.UseVisualStyleBackColor = true;
-            this.ReportBtn.Click += new System.EventHandler(this.ReportBtn_Click);
-            // 
-            // button1
-            // 
-            this.transition.SetDecoration(this.button1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 562);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(310, 69);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "   Backup";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // SystemMaintenanceBtn
-            // 
-            this.transition.SetDecoration(this.SystemMaintenanceBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.SystemMaintenanceBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SystemMaintenanceBtn.FlatAppearance.BorderSize = 0;
-            this.SystemMaintenanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SystemMaintenanceBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SystemMaintenanceBtn.ForeColor = System.Drawing.Color.White;
-            this.SystemMaintenanceBtn.Image = ((System.Drawing.Image)(resources.GetObject("SystemMaintenanceBtn.Image")));
-            this.SystemMaintenanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SystemMaintenanceBtn.Location = new System.Drawing.Point(0, 631);
-            this.SystemMaintenanceBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.SystemMaintenanceBtn.Name = "SystemMaintenanceBtn";
-            this.SystemMaintenanceBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.SystemMaintenanceBtn.Size = new System.Drawing.Size(310, 69);
-            this.SystemMaintenanceBtn.TabIndex = 11;
-            this.SystemMaintenanceBtn.Text = "   System Maintenance";
-            this.SystemMaintenanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SystemMaintenanceBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SystemMaintenanceBtn.UseVisualStyleBackColor = true;
-            this.SystemMaintenanceBtn.Click += new System.EventHandler(this.SystemMaintenanceBtn_Click);
-            // 
-            // button2
-            // 
-            this.transition.SetDecoration(this.button2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 700);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(310, 69);
-            this.button2.TabIndex = 10;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // MainPanel
             // 
+            this.MainPanel.BackColor = System.Drawing.Color.White;
             this.MainPanel.Controls.Add(this.SwitchPanel);
             this.transition.SetDecoration(this.MainPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(309, 0);
+            this.MainPanel.Location = new System.Drawing.Point(247, 0);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1359, 826);
+            this.MainPanel.Size = new System.Drawing.Size(1087, 788);
             this.MainPanel.TabIndex = 1;
             // 
             // SwitchPanel
@@ -369,9 +140,10 @@
             this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
             this.SwitchPanel.Margin = new System.Windows.Forms.Padding(0);
             this.SwitchPanel.Name = "SwitchPanel";
-            this.SwitchPanel.Size = new System.Drawing.Size(1359, 826);
+            this.SwitchPanel.Size = new System.Drawing.Size(1087, 788);
             this.SwitchPanel.TabIndex = 0;
             this.SwitchPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.SwitchPanel_ControlAdded);
+            this.SwitchPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SwitchPanel_Paint);
             // 
             // transition
             // 
@@ -400,19 +172,269 @@
             this.ReaderDetector.Interval = 1000;
             this.ReaderDetector.Tick += new System.EventHandler(this.ReaderDetector_Tick);
             // 
+            // pictureBox1
+            // 
+            this.transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(248, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BackupButton
+            // 
+            this.BackupButton.Animated = true;
+            this.BackupButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.BackupButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.BackupButton.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.BackupButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BackupButton.DisabledState.FillColor = System.Drawing.Color.SteelBlue;
+            this.BackupButton.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.BackupButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.BackupButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BackupButton.ForeColor = System.Drawing.Color.White;
+            this.BackupButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.database_logo;
+            this.BackupButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BackupButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.BackupButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.BackupButton.Location = new System.Drawing.Point(0, 439);
+            this.BackupButton.Margin = new System.Windows.Forms.Padding(0);
+            this.BackupButton.Name = "BackupButton";
+            this.BackupButton.Size = new System.Drawing.Size(248, 55);
+            this.BackupButton.TabIndex = 24;
+            this.BackupButton.Text = "Backup";
+            this.BackupButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BackupButton.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // ReportButton
+            // 
+            this.ReportButton.Animated = true;
+            this.ReportButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.ReportButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.ReportButton.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.ReportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReportButton.DisabledState.FillColor = System.Drawing.Color.SteelBlue;
+            this.ReportButton.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.ReportButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.ReportButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.ReportButton.ForeColor = System.Drawing.Color.White;
+            this.ReportButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.description_logo1;
+            this.ReportButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ReportButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.ReportButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.ReportButton.Location = new System.Drawing.Point(0, 384);
+            this.ReportButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(248, 55);
+            this.ReportButton.TabIndex = 23;
+            this.ReportButton.Text = "Report";
+            this.ReportButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ReportButton.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // PayrollButton
+            // 
+            this.PayrollButton.Animated = true;
+            this.PayrollButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.PayrollButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.PayrollButton.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.PayrollButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PayrollButton.DisabledState.FillColor = System.Drawing.Color.SteelBlue;
+            this.PayrollButton.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.PayrollButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.PayrollButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PayrollButton.ForeColor = System.Drawing.Color.White;
+            this.PayrollButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.cash_logo;
+            this.PayrollButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PayrollButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.PayrollButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.PayrollButton.Location = new System.Drawing.Point(0, 329);
+            this.PayrollButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PayrollButton.Name = "PayrollButton";
+            this.PayrollButton.Size = new System.Drawing.Size(248, 55);
+            this.PayrollButton.TabIndex = 22;
+            this.PayrollButton.Text = "Payroll";
+            this.PayrollButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PayrollButton.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // AttendanceButton
+            // 
+            this.AttendanceButton.Animated = true;
+            this.AttendanceButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.AttendanceButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.AttendanceButton.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.AttendanceButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AttendanceButton.DisabledState.FillColor = System.Drawing.Color.SteelBlue;
+            this.AttendanceButton.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.AttendanceButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.AttendanceButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.AttendanceButton.ForeColor = System.Drawing.Color.White;
+            this.AttendanceButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.schedule_logo1;
+            this.AttendanceButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.AttendanceButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.AttendanceButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.AttendanceButton.Location = new System.Drawing.Point(0, 274);
+            this.AttendanceButton.Margin = new System.Windows.Forms.Padding(0);
+            this.AttendanceButton.Name = "AttendanceButton";
+            this.AttendanceButton.Size = new System.Drawing.Size(248, 55);
+            this.AttendanceButton.TabIndex = 21;
+            this.AttendanceButton.Text = "Attendance Management";
+            this.AttendanceButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.AttendanceButton.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // BiometricButton
+            // 
+            this.BiometricButton.Animated = true;
+            this.BiometricButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.BiometricButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.BiometricButton.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.BiometricButton.DisabledState.FillColor = System.Drawing.Color.SteelBlue;
+            this.BiometricButton.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.BiometricButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.BiometricButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BiometricButton.ForeColor = System.Drawing.Color.White;
+            this.BiometricButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.fingerprint_logo1;
+            this.BiometricButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BiometricButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.BiometricButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.BiometricButton.Location = new System.Drawing.Point(0, 219);
+            this.BiometricButton.Margin = new System.Windows.Forms.Padding(0);
+            this.BiometricButton.Name = "BiometricButton";
+            this.BiometricButton.Size = new System.Drawing.Size(248, 55);
+            this.BiometricButton.TabIndex = 20;
+            this.BiometricButton.Text = "Biometric Attendance";
+            this.BiometricButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BiometricButton.TextOffset = new System.Drawing.Point(10, 0);
+            this.BiometricButton.Click += new System.EventHandler(this.BiometricAttendanceBtn_Click);
+            // 
+            // EmployeeButton
+            // 
+            this.EmployeeButton.Animated = true;
+            this.EmployeeButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.EmployeeButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.EmployeeButton.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.EmployeeButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EmployeeButton.DisabledState.FillColor = System.Drawing.Color.SteelBlue;
+            this.EmployeeButton.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.EmployeeButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.EmployeeButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.EmployeeButton.ForeColor = System.Drawing.Color.White;
+            this.EmployeeButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.group_logo4;
+            this.EmployeeButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.EmployeeButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.EmployeeButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.EmployeeButton.Location = new System.Drawing.Point(0, 164);
+            this.EmployeeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.EmployeeButton.Name = "EmployeeButton";
+            this.EmployeeButton.Size = new System.Drawing.Size(248, 55);
+            this.EmployeeButton.TabIndex = 19;
+            this.EmployeeButton.Text = "Employee Dashboard";
+            this.EmployeeButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.EmployeeButton.TextOffset = new System.Drawing.Point(10, 0);
+            this.EmployeeButton.Click += new System.EventHandler(this.EmployeeInformationBtn_Click);
+            // 
+            // SystemButton
+            // 
+            this.SystemButton.Animated = true;
+            this.SystemButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.SystemButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.SystemButton.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.SystemButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SystemButton.DisabledState.FillColor = System.Drawing.Color.SteelBlue;
+            this.SystemButton.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.SystemButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.SystemButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SystemButton.ForeColor = System.Drawing.Color.White;
+            this.SystemButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.config_logo2;
+            this.SystemButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SystemButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.SystemButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.SystemButton.Location = new System.Drawing.Point(0, 494);
+            this.SystemButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SystemButton.Name = "SystemButton";
+            this.SystemButton.Size = new System.Drawing.Size(248, 55);
+            this.SystemButton.TabIndex = 25;
+            this.SystemButton.Text = "System Maintenance";
+            this.SystemButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SystemButton.TextOffset = new System.Drawing.Point(10, 0);
+            this.SystemButton.Click += new System.EventHandler(this.SystemMaintenanceBtn_Click);
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Animated = true;
+            this.LogoutButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.LogoutButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.LogoutButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LogoutButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LogoutButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LogoutButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LogoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LogoutButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.LogoutButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LogoutButton.ForeColor = System.Drawing.Color.White;
+            this.LogoutButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.logout_logo1;
+            this.LogoutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LogoutButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.LogoutButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.LogoutButton.Location = new System.Drawing.Point(0, 733);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(0);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(247, 55);
+            this.LogoutButton.TabIndex = 26;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LogoutButton.TextOffset = new System.Drawing.Point(10, 0);
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutBtn_Click);
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.Animated = true;
+            this.MenuButton.BackColor = System.Drawing.Color.Transparent;
+            this.transition.SetDecoration(this.MenuButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.MenuButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.MenuButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.MenuButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MenuButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.MenuButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.MenuButton.ForeColor = System.Drawing.Color.White;
+            this.MenuButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.menu_logo1;
+            this.MenuButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.MenuButton.ImageOffset = new System.Drawing.Point(3, 0);
+            this.MenuButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.MenuButton.Location = new System.Drawing.Point(0, 0);
+            this.MenuButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(248, 46);
+            this.MenuButton.TabIndex = 20;
+            this.MenuButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.MenuButton.TextOffset = new System.Drawing.Point(10, 0);
+            this.MenuButton.Click += new System.EventHandler(this.MenuBtn_Click);
+            // 
+            // guna2Separator1
+            // 
+            this.transition.SetDecoration(this.guna2Separator1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Separator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Separator1.FillColor = System.Drawing.Color.White;
+            this.guna2Separator1.FillThickness = 2;
+            this.guna2Separator1.Location = new System.Drawing.Point(8, 86);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(229, 26);
+            this.guna2Separator1.TabIndex = 0;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1668, 826);
+            this.ClientSize = new System.Drawing.Size(1091, 788);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.transition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1364, 736);
+            this.MinimumSize = new System.Drawing.Size(1086, 589);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeInformation";
@@ -424,9 +446,8 @@
             this.SidebarPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
-            this.LogoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,23 +455,22 @@
         #endregion
         private System.Windows.Forms.Panel SidebarPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button MenuBtn;
         private System.Windows.Forms.Panel LogoPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button EmployeeInformationBtn;
-        private System.Windows.Forms.Button BiometricAttendanceBtn;
-        private System.Windows.Forms.Button AttendanceManagementBtn;
-        private System.Windows.Forms.Button PayrollCalculationBtn;
-        private System.Windows.Forms.Button ReportBtn;
-        private System.Windows.Forms.Button LogoutBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button SystemMaintenanceBtn;
         private Guna.UI2.WinForms.Guna2Transition transition;
         internal System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Panel SwitchPanel;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.Timer ReaderDetector;
+        private Guna.UI2.WinForms.Guna2Button EmployeeButton;
+        private Guna.UI2.WinForms.Guna2Button BackupButton;
+        private Guna.UI2.WinForms.Guna2Button ReportButton;
+        private Guna.UI2.WinForms.Guna2Button PayrollButton;
+        private Guna.UI2.WinForms.Guna2Button AttendanceButton;
+        private Guna.UI2.WinForms.Guna2Button BiometricButton;
+        private Guna.UI2.WinForms.Guna2Button SystemButton;
+        private Guna.UI2.WinForms.Guna2Button LogoutButton;
+        private Guna.UI2.WinForms.Guna2Button MenuButton;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
     }
 }

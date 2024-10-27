@@ -14,7 +14,7 @@ namespace ARIAR_PayrollSystem.Models
 
         public int PositionId { get; set; }
 
-        public DateTime HireDate { get; set; }
+        public string HireDate { get; set; }
 
         public decimal PayRate { get; set; }
 

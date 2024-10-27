@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EmployeeInfoPanel = new System.Windows.Forms.Panel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
@@ -42,8 +42,8 @@
             this.EmployeeDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.TimerProcess = new System.Windows.Forms.Timer(this.components);
             this.EmployeeInfoPanel.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
@@ -85,8 +86,8 @@
             this.EmployeeInfoPanel.Controls.Add(this.guna2TextBox1);
             this.EmployeeInfoPanel.Controls.Add(this.guna2Panel6);
             this.EmployeeInfoPanel.Controls.Add(this.guna2Panel5);
-            this.EmployeeInfoPanel.Controls.Add(this.label6);
-            this.EmployeeInfoPanel.Controls.Add(this.label5);
+            this.EmployeeInfoPanel.Controls.Add(this.TimeLabel);
+            this.EmployeeInfoPanel.Controls.Add(this.DateLabel);
             this.EmployeeInfoPanel.Controls.Add(this.tableLayoutPanel1);
             this.EmployeeInfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeInfoPanel.Location = new System.Drawing.Point(0, 0);
@@ -229,29 +230,29 @@
             this.EmployeeDataGrid.AllowUserToDeleteRows = false;
             this.EmployeeDataGrid.AllowUserToResizeColumns = false;
             this.EmployeeDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.EmployeeDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.EmployeeDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EmployeeDataGrid.ColumnHeadersHeight = 45;
             this.EmployeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.EmployeeDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeName,
             this.Actions});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmployeeDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.EmployeeDataGrid.Location = new System.Drawing.Point(0, 0);
@@ -304,29 +305,29 @@
             this.Actions.ReadOnly = true;
             this.Actions.Text = "UPDATE";
             // 
-            // label6
+            // TimeLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.label6.Location = new System.Drawing.Point(38, 50);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(310, 56);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "11:11:11 AM";
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.TimeLabel.Location = new System.Drawing.Point(38, 50);
+            this.TimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(310, 56);
+            this.TimeLabel.TabIndex = 9;
+            this.TimeLabel.Text = "11:11:11 AM";
             // 
-            // label5
+            // DateLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.label5.Location = new System.Drawing.Point(41, 12);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(264, 41);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "JANUARY 1, 2024\r\n";
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.DateLabel.Location = new System.Drawing.Point(41, 12);
+            this.DateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(264, 41);
+            this.DateLabel.TabIndex = 2;
+            this.DateLabel.Text = "JANUARY 1, 2024\r\n";
             // 
             // tableLayoutPanel1
             // 
@@ -359,7 +360,7 @@
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel4.FillColor = System.Drawing.Color.SlateGray;
             this.guna2Panel4.Location = new System.Drawing.Point(702, 12);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(12);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.BorderRadius = 11;
             this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
@@ -415,7 +416,7 @@
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.FillColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel3.Location = new System.Drawing.Point(472, 12);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(12);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 11;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
@@ -471,7 +472,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.FillColor = System.Drawing.Color.IndianRed;
             this.guna2Panel2.Location = new System.Drawing.Point(242, 12);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(12);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 11;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
@@ -527,7 +528,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.SteelBlue;
             this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(12);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 11;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
@@ -583,6 +584,11 @@
             this.guna2Elipse2.BorderRadius = 11;
             this.guna2Elipse2.TargetControl = this.guna2TabControl1;
             // 
+            // TimerProcess
+            // 
+            this.TimerProcess.Interval = 1000;
+            this.TimerProcess.Tick += new System.EventHandler(this.TimerProcess_Tick);
+            // 
             // EmployeeInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -626,8 +632,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2DataGridView EmployeeDataGrid;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label TimeLabel;
+        private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label4;
@@ -650,5 +656,6 @@
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewButtonColumn Actions;
+        private System.Windows.Forms.Timer TimerProcess;
     }
 }

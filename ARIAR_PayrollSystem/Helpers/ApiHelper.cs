@@ -8,12 +8,37 @@ namespace ARIAR_PayrollSystem.Helpers
 {
     public static class ApiHelper
     {
-        public const string ApiGetPersonalInfo = "/api/Employee/DisplayPersonalInfo";
-        public const string ApiAddEmployeeInfo = "/api/Employee/AddOrUpdateEmployeeInfo";
-        public const string ApiLogin = "/api/UserAuthentication/Login";
-        public const string ApiAddBiometric = "/api/Biometric/AddBiometricData";
-        public const string ApiGetBiometric = "/api/Biometric/DisplayEmployeeBiometric";
+        public static class Employee
+        {
+            public const string GetPersonalInfo = "/api/Employee/DisplayPersonalInfo";
+            public const string AddOrUpdateEmployeeInfo = "/api/Employee/AddOrUpdateEmployeeInfo";
+            public const string GetPersonalInfoById = "/api/Employee/DisplayPersonalInfoById/";
+        }
 
+        public static class Biometric
+        {
+            public const string AddBiometric = "/api/Biometric/AddBiometricData";
+            public const string GetBiometric = "/api/Biometric/DisplayEmployeeBiometric";
+        }
 
+        public static class Attendance
+        {
+            public const string LogAttendance = "/api/Attendance/LogAttendance";
+            public const string HasMorningIn = "/api/Attendance/HasMorningIn";
+            public const string GetAttendanceLogShort = "/api/Attendance/GetAllAttendanceShort?date=";
+        }
+
+        public static class Auth
+        {
+            public const string Login = "/api/UserAuthentication/Login";
+        }
+
+        public static class Payroll
+        {
+            // Define Payroll-related API endpoints here when needed
+        }
     }
+
+
+
 }

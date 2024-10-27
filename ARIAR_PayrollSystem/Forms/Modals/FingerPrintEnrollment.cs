@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ARIAR_PayrollSystem.Forms.SystemMaintenance;
 using static DPUruNet.Fid;
 using FeatureExtraction = DPUruNet.FeatureExtraction;
 
@@ -25,18 +26,22 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         private List<Fmd> preenrollmentFmds;
         private int count;
         public MainForm _mainForm;
+        private readonly Employee _employee;
 
-        
+
+
 
         // Connection string to your database
         //private string connectionString = "YourConnectionStringHere";
 
-        public FingerPrintEnrollment(MainForm mainForm)
+        public FingerPrintEnrollment(MainForm mainForm, Employee employee)
         {
             InitializeComponent();
             preenrollmentFmds = new List<Fmd>();
             count = 0;
             _mainForm = mainForm;
+            _employee = employee;
+            PersonalIDTextBox.Text = _employee.Fullname;
             //InitCapturer();
         }
 
@@ -63,11 +68,12 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         }
 
 
-        
 
 
-        
-        private async Task SaveFingerprintEnrollment(Fmd enrollmentFmd, Guid personalId)
+
+
+
+        private async Task SaveFingerprintEnrollment(Fmd enrollmentFmd)
         {
             try
             {
@@ -75,23 +81,23 @@ namespace ARIAR_PayrollSystem.Forms.Modals
                 var empployeeBiometric = new EmployeeBiometrics
                 {
                     BiometricData = enrollmentFmd.Bytes,
-                    PersonalId = personalId,
+                    PersonalId = _employee.PersonalId,
                     RecordDate = DateTime.Now,
                 };
 
-                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.ApiAddBiometric, empployeeBiometric);
+                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.Biometric.AddBiometric, empployeeBiometric);
                 if (_result.isSuccess)
                 {
-                    GunaMessage.InfoMessage(ParentForm, _result.Data, "INFO");
+                    GunaMessage.Info(_mainForm, _result.Data, "INFO");
                 }
                 else
                 {
-                    GunaMessage.ErrorMessage(ParentForm, _result.ErrorMessage, "ERROR");
+                    GunaMessage.Error(_mainForm, _result.ErrorMessage, "ERROR");
                 }
             }
             catch (Exception ex)
             {
-                GunaMessage.ErrorMessage(ParentForm, "Error while saving fingerprint enrollment: " + ex.Message, "ERROR");
+                GunaMessage.Error(_mainForm, "Error while saving fingerprint enrollment: " + ex.Message, "ERROR");
             }
         }
 
@@ -109,6 +115,12 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         {
             try
             {
+
+                if(PersonalIDTextBox.Text == "")
+                {
+                    SetStatus("No Personal ID or Personal ID does not exist!");
+                    return;
+                }
                 // Check capture quality and throw an error if bad.
                 if (!_mainForm.CheckCaptureResult(captureResult)) return;
 
@@ -137,7 +149,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
                         SetPrompt("Place a finger on the reader.");
                         preenrollmentFmds.Clear();
                         count = 0;
-                        await SaveFingerprintEnrollment(resultEnrollment.Data, Guid.Parse(PersonalIDTextBox.Text));
+                        await SaveFingerprintEnrollment(resultEnrollment.Data);
                         return;
 
                     }
@@ -174,6 +186,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
 
         private void FingerPrintEnrollment_Load(object sender, EventArgs e)
         {
+
             count = 0;
             preenrollmentFmds = new List<Fmd>();
             SetPrompt("Place a finger on the scanner");

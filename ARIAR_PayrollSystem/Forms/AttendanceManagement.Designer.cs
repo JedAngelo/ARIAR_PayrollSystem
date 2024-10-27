@@ -1,6 +1,6 @@
 ﻿namespace ARIAR_PayrollSystem.Forms
 {
-    partial class AttendanceLog
+    partial class AttendanceManagement
     {
         /// <summary>
         /// Required designer variable.
