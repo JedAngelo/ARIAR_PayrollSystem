@@ -17,8 +17,8 @@ namespace ARIAR_PayrollSystem.Helpers
     public static class HttpHelper
     {
         //private static readonly string apiBasicUri = "https://localhost:44376";
-        //private static readonly string apiBasicUri = "http://localhost:5292";
-        private static readonly string apiBasicUri = "https://localhost:2428";
+        private static readonly string apiBasicUri = "http://localhost:5292";
+        //private static readonly string apiBasicUri = "https://localhost:2428";
 
         #region api endpoints
         public const string ApiGetPersonalInfo = "/api/Employee/DisplayPersonalInfo";

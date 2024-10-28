@@ -271,6 +271,12 @@
     <Compile Include="UserControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EmployeeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeView.Designer.cs">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SearchBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -354,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeView.resx">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>

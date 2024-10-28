@@ -1,4 +1,6 @@
-﻿    using Guna.UI2.WinForms;
+﻿using ARIAR_PayrollSystem.Forms;
+using ARIAR_PayrollSystem.Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -174,6 +176,20 @@ namespace ARIAR_PayrollSystem.Helpers
                 await Task.Run(() => pictureBox.Image = Image.FromStream(ms));
             }
         }
+
+        public static async Task ConvertByteToImageCircleBoxAsync(byte[] imageBytes, Guna2CirclePictureBox pictureBox)
+        {
+            if (imageBytes == null || imageBytes.Length == 0)
+                return;
+
+            using (MemoryStream ms = new MemoryStream(imageBytes))
+            {
+                // Use Task.Run to run the synchronous operation asynchronously
+                await Task.Run(() => pictureBox.Image = Image.FromStream(ms));
+            }
+        }
+
+
 
 
     }

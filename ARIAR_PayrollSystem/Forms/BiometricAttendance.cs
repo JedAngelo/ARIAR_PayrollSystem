@@ -63,13 +63,17 @@ namespace ARIAR_PayrollSystem.Forms
             }
 
             var filteredLogs = attendanceLogs.Data
-                            .Where(x => x.Name.ToLower().Contains(searchItem.ToLower()))
-                            .ToList();
+                               .Where(x => x.Name.ToLower().Contains(searchItem.ToLower()))
+                               .ToList();
 
             UpdateDataGrid(filteredLogs);
 
         }
 
+        private void FillEmployeeTable()
+        {
+
+        }
 
         private async void GetAttendanceLogs()
         {
