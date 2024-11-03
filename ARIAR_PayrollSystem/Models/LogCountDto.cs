@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Models
 {
-    public class LoginModel
+    public class LogCountDto
     {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Token { get; set; }
+        public int PresentCount { get; set; }
+        public int AbsentCount { get; set; }
+        public int LeaveCount { get; set; }
+
     }
 }

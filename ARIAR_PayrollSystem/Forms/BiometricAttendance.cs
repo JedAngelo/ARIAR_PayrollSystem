@@ -1,6 +1,7 @@
 ﻿using ARIAR_PayrollSystem.Forms.Modals;
 using ARIAR_PayrollSystem.Helpers;
 using ARIAR_PayrollSystem.Models;
+using ARIAR_PayrollSystem.UserControls;
 using DPUruNet;
 using Guna.UI2.WinForms;
 using System;
@@ -49,58 +50,81 @@ namespace ARIAR_PayrollSystem.Forms
         {
             InitializeComponent();
             _mainForm = mainForm;
-            TimeLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
-            GetAttendanceLogs();
+            TimeLabel.Text = DateTime.Now.ToString("T");
+            DateLabel.Text = DateTime.Now.Date.ToString("MMMM d, yyyy");
+            ProgressCircle.Visible = true;
+            ProgressCircle.Value = 0;
+            PopulateAttendanceView("*"); 
 
         }
 
-        private void FilterAttendanceLogs(string searchItem)
-        {
-            if (attendanceLogs.Data == null)
-            {
-                ToastNotify.Error("No item found with that keyword");
-                return;
-            }
+       
 
-            var filteredLogs = attendanceLogs.Data
-                               .Where(x => x.Name.ToLower().Contains(searchItem.ToLower()))
-                               .ToList();
-
-            UpdateDataGrid(filteredLogs);
-
-        }
-
-        private void FillEmployeeTable()
-        {
-
-        }
-
-        private async void GetAttendanceLogs()
+        private async void PopulateAttendanceView(string type)
         {
             try
             {
                 var DateNowString = DateTime.Now.Date.ToString("yyyy-MM-dd");
-                //GunaMessage.Info(_mainForm,$"{ApiHelper.Attendance.GetAttendanceLogShort}{DateTime.Now.Date.ToString("yyyy-MM-dd")}","DATA");
                 attendanceLogs = await HttpHelper.GetAsync<ApiResponse<List<AttendanceDataLog>>>($"{ApiHelper.Attendance.GetAttendanceLogShort}{DateNowString}");
-                //Console.Write(attendanceLogs.Data);
                 if (attendanceLogs == null)
                 {
-                    GunaMessage.Error(_mainForm, "Can't retrieve attendance logs!", "ERROR");
+                    GunaMessage.Error("Can't retrieve attendance logs!", "ERROR");
                     return;
                 }
                 attendanceLogs.Data.ForEach(a =>
                 {
-                    a.Log = TimeOnly.Parse(a.Log).ToString("h:mm tt");
+                    a.Log = TimeOnly.Parse(a.Log).ToString("t");
                 });
 
+                if (attendanceLogs.isSuccess)
+                {
+                    if (String.Equals(type, "*"))
+                    {
+                        ProgressCircle.Visible = true;
+                        ProgressCircle.Maximum = attendanceLogs.Data.Count();
+                        await AttendanceLogView.DataViewAsync(attendanceLogs.Data, AttendanceView);
+                        for (int i = 0; i < attendanceLogs.Data.Count; i++)
+                        {
+                            ProgressCircle.Value = i + 1;
+                            await Task.Delay(50);
+                        }
+                        if (attendanceLogs.Data.Count() > 4)
+                        {
+                            ToastNotify.Info(attendanceLogs.Data.Count().ToString());
+                            foreach (Control control in AttendanceView.Controls)
+                            {
+                                if (control.Name == "AttendanceLogView")
+                                {
+                                    control.Width -= 15;
+                                }
+                            }
+                        }
+                        ProgressCircle.Visible = false;
+                        LoadingLabel.Visible = false;
+                        AttendanceView.Visible = true;
 
-                UpdateDataGrid(attendanceLogs.Data);
+                    }
+                    else if (String.Equals(type, "LAST"))
+                    {                       
+
+                        await AttendanceLogView.DataViewAddAsync(attendanceLogs.Data.LastOrDefault(), AttendanceView);
+                        if (attendanceLogs.Data.Count() > 4)
+                        {
+                            PopulateAttendanceView("*");
+                        }
+                    }
+                }
+                else
+                {
+                    GunaMessage.Warning(attendanceLogs.ErrorMessage, "Warning");
+                }
+                
                 
 
             }
             catch (Exception ex)
             {
-                GunaMessage.Error(_mainForm, ex.Message, "ERROR");
+                GunaMessage.Error(ex.Message, "ERROR");
             }
         }
 
@@ -108,11 +132,11 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometrics>>>(ApiHelper.Biometric.GetBiometric);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometricsDto>>>(ApiHelper.Biometric.GetBiometric);
 
                 if (_employeeInfo == null)
                 {
-                    GunaMessage.Error(_mainForm, "Can't retrieve employee info!", "ERROR");
+                    GunaMessage.Error("Can't retrieve employee info!", "ERROR");
                     return;
                 }
 
@@ -136,7 +160,7 @@ namespace ARIAR_PayrollSystem.Forms
             catch (Exception ex)
             {
                 // Handle the exception appropriately
-                GunaMessage.Error(ParentForm, $"Error retrieving employee biometrics: {ex.Message}", "ERROR");
+                GunaMessage.Error($"Error retrieving employee biometrics: {ex.Message}", "ERROR");
             }
         }
 
@@ -144,7 +168,7 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var attendanceData = new Attendance
+                var attendanceData = new AttendanceDto
                 {
                     PersonalId = personalId,
                     AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd")
@@ -172,12 +196,12 @@ namespace ARIAR_PayrollSystem.Forms
             try
             {
                 bool hasMorningIn = await HasMorningIn(personalId);
-                Attendance attendanceData = null;
+                AttendanceDto attendanceData = null;
                 var timeNow = DateTime.Now.TimeOfDay;
 
                 if (timeNow > _morningInStart && timeNow < _morningInEnd)
                 {
-                    attendanceData = new Attendance
+                    attendanceData = new AttendanceDto
                     {
                         PersonalId = personalId,
                         AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
@@ -188,7 +212,7 @@ namespace ARIAR_PayrollSystem.Forms
 
                 if (timeNow > _afternoonOutStart && timeNow < _afternoonOutEnd)
                 {
-                    attendanceData = new Attendance
+                    attendanceData = new AttendanceDto
                     {
                         PersonalId = personalId,
                         AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
@@ -198,7 +222,7 @@ namespace ARIAR_PayrollSystem.Forms
 
                 if (!hasMorningIn && timeNow > _afternoonInStart && timeNow < _afternoonInEnd)
                 {
-                    attendanceData = new Attendance
+                    attendanceData = new AttendanceDto
                     {
                         PersonalId = personalId,
                         AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
@@ -208,7 +232,7 @@ namespace ARIAR_PayrollSystem.Forms
 
                 if (hasMorningIn && timeNow > _morningOutStart && timeNow < _morningOutEnd)
                 {
-                    attendanceData = new Attendance
+                    attendanceData = new AttendanceDto
                     {
                         PersonalId = personalId,
                         AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
@@ -225,7 +249,7 @@ namespace ARIAR_PayrollSystem.Forms
                     {
                         ToastNotify.Info(result.Data);
                         //MakeReport(result.Data, "INFO");
-                        var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<PersonalInformation>>(ApiHelper.Employee.GetPersonalInfoById + personalId);
+                        var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<PersonalInformationDto>>(ApiHelper.Employee.GetPersonalInfoById + personalId);
                         if (_employeeInfo != null)
                         {
                             await ControlsHelper.ConvertByteToImageAsync(_employeeInfo.Data.EmployeeImage, pictureBox2);
@@ -233,7 +257,8 @@ namespace ARIAR_PayrollSystem.Forms
                             {
                                 NameLabel.Text = $"{_employeeInfo.Data.FirstName} {(string.IsNullOrEmpty(_employeeInfo.Data.MiddleName) ? "" : $"{_employeeInfo.Data.MiddleName[0]}. ")}{_employeeInfo.Data.LastName}";
                             }));
-                            GetAttendanceLogs();
+                            PopulateAttendanceView("LAST");
+
                         }
 
                         //GunaMessage.InfoMessage(_mainForm, result.Data, "Attendance Logged");
@@ -358,11 +383,11 @@ namespace ARIAR_PayrollSystem.Forms
             SetPrompt("Place a finger on the scanner");
             if (!_mainForm.OpenReader())
             {
-                GunaMessage.Warning(ParentForm,"No fingerprint scanner found.","WARNING");
+                GunaMessage.Warning("No fingerprint scanner found.","WARNING");
             }
             if (this.IsHandleCreated && !_mainForm.StartCaptureAsync(this.OnCaptured))
             {
-                GunaMessage.Warning(ParentForm, "No fingers captured.", "WARNING");
+                GunaMessage.Warning("No fingers captured.", "WARNING");
             }
         }
 
@@ -380,17 +405,10 @@ namespace ARIAR_PayrollSystem.Forms
 
         protected void SendStatus(string status)
         {
-            Invoke((Action)((() => GunaMessage.Error(ParentForm, status, "ERROR"))));
+            Invoke((Action)((() => GunaMessage.Error(status, "ERROR"))));
         }
 
-        private void UpdateDataGrid<T>(T data)
-        {
-            Invoke((Action)(() =>
-            {
-                AttendanceDataGrid.DataSource = data;
-                AttendanceDataGrid.ClearSelection();
-            }));
-        }
+        
 
         private void BiometricAttPanel_Paint(object sender, PaintEventArgs e)
         {
@@ -403,7 +421,7 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void TimerProcess_Tick(object sender, EventArgs e)
         {
-            TimeLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            TimeLabel.Text = DateTime.Now.ToString("T");
         }
 
         private void BiometricAttendance_Load(object sender, EventArgs e)
@@ -411,19 +429,13 @@ namespace ARIAR_PayrollSystem.Forms
             GetEmployeeBiometrics();
             //StartCapture();
             TimerProcess.Start();
-            DateLabel.Text = DateTime.Now.Date.ToString("MMMM d, yyyy");
+            
             
 
         }
 
 
-        private void ReportLabel_TextChanged(object sender, EventArgs e)
-        {
-
-            ReportLabel.SelectionStart = ReportLabel.Text.Length;
-            ReportLabel.ScrollToCaret();
-            
-        }
+        
 
         private void ReportLabel_Leave(object sender, EventArgs e)
         {
@@ -435,18 +447,12 @@ namespace ARIAR_PayrollSystem.Forms
             _mainForm.CancelCaptureAndCloseReader(this.OnCaptured);
         }
 
-        private void AttendanceDataGrid_Leave(object sender, EventArgs e)
-        {
-            AttendanceDataGrid.ClearSelection();
-        }
-
+        
         private void SearchBox_TextChanged(object sender, EventArgs e)
         {
-            FilterAttendanceLogs(SearchBox.Text);
-            if (String.IsNullOrEmpty(SearchBox.Text))
-            {
-                UpdateDataGrid(attendanceLogs.Data);
-            }
+            
         }
+
+        
     }
 }

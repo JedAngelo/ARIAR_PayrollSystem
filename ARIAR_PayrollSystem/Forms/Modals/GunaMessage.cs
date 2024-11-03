@@ -6,70 +6,66 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace ARIAR_PayrollSystem.Forms.Modals
 {
     public class GunaMessage
     {
-        public static void ShowMessage(Form parentForm, string message, string caption, MessageDialogIcon icon, MessageDialogButtons buttons = MessageDialogButtons.OK)
+        public static DialogResult ShowMessage(string message, string caption, MessageDialogIcon icon, MessageDialogButtons buttons = MessageDialogButtons.OK)
         {
-            // Create and configure the Guna2MessageDialog
+            // Attempt to find the main form once
+            var mainForm = Application.OpenForms["MainForm"] as Form;
+
+            if (mainForm == null)
+            {
+                GunaMessage.Error("No main form found!", "ERROR");
+                return DialogResult.None;
+            }
 
             Guna2MessageDialog dialog = new Guna2MessageDialog
             {
                 Caption = caption,
                 Icon = icon,
-                Parent = parentForm,
+                Parent = mainForm,
                 Buttons = buttons,
                 Style = MessageDialogStyle.Default,
                 Text = message,
             };
 
-            // Show the dialog asynchronously (non-blocking)
-            dialog.Show();
+            if (mainForm.InvokeRequired)
+            {
+                // Run on the main UI thread and capture DialogResult
+                return (DialogResult)mainForm.Invoke(new Func<DialogResult>(() => dialog.Show()));
+            }
+            else
+            {
+                return dialog.Show();
+            }
         }
+
 
         // Convenience methods for specific message types
-        public static void Info(Form parentForm, string message, string caption)
+        public static DialogResult Info(string message, string caption)
         {
-            if (parentForm.InvokeRequired)
-            {
-                parentForm.Invoke(new Action(() => Info(parentForm, message, caption)));
-            }
-            else
-            {
-                ShowMessage(parentForm, message, caption, MessageDialogIcon.Information);
-            }
+            return ShowMessage(message, caption, MessageDialogIcon.Information);
         }
 
-        public static void Error(Form parentForm, string message, string caption)
+        public static DialogResult Error(string message, string caption)
         {
-            if (parentForm.InvokeRequired)
-            {
-                parentForm.Invoke(new Action(() => Error(parentForm, message, caption)));
-            }
-            else
-            {
-                ShowMessage(parentForm, message, caption, MessageDialogIcon.Error);
-            }
+            return ShowMessage(message, caption, MessageDialogIcon.Error);
         }
 
-        public static void Warning(Form parentForm, string message, string caption, MessageDialogButtons buttons = MessageDialogButtons.OK)
+        public static DialogResult Warning(string message, string caption, MessageDialogButtons buttons = MessageDialogButtons.OK)
         {
-            if (parentForm.InvokeRequired)
-            {
-                parentForm.Invoke(new Action(() => Warning(parentForm, message, caption, buttons)));
-            }
-            else
-            {
-                ShowMessage(parentForm, message, caption, MessageDialogIcon.Warning, buttons);
-            }
+            return ShowMessage(message, caption, MessageDialogIcon.Warning, buttons);
         }
 
         public static DialogResult Question(Form parentForm, string message, string caption, MessageDialogButtons buttons = MessageDialogButtons.YesNoCancel)
         {
             if (parentForm.InvokeRequired)
             {
+                // Run on the main UI thread and capture DialogResult
                 return (DialogResult)parentForm.Invoke(new Func<DialogResult>(() => Question(parentForm, message, caption, buttons)));
             }
             else
@@ -88,6 +84,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
                 return dialog.Show();
             }
         }
+
 
 
 

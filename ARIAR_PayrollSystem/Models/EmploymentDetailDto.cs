@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Models
 {
-    public class EmploymentDetail
+    public class EmploymentDetailDto
     {
         public int EmploymentId { get; set; }
 
@@ -26,5 +26,9 @@ namespace ARIAR_PayrollSystem.Models
         public decimal PagibigEmployeeRate { get; set; }
 
         public decimal IncomeTaxRate { get; set; }
+
+        //public virtual PersonalInformationDto PersonalDtos { get; set; } = null!;
+
+        //public virtual PostionDto PositionDtos { get; set; } = new PostionDto();
     }
 }

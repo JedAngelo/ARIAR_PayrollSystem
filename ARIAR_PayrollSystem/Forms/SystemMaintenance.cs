@@ -69,7 +69,7 @@ namespace ARIAR_PayrollSystem.Forms
             {
 
 
-                var _employeeInfo = new PersonalInformation()
+                var _employeeInfo = new PersonalInformationDto()
                 {
                     PersonalId = null,
                     FirstName = FirstnameTextBox.Text,
@@ -79,14 +79,14 @@ namespace ARIAR_PayrollSystem.Forms
                     Gender = "Male",
                     Age = byte.Parse(AgeTextBox.Text),
                     EmployeeImage = await ControlsHelper.ConvertImageToByteAsync(EmployeePictureBox),
-                    ContactInformationDtos = new ContactInformation
+                    ContactInformationDtos = new ContactInformationDto
                     {
                         Address = AddressTextBox.Text,
                         Email = EmailTextBox.Text,
                         PhoneNumber = ContactNoTextBox.Text,
 
                     },
-                    EmploymentDetailDtos = new EmploymentDetail
+                    EmploymentDetailDtos = new EmploymentDetailDto
                     {
                         HireDate = HiredDatePicker.Value.Date.ToString("yyyy-MM-dd"),
                         IncomeTaxRate = decimal.Parse(IncomeTextBox.Text),
@@ -114,7 +114,7 @@ namespace ARIAR_PayrollSystem.Forms
             catch (Exception ex)
             {
 
-                MessageBox.Show($"Error: {ex.Message}");
+                GunaMessage.Error($"Error: {ex.Message}","ERROR");
                 
             }
             finally
@@ -159,20 +159,17 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            OverlayForm overlayForm = new OverlayForm(_mainForm);
-            overlayForm.Show(_mainForm);
+            //OverlayForm overlayForm = new OverlayForm(_mainForm);
+            //overlayForm.Show(_mainForm);
 
-            //using (TestModal _testModal = new TestModal())
+            //using (FingerPrintEnrollment _enrollmentModal = new FingerPrintEnrollment(_mainForm, _employee)) 
             //{
-            //    _testModal.ShowDialog(_mainForm);
+            //    _enrollmentModal.ShowDialog(_mainForm);
             //}
 
-            using (FingerPrintEnrollment _enrollmentModal = new FingerPrintEnrollment(_mainForm, _employee)) 
-            {
-                _enrollmentModal.ShowDialog(_mainForm);
-            }
-
-            overlayForm.Close();
+            //overlayForm.Close();
+            FingerPrintEnrollment _enrollmentModal = new FingerPrintEnrollment(_mainForm, _employee);
+            ControlsHelper.ShowModal(_mainForm, _enrollmentModal);
 
 
 
@@ -218,7 +215,7 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformation>>>(ApiHelper.Employee.GetPersonalInfo);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformationDto>>>(ApiHelper.Employee.GetPersonalInfo);
                 
                 if (_employeeInfo == null)
                 {
@@ -236,7 +233,7 @@ namespace ARIAR_PayrollSystem.Forms
             }
             catch (Exception ex)
             {
-                GunaMessage.Error(_mainForm, $"Error: {ex.Message}", "ERROR");
+                GunaMessage.Error($"Error: {ex.Message}", "ERROR");
             }
         }
 

@@ -16,18 +16,12 @@ namespace ARIAR_PayrollSystem.Helpers
 {
     public static class HttpHelper
     {
-        //private static readonly string apiBasicUri = "https://localhost:44376";
-        private static readonly string apiBasicUri = "http://localhost:5292";
-        //private static readonly string apiBasicUri = "https://localhost:2428";
+        private static string _apiBasicUri = "http://localhost:2450";
 
-        #region api endpoints
-        public const string ApiGetPersonalInfo = "/api/Employee/DisplayPersonalInfo";
-        public const string ApiAddEmployeeInfo = "/api/Employee/AddOrUpdateEmployeeInfo";
-        public const string ApiLogin = "/api/UserAuthentication/Login";
-        public const string ApiAddBiometric = "/api/Biometric/AddBiometricData";
-        public const string ApiGetBiometric = "/api/Biometric/DisplayEmployeeBiometric";
-
-        #endregion
+        public static void SetApiBasicUri(string value)
+        {
+            _apiBasicUri = value;
+        }
 
         private static string accessToken;  // Store the access token
         private static readonly string secretKey = "TheTreesMightLongForPeaceButTheWindWillNeverCeaseTheQuickBrownFoxJumpsOverTheLazyDog";
@@ -69,7 +63,7 @@ namespace ARIAR_PayrollSystem.Helpers
 
             try
             {
-                httpClient.BaseAddress = new Uri(apiBasicUri);
+                httpClient.BaseAddress = new Uri(_apiBasicUri);
                 var serializedContent = JsonConvert.SerializeObject(contentValue);
                 Console.WriteLine(serializedContent);
                 Console.WriteLine("Serialized Content: " + serializedContent);
@@ -115,7 +109,7 @@ namespace ARIAR_PayrollSystem.Helpers
             var httpClient = new HttpClient();
             try
             {
-                httpClient.BaseAddress = new Uri(apiBasicUri);
+                httpClient.BaseAddress = new Uri(_apiBasicUri);
                 httpClient.DefaultRequestHeaders.Add("AccessToken", accessToken);
                 httpClient.DefaultRequestHeaders.Add("secretKey", secretKey);
                 httpClient.DefaultRequestHeaders.Accept.Add(
@@ -150,7 +144,7 @@ namespace ARIAR_PayrollSystem.Helpers
             var httpClient = new HttpClient();
             try
             {
-                httpClient.BaseAddress = new Uri(apiBasicUri);
+                httpClient.BaseAddress = new Uri(_apiBasicUri);
                 httpClient.DefaultRequestHeaders.Add("AccessToken", accessToken);
                 httpClient.DefaultRequestHeaders.Add("secretKey", secretKey);
                 httpClient.DefaultRequestHeaders.Accept.Add(

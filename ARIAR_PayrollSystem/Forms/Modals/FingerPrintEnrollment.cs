@@ -78,7 +78,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             try
             {
                 // Prepare the DTO
-                var empployeeBiometric = new EmployeeBiometrics
+                var empployeeBiometric = new EmployeeBiometricsDto
                 {
                     BiometricData = enrollmentFmd.Bytes,
                     PersonalId = _employee.PersonalId,
@@ -88,16 +88,16 @@ namespace ARIAR_PayrollSystem.Forms.Modals
                 var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.Biometric.AddBiometric, empployeeBiometric);
                 if (_result.isSuccess)
                 {
-                    GunaMessage.Info(_mainForm, _result.Data, "INFO");
+                    GunaMessage.Info(_result.Data, "INFO");
                 }
                 else
                 {
-                    GunaMessage.Error(_mainForm, _result.ErrorMessage, "ERROR");
+                    GunaMessage.Error( _result.ErrorMessage, "ERROR");
                 }
             }
             catch (Exception ex)
             {
-                GunaMessage.Error(_mainForm, "Error while saving fingerprint enrollment: " + ex.Message, "ERROR");
+                GunaMessage.Error("Error while saving fingerprint enrollment: " + ex.Message, "ERROR");
             }
         }
 

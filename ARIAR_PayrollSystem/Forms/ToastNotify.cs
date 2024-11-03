@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ARIAR_PayrollSystem.Forms.Modals;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -68,16 +69,20 @@ namespace ARIAR_PayrollSystem.Forms
 
         private static void ShowToastWithType(string message, string type)
         {
-            if (Application.OpenForms["MainForm"] is Form mainForm)
+            var mainForm = Application.OpenForms["MainForm"];
+            
+            if (mainForm == null)
             {
-                if (mainForm.InvokeRequired)
-                {
-                    mainForm.Invoke((Action)(() => ShowToastr(message, type)));
-                }
-                else
-                {
-                    ShowToastr(message, type);
-                }
+                GunaMessage.Error("MainForm does not exist!", "ERROR");
+            }
+
+            if (mainForm.InvokeRequired)
+            {
+                mainForm.Invoke((Action)(() => ShowToastr(message, type)));
+            }
+            else
+            {
+                ShowToastr(message, type);
             }
         }
 

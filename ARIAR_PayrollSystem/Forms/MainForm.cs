@@ -25,6 +25,7 @@ namespace ARIAR_PayrollSystem.Forms
         private EmployeeInformation _employeeInformation;
         private SystemMaintenance _systemMaintenance;
         private Test _testForm;
+        private AttendanceManagement _attendanceManagement;
         private bool IsBiometricLoading = false;
 
         private SplashScreen _splashScreen;
@@ -43,9 +44,10 @@ namespace ARIAR_PayrollSystem.Forms
             //_biometricAttendance = new BiometricAttendance(this);
             _employeeInformation = new EmployeeInformation(this);
             _systemMaintenance = new SystemMaintenance(this);
+            _attendanceManagement = new AttendanceManagement(this);
             _splashScreen = new SplashScreen();
 
-            ReaderDetector.Start();
+            //ReaderDetector.Start();
 
             _ReaderDetection = new System.Threading.Timer(ReaderDetectionEvent, null, 1000, 1000);
 
@@ -82,21 +84,16 @@ namespace ARIAR_PayrollSystem.Forms
         }
 
 
-        private async void ReaderDetectionEvent(object state)
+        private void ReaderDetectionEvent(object state)
         {
-            await Task.Delay(250);
             if (currentReader == null)
             {
-                this.Invoke((Action)(() =>
-                {
-                    SetCurrentReader();
-                }));
+                Invoke((Action)(() => SetCurrentReader()));
 
             }
             if (ReaderCollection.GetReaders().Count == 0)
             {
                 currentReader = null;
-                //check here if there is a problem in the reader and reset it to null if there is
             }
         }
       
@@ -145,6 +142,11 @@ namespace ARIAR_PayrollSystem.Forms
                     isFullscreen = true;
                 }
             }
+            if (e.KeyCode == Keys.F12)
+            {
+                var switcher = new ApiSwitcher();
+                ControlsHelper.ShowModal(this, switcher);
+            }
             transition.Show(SwitchPanel);
         }
 
@@ -190,6 +192,8 @@ namespace ARIAR_PayrollSystem.Forms
 
         private async void LogoutBtn_Click(object sender, EventArgs e)
         {
+            _ReaderDetection?.Dispose();
+            _ReaderDetection = null;
             await Task.Delay(250);
             Application.Exit();
         }
@@ -308,7 +312,7 @@ namespace ARIAR_PayrollSystem.Forms
 
             if (currentReader == null)
             {
-                GunaMessage.Error(this, "Can't initialized fingerprint reader!", "ERROR");
+                GunaMessage.Error("Can't initialized fingerprint reader!", "ERROR");
                 return false;
             }
             
@@ -316,7 +320,7 @@ namespace ARIAR_PayrollSystem.Forms
 
             if (result != Constants.ResultCode.DP_SUCCESS)
             {                
-                GunaMessage.Error(this, $"Error: {result}", "ERROR");
+                GunaMessage.Error($"Error: {result}", "ERROR");
                 return false;
             }
 
@@ -435,7 +439,7 @@ namespace ARIAR_PayrollSystem.Forms
             }
             catch (Exception ex)
             {
-                GunaMessage.Error(this, $"Error: {ex.Message}", "ERROR");
+                GunaMessage.Error($"Error: {ex.Message}", "ERROR");
                 return false;
             }
         }
@@ -475,30 +479,37 @@ namespace ARIAR_PayrollSystem.Forms
         }
 
 
-        private bool isReaderDetectionInProgress = false;
+        //private bool isReaderDetectionInProgress = false;
 
 
-        private void ReaderDetector_Tick(object sender, EventArgs e)
-        {
-            if (!isReaderDetectionInProgress)
-            {
-                isReaderDetectionInProgress = true; // Set the flag to true
+        //private void ReaderDetector_Tick(object sender, EventArgs e)
+        //{
+        //    if (!isReaderDetectionInProgress)
+        //    {
+        //        isReaderDetectionInProgress = true; // Set the flag to true
 
-                if (currentReader == null)
-                {
-                    SetCurrentReader();
-                }
-                else
-                {
-                    ReaderDetector.Stop();
-                }
+        //        if (currentReader == null)
+        //        {
+        //            SetCurrentReader();
+        //        }
+        //        else
+        //        {
+        //            ReaderDetector.Stop();
+        //        }
 
-                isReaderDetectionInProgress = false; // Reset the flag after the check
-            }
-        }
+        //        isReaderDetectionInProgress = false; // Reset the flag after the check
+        //    }
+        //}
 
         private void SwitchPanel_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private async void AttendanceButton_Click(object sender, EventArgs e)
+        {
+            await Task.Delay(250);
+            await Switcher.SwitchPanelAsync(SwitchPanel, _attendanceManagement);
+            transition.Show(SwitchPanel);
         }
     }
 }

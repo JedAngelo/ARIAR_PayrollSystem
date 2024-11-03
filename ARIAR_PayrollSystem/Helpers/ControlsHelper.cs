@@ -189,6 +189,21 @@ namespace ARIAR_PayrollSystem.Helpers
             }
         }
 
+        public static void ShowModal(MainForm mainForm, Form modalForm)
+        {
+            // Create and show the overlay form
+            OverlayForm overlayForm = new OverlayForm(mainForm);
+            overlayForm.Show(mainForm);
+
+            // Display the modal form as a dialog
+            using (modalForm)
+            {
+                modalForm.ShowDialog(mainForm);
+            }
+
+            // Close the overlay form after the modal closes
+            overlayForm.Close();
+        }
 
 
 

@@ -26,6 +26,7 @@ namespace ARIAR_PayrollSystem.Helpers
             public const string LogAttendance = "/api/Attendance/LogAttendance";
             public const string HasMorningIn = "/api/Attendance/HasMorningIn";
             public const string GetAttendanceLogShort = "/api/Attendance/GetAllAttendanceShort?date=";
+            public const string GetLogCount = "/api/Attendance/GetLogCount/";
         }
 
         public static class Auth

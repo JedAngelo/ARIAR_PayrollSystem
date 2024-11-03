@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Models
 {
-    public class Attendance
+    public class AttendanceDto
     {
         public int? AttendanceId { get; set; }
 

@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BiometricAttPanel = new System.Windows.Forms.Panel();
             this.SearchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ReportLabel = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.PromptLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.AttendanceDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.AttendanceView = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.LoadingLabel = new System.Windows.Forms.Label();
+            this.ProgressCircle = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.DateLabel = new System.Windows.Forms.Label();
             this.TimeLabel = new System.Windows.Forms.Label();
@@ -60,16 +59,10 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.TimerProcess = new System.Windows.Forms.Timer(this.components);
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Log = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BiometricAttPanel.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
-            this.guna2Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AttendanceDataGrid)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -80,6 +73,7 @@
             // 
             // BiometricAttPanel
             // 
+            this.BiometricAttPanel.AutoScroll = true;
             this.BiometricAttPanel.BackColor = System.Drawing.Color.White;
             this.BiometricAttPanel.Controls.Add(this.SearchBox);
             this.BiometricAttPanel.Controls.Add(this.guna2Panel5);
@@ -133,9 +127,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel5.BorderRadius = 8;
+            this.guna2Panel5.Controls.Add(this.PromptLabel);
             this.guna2Panel5.Controls.Add(this.NameLabel);
-            this.guna2Panel5.Controls.Add(this.guna2Panel7);
-            this.guna2Panel5.Controls.Add(this.guna2Panel6);
             this.guna2Panel5.Controls.Add(this.label6);
             this.guna2Panel5.Controls.Add(this.pictureBox2);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
@@ -150,6 +143,18 @@
             this.guna2Panel5.TabIndex = 11;
             this.guna2Panel5.UseTransparentBackground = true;
             // 
+            // PromptLabel
+            // 
+            this.PromptLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PromptLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.PromptLabel.Location = new System.Drawing.Point(103, 532);
+            this.PromptLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PromptLabel.Name = "PromptLabel";
+            this.PromptLabel.Size = new System.Drawing.Size(314, 43);
+            this.PromptLabel.TabIndex = 1;
+            this.PromptLabel.Text = "AFTERNOON";
+            this.PromptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // NameLabel
             // 
             this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -162,83 +167,6 @@
             this.NameLabel.TabIndex = 15;
             this.NameLabel.Text = "...";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel7.AutoScroll = true;
-            this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel7.BorderRadius = 8;
-            this.guna2Panel7.Controls.Add(this.ReportLabel);
-            this.guna2Panel7.FillColor = System.Drawing.Color.White;
-            this.guna2Panel7.Location = new System.Drawing.Point(10, 487);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel7.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel7.ShadowDecoration.Depth = 15;
-            this.guna2Panel7.ShadowDecoration.Enabled = true;
-            this.guna2Panel7.Size = new System.Drawing.Size(490, 207);
-            this.guna2Panel7.TabIndex = 14;
-            this.guna2Panel7.UseTransparentBackground = true;
-            // 
-            // ReportLabel
-            // 
-            this.ReportLabel.AutoScroll = true;
-            this.ReportLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ReportLabel.DefaultText = "";
-            this.ReportLabel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ReportLabel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ReportLabel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ReportLabel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ReportLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReportLabel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ReportLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportLabel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ReportLabel.Location = new System.Drawing.Point(0, 0);
-            this.ReportLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ReportLabel.Multiline = true;
-            this.ReportLabel.Name = "ReportLabel";
-            this.ReportLabel.PasswordChar = '\0';
-            this.ReportLabel.PlaceholderText = "";
-            this.ReportLabel.SelectedText = "";
-            this.ReportLabel.Size = new System.Drawing.Size(490, 207);
-            this.ReportLabel.TabIndex = 0;
-            this.ReportLabel.TextChanged += new System.EventHandler(this.ReportLabel_TextChanged);
-            this.ReportLabel.Leave += new System.EventHandler(this.ReportLabel_Leave);
-            // 
-            // guna2Panel6
-            // 
-            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel6.BorderRadius = 8;
-            this.guna2Panel6.Controls.Add(this.PromptLabel);
-            this.guna2Panel6.FillColor = System.Drawing.Color.White;
-            this.guna2Panel6.Location = new System.Drawing.Point(10, 430);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel6.ShadowDecoration.Depth = 15;
-            this.guna2Panel6.ShadowDecoration.Enabled = true;
-            this.guna2Panel6.Size = new System.Drawing.Size(490, 43);
-            this.guna2Panel6.TabIndex = 13;
-            this.guna2Panel6.UseTransparentBackground = true;
-            // 
-            // PromptLabel
-            // 
-            this.PromptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PromptLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PromptLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.PromptLabel.Location = new System.Drawing.Point(0, 0);
-            this.PromptLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.PromptLabel.Name = "PromptLabel";
-            this.PromptLabel.Size = new System.Drawing.Size(490, 43);
-            this.PromptLabel.TabIndex = 1;
-            this.PromptLabel.Text = "AFTERNOON";
-            this.PromptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -272,7 +200,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel4.BorderRadius = 8;
-            this.guna2Panel4.Controls.Add(this.AttendanceDataGrid);
+            this.guna2Panel4.Controls.Add(this.guna2VScrollBar1);
+            this.guna2Panel4.Controls.Add(this.guna2Separator1);
+            this.guna2Panel4.Controls.Add(this.LoadingLabel);
+            this.guna2Panel4.Controls.Add(this.ProgressCircle);
+            this.guna2Panel4.Controls.Add(this.AttendanceView);
+            this.guna2Panel4.Controls.Add(this.label3);
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel4.Location = new System.Drawing.Point(12, 322);
@@ -286,77 +219,92 @@
             this.guna2Panel4.TabIndex = 10;
             this.guna2Panel4.UseTransparentBackground = true;
             // 
-            // AttendanceDataGrid
+            // guna2VScrollBar1
             // 
-            this.AttendanceDataGrid.AllowUserToAddRows = false;
-            this.AttendanceDataGrid.AllowUserToDeleteRows = false;
-            this.AttendanceDataGrid.AllowUserToResizeColumns = false;
-            this.AttendanceDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Empty;
-            this.AttendanceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.AttendanceDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AttendanceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.AttendanceDataGrid.ColumnHeadersHeight = 35;
-            this.AttendanceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FullName,
-            this.Log,
-            this.Type});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AttendanceDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
-            this.AttendanceDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AttendanceDataGrid.GridColor = System.Drawing.Color.White;
-            this.AttendanceDataGrid.Location = new System.Drawing.Point(0, 0);
-            this.AttendanceDataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.AttendanceDataGrid.MultiSelect = false;
-            this.AttendanceDataGrid.Name = "AttendanceDataGrid";
-            this.AttendanceDataGrid.ReadOnly = true;
-            this.AttendanceDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.AttendanceDataGrid.RowHeadersVisible = false;
-            this.AttendanceDataGrid.RowHeadersWidth = 51;
-            this.AttendanceDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.AttendanceDataGrid.RowTemplate.Height = 35;
-            this.AttendanceDataGrid.Size = new System.Drawing.Size(435, 411);
-            this.AttendanceDataGrid.TabIndex = 1;
-            this.AttendanceDataGrid.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WhiteGrid;
-            this.AttendanceDataGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.Lavender;
-            this.AttendanceDataGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.AttendanceDataGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.AttendanceDataGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.AttendanceDataGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.AttendanceDataGrid.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.AttendanceDataGrid.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.AttendanceDataGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.RoyalBlue;
-            this.AttendanceDataGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.AttendanceDataGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttendanceDataGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.AttendanceDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.AttendanceDataGrid.ThemeStyle.HeaderStyle.Height = 35;
-            this.AttendanceDataGrid.ThemeStyle.ReadOnly = true;
-            this.AttendanceDataGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.AliceBlue;
-            this.AttendanceDataGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.AttendanceDataGrid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttendanceDataGrid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.AttendanceDataGrid.ThemeStyle.RowsStyle.Height = 35;
-            this.AttendanceDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.AttendanceDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.AttendanceDataGrid.Leave += new System.EventHandler(this.AttendanceDataGrid_Leave);
+            this.guna2VScrollBar1.BindingContainer = this.AttendanceView;
+            this.guna2VScrollBar1.BorderRadius = 3;
+            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.White;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(417, 41);
+            this.guna2VScrollBar1.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 370);
+            this.guna2VScrollBar1.TabIndex = 19;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.SlateGray;
+            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
+            // AttendanceView
+            // 
+            this.AttendanceView.AutoScroll = true;
+            this.AttendanceView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AttendanceView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.AttendanceView.Location = new System.Drawing.Point(0, 41);
+            this.AttendanceView.Margin = new System.Windows.Forms.Padding(0);
+            this.AttendanceView.Name = "AttendanceView";
+            this.AttendanceView.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.AttendanceView.Size = new System.Drawing.Size(435, 370);
+            this.AttendanceView.TabIndex = 18;
+            this.AttendanceView.Visible = false;
+            this.AttendanceView.WrapContents = false;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.FillColor = System.Drawing.Color.SlateGray;
+            this.guna2Separator1.Location = new System.Drawing.Point(0, 35);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(435, 10);
+            this.guna2Separator1.TabIndex = 17;
+            this.guna2Separator1.UseTransparentBackground = true;
+            // 
+            // LoadingLabel
+            // 
+            this.LoadingLabel.BackColor = System.Drawing.Color.White;
+            this.LoadingLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.LoadingLabel.Location = new System.Drawing.Point(0, 226);
+            this.LoadingLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.LoadingLabel.Name = "LoadingLabel";
+            this.LoadingLabel.Size = new System.Drawing.Size(435, 36);
+            this.LoadingLabel.TabIndex = 21;
+            this.LoadingLabel.Text = "Loading attendance data...";
+            this.LoadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ProgressCircle
+            // 
+            this.ProgressCircle.Animated = true;
+            this.ProgressCircle.BackColor = System.Drawing.Color.Transparent;
+            this.ProgressCircle.EnsureVisible = true;
+            this.ProgressCircle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.ProgressCircle.FillThickness = 10;
+            this.ProgressCircle.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ProgressCircle.ForeColor = System.Drawing.Color.White;
+            this.ProgressCircle.Location = new System.Drawing.Point(187, 148);
+            this.ProgressCircle.Minimum = 0;
+            this.ProgressCircle.Name = "ProgressCircle";
+            this.ProgressCircle.ProgressColor = System.Drawing.Color.LightSeaGreen;
+            this.ProgressCircle.ProgressColor2 = System.Drawing.Color.LightSeaGreen;
+            this.ProgressCircle.ProgressThickness = 10;
+            this.ProgressCircle.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ProgressCircle.Size = new System.Drawing.Size(68, 68);
+            this.ProgressCircle.TabIndex = 20;
+            this.ProgressCircle.Text = "guna2CircleProgressBar1";
+            this.ProgressCircle.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
+            this.ProgressCircle.UseTransparentBackground = true;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(435, 41);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Attendance Log";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Panel1
             // 
@@ -611,35 +559,11 @@
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 11;
-            this.guna2Elipse1.TargetControl = this.AttendanceDataGrid;
             // 
             // TimerProcess
             // 
             this.TimerProcess.Interval = 1000;
             this.TimerProcess.Tick += new System.EventHandler(this.TimerProcess_Tick);
-            // 
-            // FullName
-            // 
-            this.FullName.DataPropertyName = "Name";
-            this.FullName.HeaderText = "FullName";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            // 
-            // Log
-            // 
-            this.Log.DataPropertyName = "Log";
-            this.Log.FillWeight = 60F;
-            this.Log.HeaderText = "Log";
-            this.Log.Name = "Log";
-            this.Log.ReadOnly = true;
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "Type";
-            this.Type.FillWeight = 115F;
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
             // 
             // BiometricAttendance
             // 
@@ -655,11 +579,8 @@
             this.Load += new System.EventHandler(this.BiometricAttendance_Load);
             this.BiometricAttPanel.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AttendanceDataGrid)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -693,14 +614,13 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2TextBox SearchBox;
         private System.Windows.Forms.Timer TimerProcess;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label PromptLabel;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2TextBox ReportLabel;
         private System.Windows.Forms.Label NameLabel;
-        private Guna.UI2.WinForms.Guna2DataGridView AttendanceDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Log;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel AttendanceView;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
+        private System.Windows.Forms.Label LoadingLabel;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar ProgressCircle;
     }
 }

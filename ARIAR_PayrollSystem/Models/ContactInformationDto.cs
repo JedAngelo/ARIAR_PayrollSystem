@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Models
 {
-    public class ContactInformation
+    public class ContactInformationDto
     {
         public int ContactId { get; set; }
 
@@ -17,5 +17,6 @@ namespace ARIAR_PayrollSystem.Models
         public string PhoneNumber { get; set; } = null!;
 
         public string Email { get; set; } = null!;
+
     }
 }

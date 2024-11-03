@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Models
 {
-    public class EmployeeBiometrics
+    public class EmployeeBiometricsDto
     {
         public int? RecordId { get; set; } = 0;
 

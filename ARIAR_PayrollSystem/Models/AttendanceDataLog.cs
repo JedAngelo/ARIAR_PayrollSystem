@@ -11,5 +11,7 @@ namespace ARIAR_PayrollSystem.Models
         public string? Name { get; set; }
         public string? Log { get; set; }
         public string? Type { get; set; }
+        public byte[] EmployeeImage { get; set; }
+
     }
 }

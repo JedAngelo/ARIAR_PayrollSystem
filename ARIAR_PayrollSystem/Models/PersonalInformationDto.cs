@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Models
 {
-    public class PersonalInformation
+    public class PersonalInformationDto
     {
         public Guid? PersonalId { get; set; }
 
@@ -29,16 +29,20 @@ namespace ARIAR_PayrollSystem.Models
 
         public string CreatedBy { get; set; } = null!;
 
+
+
         public bool IsActive { get; set; }
+
 
         public DateTime? ModifiedDate { get; set; }
 
         public string? ModifiedBy { get; set; }
 
-        public virtual ContactInformation ContactInformationDtos { get; set; } = new ContactInformation();
 
-        //public virtual List<EmployeeBiometric> EmployeeBiometrics { get; set; } = new List<EmployeeBiometric>();
+        public virtual ContactInformationDto ContactInformationDtos { get; set; } = new ContactInformationDto();
 
-        public virtual EmploymentDetail EmploymentDetailDtos { get; set; } = new EmploymentDetail();
+        //public virtual List<EmployeeBiometricDto> EmployeeBiometricDtos { get; set; } = new List<EmployeeBiometricDto>();
+
+        public virtual EmploymentDetailDto EmploymentDetailDtos { get; set; } = new EmploymentDetailDto();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ARIAR_PayrollSystem.UserControls
 {
-    partial class EmployeeView
+    partial class AttendanceLogView
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.ContactNo = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.Log = new System.Windows.Forms.Label();
+            this.Type = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.Address = new System.Windows.Forms.Label();
             this.Fullname = new System.Windows.Forms.Label();
             this.EmployeePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeePic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,12 +47,10 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.SlateGray;
             this.guna2Panel1.BorderRadius = 10;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.guna2ImageButton1);
-            this.guna2Panel1.Controls.Add(this.ContactNo);
-            this.guna2Panel1.Controls.Add(this.guna2Separator1);
-            this.guna2Panel1.Controls.Add(this.Address);
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.Fullname);
             this.guna2Panel1.Controls.Add(this.EmployeePic);
+            this.guna2Panel1.Controls.Add(this.guna2Separator1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(5, 0);
@@ -60,60 +60,79 @@
             this.guna2Panel1.ShadowDecoration.Depth = 15;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.Size = new System.Drawing.Size(330, 78);
-            this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.TabIndex = 1;
             this.guna2Panel1.UseTransparentBackground = true;
             // 
-            // guna2ImageButton1
+            // guna2Panel2
             // 
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = global::ARIAR_PayrollSystem.Properties.Resources.checkbox_circle_fill__1_;
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(28, 28);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(280, 45);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(28, 28);
-            this.guna2ImageButton1.TabIndex = 10;
-            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel2.BorderRadius = 5;
+            this.guna2Panel2.Controls.Add(this.guna2VSeparator1);
+            this.guna2Panel2.Controls.Add(this.Log);
+            this.guna2Panel2.Controls.Add(this.Type);
+            this.guna2Panel2.FillColor = System.Drawing.Color.DodgerBlue;
+            this.guna2Panel2.Location = new System.Drawing.Point(76, 36);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(242, 25);
+            this.guna2Panel2.TabIndex = 10;
             // 
-            // ContactNo
+            // guna2VSeparator1
             // 
-            this.ContactNo.AutoSize = true;
-            this.ContactNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContactNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ContactNo.Location = new System.Drawing.Point(88, 28);
-            this.ContactNo.Name = "ContactNo";
-            this.ContactNo.Size = new System.Drawing.Size(104, 13);
-            this.ContactNo.TabIndex = 7;
-            this.ContactNo.Text = "(+63) 912 633 3500";
+            this.guna2VSeparator1.FillColor = System.Drawing.Color.White;
+            this.guna2VSeparator1.Location = new System.Drawing.Point(61, -10);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 49);
+            this.guna2VSeparator1.TabIndex = 12;
+            this.guna2VSeparator1.UseTransparentBackground = true;
+            // 
+            // Log
+            // 
+            this.Log.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Log.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Log.ForeColor = System.Drawing.Color.White;
+            this.Log.Location = new System.Drawing.Point(0, 0);
+            this.Log.Name = "Log";
+            this.Log.Size = new System.Drawing.Size(69, 25);
+            this.Log.TabIndex = 11;
+            this.Log.Text = "5:00 PM";
+            this.Log.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Type
+            // 
+            this.Type.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Type.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Type.ForeColor = System.Drawing.Color.White;
+            this.Type.Location = new System.Drawing.Point(56, 0);
+            this.Type.Name = "Type";
+            this.Type.Size = new System.Drawing.Size(186, 25);
+            this.Type.TabIndex = 7;
+            this.Type.Text = "TIME OUT - (FULL DAY)";
+            this.Type.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Separator1
             // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Separator1.Location = new System.Drawing.Point(91, 20);
+            this.guna2Separator1.FillColor = System.Drawing.Color.SlateGray;
+            this.guna2Separator1.Location = new System.Drawing.Point(76, 22);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(242, 10);
             this.guna2Separator1.TabIndex = 9;
-            // 
-            // Address
-            // 
-            this.Address.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.Address.Location = new System.Drawing.Point(88, 42);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(204, 30);
-            this.Address.TabIndex = 8;
-            this.Address.Text = "Purok Malipayon, General Santos City, South Cotabato";
+            this.guna2Separator1.UseTransparentBackground = true;
             // 
             // Fullname
             // 
-            this.Fullname.AutoSize = true;
+            this.Fullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Fullname.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fullname.Location = new System.Drawing.Point(88, 6);
+            this.Fullname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Fullname.Location = new System.Drawing.Point(76, 6);
             this.Fullname.Name = "Fullname";
-            this.Fullname.Size = new System.Drawing.Size(123, 17);
+            this.Fullname.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Fullname.Size = new System.Drawing.Size(242, 17);
             this.Fullname.TabIndex = 6;
             this.Fullname.Text = "Jed Angelo M. Tan";
             // 
@@ -123,7 +142,7 @@
             this.EmployeePic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.EmployeePic.Image = global::ARIAR_PayrollSystem.Properties.Resources.close_circle_fill;
             this.EmployeePic.ImageRotate = 0F;
-            this.EmployeePic.Location = new System.Drawing.Point(19, 15);
+            this.EmployeePic.Location = new System.Drawing.Point(13, 16);
             this.EmployeePic.Name = "EmployeePic";
             this.EmployeePic.ShadowDecoration.BorderRadius = 11;
             this.EmployeePic.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
@@ -135,31 +154,32 @@
             this.EmployeePic.TabStop = false;
             this.EmployeePic.UseTransparentBackground = true;
             // 
-            // EmployeeView
+            // AttendanceLogView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2Panel1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "EmployeeView";
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "AttendanceLogView";
             this.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.Size = new System.Drawing.Size(340, 83);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EmployeePic)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label ContactNo;
+        private System.Windows.Forms.Label Type;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private System.Windows.Forms.Label Address;
         private System.Windows.Forms.Label Fullname;
         private Guna.UI2.WinForms.Guna2CirclePictureBox EmployeePic;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private System.Windows.Forms.Label Log;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
     }
 }

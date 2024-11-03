@@ -175,6 +175,12 @@
     <Compile Include="Forms\Modals\AnotherTestMF.Designer.cs">
       <DependentUpon>AnotherTestMF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\ApiSwitcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ApiSwitcher.Designer.cs">
+      <DependentUpon>ApiSwitcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modals\CustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,14 +250,16 @@
     <Compile Include="Helpers\Switcher.cs" />
     <Compile Include="Helpers\TabcontrolHelper.cs" />
     <Compile Include="Models\ApiResponse.cs" />
-    <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\AttendanceDto.cs" />
     <Compile Include="Models\AttendanceDataLog.cs" />
-    <Compile Include="Models\ContactInformation.cs" />
-    <Compile Include="Models\EmployeeBiometrics.cs" />
-    <Compile Include="Models\EmploymentDetail.cs" />
-    <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\PersonalInformation.cs" />
-    <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="Models\ContactInformationDto.cs" />
+    <Compile Include="Models\EmployeeBiometricsDto.cs" />
+    <Compile Include="Models\EmploymentDetailDto.cs" />
+    <Compile Include="Models\LogCountDto.cs" />
+    <Compile Include="Models\LoginModelDto.cs" />
+    <Compile Include="Models\PersonalInformationDisplayDto.cs" />
+    <Compile Include="Models\PersonalInformationDto.cs" />
+    <Compile Include="Models\UserLoginDto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -264,6 +272,18 @@
     </Compile>
     <Compile Include="Tests\EmployeeDetailsTest.Designer.cs">
       <DependentUpon>EmployeeDetailsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendanceLogView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendanceLogView.Designer.cs">
+      <DependentUpon>AttendanceLogView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarDayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalendarDayView.Designer.cs">
+      <DependentUpon>CalendarDayView.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CustomTextBox.cs">
       <SubType>UserControl</SubType>
@@ -319,6 +339,9 @@
     <EmbeddedResource Include="Forms\Modals\AnotherTestMF.resx">
       <DependentUpon>AnotherTestMF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ApiSwitcher.resx">
+      <DependentUpon>ApiSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +380,12 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Tests\EmployeeDetailsTest.resx">
       <DependentUpon>EmployeeDetailsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AttendanceLogView.resx">
+      <DependentUpon>AttendanceLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CalendarDayView.resx">
+      <DependentUpon>CalendarDayView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
@@ -510,6 +539,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cash_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-s-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-double-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-double-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-s-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-double-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-s-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-s-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-double-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-fill%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-fill%282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

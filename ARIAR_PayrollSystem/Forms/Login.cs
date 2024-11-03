@@ -60,17 +60,17 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var _loginInfo = new LoginModel()
+                var _loginInfo = new LoginModelDto()
                 {
                     UserName = UsernameTextBox.Text,
                     Password = PasswordTextBox.Text
                 };
 
-                var _loginResult = await HttpHelper.PostAsync<ApiResponse<LoginModel>, dynamic>(ApiHelper.Auth.Login, _loginInfo);
+                var _loginResult = await HttpHelper.PostAsync<ApiResponse<LoginModelDto>, dynamic>(ApiHelper.Auth.Login, _loginInfo);
                 if (_loginResult.isSuccess)
                 {
                     HttpHelper.SetAccessToken(_loginResult.Data.Token);
-                    GunaMessage.Info(this, "Successfully login!", "SUCCESS");
+                    GunaMessage.Info("Successfully login!", "SUCCESS");
 
                     //CustomMessageBox.Show("Successfully login!");//TBD
                     mainForm.Show();
@@ -78,14 +78,14 @@ namespace ARIAR_PayrollSystem.Forms
                 }
                 else
                 {
-                    GunaMessage.Error(this, _loginResult.ErrorMessage, "ERROR");
+                    GunaMessage.Error(_loginResult.ErrorMessage, "ERROR");
                     //CustomMessageBox.Show(_loginResult.ErrorMessage);
 
                 }
             }
             catch (Exception ex)
             {
-                GunaMessage.Warning(this,ex.Message, "ERROR");
+                GunaMessage.Warning(ex.Message, "ERROR");
             }
         }
 
