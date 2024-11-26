@@ -192,10 +192,13 @@ namespace ARIAR_PayrollSystem.Forms
 
         private async void LogoutBtn_Click(object sender, EventArgs e)
         {
-            _ReaderDetection?.Dispose();
+            AutoResetEvent waitHandle = new AutoResetEvent(false);
+            _ReaderDetection?.Dispose(waitHandle);
+            waitHandle.WaitOne();
             _ReaderDetection = null;
             await Task.Delay(250);
             Application.Exit();
+            //this.Close();
         }
 
 

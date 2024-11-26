@@ -20,7 +20,8 @@ namespace ARIAR_PayrollSystem.Forms
         {
             InitializeComponent();
             _mainForm = mainForm;
-            DateLabel.Text = _currentDate.ToString("MMMM ( yyyy )");
+            MonthComboBox.SelectedIndex = _currentDate.Month-1;
+            YearComboBox.SelectedIndex = _currentDate.Year-1970;
             CalendarDayView.ShowCalendarDay(CalendarView, _currentDate);            
         }
 
@@ -52,33 +53,56 @@ namespace ARIAR_PayrollSystem.Forms
         private async void guna2Button4_Click(object sender, EventArgs e)
         {
             await Task.Delay(200);
-            _currentDate = _currentDate.AddMonths(-1);
-            DateLabel.Text = _currentDate.ToString("MMMM ( yyyy )");
-            CalendarDayView.ShowCalendarDay(CalendarView, _currentDate);
+            if (MonthComboBox.SelectedIndex == 0)
+            {
+                MonthComboBox.SelectedIndex = 11;
+                YearComboBox.SelectedIndex -= 1;
+                return;
+            }
+            MonthComboBox.SelectedIndex -= 1;
         }
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
             await Task.Delay(200);
-            _currentDate = _currentDate.AddMonths(+1);
-            DateLabel.Text = _currentDate.ToString("MMMM ( yyyy )");
-            CalendarDayView.ShowCalendarDay(CalendarView, _currentDate);
+            if (MonthComboBox.SelectedIndex == 11)
+            {
+                MonthComboBox.SelectedIndex = 0;
+                YearComboBox.SelectedIndex += 1;
+                return;
+            }
+            MonthComboBox.SelectedIndex += 1;
         }
 
         private async void guna2Button1_Click(object sender, EventArgs e)
         {
             await Task.Delay(200);
-            _currentDate = _currentDate.AddYears(-1);
-            DateLabel.Text = _currentDate.ToString("MMMM ( yyyy )");
-            CalendarDayView.ShowCalendarDay(CalendarView, _currentDate);
+            YearComboBox.SelectedIndex -= 1;
         }
 
         private async void guna2Button2_Click(object sender, EventArgs e)
         {
             await Task.Delay(200);
-            _currentDate = _currentDate.AddYears(+1);
-            DateLabel.Text = _currentDate.ToString("MMMM ( yyyy )");
+            YearComboBox.SelectedIndex += 1;
+        }
+
+        private void MonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MonthComboBox.Enabled = false;
+            YearComboBox.Enabled = false;
+            _currentDate = new DateTime(_currentDate.Year, MonthComboBox.SelectedIndex+1, _currentDate.Day);
             CalendarDayView.ShowCalendarDay(CalendarView, _currentDate);
+            MonthComboBox.Enabled = true;
+            YearComboBox.Enabled = true;
+
+        }
+
+        private void YearComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            YearComboBox.Enabled = false;
+            _currentDate = new DateTime(YearComboBox.SelectedIndex+1970, _currentDate.Month, _currentDate.Day);
+            CalendarDayView.ShowCalendarDay(CalendarView, _currentDate);
+            YearComboBox.Enabled = true;
         }
 
         //private async Task LoadingCalendar()

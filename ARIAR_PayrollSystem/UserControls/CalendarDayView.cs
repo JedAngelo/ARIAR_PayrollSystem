@@ -28,6 +28,8 @@ namespace ARIAR_PayrollSystem.UserControls
         public static void ShowCalendarDay(TableLayoutPanel viewParent, DateTime dateTime)
         {
             viewParent.Controls.Clear();
+            viewParent.Visible = false;
+
             var startOfMonth = new DateTime(dateTime.Year, dateTime.Month, 1);
             var convertedStartOfMonth = ((int)startOfMonth.DayOfWeek + 1);
             //Console.WriteLine("Start of month" +startOfMonth);
@@ -36,11 +38,13 @@ namespace ARIAR_PayrollSystem.UserControls
 
 
             var pastMonthDays = convertedStartOfMonth - 1;
-            
+            var calendarDays = new List<Control>();
+
             for (int cellIndex = 1; cellIndex <= 42; cellIndex++)
             {                
                 var days = startOfMonth.AddDays(-pastMonthDays);
                 var calendarDay = new CalendarDayView() { Dock = DockStyle.Fill };
+                calendarDay.DayLabel.Text = days.Day.ToString("d");                    
 
                 calendarDay._date = days.Date.ToString("yyyy-MM-dd");
 
@@ -48,25 +52,33 @@ namespace ARIAR_PayrollSystem.UserControls
                 {
                     calendarDay._currentMonth = true;
                     _ = calendarDay.GetAttendanceLog(calendarDay._date);
+                    if (days.Date == DateTime.Now.Date)
+                    {
+                        calendarDay.BackColor = Color.LightBlue;
+                    }
+                    if (days.Date.DayOfWeek == 0) calendarDay.BackColor = Color.Gray;
                 }
                 else
                 {
                     ApplyOutOfMonthStyle(calendarDay);
+                    if (days.Date.DayOfWeek == 0) calendarDay.BackColor = Color.Gray;
                 }
 
-                calendarDay.DayLabel.Text = days.Day.ToString("d");                    
                 pastMonthDays--;
 
-                viewParent.Controls.Add(calendarDay);
-
-                
-            }        
+                //viewParent.Controls.Add(calendarDay);
+                calendarDays.Add(calendarDay);
+            }
+            viewParent.Controls.AddRange(calendarDays.ToArray());
+            //Task.Delay(50);
+            viewParent.Visible = true;
         }
 
         private void Control_MouseEnter(object sender, EventArgs e)
         {
-            MainView.FillColor = Color.DodgerBlue;
-            //this.BackColor = Color.DodgerBlue;
+            if (_date == DateTime.Now.Date.ToString("yyyy-MM-dd")) return;
+            //guna2Panel1.FillColor = Color.DodgerBlue;
+            this.BackColor = Color.DodgerBlue;
             DayLabel.ForeColor = _currentMonth? Color.White : Color.LightGray;
             PresentCount.ForeColor = _currentMonth? Color.White : Color.LightGray;
             AbsentCount.ForeColor = _currentMonth? Color.White : Color.LightGray;
@@ -77,8 +89,9 @@ namespace ARIAR_PayrollSystem.UserControls
 
         private void Control_MouseLeave(object sender, EventArgs e)
         {
-            MainView.FillColor = Color.White;
-            //this.BackColor = Color.White;
+            if (_date == DateTime.Now.Date.ToString("yyyy-MM-dd")) return;
+            //guna2Panel1.FillColor = Color.White;
+            this.BackColor = Color.White;
             DayLabel.ForeColor = _currentMonth ? Color.FromArgb(69, 69, 69) : Color.FromArgb(200, 200, 200);
             PresentCount.ForeColor = _currentMonth ? Color.FromArgb(69, 69, 69) : Color.FromArgb(200, 200, 200);
             AbsentCount.ForeColor = _currentMonth ? Color.FromArgb(69, 69, 69) : Color.FromArgb(200, 200, 200);

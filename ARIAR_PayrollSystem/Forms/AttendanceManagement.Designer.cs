@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AttendanceManagementPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.MonthComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.YearComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -44,9 +47,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CalendarView = new System.Windows.Forms.TableLayoutPanel();
-            this.DateLabel = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.AttendanceManagementPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.CalendarPanel.SuspendLayout();
             this.DayOfTheWeekTLP.SuspendLayout();
             this.SuspendLayout();
@@ -54,18 +57,235 @@
             // AttendanceManagementPanel
             // 
             this.AttendanceManagementPanel.BackColor = System.Drawing.Color.White;
+            this.AttendanceManagementPanel.Controls.Add(this.panel1);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button2);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button3);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button1);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button4);
             this.AttendanceManagementPanel.Controls.Add(this.CalendarPanel);
-            this.AttendanceManagementPanel.Controls.Add(this.DateLabel);
             this.AttendanceManagementPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AttendanceManagementPanel.Location = new System.Drawing.Point(0, 0);
             this.AttendanceManagementPanel.Margin = new System.Windows.Forms.Padding(0);
             this.AttendanceManagementPanel.Name = "AttendanceManagementPanel";
             this.AttendanceManagementPanel.Size = new System.Drawing.Size(990, 599);
             this.AttendanceManagementPanel.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.MonthComboBox);
+            this.panel1.Controls.Add(this.YearComboBox);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(339, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(282, 44);
+            this.panel1.TabIndex = 18;
+            // 
+            // MonthComboBox
+            // 
+            this.MonthComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MonthComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.MonthComboBox.BorderThickness = 0;
+            this.MonthComboBox.DisabledState.FillColor = System.Drawing.Color.White;
+            this.MonthComboBox.DisabledState.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.MonthComboBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.MonthComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.MonthComboBox.DropDownHeight = 40;
+            this.MonthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MonthComboBox.FocusedColor = System.Drawing.Color.Empty;
+            this.MonthComboBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonthComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.MonthComboBox.IntegralHeight = false;
+            this.MonthComboBox.ItemHeight = 38;
+            this.MonthComboBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.MonthComboBox.ItemsAppearance.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.MonthComboBox.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.MonthComboBox.ItemsAppearance.SelectedFont = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.MonthComboBox.Location = new System.Drawing.Point(0, 0);
+            this.MonthComboBox.Margin = new System.Windows.Forms.Padding(0);
+            this.MonthComboBox.Name = "MonthComboBox";
+            this.MonthComboBox.Size = new System.Drawing.Size(172, 44);
+            this.MonthComboBox.StartIndex = 0;
+            this.MonthComboBox.TabIndex = 16;
+            this.MonthComboBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.MonthComboBox.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.MonthComboBox.SelectedIndexChanged += new System.EventHandler(this.MonthComboBox_SelectedIndexChanged);
+            // 
+            // YearComboBox
+            // 
+            this.YearComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.YearComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.YearComboBox.BorderThickness = 0;
+            this.YearComboBox.DisabledState.FillColor = System.Drawing.Color.White;
+            this.YearComboBox.DisabledState.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.YearComboBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.YearComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.YearComboBox.DropDownHeight = 40;
+            this.YearComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.YearComboBox.FocusedColor = System.Drawing.Color.Empty;
+            this.YearComboBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.YearComboBox.IntegralHeight = false;
+            this.YearComboBox.ItemHeight = 38;
+            this.YearComboBox.Items.AddRange(new object[] {
+            "1970",
+            "1971",
+            "1972",
+            "1973",
+            "1974",
+            "1975",
+            "1976",
+            "1977",
+            "1978",
+            "1979",
+            "1980",
+            "1981",
+            "1982",
+            "1983",
+            "1984",
+            "1985",
+            "1986",
+            "1987",
+            "1988",
+            "1989",
+            "1990",
+            "1991",
+            "1992",
+            "1993",
+            "1994",
+            "1995",
+            "1996",
+            "1997",
+            "1998",
+            "1999",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035",
+            "2036",
+            "2037",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2043",
+            "2044",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2050",
+            "2051",
+            "2052",
+            "2053",
+            "2054",
+            "2055",
+            "2056",
+            "2057",
+            "2058",
+            "2059",
+            "2060",
+            "2061",
+            "2062",
+            "2063",
+            "2064",
+            "2065",
+            "2066",
+            "2067",
+            "2068",
+            "2069",
+            "2070",
+            "2071",
+            "2072",
+            "2073",
+            "2074",
+            "2075",
+            "2076",
+            "2077",
+            "2078",
+            "2079",
+            "2080",
+            "2081",
+            "2082",
+            "2083",
+            "2084",
+            "2085",
+            "2086",
+            "2087",
+            "2088",
+            "2089",
+            "2090",
+            "2091",
+            "2092",
+            "2093",
+            "2094",
+            "2095",
+            "2096",
+            "2097",
+            "2098",
+            "2099"});
+            this.YearComboBox.ItemsAppearance.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.YearComboBox.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.YearComboBox.ItemsAppearance.SelectedFont = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.YearComboBox.Location = new System.Drawing.Point(154, 0);
+            this.YearComboBox.Margin = new System.Windows.Forms.Padding(0);
+            this.YearComboBox.MaxDropDownItems = 5;
+            this.YearComboBox.Name = "YearComboBox";
+            this.YearComboBox.Size = new System.Drawing.Size(128, 44);
+            this.YearComboBox.StartIndex = 0;
+            this.YearComboBox.TabIndex = 17;
+            this.YearComboBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.YearComboBox.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.YearComboBox.SelectedIndexChanged += new System.EventHandler(this.YearComboBox_SelectedIndexChanged);
             // 
             // guna2Button2
             // 
@@ -79,9 +299,8 @@
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button2.HoverState.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_right_double_line_1_;
             this.guna2Button2.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_right_double_line;
             this.guna2Button2.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button2.IndicateFocus = true;
@@ -109,9 +328,8 @@
             this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button3.HoverState.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_right_s_line_1_;
             this.guna2Button3.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_right_s_line;
             this.guna2Button3.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button3.IndicateFocus = true;
@@ -138,9 +356,8 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button1.HoverState.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_left_double_line_1_;
             this.guna2Button1.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_left_double_line;
             this.guna2Button1.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button1.IndicateFocus = true;
@@ -167,9 +384,8 @@
             this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button4.HoverState.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_left_s_line_1_;
             this.guna2Button4.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_left_s_line;
             this.guna2Button4.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button4.IndicateFocus = true;
@@ -209,7 +425,7 @@
             // 
             this.DayOfTheWeekTLP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DayOfTheWeekTLP.BackColor = System.Drawing.Color.White;
+            this.DayOfTheWeekTLP.BackColor = System.Drawing.SystemColors.Control;
             this.DayOfTheWeekTLP.ColumnCount = 7;
             this.DayOfTheWeekTLP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.DayOfTheWeekTLP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -338,7 +554,7 @@
             this.CalendarView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CalendarView.BackColor = System.Drawing.Color.White;
+            this.CalendarView.BackColor = System.Drawing.SystemColors.Control;
             this.CalendarView.ColumnCount = 7;
             this.CalendarView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.CalendarView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
@@ -361,19 +577,6 @@
             this.CalendarView.Size = new System.Drawing.Size(941, 441);
             this.CalendarView.TabIndex = 0;
             // 
-            // DateLabel
-            // 
-            this.DateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DateLabel.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.DateLabel.Location = new System.Drawing.Point(165, 20);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(656, 44);
-            this.DateLabel.TabIndex = 11;
-            this.DateLabel.Text = "JANUARY ( 2024 )";
-            this.DateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 8;
@@ -390,6 +593,7 @@
             this.Name = "AttendanceManagement";
             this.Text = "AttendanceLog";
             this.AttendanceManagementPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.CalendarPanel.ResumeLayout(false);
             this.DayOfTheWeekTLP.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -409,11 +613,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private System.Windows.Forms.Label DateLabel;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox MonthComboBox;
+        private Guna.UI2.WinForms.Guna2ComboBox YearComboBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }

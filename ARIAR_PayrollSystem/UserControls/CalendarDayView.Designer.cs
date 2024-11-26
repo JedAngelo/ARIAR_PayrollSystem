@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.DayLabel = new System.Windows.Forms.Label();
             this.PresentCount = new System.Windows.Forms.Label();
             this.AbsentCount = new System.Windows.Forms.Label();
             this.LeaveCount = new System.Windows.Forms.Label();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.MainView = new Guna.UI2.WinForms.Guna2Panel();
+            this.MainView = new System.Windows.Forms.Panel();
             this.MainView.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +47,7 @@
             this.DayLabel.Margin = new System.Windows.Forms.Padding(0);
             this.DayLabel.Name = "DayLabel";
             this.DayLabel.Padding = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.DayLabel.Size = new System.Drawing.Size(142, 33);
+            this.DayLabel.Size = new System.Drawing.Size(142, 27);
             this.DayLabel.TabIndex = 0;
             this.DayLabel.Text = "01";
             this.DayLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -66,7 +64,7 @@
             this.PresentCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.PresentCount.Image = global::ARIAR_PayrollSystem.Properties.Resources.circle_fill;
             this.PresentCount.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.PresentCount.Location = new System.Drawing.Point(0, 33);
+            this.PresentCount.Location = new System.Drawing.Point(0, 27);
             this.PresentCount.Margin = new System.Windows.Forms.Padding(0);
             this.PresentCount.Name = "PresentCount";
             this.PresentCount.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
@@ -87,7 +85,7 @@
             this.AbsentCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.AbsentCount.Image = global::ARIAR_PayrollSystem.Properties.Resources.circle_fill_1_;
             this.AbsentCount.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.AbsentCount.Location = new System.Drawing.Point(0, 67);
+            this.AbsentCount.Location = new System.Drawing.Point(0, 61);
             this.AbsentCount.Margin = new System.Windows.Forms.Padding(0);
             this.AbsentCount.Name = "AbsentCount";
             this.AbsentCount.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
@@ -108,7 +106,7 @@
             this.LeaveCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.LeaveCount.Image = global::ARIAR_PayrollSystem.Properties.Resources.circle_fill_2_;
             this.LeaveCount.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.LeaveCount.Location = new System.Drawing.Point(0, 50);
+            this.LeaveCount.Location = new System.Drawing.Point(0, 44);
             this.LeaveCount.Margin = new System.Windows.Forms.Padding(0);
             this.LeaveCount.Name = "LeaveCount";
             this.LeaveCount.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
@@ -123,21 +121,15 @@
             // MainView
             // 
             this.MainView.BackColor = System.Drawing.Color.Transparent;
-            this.MainView.BorderRadius = 5;
             this.MainView.Controls.Add(this.AbsentCount);
             this.MainView.Controls.Add(this.LeaveCount);
             this.MainView.Controls.Add(this.PresentCount);
             this.MainView.Controls.Add(this.DayLabel);
             this.MainView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainView.FillColor = System.Drawing.Color.White;
             this.MainView.Location = new System.Drawing.Point(2, 2);
             this.MainView.Name = "MainView";
-            this.MainView.ShadowDecoration.BorderRadius = 10;
-            this.MainView.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.MainView.ShadowDecoration.Depth = 15;
-            this.MainView.ShadowDecoration.Enabled = true;
             this.MainView.Size = new System.Drawing.Size(142, 98);
-            this.MainView.TabIndex = 10;
+            this.MainView.TabIndex = 11;
             this.MainView.Click += new System.EventHandler(this.Control_Click);
             this.MainView.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
             this.MainView.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
@@ -146,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.MainView);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CalendarDayView";
@@ -163,7 +155,6 @@
         private System.Windows.Forms.Label LeaveCount;
         private System.Windows.Forms.Label AbsentCount;
         private System.Windows.Forms.Label PresentCount;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Panel MainView;
+        private System.Windows.Forms.Panel MainView;
     }
 }

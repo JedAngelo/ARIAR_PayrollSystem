@@ -181,11 +181,23 @@
     <Compile Include="Forms\Modals\ApiSwitcher.Designer.cs">
       <DependentUpon>ApiSwitcher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformation.Designer.cs">
+      <DependentUpon>PersonalInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modals\CustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Modals\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\CanvasModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\CanvasModal.Designer.cs">
+      <DependentUpon>CanvasModal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Modals\FingerPrintEnrollment.cs">
       <SubType>Form</SubType>
@@ -342,8 +354,14 @@
     <EmbeddedResource Include="Forms\Modals\ApiSwitcher.resx">
       <DependentUpon>ApiSwitcher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ChildrenModal\PersonalInformation.resx">
+      <DependentUpon>PersonalInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\CanvasModal.resx">
+      <DependentUpon>CanvasModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\FingerPrintEnrollment.resx">
       <DependentUpon>FingerPrintEnrollment.cs</DependentUpon>
