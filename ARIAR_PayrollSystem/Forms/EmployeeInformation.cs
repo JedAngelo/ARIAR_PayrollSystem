@@ -13,6 +13,7 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace ARIAR_PayrollSystem.Forms
@@ -26,17 +27,21 @@ namespace ARIAR_PayrollSystem.Forms
         private List<object> _personalData;
         private EmployeeView _employeeView;
 
+
+        private const int SB_BOTH = 3; // Both scroll bars
+
         public EmployeeInformation(MainForm mainForm)
         {
             InitializeComponent();
             _mainForm = mainForm;
             _employeeDetails = new EmployeeDetails();
-            Switcher.SwitchGunaTabGroup(guna2TabControl1, _employeeDetails.guna2TabControl2);
             //DisplayPersonalInfo();
             TimeLabel.Text = DateTime.Now.ToString("t");
             DateLabel.Text = DateTime.Now.Date.ToString("MMMM d, yyyy");
             TimerProcess.Start();
             PopulateEmployeeTable();
+            EmployeeTableView.VerticalScroll.Visible = false;
+            EmployeeTableView.VerticalScroll.Maximum = 0;
 
 
         }
@@ -67,15 +72,38 @@ namespace ARIAR_PayrollSystem.Forms
         //    catch (Exception ex)
         //    {
         //        CustomMessageBox.Show(ex.Message);
-                
+
         //    }
         //}
+        private async void FillEmployeeView(List<PersonalInformationDisplayDto> data)
+        {
+            try
+            {
+                ProgressCircle.Visible = true;
+                ProgressCircle.Value = 0;
+                ProgressCircle.Minimum = 0;
+                ProgressCircle.Maximum = data.Count;
+                await EmployeeView.DataViewAsync(data, EmployeeTableView);
+
+                for (int i = 0; i < data.Count; i++)
+                {
+                    ProgressCircle.Value = i + 1;
+                    await Task.Delay(50);
+                }
+                ProgressCircle.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
 
         private async void PopulateEmployeeTable()
         {
             try
             {
-                _employeeData = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformationDisplayDto>>>(ApiHelper.Employee.GetPersonalInfo);
+                _employeeData = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformationDisplayDto>>>(ApiEndpointHelper.Employee.GetPersonalInfo);
                 LoadingLabel.Visible = true;
                 EmployeeTableView.Visible = false;
 
@@ -91,20 +119,8 @@ namespace ARIAR_PayrollSystem.Forms
 
                 if (_employeeData.isSuccess)
                 {
-                    ProgressCircle.Visible = true;
-                    ProgressCircle.Value = 0;
-                    ProgressCircle.Minimum = 0;
-                    ProgressCircle.Maximum = _employeeData.Data.Count;
-                    await EmployeeView.DataViewAsync(_employeeData.Data, EmployeeTableView);
 
-                    for (int i = 0; i < _employeeData.Data.Count; i++)
-                    {
-                        ProgressCircle.Value = i + 1;
-                        await Task.Delay(50);
-                    }
-                    EmployeeCount.Text = _employeeData.Data.Count.ToString();
-                    ProgressCircle.Visible = false;
-
+                    FillEmployeeView(_employeeData.Data);
                 }
                 else
                 {
@@ -171,29 +187,71 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
+            var filter = SearchBox.Text.ToLower();
             //FilterPersonnel(guna2TextBox1.Text);
-            
+            if (String.IsNullOrEmpty(filter))
+            {
+                PopulateEmployeeTable();
+                return;
+            }
+            var filteredEmployeeData = _employeeData.Data.Where
+            (
+                x => $"{x.FirstName} {(String.IsNullOrEmpty(x.MiddleName) ? "" : $"{x.MiddleName[0]}. ")}{x.LastName}".ToLower().Contains(filter)
+            ).ToList();
+            FillEmployeeView(filteredEmployeeData);
         }
+
+
+
 
         private void EmployeeDataGrid_Leave(object sender, EventArgs e)
         {
             //EmployeeDataGrid.ClearSelection();
         }
-
-        private void guna2VScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
+        
 
         private void EmployeeInformation_Load(object sender, EventArgs e)
         {
-
+   
 
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             PopulateEmployeeTable();
+        }
+
+        private async void EmployeeTableView_SizeChanged(object sender, EventArgs e)
+        {
+            var controls = EmployeeTableView.Controls.OfType<Control>().ToList();
+
+            await Task.Run(() =>
+            {
+                foreach (var control in controls)
+                {
+                    // Calculate the new width
+                    int newWidth = EmployeeTableView.ClientSize.Width - 20;
+
+                    // Update the control on the UI thread
+                    EmployeeTableView.Invoke((Action)(() =>
+                    {
+                        control.Width = newWidth;
+                    }));
+                }
+            });
+            EmployeeViewScrollBar.Visible = true;
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void AddEmployeeButton_Click(object sender, EventArgs e)
+        {
+            await Task.Delay(200);
+            EmployeeCanvasModal _canvasModal = new EmployeeCanvasModal();
+            ControlsHelper.ShowModal(_mainForm, _canvasModal);
         }
     }
 }

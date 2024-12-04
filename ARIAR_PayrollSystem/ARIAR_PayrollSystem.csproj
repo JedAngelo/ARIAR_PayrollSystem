@@ -133,6 +133,12 @@
     <Compile Include="Forms\AttendanceManagement.Designer.cs">
       <DependentUpon>AttendanceManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BiometricAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,11 +187,29 @@
     <Compile Include="Forms\Modals\ApiSwitcher.Designer.cs">
       <DependentUpon>ApiSwitcher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformation.cs">
+    <Compile Include="Forms\Modals\ChildrenModal\ContactInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformation.Designer.cs">
-      <DependentUpon>PersonalInformation.cs</DependentUpon>
+    <Compile Include="Forms\Modals\ChildrenModal\ContactInformationForm.Designer.cs">
+      <DependentUpon>ContactInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\EmploymentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\EmploymentDetails.Designer.cs">
+      <DependentUpon>EmploymentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformationForm.Designer.cs">
+      <DependentUpon>PersonalInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ConsoleLogsModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ConsoleLogsModal.Designer.cs">
+      <DependentUpon>ConsoleLogsModal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Modals\CustomMessageBox.cs">
       <SubType>Form</SubType>
@@ -193,11 +217,17 @@
     <Compile Include="Forms\Modals\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Modals\CanvasModal.cs">
+    <Compile Include="Forms\Modals\EmployeeCanvasModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Modals\CanvasModal.Designer.cs">
-      <DependentUpon>CanvasModal.cs</DependentUpon>
+    <Compile Include="Forms\Modals\EmployeeCanvasModal.Designer.cs">
+      <DependentUpon>EmployeeCanvasModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeInformationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeInformationView.Designer.cs">
+      <DependentUpon>EmployeeInformationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Modals\FingerPrintEnrollment.cs">
       <SubType>Form</SubType>
@@ -207,6 +237,12 @@
     </Compile>
     <Compile Include="Forms\Modals\GunaMessage.cs" />
     <Compile Include="Forms\Modals\ModalHelpers\ModalHelper.cs" />
+    <Compile Include="Forms\Modals\PersonalInformationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\PersonalInformationView.Designer.cs">
+      <DependentUpon>PersonalInformationView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modals\TestModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,7 +291,7 @@
     <Compile Include="Forms\ToastNotify.Designer.cs">
       <DependentUpon>ToastNotify.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ApiHelper.cs" />
+    <Compile Include="Helpers\ApiEndpointHelper.cs" />
     <Compile Include="Helpers\ControlsHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Helpers\SidebarHelper.cs" />
@@ -297,6 +333,9 @@
     <Compile Include="UserControls\CalendarDayView.Designer.cs">
       <DependentUpon>CalendarDayView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CustomFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -308,6 +347,12 @@
     </Compile>
     <Compile Include="UserControls\EmployeeView.Designer.cs">
       <DependentUpon>EmployeeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PayrollView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PayrollView.Designer.cs">
+      <DependentUpon>PayrollView.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SearchBar.cs">
       <SubType>UserControl</SubType>
@@ -321,6 +366,9 @@
     <Compile Include="UserControls\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\WaitScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -329,6 +377,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\AttendanceManagement.resx">
       <DependentUpon>AttendanceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BiometricAttendance.resx">
       <DependentUpon>BiometricAttendance.cs</DependentUpon>
@@ -354,17 +405,32 @@
     <EmbeddedResource Include="Forms\Modals\ApiSwitcher.resx">
       <DependentUpon>ApiSwitcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Modals\ChildrenModal\PersonalInformation.resx">
-      <DependentUpon>PersonalInformation.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Modals\ChildrenModal\ContactInformationForm.resx">
+      <DependentUpon>ContactInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ChildrenModal\EmploymentDetails.resx">
+      <DependentUpon>EmploymentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ChildrenModal\PersonalInformationForm.resx">
+      <DependentUpon>PersonalInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ConsoleLogsModal.resx">
+      <DependentUpon>ConsoleLogsModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Modals\CanvasModal.resx">
-      <DependentUpon>CanvasModal.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Modals\EmployeeCanvasModal.resx">
+      <DependentUpon>EmployeeCanvasModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\EmployeeInformationView.resx">
+      <DependentUpon>EmployeeInformationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\FingerPrintEnrollment.resx">
       <DependentUpon>FingerPrintEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\PersonalInformationView.resx">
+      <DependentUpon>PersonalInformationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modals\TestModal.resx">
       <DependentUpon>TestModal.cs</DependentUpon>
@@ -410,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\EmployeeView.resx">
       <DependentUpon>EmployeeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PayrollView.resx">
+      <DependentUpon>PayrollView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>
@@ -602,6 +671,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\circle-fill%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-lens-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-3-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-bin-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-pin-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-s-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-s-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_clock_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-circle-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-circle-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-4-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-line.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

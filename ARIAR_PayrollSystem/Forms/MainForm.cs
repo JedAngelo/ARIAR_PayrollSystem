@@ -15,6 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using System.Management;
 using static DPUruNet.Fid;
 
 namespace ARIAR_PayrollSystem.Forms
@@ -27,14 +28,15 @@ namespace ARIAR_PayrollSystem.Forms
         private Test _testForm;
         private AttendanceManagement _attendanceManagement;
         private bool IsBiometricLoading = false;
-
         private SplashScreen _splashScreen;
-
         public System.Threading.Timer _ReaderDetection;
-
         private bool _isSidebarCol = false;
         private bool isFullscreen = true;
         private bool _isReaderReset = false;
+        private ManagementEventWatcher connectWatcher;
+        private ManagementEventWatcher disconnectWatcher;
+        private ConsoleLogsModal _consoleLogs;
+
 
         public MainForm()
         {
@@ -46,20 +48,64 @@ namespace ARIAR_PayrollSystem.Forms
             _systemMaintenance = new SystemMaintenance(this);
             _attendanceManagement = new AttendanceManagement(this);
             _splashScreen = new SplashScreen();
+            _consoleLogs = new ConsoleLogsModal();
+            _consoleLogs.Show();
+            _consoleLogs.Hide();
 
             //ReaderDetector.Start();
 
-            _ReaderDetection = new System.Threading.Timer(ReaderDetectionEvent, null, 1000, 1000);
+            //_ReaderDetection = new System.Threading.Timer(ReaderDetectionEvent, null, 1000, 1000);
 
             //SetCurrentReader();
             //this.Controls.Add(_splashScreen.SplashScreenTLP);
             //this.tableLayoutPanel1.Visible = false;
 
             //this.MinimumSize = new Size(1422, 888);
+            // Initialize the ManagementEventWatchers for connect and disconnect events
+            connectWatcher = new ManagementEventWatcher();
+            disconnectWatcher = new ManagementEventWatcher();
+
+            // Set up the event for USB device connection
+            connectWatcher.EventArrived += new EventArrivedEventHandler(DeviceConnected);
+            connectWatcher.Query = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 2");
+
+            // Set up the event for USB device disconnection
+            disconnectWatcher.EventArrived += new EventArrivedEventHandler(DeviceDisconnected);
+            disconnectWatcher.Query = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 3");
+            StartListening();
 
 
         }
-        
+        public void StartListening()
+        {
+            connectWatcher.Start();
+            disconnectWatcher.Start();
+            Console.WriteLine("Listening for USB device connect/disconnect events...");
+
+        }
+
+        // Event handler for device connection
+        private async void DeviceConnected(object sender, EventArrivedEventArgs e)
+        {
+            Console.WriteLine("USB Device Connected!");
+            if (ReaderCollection.GetReaders().Count == 0)
+            {
+                await Task.Delay(250);
+                Invoke((Action)(() => SetCurrentReader()));
+            }
+        }
+
+        // Event handler for device disconnection
+        private void DeviceDisconnected(object sender, EventArrivedEventArgs e)
+        {
+            Console.WriteLine("USB Device Disconnected!");
+            if (ReaderCollection.GetReaders().Count < 1)
+            {
+                currentReader = null;
+                Invoke((Action)(() => SetCurrentReader()));
+            }
+        }
+
         private void DisableButtons()
         {
             EmployeeButton.Enabled = false;
@@ -147,6 +193,11 @@ namespace ARIAR_PayrollSystem.Forms
                 var switcher = new ApiSwitcher();
                 ControlsHelper.ShowModal(this, switcher);
             }
+            if (e.KeyCode == Keys.F4)
+            {
+                if (!_consoleLogs.Visible) _consoleLogs.Show();
+            }
+
             transition.Show(SwitchPanel);
         }
 
@@ -160,7 +211,8 @@ namespace ARIAR_PayrollSystem.Forms
             //Switcher.SwitchPanel(SwitchPanel, _systemMaintenance);
             //Switcher.SwitchPanel(SwitchPanel, _biometricAttendance);
             transition.Show(SwitchPanel);
-            
+
+            Invoke((Action)(() => SetCurrentReader()));
 
             //waitScreen1.Visible = false;
 
@@ -192,10 +244,6 @@ namespace ARIAR_PayrollSystem.Forms
 
         private async void LogoutBtn_Click(object sender, EventArgs e)
         {
-            AutoResetEvent waitHandle = new AutoResetEvent(false);
-            _ReaderDetection?.Dispose(waitHandle);
-            waitHandle.WaitOne();
-            _ReaderDetection = null;
             await Task.Delay(250);
             Application.Exit();
             //this.Close();
@@ -285,6 +333,7 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void SetCurrentReader()
         {
+            Console.WriteLine("Detecting for fingerprint reader...");
             ReaderCollection readers = ReaderCollection.GetReaders();
 
             if (readers.Count > 0)
@@ -443,6 +492,7 @@ namespace ARIAR_PayrollSystem.Forms
             catch (Exception ex)
             {
                 GunaMessage.Error($"Error: {ex.Message}", "ERROR");
+                Console.WriteLine($"Error: {ex.Message}");
                 return false;
             }
         }

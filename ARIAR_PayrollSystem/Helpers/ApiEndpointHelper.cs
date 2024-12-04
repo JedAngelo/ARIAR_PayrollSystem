@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARIAR_PayrollSystem.Helpers
 {
-    public static class ApiHelper
+    public static class ApiEndpointHelper
     {
         public static class Employee
         {

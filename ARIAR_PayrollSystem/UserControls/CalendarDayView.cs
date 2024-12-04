@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -76,7 +77,8 @@ namespace ARIAR_PayrollSystem.UserControls
 
         private void Control_MouseEnter(object sender, EventArgs e)
         {
-            if (_date == DateTime.Now.Date.ToString("yyyy-MM-dd")) return;
+            var dateConverted = DateTime.ParseExact(_date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            if (_date == DateTime.Now.Date.ToString("yyyy-MM-dd") || dateConverted.Date.DayOfWeek == 0) return;
             //guna2Panel1.FillColor = Color.DodgerBlue;
             this.BackColor = Color.DodgerBlue;
             DayLabel.ForeColor = _currentMonth? Color.White : Color.LightGray;
@@ -89,7 +91,8 @@ namespace ARIAR_PayrollSystem.UserControls
 
         private void Control_MouseLeave(object sender, EventArgs e)
         {
-            if (_date == DateTime.Now.Date.ToString("yyyy-MM-dd")) return;
+            var dateConverted = DateTime.ParseExact(_date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            if (_date == DateTime.Now.Date.ToString("yyyy-MM-dd") || dateConverted.Date.DayOfWeek == 0) return;
             //guna2Panel1.FillColor = Color.White;
             this.BackColor = Color.White;
             DayLabel.ForeColor = _currentMonth ? Color.FromArgb(69, 69, 69) : Color.FromArgb(200, 200, 200);
@@ -108,7 +111,7 @@ namespace ARIAR_PayrollSystem.UserControls
         {
             try
             {
-                var logs = await HttpHelper.GetAsync<ApiResponse<LogCountDto>>($"{ApiHelper.Attendance.GetLogCount}{date}");
+                var logs = await HttpHelper.GetAsync<ApiResponse<LogCountDto>>($"{ApiEndpointHelper.Attendance.GetLogCount}{date}");
 
                 if (logs.Data == null)
                 {

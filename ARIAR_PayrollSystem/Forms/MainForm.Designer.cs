@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation6 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SidebarPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MenuButton = new Guna.UI2.WinForms.Guna2Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.SwitchPanel = new System.Windows.Forms.Panel();
+            this.transition = new Guna.UI2.WinForms.Guna2Transition();
+            this.MenuButton = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.EmployeeButton = new Guna.UI2.WinForms.Guna2Button();
             this.BiometricButton = new Guna.UI2.WinForms.Guna2Button();
@@ -46,15 +48,12 @@
             this.BackupButton = new Guna.UI2.WinForms.Guna2Button();
             this.SystemButton = new Guna.UI2.WinForms.Guna2Button();
             this.LogoutButton = new Guna.UI2.WinForms.Guna2Button();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.SwitchPanel = new System.Windows.Forms.Panel();
-            this.transition = new Guna.UI2.WinForms.Guna2Transition();
             this.tableLayoutPanel1.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.LogoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -106,6 +105,77 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(247, 700);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // LogoPanel
+            // 
+            this.LogoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogoPanel.Controls.Add(this.guna2Separator1);
+            this.LogoPanel.Controls.Add(this.pictureBox1);
+            this.transition.SetDecoration(this.LogoPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.LogoPanel.Location = new System.Drawing.Point(3, 49);
+            this.LogoPanel.Name = "LogoPanel";
+            this.LogoPanel.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.LogoPanel.Size = new System.Drawing.Size(245, 112);
+            this.LogoPanel.TabIndex = 1;
+            // 
+            // guna2Separator1
+            // 
+            this.transition.SetDecoration(this.guna2Separator1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Separator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Separator1.FillColor = System.Drawing.Color.White;
+            this.guna2Separator1.FillThickness = 2;
+            this.guna2Separator1.Location = new System.Drawing.Point(8, 86);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(229, 26);
+            this.guna2Separator1.TabIndex = 0;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.BackColor = System.Drawing.Color.White;
+            this.MainPanel.Controls.Add(this.SwitchPanel);
+            this.transition.SetDecoration(this.MainPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(247, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1087, 772);
+            this.MainPanel.TabIndex = 1;
+            // 
+            // SwitchPanel
+            // 
+            this.SwitchPanel.BackColor = System.Drawing.Color.White;
+            this.transition.SetDecoration(this.SwitchPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
+            this.SwitchPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.SwitchPanel.Name = "SwitchPanel";
+            this.SwitchPanel.Size = new System.Drawing.Size(1087, 772);
+            this.SwitchPanel.TabIndex = 0;
+            this.SwitchPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.SwitchPanel_ControlAdded);
+            this.SwitchPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SwitchPanel_Paint);
+            // 
+            // transition
+            // 
+            this.transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
+            this.transition.Cursor = null;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 0;
+            animation6.Padding = new System.Windows.Forms.Padding(0);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 0F;
+            animation6.TransparencyCoeff = 1F;
+            this.transition.DefaultAnimation = animation6;
+            this.transition.TimeStep = 0.1F;
+            // 
             // MenuButton
             // 
             this.MenuButton.Animated = true;
@@ -130,30 +200,6 @@
             this.MenuButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MenuButton.TextOffset = new System.Drawing.Point(10, 0);
             this.MenuButton.Click += new System.EventHandler(this.MenuBtn_Click);
-            // 
-            // LogoPanel
-            // 
-            this.LogoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogoPanel.Controls.Add(this.guna2Separator1);
-            this.LogoPanel.Controls.Add(this.pictureBox1);
-            this.transition.SetDecoration(this.LogoPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.LogoPanel.Location = new System.Drawing.Point(3, 49);
-            this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.LogoPanel.Size = new System.Drawing.Size(245, 112);
-            this.LogoPanel.TabIndex = 1;
-            // 
-            // guna2Separator1
-            // 
-            this.transition.SetDecoration(this.guna2Separator1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Separator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Separator1.FillColor = System.Drawing.Color.White;
-            this.guna2Separator1.FillThickness = 2;
-            this.guna2Separator1.Location = new System.Drawing.Point(8, 86);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(229, 26);
-            this.guna2Separator1.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -187,7 +233,7 @@
             this.EmployeeButton.Name = "EmployeeButton";
             this.EmployeeButton.Size = new System.Drawing.Size(248, 55);
             this.EmployeeButton.TabIndex = 19;
-            this.EmployeeButton.Text = "Employee Dashboard";
+            this.EmployeeButton.Text = "Employee";
             this.EmployeeButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.EmployeeButton.TextOffset = new System.Drawing.Point(10, 0);
             this.EmployeeButton.Click += new System.EventHandler(this.EmployeeInformationBtn_Click);
@@ -212,7 +258,7 @@
             this.BiometricButton.Name = "BiometricButton";
             this.BiometricButton.Size = new System.Drawing.Size(248, 55);
             this.BiometricButton.TabIndex = 20;
-            this.BiometricButton.Text = "Biometric Attendance";
+            this.BiometricButton.Text = "Attendance";
             this.BiometricButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BiometricButton.TextOffset = new System.Drawing.Point(10, 0);
             this.BiometricButton.Click += new System.EventHandler(this.BiometricAttendanceBtn_Click);
@@ -229,7 +275,7 @@
             this.AttendanceButton.FillColor = System.Drawing.Color.SteelBlue;
             this.AttendanceButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.AttendanceButton.ForeColor = System.Drawing.Color.White;
-            this.AttendanceButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.schedule_logo1;
+            this.AttendanceButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.calendar_clock_logo;
             this.AttendanceButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AttendanceButton.ImageOffset = new System.Drawing.Point(3, 0);
             this.AttendanceButton.ImageSize = new System.Drawing.Size(25, 25);
@@ -238,7 +284,7 @@
             this.AttendanceButton.Name = "AttendanceButton";
             this.AttendanceButton.Size = new System.Drawing.Size(248, 55);
             this.AttendanceButton.TabIndex = 21;
-            this.AttendanceButton.Text = "Attendance Management";
+            this.AttendanceButton.Text = "Work Logs";
             this.AttendanceButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AttendanceButton.TextOffset = new System.Drawing.Point(10, 0);
             this.AttendanceButton.Click += new System.EventHandler(this.AttendanceButton_Click);
@@ -289,7 +335,7 @@
             this.ReportButton.Name = "ReportButton";
             this.ReportButton.Size = new System.Drawing.Size(248, 55);
             this.ReportButton.TabIndex = 23;
-            this.ReportButton.Text = "Report";
+            this.ReportButton.Text = "Reports";
             this.ReportButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ReportButton.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -339,7 +385,7 @@
             this.SystemButton.Name = "SystemButton";
             this.SystemButton.Size = new System.Drawing.Size(248, 55);
             this.SystemButton.TabIndex = 25;
-            this.SystemButton.Text = "System Maintenance";
+            this.SystemButton.Text = "Maintenance";
             this.SystemButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SystemButton.TextOffset = new System.Drawing.Point(10, 0);
             this.SystemButton.Click += new System.EventHandler(this.SystemMaintenanceBtn_Click);
@@ -371,53 +417,6 @@
             this.LogoutButton.TextOffset = new System.Drawing.Point(10, 0);
             this.LogoutButton.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
-            // MainPanel
-            // 
-            this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.Controls.Add(this.SwitchPanel);
-            this.transition.SetDecoration(this.MainPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(247, 0);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1087, 772);
-            this.MainPanel.TabIndex = 1;
-            // 
-            // SwitchPanel
-            // 
-            this.SwitchPanel.BackColor = System.Drawing.Color.White;
-            this.transition.SetDecoration(this.SwitchPanel, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
-            this.SwitchPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.SwitchPanel.Name = "SwitchPanel";
-            this.SwitchPanel.Size = new System.Drawing.Size(1087, 772);
-            this.SwitchPanel.TabIndex = 0;
-            this.SwitchPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.SwitchPanel_ControlAdded);
-            this.SwitchPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SwitchPanel_Paint);
-            // 
-            // transition
-            // 
-            this.transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
-            this.transition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.transition.DefaultAnimation = animation1;
-            this.transition.TimeStep = 0.1F;           
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -441,8 +440,8 @@
             this.SidebarPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

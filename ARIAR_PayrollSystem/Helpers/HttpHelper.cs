@@ -65,7 +65,7 @@ namespace ARIAR_PayrollSystem.Helpers
             {
                 httpClient.BaseAddress = new Uri(_apiBasicUri);
                 var serializedContent = JsonConvert.SerializeObject(contentValue);
-                Console.WriteLine(serializedContent);
+                Console.WriteLine(JsonConvert.SerializeObject(contentValue, Formatting.Indented));
                 Console.WriteLine("Serialized Content: " + serializedContent);
                 var content = new StringContent(JsonConvert.SerializeObject(contentValue), Encoding.UTF8, "application/json");
                 httpClient.DefaultRequestHeaders.Add("AccessToken", accessToken);

@@ -66,14 +66,14 @@ namespace ARIAR_PayrollSystem.Forms
                     Password = PasswordTextBox.Text
                 };
 
-                var _loginResult = await HttpHelper.PostAsync<ApiResponse<LoginModelDto>, dynamic>(ApiHelper.Auth.Login, _loginInfo);
+                var _loginResult = await HttpHelper.PostAsync<ApiResponse<LoginModelDto>, dynamic>(ApiEndpointHelper.Auth.Login, _loginInfo);
                 if (_loginResult.isSuccess)
                 {
                     HttpHelper.SetAccessToken(_loginResult.Data.Token);
-                    GunaMessage.Info("Successfully login!", "SUCCESS");
 
                     //CustomMessageBox.Show("Successfully login!");//TBD
                     mainForm.Show();
+                    GunaMessage.Info("Successfully login!", "SUCCESS");
                     this.Hide();
                 }
                 else

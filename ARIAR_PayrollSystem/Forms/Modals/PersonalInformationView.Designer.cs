@@ -1,6 +1,6 @@
-﻿namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
+﻿namespace ARIAR_PayrollSystem.Forms.Modals
 {
-    partial class PersonalInformation
+    partial class PersonalInformationView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // PersonalInformation
+            // PersonalInformationView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1064, 542);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PersonalInformation";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PersonalInformation";
+            this.Name = "PersonalInformationView";
+            this.Text = "PersonalInformationView";
             this.ResumeLayout(false);
 
         }

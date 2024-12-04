@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AttendanceManagementPanel = new System.Windows.Forms.Panel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.EmployeeViewScrollBar = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.ReportView = new ARIAR_PayrollSystem.UserControls.CustomFlowLayoutPanel();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MonthComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.YearComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -47,28 +54,192 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CalendarView = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.AttendanceManagementPanel.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.CalendarPanel.SuspendLayout();
             this.DayOfTheWeekTLP.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2Panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // AttendanceManagementPanel
             // 
             this.AttendanceManagementPanel.BackColor = System.Drawing.Color.White;
+            this.AttendanceManagementPanel.Controls.Add(this.guna2TextBox1);
+            this.AttendanceManagementPanel.Controls.Add(this.guna2Panel5);
             this.AttendanceManagementPanel.Controls.Add(this.panel1);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button2);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button3);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button1);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Button4);
             this.AttendanceManagementPanel.Controls.Add(this.CalendarPanel);
+            this.AttendanceManagementPanel.Controls.Add(this.tableLayoutPanel2);
             this.AttendanceManagementPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AttendanceManagementPanel.Location = new System.Drawing.Point(0, 0);
             this.AttendanceManagementPanel.Margin = new System.Windows.Forms.Padding(0);
             this.AttendanceManagementPanel.Name = "AttendanceManagementPanel";
             this.AttendanceManagementPanel.Size = new System.Drawing.Size(990, 599);
             this.AttendanceManagementPanel.TabIndex = 0;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox1.BorderRadius = 8;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.guna2TextBox1.IconRight = global::ARIAR_PayrollSystem.Properties.Resources.search_line__1_;
+            this.guna2TextBox1.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.guna2TextBox1.Location = new System.Drawing.Point(23, 23);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "Search";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.ShadowDecoration.BorderRadius = 11;
+            this.guna2TextBox1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2TextBox1.ShadowDecoration.Depth = 55;
+            this.guna2TextBox1.ShadowDecoration.Enabled = true;
+            this.guna2TextBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.guna2TextBox1.Size = new System.Drawing.Size(340, 31);
+            this.guna2TextBox1.TabIndex = 20;
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel5.BorderRadius = 8;
+            this.guna2Panel5.Controls.Add(this.EmployeeViewScrollBar);
+            this.guna2Panel5.Controls.Add(this.guna2Button5);
+            this.guna2Panel5.Controls.Add(this.guna2Separator1);
+            this.guna2Panel5.Controls.Add(this.ReportView);
+            this.guna2Panel5.Controls.Add(this.label8);
+            this.guna2Panel5.FillColor = System.Drawing.Color.White;
+            this.guna2Panel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Panel5.Location = new System.Drawing.Point(23, 63);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel5.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel5.ShadowDecoration.Depth = 15;
+            this.guna2Panel5.ShadowDecoration.Enabled = true;
+            this.guna2Panel5.Size = new System.Drawing.Size(340, 510);
+            this.guna2Panel5.TabIndex = 19;
+            this.guna2Panel5.UseTransparentBackground = true;
+            // 
+            // EmployeeViewScrollBar
+            // 
+            this.EmployeeViewScrollBar.BindingContainer = this.ReportView;
+            this.EmployeeViewScrollBar.BorderRadius = 3;
+            this.EmployeeViewScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.EmployeeViewScrollBar.FillColor = System.Drawing.Color.White;
+            this.EmployeeViewScrollBar.InUpdate = false;
+            this.EmployeeViewScrollBar.LargeChange = 10;
+            this.EmployeeViewScrollBar.Location = new System.Drawing.Point(328, 36);
+            this.EmployeeViewScrollBar.Margin = new System.Windows.Forms.Padding(0);
+            this.EmployeeViewScrollBar.MaximumSize = new System.Drawing.Size(12, 0);
+            this.EmployeeViewScrollBar.MinimumSize = new System.Drawing.Size(12, 0);
+            this.EmployeeViewScrollBar.Name = "EmployeeViewScrollBar";
+            this.EmployeeViewScrollBar.ScrollbarSize = 12;
+            this.EmployeeViewScrollBar.Size = new System.Drawing.Size(12, 474);
+            this.EmployeeViewScrollBar.TabIndex = 5;
+            this.EmployeeViewScrollBar.ThumbColor = System.Drawing.Color.SlateGray;
+            this.EmployeeViewScrollBar.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
+            // ReportView
+            // 
+            this.ReportView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReportView.AutoScroll = true;
+            this.ReportView.BackColor = System.Drawing.Color.White;
+            this.ReportView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.ReportView.Location = new System.Drawing.Point(0, 36);
+            this.ReportView.Margin = new System.Windows.Forms.Padding(0);
+            this.ReportView.Name = "ReportView";
+            this.ReportView.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.ReportView.Size = new System.Drawing.Size(340, 474);
+            this.ReportView.TabIndex = 1;
+            this.ReportView.Visible = false;
+            this.ReportView.WrapContents = false;
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button5.Animated = true;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Image = global::ARIAR_PayrollSystem.Properties.Resources.refresh_line_2_;
+            this.guna2Button5.ImageSize = new System.Drawing.Size(24, 24);
+            this.guna2Button5.Location = new System.Drawing.Point(300, 0);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(40, 35);
+            this.guna2Button5.TabIndex = 4;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Separator1.FillColor = System.Drawing.Color.SlateGray;
+            this.guna2Separator1.Location = new System.Drawing.Point(0, 30);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(340, 10);
+            this.guna2Separator1.TabIndex = 2;
+            this.guna2Separator1.UseTransparentBackground = true;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(340, 36);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Empoyee Logs";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -77,7 +248,7 @@
             this.panel1.Controls.Add(this.MonthComboBox);
             this.panel1.Controls.Add(this.YearComboBox);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(339, 20);
+            this.panel1.Location = new System.Drawing.Point(521, 101);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 44);
             this.panel1.TabIndex = 18;
@@ -304,7 +475,7 @@
             this.guna2Button2.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_right_double_line;
             this.guna2Button2.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button2.IndicateFocus = true;
-            this.guna2Button2.Location = new System.Drawing.Point(741, 20);
+            this.guna2Button2.Location = new System.Drawing.Point(923, 101);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedColor = System.Drawing.Color.White;
@@ -333,7 +504,7 @@
             this.guna2Button3.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_right_s_line;
             this.guna2Button3.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button3.IndicateFocus = true;
-            this.guna2Button3.Location = new System.Drawing.Point(697, 20);
+            this.guna2Button3.Location = new System.Drawing.Point(879, 101);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.PressedColor = System.Drawing.Color.White;
@@ -361,7 +532,7 @@
             this.guna2Button1.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_left_double_line;
             this.guna2Button1.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button1.IndicateFocus = true;
-            this.guna2Button1.Location = new System.Drawing.Point(206, 20);
+            this.guna2Button1.Location = new System.Drawing.Point(388, 101);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.PressedColor = System.Drawing.Color.White;
@@ -389,7 +560,7 @@
             this.guna2Button4.Image = global::ARIAR_PayrollSystem.Properties.Resources.arrow_left_s_line;
             this.guna2Button4.ImageSize = new System.Drawing.Size(24, 24);
             this.guna2Button4.IndicateFocus = true;
-            this.guna2Button4.Location = new System.Drawing.Point(250, 20);
+            this.guna2Button4.Location = new System.Drawing.Point(432, 101);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.PressedColor = System.Drawing.Color.White;
@@ -410,14 +581,14 @@
             this.CalendarPanel.Controls.Add(this.DayOfTheWeekTLP);
             this.CalendarPanel.Controls.Add(this.CalendarView);
             this.CalendarPanel.FillColor = System.Drawing.SystemColors.Control;
-            this.CalendarPanel.Location = new System.Drawing.Point(24, 100);
+            this.CalendarPanel.Location = new System.Drawing.Point(385, 147);
             this.CalendarPanel.Margin = new System.Windows.Forms.Padding(0);
             this.CalendarPanel.Name = "CalendarPanel";
             this.CalendarPanel.ShadowDecoration.BorderRadius = 0;
             this.CalendarPanel.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.CalendarPanel.ShadowDecoration.Depth = 15;
             this.CalendarPanel.ShadowDecoration.Enabled = true;
-            this.CalendarPanel.Size = new System.Drawing.Size(941, 475);
+            this.CalendarPanel.Size = new System.Drawing.Size(580, 426);
             this.CalendarPanel.TabIndex = 10;
             this.CalendarPanel.UseTransparentBackground = true;
             // 
@@ -448,7 +619,7 @@
             this.DayOfTheWeekTLP.RowCount = 1;
             this.DayOfTheWeekTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.DayOfTheWeekTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.DayOfTheWeekTLP.Size = new System.Drawing.Size(941, 34);
+            this.DayOfTheWeekTLP.Size = new System.Drawing.Size(580, 34);
             this.DayOfTheWeekTLP.TabIndex = 1;
             // 
             // label1
@@ -460,9 +631,9 @@
             this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 29);
+            this.label1.Size = new System.Drawing.Size(76, 29);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Sunday";
+            this.label1.Text = "SUN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
@@ -471,12 +642,12 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label7.Location = new System.Drawing.Point(803, 5);
+            this.label7.Location = new System.Drawing.Point(497, 5);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 29);
+            this.label7.Size = new System.Drawing.Size(78, 29);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Saturday";
+            this.label7.Text = "SAT";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -485,12 +656,12 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label6.Location = new System.Drawing.Point(670, 5);
+            this.label6.Location = new System.Drawing.Point(415, 5);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 29);
+            this.label6.Size = new System.Drawing.Size(76, 29);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Friday";
+            this.label6.Text = "FRI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -499,12 +670,12 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label5.Location = new System.Drawing.Point(537, 5);
+            this.label5.Location = new System.Drawing.Point(333, 5);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 29);
+            this.label5.Size = new System.Drawing.Size(76, 29);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Thursday";
+            this.label5.Text = "THU";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -513,12 +684,12 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label4.Location = new System.Drawing.Point(404, 5);
+            this.label4.Location = new System.Drawing.Point(251, 5);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 29);
+            this.label4.Size = new System.Drawing.Size(76, 29);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Wednesday";
+            this.label4.Text = "WED";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -527,12 +698,12 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label3.Location = new System.Drawing.Point(271, 5);
+            this.label3.Location = new System.Drawing.Point(169, 5);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 29);
+            this.label3.Size = new System.Drawing.Size(76, 29);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Tuesday";
+            this.label3.Text = "TUE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -541,12 +712,12 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label2.Location = new System.Drawing.Point(138, 5);
+            this.label2.Location = new System.Drawing.Point(87, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 29);
+            this.label2.Size = new System.Drawing.Size(76, 29);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Monday";
+            this.label2.Text = "MON";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CalendarView
@@ -574,8 +745,254 @@
             this.CalendarView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.CalendarView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.CalendarView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.CalendarView.Size = new System.Drawing.Size(941, 441);
+            this.CalendarView.Size = new System.Drawing.Size(580, 392);
             this.CalendarView.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel3, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel2, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel9, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(368, 11);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(611, 96);
+            this.tableLayoutPanel2.TabIndex = 12;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BorderRadius = 8;
+            this.guna2Panel3.Controls.Add(this.pictureBox4);
+            this.guna2Panel3.Controls.Add(this.label13);
+            this.guna2Panel3.Controls.Add(this.label14);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel3.FillColor = System.Drawing.Color.SlateGray;
+            this.guna2Panel3.Location = new System.Drawing.Point(468, 12);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(12);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel3.ShadowDecoration.Depth = 15;
+            this.guna2Panel3.ShadowDecoration.Enabled = true;
+            this.guna2Panel3.Size = new System.Drawing.Size(131, 72);
+            this.guna2Panel3.TabIndex = 7;
+            this.guna2Panel3.UseTransparentBackground = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox4.Image = global::ARIAR_PayrollSystem.Properties.Resources.home_4_line;
+            this.pictureBox4.Location = new System.Drawing.Point(13, 40);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(9, 6);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 21);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "On Leave";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(91, 37);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(30, 30);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "0";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BorderRadius = 8;
+            this.guna2Panel2.Controls.Add(this.pictureBox3);
+            this.guna2Panel2.Controls.Add(this.label11);
+            this.guna2Panel2.Controls.Add(this.label12);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.FillColor = System.Drawing.Color.IndianRed;
+            this.guna2Panel2.Location = new System.Drawing.Point(316, 12);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(12);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel2.ShadowDecoration.Depth = 15;
+            this.guna2Panel2.ShadowDecoration.Enabled = true;
+            this.guna2Panel2.Size = new System.Drawing.Size(128, 72);
+            this.guna2Panel2.TabIndex = 6;
+            this.guna2Panel2.UseTransparentBackground = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox3.Image = global::ARIAR_PayrollSystem.Properties.Resources.close_circle_line;
+            this.pictureBox3.Location = new System.Drawing.Point(13, 40);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(9, 6);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 21);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Absents";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(88, 37);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 30);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "0";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BorderRadius = 8;
+            this.guna2Panel1.Controls.Add(this.pictureBox1);
+            this.guna2Panel1.Controls.Add(this.label9);
+            this.guna2Panel1.Controls.Add(this.label10);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel1.Location = new System.Drawing.Point(164, 12);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(12);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel1.ShadowDecoration.Depth = 15;
+            this.guna2Panel1.ShadowDecoration.Enabled = true;
+            this.guna2Panel1.Size = new System.Drawing.Size(128, 72);
+            this.guna2Panel1.TabIndex = 5;
+            this.guna2Panel1.UseTransparentBackground = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = global::ARIAR_PayrollSystem.Properties.Resources.checkbox_circle_line;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 40);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(9, 6);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 21);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Presents";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(88, 37);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 30);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "0";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel9.BorderRadius = 8;
+            this.guna2Panel9.Controls.Add(this.pictureBox2);
+            this.guna2Panel9.Controls.Add(this.label21);
+            this.guna2Panel9.Controls.Add(this.label22);
+            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel9.FillColor = System.Drawing.Color.SteelBlue;
+            this.guna2Panel9.Location = new System.Drawing.Point(12, 12);
+            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(12);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel9.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel9.ShadowDecoration.Depth = 15;
+            this.guna2Panel9.ShadowDecoration.Enabled = true;
+            this.guna2Panel9.Size = new System.Drawing.Size(128, 72);
+            this.guna2Panel9.TabIndex = 4;
+            this.guna2Panel9.UseTransparentBackground = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox2.Image = global::ARIAR_PayrollSystem.Properties.Resources.group_line;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 40);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(9, 6);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(93, 21);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Employees";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(88, 37);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(30, 30);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "0";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Elipse1
             // 
@@ -593,9 +1010,23 @@
             this.Name = "AttendanceManagement";
             this.Text = "AttendanceLog";
             this.AttendanceManagementPanel.ResumeLayout(false);
+            this.guna2Panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.CalendarPanel.ResumeLayout(false);
             this.DayOfTheWeekTLP.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -621,5 +1052,29 @@
         private Guna.UI2.WinForms.Guna2ComboBox MonthComboBox;
         private Guna.UI2.WinForms.Guna2ComboBox YearComboBox;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2VScrollBar EmployeeViewScrollBar;
+        private UserControls.CustomFlowLayoutPanel ReportView;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

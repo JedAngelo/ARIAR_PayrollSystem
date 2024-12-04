@@ -16,5 +16,10 @@ namespace ARIAR_PayrollSystem.Forms
         {
             InitializeComponent();
         }
+
+        private void EmployeeViewScrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }

@@ -65,7 +65,7 @@ namespace ARIAR_PayrollSystem.Forms
             try
             {
                 var DateNowString = DateTime.Now.Date.ToString("yyyy-MM-dd");
-                attendanceLogs = await HttpHelper.GetAsync<ApiResponse<List<AttendanceDataLog>>>($"{ApiHelper.Attendance.GetAttendanceLogShort}{DateNowString}");
+                attendanceLogs = await HttpHelper.GetAsync<ApiResponse<List<AttendanceDataLog>>>($"{ApiEndpointHelper.Attendance.GetAttendanceLogShort}{DateNowString}");
                 if (attendanceLogs == null)
                 {
                     GunaMessage.Error("Can't retrieve attendance logs!", "ERROR");
@@ -132,7 +132,7 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometricsDto>>>(ApiHelper.Biometric.GetBiometric);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometricsDto>>>(ApiEndpointHelper.Biometric.GetBiometric);
 
                 if (_employeeInfo == null)
                 {
@@ -174,7 +174,7 @@ namespace ARIAR_PayrollSystem.Forms
                     AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd")
                 };
 
-                var result = await HttpHelper.PostAsync<ApiResponse<bool>, dynamic>(ApiHelper.Attendance.HasMorningIn, attendanceData);
+                var result = await HttpHelper.PostAsync<ApiResponse<bool>, dynamic>(ApiEndpointHelper.Attendance.HasMorningIn, attendanceData);
                 if (!result.isSuccess)            
                 {
                     //MakeReport($"Error retrieving morning in data: {result.ErrorMessage}");
@@ -243,13 +243,13 @@ namespace ARIAR_PayrollSystem.Forms
 
                 if (attendanceData != null)
                 {
-                    var result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.Attendance.LogAttendance, attendanceData);
+                    var result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiEndpointHelper.Attendance.LogAttendance, attendanceData);
 
                     if (result.isSuccess)
                     {
                         ToastNotify.Info(result.Data);
                         //MakeReport(result.Data, "INFO");
-                        var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<PersonalInformationDto>>(ApiHelper.Employee.GetPersonalInfoById + personalId);
+                        var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<PersonalInformationDto>>(ApiEndpointHelper.Employee.GetPersonalInfoById + personalId);
                         if (_employeeInfo != null)
                         {
                             await ControlsHelper.ConvertByteToImageAsync(_employeeInfo.Data.EmployeeImage, pictureBox2);

@@ -19,8 +19,6 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void Report_Load(object sender, EventArgs e)
         {
-
-            this.reportViewer1.RefreshReport();
         }
     }
 }

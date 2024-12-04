@@ -40,21 +40,6 @@ namespace ARIAR_PayrollSystem.Forms
             InitializeComponent();
             _mainForm = mainForm;
 
-            textBoxLabelMap = new Dictionary<Guna2TextBox, Tuple<Label, int>>
-            {
-                { FirstnameTextBox, new Tuple<Label, int>(FirstnameLabel, FirstnameLabel.Location.Y) },
-                { LastnameTextBox, new Tuple<Label, int>(LastNameLabel, LastNameLabel.Location.Y) },
-                { MiddlenameTextBox, new Tuple<Label, int>(MiddlenameLabel, MiddlenameLabel.Location.Y) },
-                { AgeTextBox, new Tuple<Label, int>(AgeLabel, AgeLabel.Location.Y) },
-                { ContactNoTextBox, new Tuple<Label, int>(ContactLabel, ContactLabel.Location.Y) },
-                { EmailTextBox, new Tuple<Label, int>(EmailLabel, EmailLabel.Location.Y) },
-                { AddressTextBox, new Tuple<Label, int>(AddressLabel, AddressLabel.Location.Y) },
-                { SSSTextBox, new Tuple<Label, int>(SSSLabel, SSSLabel.Location.Y) },
-                { PhilhealthTextBox, new Tuple<Label, int>(PhilhealthLabel, PhilhealthLabel.Location.Y) },
-                { PagIbigTextBox, new Tuple<Label, int>(PagibigLabel, PagibigLabel.Location.Y) },
-                { IncomeTextBox, new Tuple<Label, int>(IncomeLabel, IncomeLabel.Location.Y) },
-                { PayrateTextBox, new Tuple<Label, int>(PayrateLabel, PayrateLabel.Location.Y) }
-            };
 
             //targetY = originalY - 20;
 
@@ -69,46 +54,7 @@ namespace ARIAR_PayrollSystem.Forms
             {
 
 
-                var _employeeInfo = new PersonalInformationDto()
-                {
-                    PersonalId = null,
-                    FirstName = FirstnameTextBox.Text,
-                    MiddleName = MiddlenameTextBox.Text,
-                    LastName = LastnameTextBox.Text,
-                    DateOfBirth = DoBDatePicker.Value.Date.ToString("yyyy-MM-dd"),
-                    Gender = "Male",
-                    Age = byte.Parse(AgeTextBox.Text),
-                    EmployeeImage = await ControlsHelper.ConvertImageToByteAsync(EmployeePictureBox),
-                    ContactInformationDtos = new ContactInformationDto
-                    {
-                        Address = AddressTextBox.Text,
-                        Email = EmailTextBox.Text,
-                        PhoneNumber = ContactNoTextBox.Text,
-
-                    },
-                    EmploymentDetailDtos = new EmploymentDetailDto
-                    {
-                        HireDate = HiredDatePicker.Value.Date.ToString("yyyy-MM-dd"),
-                        IncomeTaxRate = decimal.Parse(IncomeTextBox.Text),
-                        PayRate = decimal.Parse(PayrateTextBox.Text),
-                        SssEmployeeRate = decimal.Parse(SSSTextBox.Text),
-                        PhilhealthEmployeeRate = decimal.Parse(PhilhealthTextBox.Text),
-                        PagibigEmployeeRate = decimal.Parse(PagIbigTextBox.Text),
-                        PositionId = 1
-                    },
-                    CreatedBy = "ASSHOLE",
-                    CreatedDate = DateTime.Now
-
-                };
-                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.Employee.AddOrUpdateEmployeeInfo, _employeeInfo);
-                if (_result.isSuccess)
-                {
-                    CustomMessageBox.Show(_result.Data);
-                }
-                else
-                {
-                    CustomMessageBox.Show(_result.ErrorMessage);
-                }
+               
 
             }
             catch (Exception ex)
@@ -187,35 +133,16 @@ namespace ARIAR_PayrollSystem.Forms
                 // Load image asynchronously
                 Image image = await Task.Run(() => Image.FromFile(filePath));
 
-                EmployeePictureBox.Image = image;
             }
         }
 
 
-        private void DoBDatePicker_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime selectedDate = DoBDatePicker.Value;
-
-            // Calculate the age based on the selected date and today's date
-            int calculatedAge = DateTime.Now.Year - selectedDate.Year;
-
-            // Adjust if the birthday hasn't occurred yet this year
-            if (DateTime.Now < selectedDate.AddYears(calculatedAge))
-            {
-                calculatedAge--;
-            }
-            //AgeTextBox.Focus();
-            TextBox_Enter(AgeTextBox, EventArgs.Empty);
-            AgeTextBox.Text = calculatedAge.ToString();
-
-
-        }
 
         private async void GetEmployeeInfo()
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformationDto>>>(ApiHelper.Employee.GetPersonalInfo);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<PersonalInformationDto>>>(ApiEndpointHelper.Employee.GetPersonalInfo);
                 
                 if (_employeeInfo == null)
                 {
@@ -271,6 +198,12 @@ namespace ARIAR_PayrollSystem.Forms
                 }
 
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            EmployeeCanvasModal _canvasModal = new EmployeeCanvasModal();
+            ControlsHelper.ShowModal(_mainForm, _canvasModal);
         }
     }
 }

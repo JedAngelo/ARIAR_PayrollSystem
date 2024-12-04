@@ -41,13 +41,13 @@
             this.DayLabel.BackColor = System.Drawing.Color.Transparent;
             this.DayLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.DayLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DayLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DayLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.DayLabel.Location = new System.Drawing.Point(0, 0);
             this.DayLabel.Margin = new System.Windows.Forms.Padding(0);
             this.DayLabel.Name = "DayLabel";
-            this.DayLabel.Padding = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.DayLabel.Size = new System.Drawing.Size(142, 27);
+            this.DayLabel.Padding = new System.Windows.Forms.Padding(3);
+            this.DayLabel.Size = new System.Drawing.Size(119, 27);
             this.DayLabel.TabIndex = 0;
             this.DayLabel.Text = "01";
             this.DayLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -67,8 +67,8 @@
             this.PresentCount.Location = new System.Drawing.Point(0, 27);
             this.PresentCount.Margin = new System.Windows.Forms.Padding(0);
             this.PresentCount.Name = "PresentCount";
-            this.PresentCount.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.PresentCount.Size = new System.Drawing.Size(142, 17);
+            this.PresentCount.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.PresentCount.Size = new System.Drawing.Size(119, 17);
             this.PresentCount.TabIndex = 1;
             this.PresentCount.Text = "     Present";
             this.PresentCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,8 +88,8 @@
             this.AbsentCount.Location = new System.Drawing.Point(0, 61);
             this.AbsentCount.Margin = new System.Windows.Forms.Padding(0);
             this.AbsentCount.Name = "AbsentCount";
-            this.AbsentCount.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.AbsentCount.Size = new System.Drawing.Size(142, 17);
+            this.AbsentCount.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.AbsentCount.Size = new System.Drawing.Size(119, 17);
             this.AbsentCount.TabIndex = 2;
             this.AbsentCount.Text = "     Absent";
             this.AbsentCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,8 +109,8 @@
             this.LeaveCount.Location = new System.Drawing.Point(0, 44);
             this.LeaveCount.Margin = new System.Windows.Forms.Padding(0);
             this.LeaveCount.Name = "LeaveCount";
-            this.LeaveCount.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.LeaveCount.Size = new System.Drawing.Size(142, 17);
+            this.LeaveCount.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LeaveCount.Size = new System.Drawing.Size(119, 17);
             this.LeaveCount.TabIndex = 3;
             this.LeaveCount.Text = "     Leave";
             this.LeaveCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -128,7 +128,7 @@
             this.MainView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainView.Location = new System.Drawing.Point(2, 2);
             this.MainView.Name = "MainView";
-            this.MainView.Size = new System.Drawing.Size(142, 98);
+            this.MainView.Size = new System.Drawing.Size(119, 98);
             this.MainView.TabIndex = 11;
             this.MainView.Click += new System.EventHandler(this.Control_Click);
             this.MainView.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
@@ -143,7 +143,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CalendarDayView";
             this.Padding = new System.Windows.Forms.Padding(2);
-            this.Size = new System.Drawing.Size(146, 102);
+            this.Size = new System.Drawing.Size(123, 102);
             this.MainView.ResumeLayout(false);
             this.ResumeLayout(false);
 

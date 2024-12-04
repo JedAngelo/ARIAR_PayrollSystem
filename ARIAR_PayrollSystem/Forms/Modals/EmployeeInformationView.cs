@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ARIAR_PayrollSystem.Forms.Modals
 {
-    public partial class CanvasModal : Form
+    public partial class EmployeeInformationView : Form
     {
-        public CanvasModal()
+        public EmployeeInformationView()
         {
             InitializeComponent();
         }

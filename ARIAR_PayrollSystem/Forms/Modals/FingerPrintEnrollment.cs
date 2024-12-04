@@ -85,7 +85,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
                     RecordDate = DateTime.Now,
                 };
 
-                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiHelper.Biometric.AddBiometric, empployeeBiometric);
+                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiEndpointHelper.Biometric.AddBiometric, empployeeBiometric);
                 if (_result.isSuccess)
                 {
                     GunaMessage.Info(_result.Data, "INFO");

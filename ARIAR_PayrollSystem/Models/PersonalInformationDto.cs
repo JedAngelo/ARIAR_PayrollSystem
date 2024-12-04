@@ -21,6 +21,8 @@ namespace ARIAR_PayrollSystem.Models
 
         public string Gender { get; set; } = null!;
 
+        public string MaritalStatus { get; set; } = null!;
+
         public byte Age { get; set; }
 
         public byte[]? EmployeeImage { get; set; }
