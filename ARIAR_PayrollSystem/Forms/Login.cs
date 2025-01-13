@@ -19,12 +19,12 @@ namespace ARIAR_PayrollSystem.Forms
     {
         public readonly HttpClient client = new HttpClient();
         //private Dictionary<Guna2TextBox, Tuple<Label, int>> textBoxLabelMap;
-        MainForm mainForm;
+        MainForm _mainForm;
 
         public Login()
         {
             InitializeComponent();
-            mainForm = new MainForm();
+            _mainForm = new MainForm();
             //textBoxLabelMap = new Dictionary<Guna2TextBox, Tuple<Label, int>>
             //{
             //    { UsernameTextBox, new Tuple<Label, int>(UsernameLabel, UsernameLabel.Location.Y) },
@@ -66,13 +66,14 @@ namespace ARIAR_PayrollSystem.Forms
                     Password = PasswordTextBox.Text
                 };
 
-                var _loginResult = await HttpHelper.PostAsync<ApiResponse<LoginModelDto>, dynamic>(ApiEndpointHelper.Auth.Login, _loginInfo);
+                var _loginResult = await HttpHelper.PostAsync<ApiResponse<UserLoginDto>, dynamic>(ApiEndpoint.Auth.Login, _loginInfo);
                 if (_loginResult.isSuccess)
                 {
                     HttpHelper.SetAccessToken(_loginResult.Data.Token);
 
                     //CustomMessageBox.Show("Successfully login!");//TBD
-                    mainForm.Show();
+                    _mainForm.UserData = _loginResult.Data;
+                    _mainForm.Show();
                     GunaMessage.Info("Successfully login!", "SUCCESS");
                     this.Hide();
                 }

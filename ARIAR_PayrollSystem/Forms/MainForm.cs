@@ -17,6 +17,11 @@ using System.Timers;
 using System.Windows.Forms;
 using System.Management;
 using static DPUruNet.Fid;
+using ARIAR_PayrollSystem.Models;
+using System.Web.UI.WebControls;
+using Image = System.Drawing.Image;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Newtonsoft.Json;
 
 namespace ARIAR_PayrollSystem.Forms
 {
@@ -27,8 +32,13 @@ namespace ARIAR_PayrollSystem.Forms
         private SystemMaintenance _systemMaintenance;
         private Test _testForm;
         private AttendanceManagement _attendanceManagement;
-        private bool IsBiometricLoading = false;
         private SplashScreen _splashScreen;
+        private PayrollCalclulation _payrollCalclulation;
+        private Report _report;
+        private Backup _backup;
+
+
+        private bool IsBiometricLoading = false;
         public System.Threading.Timer _ReaderDetection;
         private bool _isSidebarCol = false;
         private bool isFullscreen = true;
@@ -36,17 +46,48 @@ namespace ARIAR_PayrollSystem.Forms
         private ManagementEventWatcher connectWatcher;
         private ManagementEventWatcher disconnectWatcher;
         private ConsoleLogsModal _consoleLogs;
+        private Image _oldIcon;
+        private Color _defaultColor = System.Drawing.SystemColors.Control;
+        private UserLoginDto _userData;
+
+        //Api Data
+        private List<PersonalInformationDisplayDto> _employeeInfo;
+        public List<PersonalInformationDisplayDto> EmployeeInfo
+        {
+            get { return _employeeInfo; }
+            set
+            {
+                _employeeInfo = value;
+            }
+        }
+
+        public UserLoginDto UserData
+        {
+            private get { return _userData; }
+            set
+            {
+                _userData = value;
+                Console.WriteLine(JsonConvert.SerializeObject(value, Formatting.Indented));
+                //_ = SetAccessView();
+            }
+        }
+
 
 
         public MainForm()
         {
             InitializeComponent();
-
             _testForm = new Test(this);
             //_biometricAttendance = new BiometricAttendance(this);
-            _employeeInformation = new EmployeeInformation(this);
-            _systemMaintenance = new SystemMaintenance(this);
-            _attendanceManagement = new AttendanceManagement(this);
+            AutoScaleMode = AutoScaleMode.None;
+            _employeeInformation = new EmployeeInformation(this) { AutoScaleMode = AutoScaleMode.None };
+            _systemMaintenance = new SystemMaintenance(this) { AutoScaleMode = AutoScaleMode.None };
+            _attendanceManagement = new AttendanceManagement(this) { AutoScaleMode = AutoScaleMode.None };
+            _payrollCalclulation = new PayrollCalclulation(this) { AutoScaleMode = AutoScaleMode.None };
+            _backup = new Backup(this) { AutoScaleMode = AutoScaleMode.None };
+            _report = new Report(this) { AutoScaleMode = AutoScaleMode.None };
+
+
             _splashScreen = new SplashScreen();
             _consoleLogs = new ConsoleLogsModal();
             _consoleLogs.Show();
@@ -109,8 +150,8 @@ namespace ARIAR_PayrollSystem.Forms
         private void DisableButtons()
         {
             EmployeeButton.Enabled = false;
-            BiometricButton.Enabled = false;
             AttendanceButton.Enabled = false;
+            WorkLogButton.Enabled = false;
             PayrollButton.Enabled = false;
             BackupButton.Enabled = false;
             ReportButton.Enabled = false;
@@ -121,8 +162,8 @@ namespace ARIAR_PayrollSystem.Forms
             await Task.Delay(250);
 
             EmployeeButton.Enabled = true;
-            BiometricButton.Enabled = true;
             AttendanceButton.Enabled = true;
+            WorkLogButton.Enabled = true;
             PayrollButton.Enabled = true;
             BackupButton.Enabled = true;
             ReportButton.Enabled = true;
@@ -147,25 +188,31 @@ namespace ARIAR_PayrollSystem.Forms
         {
             await Task.Delay(250);
             SwitchPanel.Visible = false;
-            
-            if (!_isSidebarCol)
-            {
-                SidebarHelper.ChangeColWidth(tableLayoutPanel1, false);
-                LogoPanel.Height = 0;
-                _isSidebarCol = true;
-                //await Task.Delay(1000);
-                transition.Show(SwitchPanel);
-                //transition.Show(MainPanel);
-            }
-            else
-            {
-                SidebarHelper.ChangeColWidth(tableLayoutPanel1, true);
-                LogoPanel.Height = 112;
-                _isSidebarCol = false;
-                //await Task.Delay(1000);
-                transition.Show(SwitchPanel);
-                //transition.Show(MainPanel);
-            }
+
+            SidebarHelper.ChangeColWidth(tableLayoutPanel1, _isSidebarCol);
+            LogoPanel.Height = _isSidebarCol == false ? 0 : 112;
+            _isSidebarCol = !_isSidebarCol;
+            transition.Show(SwitchPanel);
+
+
+            //if (!_isSidebarCol)
+            //{
+            //    SidebarHelper.ChangeColWidth(tableLayoutPanel1, false);
+            //    LogoPanel.Height = 0;
+            //    _isSidebarCol = true;
+            //    //await Task.Delay(1000);
+            //    transition.Show(SwitchPanel);
+            //    //transition.Show(MainPanel);
+            //}
+            //else
+            //{
+            //    SidebarHelper.ChangeColWidth(tableLayoutPanel1, true);
+            //    LogoPanel.Height = 112;
+            //    _isSidebarCol = false;
+            //    //await Task.Delay(1000);
+            //    transition.Show(SwitchPanel);
+            //    //transition.Show(MainPanel);
+            //}
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -175,14 +222,15 @@ namespace ARIAR_PayrollSystem.Forms
                 if (isFullscreen)
                 {
 
-                    //this.FormBorderStyle = FormBorderStyle.Sizable;
-                    this.WindowState = FormWindowState.Maximized;
+                    this.FormBorderStyle = FormBorderStyle.Sizable;
+                    this.WindowState = FormWindowState.Normal;
                     isFullscreen = false;
                 }
                 else
                 {
+                    if (this.WindowState == FormWindowState.Maximized) this.WindowState = FormWindowState.Normal;
                     this.FormBorderStyle = FormBorderStyle.None;
-                    this.WindowState = FormWindowState.Normal;
+                    this.WindowState = FormWindowState.Maximized;
                     //this.Bounds = Screen.FromControl(this).Bounds;
                     
                     isFullscreen = true;
@@ -206,13 +254,18 @@ namespace ARIAR_PayrollSystem.Forms
 
             //this.Bounds = Screen.PrimaryScreen.Bounds;
 
-
+            //await SetAccessView();
             await Switcher.SwitchPanelAsync(SwitchPanel, _employeeInformation);
             //Switcher.SwitchPanel(SwitchPanel, _systemMaintenance);
             //Switcher.SwitchPanel(SwitchPanel, _biometricAttendance);
             transition.Show(SwitchPanel);
 
             Invoke((Action)(() => SetCurrentReader()));
+
+            _oldIcon = EmployeeButton.Image;
+            EmployeeButton.Image = Properties.Resources.group_line1;
+            EmployeeButton.FillColor = _defaultColor;
+            EmployeeButton.ForeColor = Color.FromArgb(45, 45, 45);
 
             //waitScreen1.Visible = false;
 
@@ -223,38 +276,84 @@ namespace ARIAR_PayrollSystem.Forms
             //_BiometricAttendance.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
         }
 
-        private void FullScreenToggle(object sender, EventArgs e)
+      
+
+        private async Task ShutdownApplication()
         {
-           
-                if (isFullscreen)
-                {
+            try
+            {
+                // Stop listening for device events
+                StopListening();
 
-                    //this.FormBorderStyle = FormBorderStyle.Sizable;
-                    this.WindowState = FormWindowState.Maximized;
-                    isFullscreen = false;
-                }
-                else
+
+                // Dispose of biometric form
+                if (_biometricAttendance != null)
                 {
-                    this.FormBorderStyle = FormBorderStyle.None;
-                    this.WindowState = FormWindowState.Normal;
-                    this.Bounds = Screen.FromControl(this).Bounds;
-                    isFullscreen = true;
+                    _biometricAttendance.Close();
+                    _biometricAttendance.Dispose();
                 }
+                if (_employeeInformation != null)
+                {
+                    _employeeInformation.Close();
+                    _employeeInformation.Dispose();
+                }
+                _consoleLogs.Close();
+                _consoleLogs.Dispose();
+
+                // Stop and dispose timer
+                if (_ReaderDetection != null)
+                {
+                    _ReaderDetection.Dispose();
+                }
+
+                // Close all opened modals
+                _consoleLogs?.Close();
+                _consoleLogs?.Dispose();
+
+                // Stop and Dispose of Event Watchers
+                StopListening();
+
+                await Task.Delay(100);
+
+                //Close the application, all resources should be disposed
+                this.Close();
+                Application.Exit();
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
+        public void StopListening()
+        {
+            connectWatcher?.Stop();
+            disconnectWatcher?.Stop();
+        }
+
+        //  Logout Button Click
         private async void LogoutBtn_Click(object sender, EventArgs e)
         {
-            await Task.Delay(250);
-            Application.Exit();
-            //this.Close();
+            await ShutdownApplication();
         }
 
 
         private async void EmployeeInformationBtn_Click(object sender, EventArgs e)
         {
             await Task.Delay(250);
+
+            await Task.Run(() =>
+            {
+                RemoveSelected();
+                _oldIcon = EmployeeButton.Image;
+                EmployeeButton.Image = Properties.Resources.group_line1;
+                EmployeeButton.FillColor = _defaultColor;
+                EmployeeButton.ForeColor = Color.FromArgb(45, 45, 45);
+            });
+
+
             await Switcher.SwitchPanelAsync(SwitchPanel, _employeeInformation);
-            transition.ShowSync(SwitchPanel);
+            transition.Show(SwitchPanel);
             //elapsedTick = 0;
             //waitClock.Start();
         }       
@@ -269,6 +368,17 @@ namespace ARIAR_PayrollSystem.Forms
         {
             
             await Task.Delay(250);
+
+            await Task.Run(() =>
+            {
+                RemoveSelected();
+                _oldIcon = AttendanceButton.Image;
+                AttendanceButton.Image = Properties.Resources.fingerprint_line_1_;
+                AttendanceButton.FillColor = _defaultColor;
+                AttendanceButton.ForeColor = Color.FromArgb(45, 45, 45);
+            });
+
+
             DisableButtons();
             _biometricAttendance?.Close();
 
@@ -292,6 +402,15 @@ namespace ARIAR_PayrollSystem.Forms
         private async void SystemMaintenanceBtn_Click(object sender, EventArgs e)
         {
             await Task.Delay(250);
+            await Task.Run(() =>
+            {
+                RemoveSelected();
+                _oldIcon = SystemButton.Image;
+                SystemButton.Image = Properties.Resources.settings_3_line;
+                SystemButton.FillColor = _defaultColor;
+                SystemButton.ForeColor = Color.FromArgb(45, 45, 45);
+            });
+
             _biometricAttendance?.Close();
             await Switcher.SwitchPanelAsync(SwitchPanel, _systemMaintenance);
             transition.Show(SwitchPanel);
@@ -530,30 +649,7 @@ namespace ARIAR_PayrollSystem.Forms
             //    _biometricAttendance.Close();
             //}
         }
-
-
-        //private bool isReaderDetectionInProgress = false;
-
-
-        //private void ReaderDetector_Tick(object sender, EventArgs e)
-        //{
-        //    if (!isReaderDetectionInProgress)
-        //    {
-        //        isReaderDetectionInProgress = true; // Set the flag to true
-
-        //        if (currentReader == null)
-        //        {
-        //            SetCurrentReader();
-        //        }
-        //        else
-        //        {
-        //            ReaderDetector.Stop();
-        //        }
-
-        //        isReaderDetectionInProgress = false; // Reset the flag after the check
-        //    }
-        //}
-
+      
         private void SwitchPanel_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -561,8 +657,106 @@ namespace ARIAR_PayrollSystem.Forms
         private async void AttendanceButton_Click(object sender, EventArgs e)
         {
             await Task.Delay(250);
+            await Task.Run(() =>
+            {
+                RemoveSelected();
+                _oldIcon = WorkLogButton.Image;
+                WorkLogButton.Image = Properties.Resources.calendar_schedule_line;
+                WorkLogButton.FillColor = _defaultColor;
+                WorkLogButton.ForeColor = Color.FromArgb(45, 45, 45);
+            });
+
             await Switcher.SwitchPanelAsync(SwitchPanel, _attendanceManagement);
             transition.Show(SwitchPanel);
         }
+
+        private async void PayrollButton_Click(object sender, EventArgs e)
+        {
+            await Task.Delay(250);
+            await Task.Run(() =>
+            {
+                RemoveSelected();
+                _oldIcon = PayrollButton.Image;
+                PayrollButton.Image = Properties.Resources.money_dollar_circle_line_1_;
+                PayrollButton.FillColor = _defaultColor;
+                PayrollButton.ForeColor = Color.FromArgb(45, 45, 45);
+            });
+
+            await Switcher.SwitchPanelAsync(SwitchPanel, _payrollCalclulation);
+            transition.Show(SwitchPanel);
+        }
+
+        private async void BackupButton_Click(object sender, EventArgs e)
+        {
+            await Task.Delay(250);
+            await Task.Run(() =>
+            {
+                RemoveSelected();
+                _oldIcon = BackupButton.Image;
+                BackupButton.Image = Properties.Resources.database_2_line;
+                BackupButton.FillColor = _defaultColor;
+                BackupButton.ForeColor = Color.FromArgb(45, 45, 45);
+            });
+
+            await Switcher.SwitchPanelAsync(SwitchPanel, _backup);
+            transition.Show(SwitchPanel);
+        }
+
+        private async void ReportButton_Click(object sender, EventArgs e)
+        {
+            await Task.Delay(250);
+            await Task.Run(() =>
+            {
+                RemoveSelected();
+                _oldIcon = ReportButton.Image;
+                ReportButton.Image = Properties.Resources.article_line;
+                ReportButton.FillColor = _defaultColor;
+                ReportButton.ForeColor = Color.FromArgb(45, 45, 45);
+            });
+
+            await Switcher.SwitchPanelAsync(SwitchPanel, _report);
+            transition.Show(SwitchPanel);
+        }
+
+        public void RemoveSelected()
+        {
+            var controls = AccessView.Controls.OfType<Guna2Button>().Where(x => x.FillColor == _defaultColor).ToList();
+
+            
+            foreach (var control in controls)
+            {
+                control.FillColor = Color.FromArgb(27, 75, 95);
+                control.ForeColor = Color.White;
+                control.Image = _oldIcon;
+            }         
+        }
+
+        public async Task SetAccessView()
+        {
+            var permissions = UserData.Permissions;
+            await Task.Run(() =>
+            {
+                Invoke((Action)(() =>
+                {
+                    if (permissions.Contains("*")) return;
+                    if (!permissions.Contains("EMPLOYEE")) AccessView.Controls.Remove(EmployeeButton);
+                    if (!permissions.Contains("ATTENDANCE")) AccessView.Controls.Remove(AttendanceButton);
+                    if (!permissions.Contains("WORKLOG")) AccessView.Controls.Remove(WorkLogButton);
+                    if (!permissions.Contains("PAYROLL")) AccessView.Controls.Remove(PayrollButton);
+                    if (!permissions.Contains("REPORT")) AccessView.Controls.Remove(ReportButton);
+                    if (!permissions.Contains("SYSTEM")) AccessView.Controls.Remove(SystemButton);
+
+                }));
+
+
+            });
+        }
+
+        public async void ReloadEmployeeData()
+        {
+            var employeeData = await _employeeInformation.RetrieveEmployeeData();
+            EmployeeInfo = employeeData.Data;
+        }
+
     }
 }

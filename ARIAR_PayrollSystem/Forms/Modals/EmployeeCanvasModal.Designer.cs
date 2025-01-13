@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.AnimatorNS.Animation animation8 = new Guna.UI2.AnimatorNS.Animation();
-            Guna.UI2.AnimatorNS.Animation animation7 = new Guna.UI2.AnimatorNS.Animation();
+            this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeCanvasModal));
             this.MainViewPanel = new System.Windows.Forms.Panel();
             this.thirdStep = new Guna.UI2.WinForms.Guna2Panel();
             this.thirdStepLabel = new System.Windows.Forms.Label();
             this.secondStep = new Guna.UI2.WinForms.Guna2Panel();
             this.secondStepLabel = new System.Windows.Forms.Label();
-            this.secondToThird = new Guna.UI2.WinForms.Guna2Separator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.firstStep = new Guna.UI2.WinForms.Guna2Panel();
             this.firstStepLabel = new System.Windows.Forms.Label();
-            this.firstToSecond = new Guna.UI2.WinForms.Guna2Separator();
+            this.progressLine = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.nextTransition = new Guna.UI2.WinForms.Guna2Transition();
             this.prevTransition = new Guna.UI2.WinForms.Guna2Transition();
+            this.borderlessFormAnimation = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.thirdStep.SuspendLayout();
             this.secondStep.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,7 +69,7 @@
             this.prevTransition.SetDecoration(this.thirdStep, Guna.UI2.AnimatorNS.DecorationType.None);
             this.nextTransition.SetDecoration(this.thirdStep, Guna.UI2.AnimatorNS.DecorationType.None);
             this.thirdStep.FillColor = System.Drawing.Color.White;
-            this.thirdStep.Location = new System.Drawing.Point(730, 12);
+            this.thirdStep.Location = new System.Drawing.Point(730, 13);
             this.thirdStep.Name = "thirdStep";
             this.thirdStep.Size = new System.Drawing.Size(30, 30);
             this.thirdStep.TabIndex = 5;
@@ -81,7 +82,7 @@
             this.prevTransition.SetDecoration(this.thirdStepLabel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.thirdStepLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.thirdStepLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdStepLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.thirdStepLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.thirdStepLabel.Location = new System.Drawing.Point(0, 0);
             this.thirdStepLabel.Name = "thirdStepLabel";
             this.thirdStepLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -98,7 +99,7 @@
             this.prevTransition.SetDecoration(this.secondStep, Guna.UI2.AnimatorNS.DecorationType.None);
             this.nextTransition.SetDecoration(this.secondStep, Guna.UI2.AnimatorNS.DecorationType.None);
             this.secondStep.FillColor = System.Drawing.Color.White;
-            this.secondStep.Location = new System.Drawing.Point(368, 12);
+            this.secondStep.Location = new System.Drawing.Point(371, 13);
             this.secondStep.Name = "secondStep";
             this.secondStep.Size = new System.Drawing.Size(30, 30);
             this.secondStep.TabIndex = 6;
@@ -111,7 +112,7 @@
             this.prevTransition.SetDecoration(this.secondStepLabel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.secondStepLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.secondStepLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondStepLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.secondStepLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.secondStepLabel.Location = new System.Drawing.Point(0, 0);
             this.secondStepLabel.Name = "secondStepLabel";
             this.secondStepLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -120,26 +121,13 @@
             this.secondStepLabel.Text = "2";
             this.secondStepLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // secondToThird
-            // 
-            this.secondToThird.BackColor = System.Drawing.Color.Transparent;
-            this.nextTransition.SetDecoration(this.secondToThird, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.prevTransition.SetDecoration(this.secondToThird, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.secondToThird.FillColor = System.Drawing.Color.White;
-            this.secondToThird.FillThickness = 2;
-            this.secondToThird.Location = new System.Drawing.Point(395, 21);
-            this.secondToThird.Name = "secondToThird";
-            this.secondToThird.Size = new System.Drawing.Size(343, 10);
-            this.secondToThird.TabIndex = 8;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.firstStep);
-            this.panel1.Controls.Add(this.thirdStep);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
             this.panel1.Controls.Add(this.secondStep);
-            this.panel1.Controls.Add(this.secondToThird);
-            this.panel1.Controls.Add(this.firstToSecond);
+            this.panel1.Controls.Add(this.thirdStep);
+            this.panel1.Controls.Add(this.firstStep);
+            this.panel1.Controls.Add(this.progressLine);
             this.prevTransition.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.nextTransition.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -157,8 +145,8 @@
             this.firstStep.Controls.Add(this.firstStepLabel);
             this.prevTransition.SetDecoration(this.firstStep, Guna.UI2.AnimatorNS.DecorationType.None);
             this.nextTransition.SetDecoration(this.firstStep, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.firstStep.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.firstStep.Location = new System.Drawing.Point(12, 12);
+            this.firstStep.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(1)))));
+            this.firstStep.Location = new System.Drawing.Point(12, 13);
             this.firstStep.Name = "firstStep";
             this.firstStep.Size = new System.Drawing.Size(30, 30);
             this.firstStep.TabIndex = 9;
@@ -171,7 +159,7 @@
             this.prevTransition.SetDecoration(this.firstStepLabel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.firstStepLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.firstStepLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstStepLabel.ForeColor = System.Drawing.Color.White;
+            this.firstStepLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.firstStepLabel.Location = new System.Drawing.Point(0, 0);
             this.firstStepLabel.Name = "firstStepLabel";
             this.firstStepLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -180,61 +168,79 @@
             this.firstStepLabel.Text = "1";
             this.firstStepLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // firstToSecond
+            // progressLine
             // 
-            this.firstToSecond.BackColor = System.Drawing.Color.Transparent;
-            this.nextTransition.SetDecoration(this.firstToSecond, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.prevTransition.SetDecoration(this.firstToSecond, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.firstToSecond.FillColor = System.Drawing.Color.White;
-            this.firstToSecond.FillThickness = 2;
-            this.firstToSecond.Location = new System.Drawing.Point(33, 21);
-            this.firstToSecond.Name = "firstToSecond";
-            this.firstToSecond.Size = new System.Drawing.Size(345, 10);
-            this.firstToSecond.TabIndex = 10;
+            this.prevTransition.SetDecoration(this.progressLine, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.nextTransition.SetDecoration(this.progressLine, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.progressLine.FillColor = System.Drawing.Color.White;
+            this.progressLine.Location = new System.Drawing.Point(28, 26);
+            this.progressLine.Maximum = 2;
+            this.progressLine.Name = "progressLine";
+            this.progressLine.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(1)))));
+            this.progressLine.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(1)))));
+            this.progressLine.Size = new System.Drawing.Size(715, 5);
+            this.progressLine.TabIndex = 0;
+            this.progressLine.Text = "guna2ProgressBar1";
+            this.progressLine.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.progressLine.ValueChanged += new System.EventHandler(this.progressLine_ValueChanged);
             // 
             // nextTransition
             // 
             this.nextTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
             this.nextTransition.Cursor = null;
-            animation8.AnimateOnlyDifferences = true;
-            animation8.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.BlindCoeff")));
-            animation8.LeafCoeff = 0F;
-            animation8.MaxTime = 1F;
-            animation8.MinTime = 0F;
-            animation8.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicCoeff")));
-            animation8.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicShift")));
-            animation8.MosaicSize = 0;
-            animation8.Padding = new System.Windows.Forms.Padding(0);
-            animation8.RotateCoeff = 0F;
-            animation8.RotateLimit = 0F;
-            animation8.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.ScaleCoeff")));
-            animation8.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.SlideCoeff")));
-            animation8.TimeCoeff = 0F;
-            animation8.TransparencyCoeff = 0F;
-            this.nextTransition.DefaultAnimation = animation8;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.nextTransition.DefaultAnimation = animation2;
             this.nextTransition.TimeStep = 0.05F;
             // 
             // prevTransition
             // 
             this.prevTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
             this.prevTransition.Cursor = null;
-            animation7.AnimateOnlyDifferences = true;
-            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
-            animation7.LeafCoeff = 0F;
-            animation7.MaxTime = 1F;
-            animation7.MinTime = 0F;
-            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
-            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
-            animation7.MosaicSize = 0;
-            animation7.Padding = new System.Windows.Forms.Padding(0);
-            animation7.RotateCoeff = 0F;
-            animation7.RotateLimit = 0F;
-            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
-            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
-            animation7.TimeCoeff = 0F;
-            animation7.TransparencyCoeff = 0F;
-            this.prevTransition.DefaultAnimation = animation7;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.prevTransition.DefaultAnimation = animation1;
             this.prevTransition.TimeStep = 0.05F;
+            // 
+            // borderlessFormAnimation
+            // 
+            this.borderlessFormAnimation.AnimateWindow = true;
+            this.borderlessFormAnimation.AnimationInterval = 150;
+            this.borderlessFormAnimation.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_VER_POSITIVE;
+            this.borderlessFormAnimation.BorderRadius = 15;
+            this.borderlessFormAnimation.ContainerControl = this;
+            this.borderlessFormAnimation.DockIndicatorTransparencyValue = 0.6D;
+            this.borderlessFormAnimation.DragForm = false;
+            this.borderlessFormAnimation.DragStartTransparencyValue = 1D;
+            this.borderlessFormAnimation.HasFormShadow = false;
+            this.borderlessFormAnimation.ResizeForm = false;
+            this.borderlessFormAnimation.TransparentWhileDrag = true;
             // 
             // EmployeeCanvasModal
             // 
@@ -266,11 +272,11 @@
         public System.Windows.Forms.Panel MainViewPanel;
         public Guna.UI2.WinForms.Guna2Panel thirdStep;
         public Guna.UI2.WinForms.Guna2Panel secondStep;
-        public Guna.UI2.WinForms.Guna2Separator secondToThird;
         public Guna.UI2.WinForms.Guna2Panel firstStep;
         private System.Windows.Forms.Label firstStepLabel;
-        public Guna.UI2.WinForms.Guna2Separator firstToSecond;
         private Guna.UI2.WinForms.Guna2Transition nextTransition;
         private Guna.UI2.WinForms.Guna2Transition prevTransition;
+        private Guna.UI2.WinForms.Guna2ProgressBar progressLine;
+        private Guna.UI2.WinForms.Guna2BorderlessForm borderlessFormAnimation;
     }
 }

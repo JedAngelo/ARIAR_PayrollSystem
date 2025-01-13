@@ -8,6 +8,7 @@ namespace ARIAR_PayrollSystem.Models
 {
     public class AttendanceDto
     {
+        #nullable enable
         public int? AttendanceId { get; set; }
 
         public Guid PersonalId { get; set; }
@@ -22,6 +23,12 @@ namespace ARIAR_PayrollSystem.Models
 
         public string? AttendanceDate { get; set; }
 
+        public decimal? PayMultiplier { get; set; }
+
+        public string? DayType { get; set; }
+
+        public string? Status { get; set; }
         //public virtual PersonalInformationDto PersonalDtos { get; set; } = null!;
     }
+
 }

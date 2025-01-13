@@ -8,7 +8,7 @@ namespace ARIAR_PayrollSystem.Models
 {
     public class ContactInformationDto
     {
-        public int ContactId { get; set; }
+        public int? ContactId { get; set; }
 
         public Guid PersonalId { get; set; }
 

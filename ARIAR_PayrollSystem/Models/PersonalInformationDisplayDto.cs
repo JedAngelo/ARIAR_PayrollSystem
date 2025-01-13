@@ -12,8 +12,10 @@ namespace ARIAR_PayrollSystem.Models
         public string FirstName { get; set; } = null!;
         public string? MiddleName { get; set; }
         public string LastName { get; set; } = null!;
+        public string Suffix { get; set; } = null!;
         public string DateOfBirth { get; set; }
         public string Gender { get; set; } = null!;
+        public string MaritalStatus { get; set; } = null!;
         public byte Age { get; set; }
         public byte[]? EmployeeImage { get; set; }
 
@@ -24,12 +26,11 @@ namespace ARIAR_PayrollSystem.Models
 
         //Employment
         public string HireDate { get; set; }
-        public decimal PayRate { get; set; }
-        public decimal PhilhealthEmployeeRate { get; set; }
-        public decimal SssEmployeeRate { get; set; }
-        public decimal PagibigEmployeeRate { get; set; }
+        public decimal DailySalary { get; set; }
+        public decimal BasicSalary { get; set; }
         public decimal IncomeTaxRate { get; set; }
         public int PositionId { get; set; }
         public string PositionName { get; set; } = null!;
+        public bool IsActive { get; set; }
     }
 }

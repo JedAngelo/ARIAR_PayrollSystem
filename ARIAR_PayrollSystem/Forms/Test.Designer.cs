@@ -161,28 +161,6 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label57 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label53 = new System.Windows.Forms.Label();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -257,18 +235,6 @@
             this.tableLayoutPanel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.tabPage7.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            this.tableLayoutPanel18.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -696,9 +662,9 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(3, 25);
+            this.label16.Location = new System.Drawing.Point(3, 21);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(417, 84);
+            this.label16.Size = new System.Drawing.Size(417, 88);
             this.label16.TabIndex = 0;
             this.label16.Text = "Didto dapit sa my poste na dako nya kulay yellow, General Santos City, South Cota" +
     "bato";
@@ -722,9 +688,9 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(3, 25);
+            this.label15.Location = new System.Drawing.Point(3, 21);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(270, 33);
+            this.label15.Size = new System.Drawing.Size(270, 37);
             this.label15.TabIndex = 0;
             this.label15.Text = "thisisanemail@gmail.com";
             // 
@@ -747,9 +713,9 @@
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(3, 25);
+            this.label14.Location = new System.Drawing.Point(3, 21);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(235, 33);
+            this.label14.Size = new System.Drawing.Size(235, 37);
             this.label14.TabIndex = 0;
             this.label14.Text = "09128343567";
             // 
@@ -773,9 +739,9 @@
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(3, 25);
+            this.label13.Location = new System.Drawing.Point(3, 21);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(169, 33);
+            this.label13.Size = new System.Drawing.Size(169, 37);
             this.label13.TabIndex = 0;
             this.label13.Text = "Alien";
             // 
@@ -799,9 +765,9 @@
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(3, 25);
+            this.label12.Location = new System.Drawing.Point(3, 21);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(211, 33);
+            this.label12.Size = new System.Drawing.Size(211, 37);
             this.label12.TabIndex = 0;
             this.label12.Text = "January 1, 2001";
             // 
@@ -825,9 +791,9 @@
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(3, 25);
+            this.label11.Location = new System.Drawing.Point(3, 21);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(462, 37);
+            this.label11.Size = new System.Drawing.Size(462, 41);
             this.label11.TabIndex = 0;
             this.label11.Text = "Juan Dela Cruz";
             // 
@@ -1306,9 +1272,9 @@
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label28.Location = new System.Drawing.Point(3, 22);
+            this.label28.Location = new System.Drawing.Point(3, 18);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(1268, 60);
+            this.label28.Size = new System.Drawing.Size(1268, 64);
             this.label28.TabIndex = 0;
             this.label28.Text = "Didto dapit sa my poste na dako nya kulay yellow, General Santos City, South Cota" +
     "bato";
@@ -1362,9 +1328,9 @@
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label30.Location = new System.Drawing.Point(3, 22);
+            this.label30.Location = new System.Drawing.Point(3, 18);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(1036, 35);
+            this.label30.Size = new System.Drawing.Size(1036, 39);
             this.label30.TabIndex = 0;
             this.label30.Text = "09128343567";
             // 
@@ -1388,9 +1354,9 @@
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label31.Location = new System.Drawing.Point(3, 22);
+            this.label31.Location = new System.Drawing.Point(3, 18);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(146, 35);
+            this.label31.Size = new System.Drawing.Size(146, 39);
             this.label31.TabIndex = 0;
             this.label31.Text = "Alien";
             // 
@@ -1414,9 +1380,9 @@
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label32.Location = new System.Drawing.Point(3, 22);
+            this.label32.Location = new System.Drawing.Point(3, 18);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(206, 35);
+            this.label32.Size = new System.Drawing.Size(206, 39);
             this.label32.TabIndex = 0;
             this.label32.Text = "January 1, 2001";
             // 
@@ -1442,9 +1408,9 @@
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label33.Location = new System.Drawing.Point(3, 22);
+            this.label33.Location = new System.Drawing.Point(3, 18);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(1267, 39);
+            this.label33.Size = new System.Drawing.Size(1267, 43);
             this.label33.TabIndex = 0;
             this.label33.Text = "Juan Dela Cruz";
             // 
@@ -1503,7 +1469,7 @@
             this.groupBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox13.Size = new System.Drawing.Size(1161, 126);
+            this.groupBox13.Size = new System.Drawing.Size(1127, 126);
             this.groupBox13.TabIndex = 29;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Address";
@@ -1513,9 +1479,9 @@
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label34.Location = new System.Drawing.Point(3, 25);
+            this.label34.Location = new System.Drawing.Point(3, 21);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(1155, 99);
+            this.label34.Size = new System.Drawing.Size(1121, 103);
             this.label34.TabIndex = 0;
             this.label34.Text = "Didto dapit sa my poste na dako nya kulay yellow, General Santos City, South Cota" +
     "bato";
@@ -1539,9 +1505,9 @@
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label35.Location = new System.Drawing.Point(3, 25);
+            this.label35.Location = new System.Drawing.Point(3, 21);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(291, 32);
+            this.label35.Size = new System.Drawing.Size(291, 36);
             this.label35.TabIndex = 0;
             this.label35.Text = "thisisanemail@gmail.com";
             // 
@@ -1564,9 +1530,9 @@
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label36.Location = new System.Drawing.Point(3, 25);
+            this.label36.Location = new System.Drawing.Point(3, 21);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(229, 32);
+            this.label36.Size = new System.Drawing.Size(229, 36);
             this.label36.TabIndex = 0;
             this.label36.Text = "09128343567";
             // 
@@ -1576,7 +1542,7 @@
             this.groupBox16.Controls.Add(this.label37);
             this.groupBox16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox16.ForeColor = System.Drawing.Color.Black;
-            this.groupBox16.Location = new System.Drawing.Point(968, 143);
+            this.groupBox16.Location = new System.Drawing.Point(934, 143);
             this.groupBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1590,9 +1556,9 @@
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label37.Location = new System.Drawing.Point(3, 25);
+            this.label37.Location = new System.Drawing.Point(3, 21);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(195, 32);
+            this.label37.Size = new System.Drawing.Size(195, 36);
             this.label37.TabIndex = 0;
             this.label37.Text = "Alien";
             // 
@@ -1602,7 +1568,7 @@
             this.groupBox17.Controls.Add(this.label38);
             this.groupBox17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox17.ForeColor = System.Drawing.Color.Black;
-            this.groupBox17.Location = new System.Drawing.Point(907, 80);
+            this.groupBox17.Location = new System.Drawing.Point(873, 80);
             this.groupBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1616,9 +1582,9 @@
             this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label38.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label38.Location = new System.Drawing.Point(3, 25);
+            this.label38.Location = new System.Drawing.Point(3, 21);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(255, 32);
+            this.label38.Size = new System.Drawing.Size(255, 36);
             this.label38.TabIndex = 0;
             this.label38.Text = "January 1, 2001";
             // 
@@ -1634,7 +1600,7 @@
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox18.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox18.Size = new System.Drawing.Size(1159, 63);
+            this.groupBox18.Size = new System.Drawing.Size(1125, 63);
             this.groupBox18.TabIndex = 24;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Full Name";
@@ -1644,9 +1610,9 @@
             this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label39.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label39.Location = new System.Drawing.Point(3, 25);
+            this.label39.Location = new System.Drawing.Point(3, 21);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(1153, 36);
+            this.label39.Size = new System.Drawing.Size(1119, 40);
             this.label39.TabIndex = 0;
             this.label39.Text = "Juan Dela Cruz";
             // 
@@ -2085,9 +2051,10 @@
             // tabPage8
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 34);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1327, 735);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Size = new System.Drawing.Size(993, 590);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Users";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2096,391 +2063,22 @@
             // 
             this.tabPage7.Controls.Add(this.panel7);
             this.tabPage7.Location = new System.Drawing.Point(4, 34);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1327, 735);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage7.Size = new System.Drawing.Size(993, 590);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Employee";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.guna2Panel3);
-            this.panel7.Controls.Add(this.guna2Panel5);
-            this.panel7.Controls.Add(this.guna2Panel1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Location = new System.Drawing.Point(2, 2);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1321, 729);
+            this.panel7.Size = new System.Drawing.Size(989, 586);
             this.panel7.TabIndex = 4;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderRadius = 8;
-            this.guna2Panel1.Controls.Add(this.guna2Panel4);
-            this.guna2Panel1.Controls.Add(this.tableLayoutPanel17);
-            this.guna2Panel1.Controls.Add(this.tableLayoutPanel18);
-            this.guna2Panel1.Controls.Add(this.label57);
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 25);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel1.ShadowDecoration.Depth = 15;
-            this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.Size = new System.Drawing.Size(854, 449);
-            this.guna2Panel1.TabIndex = 11;
-            this.guna2Panel1.UseTransparentBackground = true;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label57.Location = new System.Drawing.Point(17, 12);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(261, 28);
-            this.label57.TabIndex = 0;
-            this.label57.Text = "PERSONAL INFORMATION";
-            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel18
-            // 
-            this.tableLayoutPanel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel18.ColumnCount = 3;
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel18.Controls.Add(this.panel10, 0, 0);
-            this.tableLayoutPanel18.Controls.Add(this.panel11, 1, 0);
-            this.tableLayoutPanel18.Controls.Add(this.panel12, 2, 0);
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(22, 66);
-            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
-            this.tableLayoutPanel18.RowCount = 1;
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(811, 75);
-            this.tableLayoutPanel18.TabIndex = 11;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.label56);
-            this.panel12.Controls.Add(this.guna2TextBox3);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(543, 3);
-            this.panel12.Name = "panel12";
-            this.panel12.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.panel12.Size = new System.Drawing.Size(265, 69);
-            this.panel12.TabIndex = 7;
-            // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox3.BorderRadius = 5;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(8, 17);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.ShadowDecoration.BorderRadius = 11;
-            this.guna2TextBox3.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2TextBox3.ShadowDecoration.Depth = 15;
-            this.guna2TextBox3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.guna2TextBox3.Size = new System.Drawing.Size(257, 52);
-            this.guna2TextBox3.TabIndex = 5;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label56.Location = new System.Drawing.Point(19, 3);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(77, 20);
-            this.label56.TabIndex = 6;
-            this.label56.Text = "Last name";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label55);
-            this.panel11.Controls.Add(this.guna2TextBox1);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(273, 3);
-            this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.panel11.Size = new System.Drawing.Size(264, 69);
-            this.panel11.TabIndex = 7;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(4, 17);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.BorderRadius = 11;
-            this.guna2TextBox1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2TextBox1.ShadowDecoration.Depth = 15;
-            this.guna2TextBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.guna2TextBox1.Size = new System.Drawing.Size(256, 52);
-            this.guna2TextBox1.TabIndex = 5;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label55.Location = new System.Drawing.Point(15, 4);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(99, 20);
-            this.label55.TabIndex = 6;
-            this.label55.Text = "Middle name";
-            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label54);
-            this.panel10.Controls.Add(this.guna2TextBox2);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.panel10.Size = new System.Drawing.Size(264, 69);
-            this.panel10.TabIndex = 5;
-            // 
-            // guna2TextBox2
-            // 
-            this.guna2TextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox2.BorderRadius = 5;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(0, 17);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.BorderRadius = 11;
-            this.guna2TextBox2.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2TextBox2.ShadowDecoration.Depth = 15;
-            this.guna2TextBox2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.guna2TextBox2.Size = new System.Drawing.Size(256, 52);
-            this.guna2TextBox2.TabIndex = 5;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label54.Location = new System.Drawing.Point(11, 4);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(80, 20);
-            this.label54.TabIndex = 6;
-            this.label54.Text = "First name";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel17
-            // 
-            this.tableLayoutPanel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel17.ColumnCount = 3;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.Controls.Add(this.panel9, 0, 0);
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(22, 165);
-            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
-            this.tableLayoutPanel17.RowCount = 1;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(811, 75);
-            this.tableLayoutPanel17.TabIndex = 12;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.label53);
-            this.panel9.Controls.Add(this.guna2Panel2);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.panel9.Size = new System.Drawing.Size(264, 69);
-            this.panel9.TabIndex = 8;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2Panel2.BorderRadius = 5;
-            this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.guna2DateTimePicker1);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 17);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(256, 52);
-            this.guna2Panel2.TabIndex = 7;
-            // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2DateTimePicker1.BorderRadius = 5;
-            this.guna2DateTimePicker1.BorderThickness = 1;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2DateTimePicker1.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.guna2DateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(0, 0);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(256, 52);
-            this.guna2DateTimePicker1.TabIndex = 8;
-            this.guna2DateTimePicker1.UseTransparentBackground = true;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 9, 25, 14, 36, 7, 477);
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label53.Location = new System.Drawing.Point(11, 3);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(96, 20);
-            this.label53.TabIndex = 6;
-            this.label53.Text = "Date of birth";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2Panel4.BorderRadius = 5;
-            this.guna2Panel4.BorderThickness = 1;
-            this.guna2Panel4.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel4.FillColor = System.Drawing.Color.White;
-            this.guna2Panel4.Location = new System.Drawing.Point(604, 165);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel4.ShadowDecoration.Depth = 15;
-            this.guna2Panel4.Size = new System.Drawing.Size(226, 200);
-            this.guna2Panel4.TabIndex = 10;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BorderRadius = 5;
-            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2PictureBox1.ErrorImage = global::ARIAR_PayrollSystem.Properties.Resources.person_logo_large;
-            this.guna2PictureBox1.Image = global::ARIAR_PayrollSystem.Properties.Resources.person_logo_large;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::ARIAR_PayrollSystem.Properties.Resources.person_logo_large;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.BorderRadius = 11;
-            this.guna2PictureBox1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(226, 200);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 11;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel5.BorderRadius = 8;
-            this.guna2Panel5.FillColor = System.Drawing.Color.White;
-            this.guna2Panel5.Location = new System.Drawing.Point(20, 492);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel5.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel5.ShadowDecoration.Depth = 15;
-            this.guna2Panel5.ShadowDecoration.Enabled = true;
-            this.guna2Panel5.Size = new System.Drawing.Size(453, 213);
-            this.guna2Panel5.TabIndex = 12;
-            this.guna2Panel5.UseTransparentBackground = true;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel3.BorderRadius = 8;
-            this.guna2Panel3.Controls.Add(this.guna2Button1);
-            this.guna2Panel3.FillColor = System.Drawing.Color.White;
-            this.guna2Panel3.Location = new System.Drawing.Point(891, 25);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel3.ShadowDecoration.Depth = 15;
-            this.guna2Panel3.ShadowDecoration.Enabled = true;
-            this.guna2Panel3.Size = new System.Drawing.Size(410, 346);
-            this.guna2Panel3.TabIndex = 13;
-            this.guna2Panel3.UseTransparentBackground = true;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(96, 238);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Register Fingerprint";
-            this.guna2Button1.UseTransparentBackground = true;
             // 
             // tabControl1
             // 
@@ -2490,21 +2088,22 @@
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(71, 30);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(40, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1335, 773);
+            this.tabControl1.Size = new System.Drawing.Size(1001, 628);
             this.tabControl1.TabIndex = 0;
             // 
             // Test
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1335, 773);
+            this.ClientSize = new System.Drawing.Size(1001, 628);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Test";
             this.Text = "Test";
             this.Load += new System.EventHandler(this.Test_Load);
@@ -2581,23 +2180,6 @@
             this.tableLayoutPanel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.tabPage7.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            this.tableLayoutPanel18.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.tableLayoutPanel17.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -2736,28 +2318,6 @@
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label53;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label54;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label55;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label56;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private System.Windows.Forms.Label label57;
         private System.Windows.Forms.TabControl tabControl1;
     }
 }

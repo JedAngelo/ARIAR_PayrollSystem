@@ -31,20 +31,20 @@ namespace ARIAR_PayrollSystem.Forms
         private Dictionary<Guid?, Fmd> employeeFmds;
         private Fmd attendanceFmd;
         private int count;
-        private ApiResponse<List<AttendanceDataLog>> attendanceLogs;
+        private ApiResponse<List<AttendanceDisplayDto>> attendanceLogs;
 
 
-        private TimeSpan _morningInStart = new TimeSpan(5, 0, 0);
-        private TimeSpan _morningInEnd = new TimeSpan(8, 30, 0);
+        private TimeOnly _morningInStart = new TimeOnly(5, 0, 0);
+        private TimeOnly _morningInEnd = new TimeOnly(12, 0, 0);
 
-        private TimeSpan _afternoonInStart = new TimeSpan(11, 0, 0);
-        private TimeSpan _afternoonInEnd = new TimeSpan(13, 0, 0);
+        private TimeOnly _afternoonInStart = new TimeOnly(12, 0, 0);
+        private TimeOnly _afternoonInEnd = new TimeOnly(17, 0, 0);
 
-        private TimeSpan _morningOutStart = new TimeSpan(11, 30, 0);
-        private TimeSpan _morningOutEnd = new TimeSpan(12, 30, 0);
+        private TimeOnly _morningOutStart = new TimeOnly(8, 0, 0);
+        private TimeOnly _morningOutEnd = new TimeOnly(13, 00, 0);
 
-        private TimeSpan _afternoonOutStart = new TimeSpan(16, 30, 0);
-        private TimeSpan _afternoonOutEnd = new TimeSpan(17, 30, 0);
+        private TimeOnly _afternoonOutStart = new TimeOnly(13, 0, 0);
+        private TimeOnly _afternoonOutEnd = new TimeOnly(18, 0, 0);
 
         public BiometricAttendance(MainForm mainForm)
         {
@@ -52,74 +52,76 @@ namespace ARIAR_PayrollSystem.Forms
             _mainForm = mainForm;
             TimeLabel.Text = DateTime.Now.ToString("T");
             DateLabel.Text = DateTime.Now.Date.ToString("MMMM d, yyyy");
-            ProgressCircle.Visible = true;
-            ProgressCircle.Value = 0;
-            PopulateAttendanceView("*"); 
+            //ProgressCircle.Visible = true;
+            //ProgressCircle.Value = 0;
+            PopulateAttendanceView(); 
 
         }
 
+        private async Task<AttendanceDto> GetEmployeeAttendance(Guid id)
+        {
+            try
+            {
+                var todayDate = DateOnly.FromDateTime(DateTime.Now).ToString("yyyy-MM-dd");
+                var apiData = await HttpHelper.GetAsync<ApiResponse<AttendanceDto>>($"{ApiEndpoint.Attendance.GetAttendanceById}?id={id}&date={todayDate}");
+
+                if (apiData == null) return null;
+
+                if (apiData.isSuccess)
+                {
+                    return apiData.Data;
+                }
+                else
+                {
+                    Console.WriteLine(apiData.ErrorMessage);
+                    return null;
+                }
+
+                throw new InvalidOperationException("apiData is not null but didn't returned either success flag");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
        
 
-        private async void PopulateAttendanceView(string type)
+        private async void PopulateAttendanceView()
         {
             try
             {
                 var DateNowString = DateTime.Now.Date.ToString("yyyy-MM-dd");
-                attendanceLogs = await HttpHelper.GetAsync<ApiResponse<List<AttendanceDataLog>>>($"{ApiEndpointHelper.Attendance.GetAttendanceLogShort}{DateNowString}");
+                attendanceLogs = await HttpHelper.GetAsync<ApiResponse<List<AttendanceDisplayDto>>>($"{ApiEndpoint.Attendance.GetAttendanceLogShort}{DateNowString}");
                 if (attendanceLogs == null)
                 {
                     GunaMessage.Error("Can't retrieve attendance logs!", "ERROR");
                     return;
-                }
-                attendanceLogs.Data.ForEach(a =>
-                {
-                    a.Log = TimeOnly.Parse(a.Log).ToString("t");
-                });
+                }                
 
                 if (attendanceLogs.isSuccess)
                 {
-                    if (String.Equals(type, "*"))
+                    attendanceLogs.Data.ForEach(a =>
                     {
-                        ProgressCircle.Visible = true;
-                        ProgressCircle.Maximum = attendanceLogs.Data.Count();
-                        await AttendanceLogView.DataViewAsync(attendanceLogs.Data, AttendanceView);
-                        for (int i = 0; i < attendanceLogs.Data.Count; i++)
-                        {
-                            ProgressCircle.Value = i + 1;
-                            await Task.Delay(50);
-                        }
-                        if (attendanceLogs.Data.Count() > 4)
-                        {
-                            ToastNotify.Info(attendanceLogs.Data.Count().ToString());
-                            foreach (Control control in AttendanceView.Controls)
-                            {
-                                if (control.Name == "AttendanceLogView")
-                                {
-                                    control.Width -= 15;
-                                }
-                            }
-                        }
-                        ProgressCircle.Visible = false;
-                        LoadingLabel.Visible = false;
-                        AttendanceView.Visible = true;
+                        a.Log = TimeOnly.Parse(a.Log).ToString("t");
+                    });
 
+                    if (InvokeRequired)
+                    {
+                        BeginInvoke((Action)(async () =>
+                        {
+                            await AttendanceLogView.DataViewAsync(attendanceLogs.Data, AttendanceView);
+                        }));
                     }
-                    else if (String.Equals(type, "LAST"))
-                    {                       
-
-                        await AttendanceLogView.DataViewAddAsync(attendanceLogs.Data.LastOrDefault(), AttendanceView);
-                        if (attendanceLogs.Data.Count() > 4)
-                        {
-                            PopulateAttendanceView("*");
-                        }
+                    else
+                    {
+                        await AttendanceLogView.DataViewAsync(attendanceLogs.Data, AttendanceView);
                     }
                 }
                 else
                 {
                     GunaMessage.Warning(attendanceLogs.ErrorMessage, "Warning");
-                }
-                
-                
+                }              
 
             }
             catch (Exception ex)
@@ -132,7 +134,7 @@ namespace ARIAR_PayrollSystem.Forms
         {
             try
             {
-                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometricsDto>>>(ApiEndpointHelper.Biometric.GetBiometric);
+                var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<List<EmployeeBiometricsDto>>>(ApiEndpoint.Biometric.GetBiometric);
 
                 if (_employeeInfo == null)
                 {
@@ -174,7 +176,7 @@ namespace ARIAR_PayrollSystem.Forms
                     AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd")
                 };
 
-                var result = await HttpHelper.PostAsync<ApiResponse<bool>, dynamic>(ApiEndpointHelper.Attendance.HasMorningIn, attendanceData);
+                var result = await HttpHelper.PostAsync<ApiResponse<bool>, dynamic>(ApiEndpoint.Attendance.HasMorningIn, attendanceData);
                 if (!result.isSuccess)            
                 {
                     //MakeReport($"Error retrieving morning in data: {result.ErrorMessage}");
@@ -197,85 +199,123 @@ namespace ARIAR_PayrollSystem.Forms
             {
                 bool hasMorningIn = await HasMorningIn(personalId);
                 AttendanceDto attendanceData = null;
-                var timeNow = DateTime.Now.TimeOfDay;
+                var timeNow = TimeOnly.FromDateTime(DateTime.Now);
+                var errorMessage = "Time does not match time in or out range";
 
-                if (timeNow > _morningInStart && timeNow < _morningInEnd)
+                var _attendance = await GetEmployeeAttendance(personalId);
+                
+                if (_attendance == null)
                 {
-                    attendanceData = new AttendanceDto
+                    if (timeNow >= _morningInStart && timeNow < _morningInEnd)
                     {
-                        PersonalId = personalId,
-                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
-                        MorningIn = DateTime.Now.TimeOfDay.ToString()
-                    };
-
-                }
-
-                if (timeNow > _afternoonOutStart && timeNow < _afternoonOutEnd)
-                {
-                    attendanceData = new AttendanceDto
+                        attendanceData = new AttendanceDto
+                        {
+                            PersonalId = personalId,
+                            AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                            MorningIn = DateTime.Now.TimeOfDay.ToString()
+                        };
+                    }
+                    else if (timeNow > _afternoonInStart && timeNow < _afternoonInEnd)
                     {
-                        PersonalId = personalId,
-                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
-                        AfternoonOut = DateTime.Now.TimeOfDay.ToString()
-                    };
+                        attendanceData = new AttendanceDto
+                        {
+                            PersonalId = personalId,
+                            AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                            AfternoonIn = DateTime.Now.TimeOfDay.ToString()
+                        };
+                    }
                 }
-
-                if (!hasMorningIn && timeNow > _afternoonInStart && timeNow < _afternoonInEnd)
-                {
-                    attendanceData = new AttendanceDto
+                else
+                {                    
+                    if (_attendance.MorningOut == null && _attendance.MorningIn != null && timeNow >= _morningOutStart && timeNow <= _morningOutEnd)
                     {
-                        PersonalId = personalId,
-                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
-                        AfternoonIn = DateTime.Now.TimeOfDay.ToString()
-                    };
-                }
-
-                if (hasMorningIn && timeNow > _morningOutStart && timeNow < _morningOutEnd)
-                {
-                    attendanceData = new AttendanceDto
+                        var morningIn = TimeOnly.ParseExact(_attendance.MorningIn, "HH:mm:ss");
+                        var timeDifference =  timeNow - morningIn;
+                        if (timeDifference <= new TimeSpan(1, 0, 0))
+                        {
+                            DialogResult result = GunaMessage.Question(_mainForm, "Time in record found 1 hour earlier, proceed?", "Early Out");
+                            if (result == DialogResult.No || result == DialogResult.Cancel) return;
+                        }
+                        attendanceData = new AttendanceDto
+                        {
+                            PersonalId = personalId,
+                            AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                            MorningOut = DateTime.Now.TimeOfDay.ToString()
+                        };
+                    }
+                    else if (_attendance.AfternoonOut == null && (_attendance.MorningIn != null || _attendance.AfternoonIn != null) && timeNow >= _afternoonOutStart && timeNow <= _afternoonOutEnd)
                     {
-                        PersonalId = personalId,
-                        AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
-                        MorningOut = DateTime.Now.TimeOfDay.ToString()
-                    };
-                }
+                        var timeDifference = timeNow - TimeOnly.ParseExact(_attendance.MorningIn ?? _attendance.AfternoonIn, "HH:mm:ss");
+                        if (timeDifference <= new TimeSpan(1, 0, 0))
+                        {
+                            DialogResult result = GunaMessage.Question(_mainForm, "Time in record found 1 hour earlier, proceed?", "Early Out");
+                            if (result == DialogResult.No || result == DialogResult.Cancel) return;
+                        }
+                        attendanceData = new AttendanceDto
+                        {
+                            PersonalId = personalId,
+                            AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                            AfternoonOut = DateTime.Now.TimeOfDay.ToString()
+                        };
+                    }
+                    else if (_attendance.MorningOut != null || _attendance.AfternoonOut != null)
+                    {
+                        errorMessage = "Invalid, attendance record found";
+                    }
 
+                    if (_attendance.Status == "ABSENT")
+                    {
+                        if (timeNow >= _morningInStart && timeNow < _morningInEnd)
+                        {
+                            attendanceData = new AttendanceDto
+                            {
+                                PersonalId = personalId,
+                                AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                                MorningIn = DateTime.Now.TimeOfDay.ToString()
+                            };
+                        }
+                        else if (timeNow >= _afternoonInStart && timeNow <= _afternoonInEnd)
+                        {
+                            attendanceData = new AttendanceDto
+                            {
+                                PersonalId = personalId,
+                                AttendanceDate = DateTime.Now.Date.ToString("yyyy-MM-dd"),
+                                AfternoonIn = DateTime.Now.TimeOfDay.ToString()
+                            };
+                        }
+                    }
+                    
+                }
+                
 
                 if (attendanceData != null)
                 {
-                    var result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiEndpointHelper.Attendance.LogAttendance, attendanceData);
+                    var result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiEndpoint.Attendance.LogAttendance, attendanceData);
 
                     if (result.isSuccess)
                     {
                         ToastNotify.Info(result.Data);
                         //MakeReport(result.Data, "INFO");
-                        var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<PersonalInformationDto>>(ApiEndpointHelper.Employee.GetPersonalInfoById + personalId);
+                        var _employeeInfo = await HttpHelper.GetAsync<ApiResponse<PersonalInformationDto>>(ApiEndpoint.Employee.GetPersonalInfoById + personalId);
                         if (_employeeInfo != null)
                         {
-                            await ControlsHelper.ConvertByteToImageAsync(_employeeInfo.Data.EmployeeImage, pictureBox2);
+                            await ControlsHelper.ConvertByteToImageAsync(_employeeInfo.Data.EmployeeImage, EmployeePictureBox);
                             Invoke((Action)(() =>
                             {
                                 NameLabel.Text = $"{_employeeInfo.Data.FirstName} {(string.IsNullOrEmpty(_employeeInfo.Data.MiddleName) ? "" : $"{_employeeInfo.Data.MiddleName[0]}. ")}{_employeeInfo.Data.LastName}";
                             }));
-                            PopulateAttendanceView("LAST");
+                            PopulateAttendanceView();
 
                         }
-
-                        //GunaMessage.InfoMessage(_mainForm, result.Data, "Attendance Logged");
                     }
                     else
                     {
-                        //MakeReport($"Attendance not logged: {result.ErrorMessage}");
-                        //MakeReport(result.ErrorMessage, "ERROR");
                         ToastNotify.Error(result.ErrorMessage);
-                        //GunaMessage.ErrorMessage(_mainForm, result.ErrorMessage, "Attendance not logged!");
                     }
                 }
                 else
                 {
-                    //MakeReport("INVALID: Time does not match time in or out range");
-                    //MakeReport("Time does not match time in or out range", "ERROR");
-                    ToastNotify.Error("Time does not match time in or out range");
+                    ToastNotify.Warning(errorMessage);
                 }
 
 
@@ -393,7 +433,7 @@ namespace ARIAR_PayrollSystem.Forms
 
         protected void SetPrompt(string prompt)
         {
-            Invoke((Action)(() => PromptLabel.Text = prompt));
+            Invoke((Action)(() => Console.WriteLine(prompt)));
         }
 
         protected void MakeReport(string message, string type)
@@ -413,10 +453,6 @@ namespace ARIAR_PayrollSystem.Forms
         private void BiometricAttPanel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
         }
 
         private void TimerProcess_Tick(object sender, EventArgs e)
@@ -453,6 +489,29 @@ namespace ARIAR_PayrollSystem.Forms
             
         }
 
-        
+        private void TimeInAmButton_Click(object sender, EventArgs e)
+        {
+            var manualAttendanceView = new AttendanceModal("TIME IN AM", _mainForm.EmployeeInfo, DateTime.Now);
+            ControlsHelper.ShowModal(_mainForm, manualAttendanceView);
+        }
+
+        private void TimeOutAmButton_Click(object sender, EventArgs e)
+        {
+            var manualAttendanceView = new AttendanceModal("TIME OUT AM", _mainForm.EmployeeInfo, DateTime.Now);
+            ControlsHelper.ShowModal(_mainForm, manualAttendanceView);
+        }
+
+        private void TimeInPmButton_Click(object sender, EventArgs e)
+        {
+            var manualAttendanceView = new AttendanceModal("TIME IN PM", _mainForm.EmployeeInfo, DateTime.Now);
+            ControlsHelper.ShowModal(_mainForm, manualAttendanceView);
+        }
+
+        private void TimeOutPmButton_Click(object sender, EventArgs e)
+        {
+            var manualAttendanceView = new AttendanceModal("TIME OUT PM", _mainForm.EmployeeInfo, DateTime.Now);
+            ControlsHelper.ShowModal(_mainForm, manualAttendanceView);
+        }
+
     }
 }

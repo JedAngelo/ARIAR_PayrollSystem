@@ -17,6 +17,8 @@ namespace ARIAR_PayrollSystem.Models
 
         public string LastName { get; set; } = null!;
 
+        public string? Suffix { get; set; } = null!;
+
         public string DateOfBirth { get; set; }
 
         public string Gender { get; set; } = null!;

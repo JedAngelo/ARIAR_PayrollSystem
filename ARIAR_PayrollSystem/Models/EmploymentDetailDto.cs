@@ -8,7 +8,7 @@ namespace ARIAR_PayrollSystem.Models
 {
     public class EmploymentDetailDto
     {
-        public int EmploymentId { get; set; }
+        public int? EmploymentId { get; set; }
 
         public Guid PersonalId { get; set; }
 
@@ -16,16 +16,10 @@ namespace ARIAR_PayrollSystem.Models
 
         public string HireDate { get; set; }
 
-        public decimal PayRate { get; set; }
+        public decimal DailySalary { get; set; }
 
+        public decimal BasicSalary { get; set; }
 
-        public decimal PhilhealthEmployeeRate { get; set; }
-
-        public decimal SssEmployeeRate { get; set; }
-
-        public decimal PagibigEmployeeRate { get; set; }
-
-        public decimal IncomeTaxRate { get; set; }
 
         //public virtual PersonalInformationDto PersonalDtos { get; set; } = null!;
 

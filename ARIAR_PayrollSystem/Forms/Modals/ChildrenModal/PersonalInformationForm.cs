@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,27 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
             InitializeComponent();
             _canvasModal = canvasModal;
             _personalInformationDto = personalInformationDto;
+
+            if (_personalInformationDto?.PersonalId != null)
+            {
+                FirstnameTextBox.Text = _personalInformationDto.FirstName;
+                MiddlenameTextBox.Text = _personalInformationDto.MiddleName;
+                LastnameTextBox.Text = _personalInformationDto.LastName;
+                SuffixTextBox.Text = _personalInformationDto.Suffix;
+                MaritalStatComboBox.Text = _personalInformationDto.MaritalStatus;
+                MaleOption.Checked = _personalInformationDto.Gender.Equals("male", StringComparison.OrdinalIgnoreCase);
+                FemaleOption.Checked = _personalInformationDto.Gender.Equals("female", StringComparison.OrdinalIgnoreCase);
+                if (_personalInformationDto.EmployeeImage != null) LoadImage(_personalInformationDto.EmployeeImage);
+                DoBDatePicker.Value = DateTime.ParseExact(_personalInformationDto.DateOfBirth, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                AgeTextBox.Text = _personalInformationDto.Age.ToString();
+
+            }
+
+        }
+
+        private async void LoadImage(byte[] data)
+        {
+            await ControlsHelper.ConvertByteToImageAsync(data, EmployeePictureBox);
         }
 
         private void DoBDatePicker_ValueChanged(object sender, EventArgs e)
@@ -73,6 +95,8 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
 
                 // Validate MiddleName (allow null or empty values)
                 dto.MiddleName = string.IsNullOrWhiteSpace(MiddlenameTextBox.Text) ? null : MiddlenameTextBox.Text;
+                dto.Suffix = string.IsNullOrWhiteSpace(SuffixTextBox.Text) ? null : SuffixTextBox.Text;
+
 
                 // Validate LastName
                 dto.LastName = string.IsNullOrWhiteSpace(LastnameTextBox.Text)
@@ -81,9 +105,8 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
 
                 // Validate Gender (ensure one of the options is selected)
                 dto.Gender = MaleOption.Checked ? MaleOption.Text :
-                             FemaleOptions.Checked ? FemaleOptions.Text :
-                             OtherOptions.Checked ? OtherOptions.Text :
-                             throw new ArgumentException("Gender is required");
+                                FemaleOption.Checked ? FemaleOption.Text :
+                                throw new ArgumentException("Gender is required");
 
                 // Validate DateOfBirth
                 dto.DateOfBirth = DoBDatePicker.Value == default ?
@@ -93,12 +116,14 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
                 // Validate Age (ensure it's a valid number and within a reasonable range)
                 if (string.IsNullOrWhiteSpace(AgeTextBox.Text) || !byte.TryParse(AgeTextBox.Text, out byte age) || age < 18 || age > 120)
                 {
-                    throw new ArgumentException("Please enter a valid age between 18 and 120.");
+                    throw new ArgumentException("Please enter a valid age between 18 and 80.");
                 }
                 dto.Age = age;
 
+                var image = await ControlsHelper.ConvertImageToByteAsync(EmployeePictureBox);
+
                 // Validate EmployeeImage (ensure an image is selected)
-                dto.EmployeeImage = await ControlsHelper.ConvertImageToByteAsync(EmployeePictureBox)
+                dto.EmployeeImage = image
                     ?? throw new ArgumentException("Employee image is required");
 
                 if (MaritalStatComboBox.SelectedIndex < 0)
@@ -106,6 +131,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
                     throw new ArgumentException("Please select a valid marital status.");
                 }
                 dto.MaritalStatus = MaritalStatComboBox.SelectedItem.ToString();
+              
 
                 // Proceed to the next step
                 _canvasModal.advanceToSecond();
@@ -130,6 +156,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
 
         private async void UploadButton_Click(object sender, EventArgs e)
         {
+            await Task.Delay(250);
             OpenFile.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
             OpenFile.Title = "Select Employee Picture";
 
@@ -138,10 +165,25 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
                 string filePath = OpenFile.FileName;
 
                 // Load image asynchronously
-                Image image = await Task.Run(() => Image.FromFile(filePath));
-
-                EmployeePictureBox.Image = image;
+                _ = LoadPic(filePath);
+                
             }
+        }
+
+        private async Task LoadPic(string filePath)
+        {
+            Image image = await Task.Run(() => Image.FromFile(filePath));
+            EmployeePictureBox.Image = image;
+        }
+
+        private void LastnameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UploadImageButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

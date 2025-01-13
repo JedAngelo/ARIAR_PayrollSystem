@@ -23,7 +23,6 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             var textWriter = new TextBoxWriter(ConsoleLogs);
             Console.SetOut(textWriter); // Redirect console output
         }
-
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -56,10 +55,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
 
         public override void Write(char value)
         {
-            // Buffer the character
             _buffer.Append(value);
-
-            // Check if we have a newline and flush
             if (value == '\n')
             {
                 FlushBuffer();
@@ -71,7 +67,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             if (!string.IsNullOrEmpty(value))
             {
                 _buffer.Append(value);
-                FlushBuffer(); // Flush immediately for full strings
+                FlushBuffer();
             }
         }
 
@@ -81,6 +77,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             {
                 _buffer.Append(value + Environment.NewLine);
                 FlushBuffer();
+
             }
         }
 
@@ -88,10 +85,11 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         {
             if (_buffer.Length > 0)
             {
-                string text = _buffer.ToString();
-                _buffer.Clear();
+                string timestamp = DateTime.Now.ToString("HH:mm:ss.fff"); // Format with milliseconds
 
-                // Safely update the RichTextBox
+                string text = $"[{timestamp}]    {_buffer}";
+
+                _buffer.Clear();
                 _outputBox.Invoke((MethodInvoker)(() =>
                 {
                     _outputBox.AppendText(text);
@@ -100,5 +98,4 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             }
         }
     }
-
 }

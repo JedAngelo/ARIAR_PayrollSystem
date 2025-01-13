@@ -1,6 +1,7 @@
 ﻿using ARIAR_PayrollSystem.Forms.Modals;
 using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ARIAR_PayrollSystem.Forms
@@ -93,14 +94,17 @@ namespace ARIAR_PayrollSystem.Forms
 
         private void Position()
         {
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+            Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
 
-            toastX = screenWidth - this.Width - 10;
-            toastY = screenHeight - this.Height + 120;
+            // Initial position for the toast
+            toastX = workingArea.Right - this.Width - 10; // 10 pixels from the right edge
+            toastY = workingArea.Bottom; // Start from the bottom edge of the working area
 
+            // Set the initial off-screen position for animation
             this.Location = new Point(toastX, toastY);
         }
+
+
 
         private void ToastNotify_Load(object sender, EventArgs e)
         {
@@ -109,57 +113,36 @@ namespace ARIAR_PayrollSystem.Forms
             
         }
         //private int elapsedTime = 0;
-        private void timerShow_Tick(object sender, EventArgs e)
+        private async void timerShow_Tick(object sender, EventArgs e)
         {
             this.Activate();
-            //this.Focus();
-            toastY -= 10;
+            toastY -= 10; // Move the toast upwards
             this.Location = new Point(toastX, toastY);
-            if (toastY <= 670)
+
+            // Stop the timer once the toast reaches the target position
+            if (toastY <= Screen.PrimaryScreen.WorkingArea.Bottom - this.Height - 10)
             {
                 timerShow.Stop();
+                await Task.Delay(1500);
                 timerHide.Start();
             }
-            //elapsedTime += 10;
-            //if (this.Opacity != 1)
-            //{
-            //    this.Opacity += 0.03;
-            //}
-
-            //if (elapsedTime == 2000)
-            //{
-            //    timerShow.Stop();
-            //    timerHide.Start();
-            //}
-
         }
+
 
         private int y = 100;
         private void timerHide_Tick(object sender, EventArgs e)
         {
-            y--;
-            if (y < 0)
-            {
-                toastY += 1;
-                this.Location = new Point(toastX, toastY += 10);
-                if (toastY > 800)
-                {
-                    timerHide.Stop();
-                    y = 100;
-                    this.Close();
-                    activeToast = null; // Clear the reference to the closed toast
-                }
-            }
-            //elapsedTime -= 10;
-            //if (this.Opacity != 0)
-            //{
-            //    this.Opacity -= 0.03;
-            //}
-            //if (elapsedTime == 0)
-            //{
-            //    this.Close();
-            //}
+            toastY += 10; // Move the toast downwards
+            this.Location = new Point(toastX, toastY);
 
+            // Stop the timer and close the toast once it moves out of the screen
+            if (toastY >= Screen.PrimaryScreen.WorkingArea.Bottom)
+            {
+                timerHide.Stop();
+                this.Close();
+                activeToast = null; // Clear the reference
+            }
         }
+
     }
 }

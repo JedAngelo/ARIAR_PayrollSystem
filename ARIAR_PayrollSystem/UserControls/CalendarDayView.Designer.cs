@@ -72,6 +72,7 @@
             this.PresentCount.TabIndex = 1;
             this.PresentCount.Text = "     Present";
             this.PresentCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PresentCount.Visible = false;
             this.PresentCount.Click += new System.EventHandler(this.Control_Click);
             this.PresentCount.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
             this.PresentCount.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
@@ -93,6 +94,7 @@
             this.AbsentCount.TabIndex = 2;
             this.AbsentCount.Text = "     Absent";
             this.AbsentCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AbsentCount.Visible = false;
             this.AbsentCount.Click += new System.EventHandler(this.Control_Click);
             this.AbsentCount.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
             this.AbsentCount.MouseLeave += new System.EventHandler(this.Control_MouseLeave);
@@ -114,6 +116,7 @@
             this.LeaveCount.TabIndex = 3;
             this.LeaveCount.Text = "     Leave";
             this.LeaveCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LeaveCount.Visible = false;
             this.LeaveCount.Click += new System.EventHandler(this.Control_Click);
             this.LeaveCount.MouseEnter += new System.EventHandler(this.Control_MouseEnter);
             this.LeaveCount.MouseLeave += new System.EventHandler(this.Control_MouseLeave);

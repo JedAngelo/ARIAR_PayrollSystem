@@ -19,22 +19,35 @@ namespace ARIAR_PayrollSystem.Forms.Modals
     {
         private PersonalInformationForm _personalInformation;
         private ContactInformationForm _contactInformation;
-        private EmploymentDetails _employmentDetails;
-        private PersonalInformationDto _personalInformationDto = new PersonalInformationDto();
-        private ContactInformationDto _contactInformationDto = new ContactInformationDto();
-        private EmploymentDetailDto _employmentDetailDto = new EmploymentDetailDto();
+        private EmploymentDetailsForm _employmentDetails;
+        private PersonalInformationDto _employeeInfo;
+        private ContactInformationDto _contactInfo;
+        private EmploymentDetailDto _employmentDetail;
 
-
-        public EmployeeCanvasModal()
+        public EmployeeCanvasModal(PersonalInformationDto employeeInfo)
         {
+            _employeeInfo = employeeInfo;
+            //if (!String.IsNullOrEmpty(_employeeInfo.PersonalId.ToString()))
+            //{
+            //    _contactInfo = employeeInfo.ContactInformationDtos;
+            //    _employmentDetail = employeeInfo.EmploymentDetailDtos;
+            //}
+            //else
+            //{
+            //    _contactInfo = new ContactInformationDto();
+            //    _employmentDetail = new EmploymentDetailDto();
+            //}
+            //_employeeInfo.ContactInformationDtos = _contactInfo;
+            //_employeeInfo.EmploymentDetailDtos = _employmentDetail;
+            
+
+
+
             InitializeComponent();
-            _personalInformation = new PersonalInformationForm(this, _personalInformationDto);
-            _contactInformation = new ContactInformationForm(this, _contactInformationDto);
-            _employmentDetails = new EmploymentDetails(this, _employmentDetailDto);
+            _personalInformation = new PersonalInformationForm(this, _employeeInfo);
+            _contactInformation = new ContactInformationForm(this, _employeeInfo.ContactInformationDtos);
+            _employmentDetails = new EmploymentDetailsForm(this, _employeeInfo.EmploymentDetailDtos);
 
-
-            _personalInformationDto.ContactInformationDtos = _contactInformationDto;
-            _personalInformationDto.EmploymentDetailDtos = _employmentDetailDto;
         }
 
 
@@ -53,18 +66,14 @@ namespace ARIAR_PayrollSystem.Forms.Modals
 
         public async void advanceToSecond()
         {
-            firstToSecond.FillColor = Color.LightSeaGreen;
-            secondStep.FillColor = Color.LightSeaGreen;
-            secondStepLabel.ForeColor = Color.White;
+            progressLine.Value++;
             await Switcher.SwitchPanelAsync(MainViewPanel, _contactInformation);
             nextTransition.Show(MainViewPanel);
         }
 
         public async void advanceToThird()
         {
-            secondToThird.FillColor = Color.LightSeaGreen;
-            thirdStep.FillColor = Color.LightSeaGreen;
-            thirdStepLabel.ForeColor = Color.White;
+            progressLine.Value++;
             await Switcher.SwitchPanelAsync(MainViewPanel, _employmentDetails);
             nextTransition.Show(MainViewPanel);
 
@@ -72,20 +81,14 @@ namespace ARIAR_PayrollSystem.Forms.Modals
 
         public async void retreatToSecond()
         {
-            thirdStep.FillColor = Color.White;
-            secondToThird.FillColor = Color.White;
-            thirdStepLabel.ForeColor = Color.FromArgb(45, 45, 45);
-            secondStepLabel.ForeColor = Color.White;
+            progressLine.Value--;
             await Switcher.SwitchPanelAsync(MainViewPanel, _contactInformation);
             prevTransition.Show(MainViewPanel);
         }
 
         public async void retreatToFirst()
         {
-            secondStep.FillColor = Color.White;
-            firstToSecond.FillColor = Color.White;
-            secondStepLabel.ForeColor = Color.FromArgb(45, 45, 45);
-            firstStepLabel.ForeColor = Color.White;
+            progressLine.Value--;
             await Switcher.SwitchPanelAsync(MainViewPanel, _personalInformation);
             prevTransition.Show(MainViewPanel);
         }
@@ -94,19 +97,22 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         {
             try
             {
-                _personalInformationDto.CreatedBy = "ADMIN";
-                _personalInformationDto.CreatedDate = DateTime.Now;
-
-                var addEmployee = await HttpHelper.PostAsync<ApiResponse<string>, PersonalInformationDto>(ApiEndpointHelper.Employee.AddOrUpdateEmployeeInfo, _personalInformationDto)
-                                  ?? throw new Exception("addEmployee is empty");
-
-                if (addEmployee.isSuccess)
+                if (_employeeInfo?.PersonalId == null)
                 {
-                    GunaMessage.Info(addEmployee.Data, "Success");
+                    _employeeInfo.CreatedBy = "ADMIN";
+                    _employeeInfo.CreatedDate = DateTime.Now;
+                }
+                
+                var addOrUpdateEmployee = await HttpHelper.PostAsync<ApiResponse<string>, PersonalInformationDto>(ApiEndpoint.Employee.AddOrUpdateEmployeeInfo, _employeeInfo)
+                                      ?? throw new Exception("Employee data is empty");
+
+                if (addOrUpdateEmployee.isSuccess)
+                {
+                    GunaMessage.Info(addOrUpdateEmployee.Data, "Success");
                 }
                 else
                 {
-                    GunaMessage.Warning(addEmployee.ErrorMessage, "Please try again later");
+                    GunaMessage.Warning(addOrUpdateEmployee.ErrorMessage, "Please try again later");
                 }
 
 
@@ -115,8 +121,29 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
-                throw;
             }
+        }
+
+        private void progressLine_ValueChanged(object sender, EventArgs e)
+        {
+            switch (progressLine.Value)
+            {
+                case 0:
+                    firstStep.FillColor = Color.FromArgb(255, 188, 1);
+                    secondStep.FillColor = Color.White;
+                    thirdStep.FillColor = Color.White;
+                    return;
+
+                case 1:
+                    secondStep.FillColor = Color.FromArgb(255, 188, 1);
+                    thirdStep.FillColor = Color.White;
+                    return;
+
+                case 2:
+                    thirdStep.FillColor = Color.FromArgb(255, 188, 1);
+                    return;
+            }
+
         }
     }
 }

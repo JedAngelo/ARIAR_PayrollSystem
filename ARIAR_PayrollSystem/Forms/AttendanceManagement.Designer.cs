@@ -30,11 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AttendanceManagementPanel = new System.Windows.Forms.Panel();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.EmployeeViewScrollBar = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.ReportView = new ARIAR_PayrollSystem.UserControls.CustomFlowLayoutPanel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.LogsView = new ARIAR_PayrollSystem.UserControls.CustomFlowLayoutPanel();
+            this.EmployeeViewScrollBar = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -72,6 +76,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.AttendanceManagementPanel.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,7 +95,11 @@
             // 
             // AttendanceManagementPanel
             // 
-            this.AttendanceManagementPanel.BackColor = System.Drawing.Color.White;
+            this.AttendanceManagementPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.AttendanceManagementPanel.Controls.Add(this.guna2Button9);
+            this.AttendanceManagementPanel.Controls.Add(this.guna2Button6);
+            this.AttendanceManagementPanel.Controls.Add(this.guna2Button7);
+            this.AttendanceManagementPanel.Controls.Add(this.guna2Button8);
             this.AttendanceManagementPanel.Controls.Add(this.guna2TextBox1);
             this.AttendanceManagementPanel.Controls.Add(this.guna2Panel5);
             this.AttendanceManagementPanel.Controls.Add(this.panel1);
@@ -106,6 +115,109 @@
             this.AttendanceManagementPanel.Name = "AttendanceManagementPanel";
             this.AttendanceManagementPanel.Size = new System.Drawing.Size(990, 599);
             this.AttendanceManagementPanel.TabIndex = 0;
+            // 
+            // guna2Button9
+            // 
+            this.guna2Button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button9.Animated = true;
+            this.guna2Button9.BorderRadius = 15;
+            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button9.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button9.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.Image = global::ARIAR_PayrollSystem.Properties.Resources.refresh_line_2_;
+            this.guna2Button9.ImageSize = new System.Drawing.Size(24, 24);
+            this.guna2Button9.Location = new System.Drawing.Point(835, 107);
+            this.guna2Button9.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.Size = new System.Drawing.Size(31, 31);
+            this.guna2Button9.TabIndex = 43;
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.Animated = true;
+            this.guna2Button6.AnimatedGIF = true;
+            this.guna2Button6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(55)))), ((int)(((byte)(65)))));
+            this.guna2Button6.BorderRadius = 13;
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.Image = global::ARIAR_PayrollSystem.Properties.Resources.calendar_2_line;
+            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button6.ImageOffset = new System.Drawing.Point(3, 0);
+            this.guna2Button6.ImageSize = new System.Drawing.Size(18, 18);
+            this.guna2Button6.Location = new System.Drawing.Point(23, 23);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.Size = new System.Drawing.Size(136, 29);
+            this.guna2Button6.TabIndex = 41;
+            this.guna2Button6.Text = "View Details";
+            this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.UseTransparentBackground = true;
+            // 
+            // guna2Button7
+            // 
+            this.guna2Button7.Animated = true;
+            this.guna2Button7.AnimatedGIF = true;
+            this.guna2Button7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(55)))), ((int)(((byte)(65)))));
+            this.guna2Button7.BorderRadius = 13;
+            this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
+            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button7.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.Image = global::ARIAR_PayrollSystem.Properties.Resources.calendar_2_line;
+            this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button7.ImageOffset = new System.Drawing.Point(3, 0);
+            this.guna2Button7.ImageSize = new System.Drawing.Size(18, 18);
+            this.guna2Button7.Location = new System.Drawing.Point(23, 63);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button7.Name = "guna2Button7";
+            this.guna2Button7.Size = new System.Drawing.Size(136, 29);
+            this.guna2Button7.TabIndex = 40;
+            this.guna2Button7.Text = "Print Payslip";
+            this.guna2Button7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button7.UseTransparentBackground = true;
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.Animated = true;
+            this.guna2Button8.AnimatedGIF = true;
+            this.guna2Button8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(55)))), ((int)(((byte)(65)))));
+            this.guna2Button8.BorderRadius = 13;
+            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
+            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button8.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.Image = global::ARIAR_PayrollSystem.Properties.Resources.calendar_2_line;
+            this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button8.ImageOffset = new System.Drawing.Point(3, 0);
+            this.guna2Button8.ImageSize = new System.Drawing.Size(18, 18);
+            this.guna2Button8.Location = new System.Drawing.Point(214, 23);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.Size = new System.Drawing.Size(149, 29);
+            this.guna2Button8.TabIndex = 39;
+            this.guna2Button8.Text = "Export Paylips";
+            this.guna2Button8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button8.UseTransparentBackground = true;
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
             // 
             // guna2TextBox1
             // 
@@ -124,7 +236,7 @@
             this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(25, 25);
             this.guna2TextBox1.IconRight = global::ARIAR_PayrollSystem.Properties.Resources.search_line__1_;
             this.guna2TextBox1.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.guna2TextBox1.Location = new System.Drawing.Point(23, 23);
+            this.guna2TextBox1.Location = new System.Drawing.Point(23, 148);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
@@ -144,27 +256,63 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel5.BorderRadius = 8;
-            this.guna2Panel5.Controls.Add(this.EmployeeViewScrollBar);
             this.guna2Panel5.Controls.Add(this.guna2Button5);
+            this.guna2Panel5.Controls.Add(this.LogsView);
+            this.guna2Panel5.Controls.Add(this.EmployeeViewScrollBar);
             this.guna2Panel5.Controls.Add(this.guna2Separator1);
-            this.guna2Panel5.Controls.Add(this.ReportView);
             this.guna2Panel5.Controls.Add(this.label8);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Panel5.Location = new System.Drawing.Point(23, 63);
+            this.guna2Panel5.Location = new System.Drawing.Point(23, 185);
             this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.ShadowDecoration.BorderRadius = 11;
             this.guna2Panel5.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.guna2Panel5.ShadowDecoration.Depth = 15;
             this.guna2Panel5.ShadowDecoration.Enabled = true;
-            this.guna2Panel5.Size = new System.Drawing.Size(340, 510);
+            this.guna2Panel5.Size = new System.Drawing.Size(340, 388);
             this.guna2Panel5.TabIndex = 19;
             this.guna2Panel5.UseTransparentBackground = true;
             // 
+            // guna2Button5
+            // 
+            this.guna2Button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button5.Animated = true;
+            this.guna2Button5.BorderRadius = 15;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Image = global::ARIAR_PayrollSystem.Properties.Resources.refresh_line_2_;
+            this.guna2Button5.ImageSize = new System.Drawing.Size(24, 24);
+            this.guna2Button5.Location = new System.Drawing.Point(303, 2);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(31, 31);
+            this.guna2Button5.TabIndex = 42;
+            // 
+            // LogsView
+            // 
+            this.LogsView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogsView.AutoScroll = true;
+            this.LogsView.BackColor = System.Drawing.Color.White;
+            this.LogsView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.LogsView.Location = new System.Drawing.Point(0, 36);
+            this.LogsView.Margin = new System.Windows.Forms.Padding(0);
+            this.LogsView.Name = "LogsView";
+            this.LogsView.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.LogsView.Size = new System.Drawing.Size(340, 352);
+            this.LogsView.TabIndex = 1;
+            this.LogsView.WrapContents = false;
+            // 
             // EmployeeViewScrollBar
             // 
-            this.EmployeeViewScrollBar.BindingContainer = this.ReportView;
+            this.EmployeeViewScrollBar.BindingContainer = this.LogsView;
             this.EmployeeViewScrollBar.BorderRadius = 3;
             this.EmployeeViewScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.EmployeeViewScrollBar.FillColor = System.Drawing.Color.White;
@@ -176,46 +324,10 @@
             this.EmployeeViewScrollBar.MinimumSize = new System.Drawing.Size(12, 0);
             this.EmployeeViewScrollBar.Name = "EmployeeViewScrollBar";
             this.EmployeeViewScrollBar.ScrollbarSize = 12;
-            this.EmployeeViewScrollBar.Size = new System.Drawing.Size(12, 474);
+            this.EmployeeViewScrollBar.Size = new System.Drawing.Size(12, 352);
             this.EmployeeViewScrollBar.TabIndex = 5;
             this.EmployeeViewScrollBar.ThumbColor = System.Drawing.Color.SlateGray;
             this.EmployeeViewScrollBar.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
-            // 
-            // ReportView
-            // 
-            this.ReportView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ReportView.AutoScroll = true;
-            this.ReportView.BackColor = System.Drawing.Color.White;
-            this.ReportView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.ReportView.Location = new System.Drawing.Point(0, 36);
-            this.ReportView.Margin = new System.Windows.Forms.Padding(0);
-            this.ReportView.Name = "ReportView";
-            this.ReportView.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.ReportView.Size = new System.Drawing.Size(340, 474);
-            this.ReportView.TabIndex = 1;
-            this.ReportView.Visible = false;
-            this.ReportView.WrapContents = false;
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button5.Animated = true;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = global::ARIAR_PayrollSystem.Properties.Resources.refresh_line_2_;
-            this.guna2Button5.ImageSize = new System.Drawing.Size(24, 24);
-            this.guna2Button5.Location = new System.Drawing.Point(300, 0);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(40, 35);
-            this.guna2Button5.TabIndex = 4;
             // 
             // guna2Separator1
             // 
@@ -259,12 +371,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MonthComboBox.BackColor = System.Drawing.Color.Transparent;
             this.MonthComboBox.BorderThickness = 0;
-            this.MonthComboBox.DisabledState.FillColor = System.Drawing.Color.White;
+            this.MonthComboBox.DisabledState.FillColor = System.Drawing.SystemColors.Control;
             this.MonthComboBox.DisabledState.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
             this.MonthComboBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.MonthComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.MonthComboBox.DropDownHeight = 40;
             this.MonthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MonthComboBox.FillColor = System.Drawing.SystemColors.Control;
             this.MonthComboBox.FocusedColor = System.Drawing.Color.Empty;
             this.MonthComboBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MonthComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -286,10 +399,10 @@
             this.MonthComboBox.ItemsAppearance.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
             this.MonthComboBox.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.MonthComboBox.ItemsAppearance.SelectedFont = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.MonthComboBox.Location = new System.Drawing.Point(0, 0);
+            this.MonthComboBox.Location = new System.Drawing.Point(-9, 0);
             this.MonthComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.MonthComboBox.Name = "MonthComboBox";
-            this.MonthComboBox.Size = new System.Drawing.Size(172, 44);
+            this.MonthComboBox.Size = new System.Drawing.Size(181, 44);
             this.MonthComboBox.StartIndex = 0;
             this.MonthComboBox.TabIndex = 16;
             this.MonthComboBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -302,14 +415,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.YearComboBox.BackColor = System.Drawing.Color.Transparent;
             this.YearComboBox.BorderThickness = 0;
-            this.YearComboBox.DisabledState.FillColor = System.Drawing.Color.White;
+            this.YearComboBox.DisabledState.FillColor = System.Drawing.SystemColors.Control;
             this.YearComboBox.DisabledState.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
             this.YearComboBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.YearComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.YearComboBox.DropDownHeight = 40;
             this.YearComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.YearComboBox.FillColor = System.Drawing.SystemColors.Control;
             this.YearComboBox.FocusedColor = System.Drawing.Color.Empty;
-            this.YearComboBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearComboBox.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
             this.YearComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.YearComboBox.IntegralHeight = false;
             this.YearComboBox.ItemHeight = 38;
@@ -581,14 +695,14 @@
             this.CalendarPanel.Controls.Add(this.DayOfTheWeekTLP);
             this.CalendarPanel.Controls.Add(this.CalendarView);
             this.CalendarPanel.FillColor = System.Drawing.SystemColors.Control;
-            this.CalendarPanel.Location = new System.Drawing.Point(385, 147);
+            this.CalendarPanel.Location = new System.Drawing.Point(385, 148);
             this.CalendarPanel.Margin = new System.Windows.Forms.Padding(0);
             this.CalendarPanel.Name = "CalendarPanel";
             this.CalendarPanel.ShadowDecoration.BorderRadius = 0;
             this.CalendarPanel.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.CalendarPanel.ShadowDecoration.Depth = 15;
             this.CalendarPanel.ShadowDecoration.Enabled = true;
-            this.CalendarPanel.Size = new System.Drawing.Size(580, 426);
+            this.CalendarPanel.Size = new System.Drawing.Size(580, 425);
             this.CalendarPanel.TabIndex = 10;
             this.CalendarPanel.UseTransparentBackground = true;
             // 
@@ -745,7 +859,7 @@
             this.CalendarView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.CalendarView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.CalendarView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.CalendarView.Size = new System.Drawing.Size(580, 392);
+            this.CalendarView.Size = new System.Drawing.Size(580, 391);
             this.CalendarView.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -766,7 +880,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(611, 96);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
@@ -999,6 +1113,11 @@
             this.guna2Elipse1.BorderRadius = 8;
             this.guna2Elipse1.TargetControl = this.DayOfTheWeekTLP;
             // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 10;
+            this.guna2Elipse2.TargetControl = this.LogsView;
+            // 
             // AttendanceManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1009,6 +1128,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AttendanceManagement";
             this.Text = "AttendanceLog";
+            this.Load += new System.EventHandler(this.AttendanceManagement_Load);
             this.AttendanceManagementPanel.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1053,10 +1173,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox YearComboBox;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2VScrollBar EmployeeViewScrollBar;
-        private UserControls.CustomFlowLayoutPanel ReportView;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
@@ -1076,5 +1192,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2VScrollBar EmployeeViewScrollBar;
+        private UserControls.CustomFlowLayoutPanel LogsView;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
     }
 }

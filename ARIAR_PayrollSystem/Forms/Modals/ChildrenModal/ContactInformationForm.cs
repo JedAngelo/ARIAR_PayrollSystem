@@ -22,6 +22,14 @@ namespace ARIAR_PayrollSystem.Forms.Modals.ChildrenModal
             InitializeComponent();
             _canvasModel = canvasModal;
             _contactInformationDto = contactInformationDto;
+                       
+            if (_contactInformationDto?.ContactId != null)
+            {
+                PhoneTextBox.Text = _contactInformationDto.PhoneNumber;
+                EmailTextBox.Text = _contactInformationDto.Email;
+                AddressTextBox.Text = _contactInformationDto.Address;
+            }
+
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

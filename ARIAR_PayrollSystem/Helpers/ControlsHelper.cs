@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -46,72 +47,7 @@ namespace ARIAR_PayrollSystem.Helpers
                 }
             }
         }
-
-
-
-        public static void LabelTransitionAll(
-        Dictionary<Guna2TextBox, Tuple<Label, int>> textBoxLabelMap,
-        Guna2Transition labelTransition)
-        {
-            foreach (var textBox in textBoxLabelMap.Keys)
-            {
-                // Check if the textbox is empty
-                if (string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    var labelTuple = textBoxLabelMap[textBox];  // Retrieve the associated label and original Y-coordinate
-                    Label label = labelTuple.Item1;
-                    int originalY = labelTuple.Item2;
-
-                    // Hide the label using the transition
-                    labelTransition.HideSync(label);
-
-                    // Move the label back to its original Y position
-                    label.Location = new Point(label.Location.X, originalY);
-
-                    // Show the label using the transition
-                    labelTransition.ShowSync(label);
-                }
-            }
-        }
-
-        public static void LabelTransition(
-        Guna2TextBox textBox,
-        Dictionary<Guna2TextBox, Tuple<Label, int>> textBoxLabelMap,
-        Guna2Transition labelTransition,
-        bool moveUp)
-        {
-            if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text) && textBoxLabelMap.ContainsKey(textBox))
-            {
-                var labelTuple = textBoxLabelMap[textBox];  // Retrieve the label and original Y-coordinate
-                Label label = labelTuple.Item1;
-                int targetY = moveUp ? labelTuple.Item2 - 20 : labelTuple.Item2;  // Move up or reset position
-
-                // Apply transition
-                labelTransition.HideSync(label);
-                label.Location = new Point(label.Location.X, targetY);
-                labelTransition.ShowSync(label);
-            }
-        }
-
-        public static void FocusTextBox(Label clickedLabel,
-        Dictionary<Guna2TextBox, Tuple<Label, int>> textBoxLabelMap)
-        {
-            // Iterate through the dictionary to find the corresponding TextBox
-            foreach (var entry in textBoxLabelMap)
-            {
-                var textBox = entry.Key;
-                var labelTuple = entry.Value;
-                var label = labelTuple.Item1;
-
-                // Check if the clicked label matches the current label in the dictionary
-                if (label == clickedLabel)
-                {
-                    // Focus on the corresponding TextBox
-                    textBox.Focus();
-                    break; // Exit the loop once found
-                }
-            }
-        }
+                  
 
         public static Point GetFormLocationInScreen(Form form)
         {
@@ -159,9 +95,28 @@ namespace ARIAR_PayrollSystem.Helpers
 
             using (MemoryStream ms = new MemoryStream())
             {
-                // Use Task.Run to run the synchronous operation asynchronously
-                await Task.Run(() => pictureBox.Image.Save(ms, ImageFormat.Jpeg)); // You can change ImageFormat to another format if needed
-                return ms.ToArray();
+                // Create a clone of the image to avoid issues with the original image being read-only
+                using (Image clonedImage = new Bitmap(pictureBox.Image))
+                {
+                    await Task.Run(() => clonedImage.Save(ms, ImageFormat.Jpeg));
+                    return ms.ToArray();
+                }
+            }
+        }
+
+        public static async Task<byte[]> ConvertButtonImageToByteAsync(Guna2Button button)
+        {
+            if (button.Image == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Create a clone of the image to avoid issues with the original image being read-only
+                using (Image clonedImage = new Bitmap(button.Image))
+                {
+                    await Task.Run(() => clonedImage.Save(ms, ImageFormat.Jpeg));
+                    return ms.ToArray();
+                }
             }
         }
 
@@ -205,7 +160,61 @@ namespace ARIAR_PayrollSystem.Helpers
             overlayForm.Close();
         }
 
+        public static void AnchorToAllSides(this Control control)
+        {
+            // Set the Anchor property to anchor to all sides
+            control.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        }
 
+        public static TimeOnly ParseTimeOnly(string timeString)
+        {
+            if (string.IsNullOrWhiteSpace(timeString))
+            {
+                throw new ArgumentNullException(nameof(timeString), "Time string cannot be null or empty.");
+            }
+
+            if (TimeOnly.TryParseExact(timeString, "H:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out TimeOnly result))
+            {
+                return result;
+            }
+            else if (TimeOnly.TryParseExact(timeString, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out TimeOnly result2))
+            {
+                return result2;
+            }
+            else if (TimeOnly.TryParseExact(timeString, "H:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out TimeOnly result3))
+            {
+                return result3;
+            }
+            else if (TimeOnly.TryParseExact(timeString, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out TimeOnly result4))
+            {
+                return result4;
+            }
+            else
+            {
+                throw new FormatException($"Invalid time format: {timeString}. Expected format is 'H:mm:ss', 'HH:mm:ss', 'H:mm' or 'HH:mm' (e.g., 8:00:30, 08:00:30, 8:00 or 08:00).");
+            }
+        }
+
+
+        public static string FormatTimeOnly(TimeOnly timeOnly)
+        {
+            return timeOnly.ToString("HH:mm:ss", CultureInfo.InvariantCulture);
+        }
+
+        public static int GetNumberOfSundays(DateOnly startDate, DateOnly endDate)
+        {
+            int sundayCount = 0;
+
+            for (var date = startDate; date <= endDate; date = date.AddDays(1))
+            {
+                if (date.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    sundayCount++;
+                }
+            }
+
+            return sundayCount;
+        }
 
     }
 }

@@ -12,9 +12,11 @@ namespace ARIAR_PayrollSystem.Forms
 {
     public partial class Backup : Form
     {
-        public Backup()
+        private readonly MainForm _mainForm;
+        public Backup(MainForm mainForm)
         {
             InitializeComponent();
+            _mainForm = mainForm;
         }
     }
 }

@@ -30,222 +30,312 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FingerPrintEnrollment));
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.borderlessFormAnimation = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.fingerImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.NameUnderline = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.PersonalIDTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.PromptTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.StatusLabel = new System.Windows.Forms.Label();
+            this.PrompLabel = new System.Windows.Forms.Label();
+            this.fingerImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.fourthStep = new Guna.UI2.WinForms.Guna2Panel();
+            this.four = new System.Windows.Forms.Label();
+            this.thirdStep = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.secondStep = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.firstStep = new Guna.UI2.WinForms.Guna2Panel();
+            this.firstStepLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.progressLine = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.TitleLabel = new System.Windows.Forms.Label();
             this.CaptureTimer = new System.Windows.Forms.Timer(this.components);
-            this.StatusTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fingerImage)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.fourthStep.SuspendLayout();
+            this.thirdStep.SuspendLayout();
+            this.secondStep.SuspendLayout();
+            this.firstStep.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2BorderlessForm1
+            // borderlessFormAnimation
             // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.DragForm = false;
-            this.guna2BorderlessForm1.DragStartTransparencyValue = 1D;
-            this.guna2BorderlessForm1.ResizeForm = false;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            this.borderlessFormAnimation.AnimateWindow = true;
+            this.borderlessFormAnimation.AnimationInterval = 150;
+            this.borderlessFormAnimation.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_VER_POSITIVE;
+            this.borderlessFormAnimation.BorderRadius = 15;
+            this.borderlessFormAnimation.ContainerControl = this;
+            this.borderlessFormAnimation.DockIndicatorTransparencyValue = 0.6D;
+            this.borderlessFormAnimation.DragForm = false;
+            this.borderlessFormAnimation.DragStartTransparencyValue = 1D;
+            this.borderlessFormAnimation.ResizeForm = false;
+            this.borderlessFormAnimation.TransparentWhileDrag = true;
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.guna2Panel7);
+            this.guna2Panel1.Controls.Add(this.NameLabel);
+            this.guna2Panel1.Controls.Add(this.NameUnderline);
             this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
-            this.guna2Panel1.Controls.Add(this.PersonalIDTextBox);
-            this.guna2Panel1.Controls.Add(this.StatusTextBox);
-            this.guna2Panel1.Controls.Add(this.PromptTextBox);
-            this.guna2Panel1.Controls.Add(this.StatusLabel);
+            this.guna2Panel1.Controls.Add(this.PrompLabel);
+            this.guna2Panel1.Controls.Add(this.fingerImage);
+            this.guna2Panel1.Controls.Add(this.panel1);
+            this.guna2Panel1.Controls.Add(this.TitleLabel);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(911, 602);
+            this.guna2Panel1.Size = new System.Drawing.Size(810, 489);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // guna2Button1
+            // NameLabel
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(681, 528);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 12;
-            this.guna2Button1.Text = "Start Capture";
-            this.guna2Button1.UseTransparentBackground = true;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.NameLabel.Location = new System.Drawing.Point(276, 13);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(113, 26);
+            this.NameLabel.TabIndex = 17;
+            this.NameLabel.Text = "JUAN LUNA";
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2Panel7
+            // NameUnderline
             // 
-            this.guna2Panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2Panel7.BorderRadius = 5;
-            this.guna2Panel7.BorderThickness = 1;
-            this.guna2Panel7.Controls.Add(this.fingerImage);
-            this.guna2Panel7.FillColor = System.Drawing.Color.White;
-            this.guna2Panel7.Location = new System.Drawing.Point(98, 179);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel7.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel7.ShadowDecoration.Depth = 15;
-            this.guna2Panel7.Size = new System.Drawing.Size(199, 202);
-            this.guna2Panel7.TabIndex = 12;
-            // 
-            // fingerImage
-            // 
-            this.fingerImage.BackColor = System.Drawing.Color.Transparent;
-            this.fingerImage.BorderRadius = 5;
-            this.fingerImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fingerImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("fingerImage.ErrorImage")));
-            this.fingerImage.Image = global::ARIAR_PayrollSystem.Properties.Resources.Untitled_design__1_;
-            this.fingerImage.ImageRotate = 0F;
-            this.fingerImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("fingerImage.InitialImage")));
-            this.fingerImage.Location = new System.Drawing.Point(0, 0);
-            this.fingerImage.Margin = new System.Windows.Forms.Padding(2);
-            this.fingerImage.Name = "fingerImage";
-            this.fingerImage.ShadowDecoration.BorderRadius = 11;
-            this.fingerImage.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.fingerImage.Size = new System.Drawing.Size(199, 202);
-            this.fingerImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.fingerImage.TabIndex = 11;
-            this.fingerImage.TabStop = false;
+            this.NameUnderline.Location = new System.Drawing.Point(276, 36);
+            this.NameUnderline.Name = "NameUnderline";
+            this.NameUnderline.Size = new System.Drawing.Size(113, 10);
+            this.NameUnderline.TabIndex = 18;
             // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.Animated = true;
+            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom;
             this.guna2ControlBox1.CustomIconSize = 13F;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.guna2ControlBox1.Location = new System.Drawing.Point(854, 13);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(775, 0);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(35, 35);
             this.guna2ControlBox1.TabIndex = 4;
             // 
-            // PersonalIDTextBox
+            // PrompLabel
             // 
-            this.PersonalIDTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.PersonalIDTextBox.BorderRadius = 8;
-            this.PersonalIDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PersonalIDTextBox.DefaultText = "";
-            this.PersonalIDTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PersonalIDTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PersonalIDTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PersonalIDTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PersonalIDTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PersonalIDTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PersonalIDTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PersonalIDTextBox.Location = new System.Drawing.Point(423, 440);
-            this.PersonalIDTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PersonalIDTextBox.Name = "PersonalIDTextBox";
-            this.PersonalIDTextBox.PasswordChar = '\0';
-            this.PersonalIDTextBox.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.PersonalIDTextBox.PlaceholderText = "Personal ID";
-            this.PersonalIDTextBox.SelectedText = "";
-            this.PersonalIDTextBox.ShadowDecoration.BorderRadius = 11;
-            this.PersonalIDTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.PersonalIDTextBox.ShadowDecoration.Depth = 15;
-            this.PersonalIDTextBox.ShadowDecoration.Enabled = true;
-            this.PersonalIDTextBox.Size = new System.Drawing.Size(438, 55);
-            this.PersonalIDTextBox.TabIndex = 3;
+            this.PrompLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrompLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrompLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.PrompLabel.Location = new System.Drawing.Point(0, 306);
+            this.PrompLabel.Name = "PrompLabel";
+            this.PrompLabel.Size = new System.Drawing.Size(810, 37);
+            this.PrompLabel.TabIndex = 15;
+            this.PrompLabel.Text = "Loading...";
+            this.PrompLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PromptTextBox
+            // fingerImage
             // 
-            this.PromptTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.PromptTextBox.BorderRadius = 8;
-            this.PromptTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PromptTextBox.DefaultText = "";
-            this.PromptTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PromptTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PromptTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PromptTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PromptTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PromptTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PromptTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PromptTextBox.Location = new System.Drawing.Point(423, 68);
-            this.PromptTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PromptTextBox.Name = "PromptTextBox";
-            this.PromptTextBox.PasswordChar = '\0';
-            this.PromptTextBox.PlaceholderText = "";
-            this.PromptTextBox.SelectedText = "";
-            this.PromptTextBox.ShadowDecoration.BorderRadius = 11;
-            this.PromptTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.PromptTextBox.ShadowDecoration.Depth = 15;
-            this.PromptTextBox.ShadowDecoration.Enabled = true;
-            this.PromptTextBox.Size = new System.Drawing.Size(438, 42);
-            this.PromptTextBox.TabIndex = 1;
+            this.fingerImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fingerImage.BackColor = System.Drawing.Color.Transparent;
+            this.fingerImage.BorderRadius = 5;
+            this.fingerImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("fingerImage.ErrorImage")));
+            this.fingerImage.FillColor = System.Drawing.Color.Transparent;
+            this.fingerImage.Image = global::ARIAR_PayrollSystem.Properties.Resources.fingerprint_1_;
+            this.fingerImage.ImageRotate = 0F;
+            this.fingerImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("fingerImage.InitialImage")));
+            this.fingerImage.Location = new System.Drawing.Point(274, 68);
+            this.fingerImage.Margin = new System.Windows.Forms.Padding(2);
+            this.fingerImage.Name = "fingerImage";
+            this.fingerImage.ShadowDecoration.BorderRadius = 11;
+            this.fingerImage.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.fingerImage.Size = new System.Drawing.Size(252, 224);
+            this.fingerImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fingerImage.TabIndex = 14;
+            this.fingerImage.TabStop = false;
             // 
-            // StatusLabel
+            // panel1
             // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(24, 479);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(70, 16);
-            this.StatusLabel.TabIndex = 0;
-            this.StatusLabel.Text = "[STATUS]";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
+            this.panel1.Controls.Add(this.fourthStep);
+            this.panel1.Controls.Add(this.thirdStep);
+            this.panel1.Controls.Add(this.secondStep);
+            this.panel1.Controls.Add(this.firstStep);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.progressLine);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 411);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(810, 78);
+            this.panel1.TabIndex = 13;
+            // 
+            // fourthStep
+            // 
+            this.fourthStep.BackColor = System.Drawing.Color.Transparent;
+            this.fourthStep.BorderRadius = 15;
+            this.fourthStep.Controls.Add(this.four);
+            this.fourthStep.FillColor = System.Drawing.Color.White;
+            this.fourthStep.Location = new System.Drawing.Point(768, 15);
+            this.fourthStep.Name = "fourthStep";
+            this.fourthStep.Size = new System.Drawing.Size(30, 30);
+            this.fourthStep.TabIndex = 18;
+            this.fourthStep.UseTransparentBackground = true;
+            // 
+            // four
+            // 
+            this.four.BackColor = System.Drawing.Color.Transparent;
+            this.four.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.four.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.four.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.four.Location = new System.Drawing.Point(0, 0);
+            this.four.Name = "four";
+            this.four.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.four.Size = new System.Drawing.Size(30, 30);
+            this.four.TabIndex = 0;
+            this.four.Text = "4";
+            this.four.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // thirdStep
+            // 
+            this.thirdStep.BackColor = System.Drawing.Color.Transparent;
+            this.thirdStep.BorderRadius = 15;
+            this.thirdStep.Controls.Add(this.label1);
+            this.thirdStep.FillColor = System.Drawing.Color.White;
+            this.thirdStep.Location = new System.Drawing.Point(514, 15);
+            this.thirdStep.Name = "thirdStep";
+            this.thirdStep.Size = new System.Drawing.Size(30, 30);
+            this.thirdStep.TabIndex = 17;
+            this.thirdStep.UseTransparentBackground = true;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.label1.Size = new System.Drawing.Size(30, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "3";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // secondStep
+            // 
+            this.secondStep.BackColor = System.Drawing.Color.Transparent;
+            this.secondStep.BorderRadius = 15;
+            this.secondStep.Controls.Add(this.label2);
+            this.secondStep.FillColor = System.Drawing.Color.White;
+            this.secondStep.Location = new System.Drawing.Point(258, 15);
+            this.secondStep.Name = "secondStep";
+            this.secondStep.Size = new System.Drawing.Size(30, 30);
+            this.secondStep.TabIndex = 17;
+            this.secondStep.UseTransparentBackground = true;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.label2.Size = new System.Drawing.Size(30, 30);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "2";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // firstStep
+            // 
+            this.firstStep.BackColor = System.Drawing.Color.Transparent;
+            this.firstStep.BorderRadius = 15;
+            this.firstStep.Controls.Add(this.firstStepLabel);
+            this.firstStep.FillColor = System.Drawing.Color.White;
+            this.firstStep.Location = new System.Drawing.Point(12, 15);
+            this.firstStep.Name = "firstStep";
+            this.firstStep.Size = new System.Drawing.Size(30, 30);
+            this.firstStep.TabIndex = 16;
+            this.firstStep.UseTransparentBackground = true;
+            // 
+            // firstStepLabel
+            // 
+            this.firstStepLabel.BackColor = System.Drawing.Color.Transparent;
+            this.firstStepLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.firstStepLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstStepLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.firstStepLabel.Location = new System.Drawing.Point(0, 0);
+            this.firstStepLabel.Name = "firstStepLabel";
+            this.firstStepLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.firstStepLabel.Size = new System.Drawing.Size(30, 30);
+            this.firstStepLabel.TabIndex = 0;
+            this.firstStepLabel.Text = "1";
+            this.firstStepLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(0, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(810, 42);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Scanning Progress";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // progressLine
+            // 
+            this.progressLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressLine.FillColor = System.Drawing.Color.White;
+            this.progressLine.Location = new System.Drawing.Point(21, 28);
+            this.progressLine.Maximum = 3;
+            this.progressLine.Name = "progressLine";
+            this.progressLine.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(1)))));
+            this.progressLine.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(1)))));
+            this.progressLine.Size = new System.Drawing.Size(765, 5);
+            this.progressLine.TabIndex = 16;
+            this.progressLine.Text = "guna2ProgressBar1";
+            this.progressLine.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.progressLine.ValueChanged += new System.EventHandler(this.progressLine_ValueChanged);
+            // 
+            // TitleLabel
+            // 
+            this.TitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TitleLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.TitleLabel.Location = new System.Drawing.Point(0, 0);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.TitleLabel.Size = new System.Drawing.Size(810, 53);
+            this.TitleLabel.TabIndex = 16;
+            this.TitleLabel.Text = "Fingerprint Registration for:";
+            this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CaptureTimer
             // 
             this.CaptureTimer.Interval = 1000;
             this.CaptureTimer.Tick += new System.EventHandler(this.TimerProcess_Tick);
             // 
-            // StatusTextBox
-            // 
-            this.StatusTextBox.AutoScroll = true;
-            this.StatusTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.StatusTextBox.BorderRadius = 8;
-            this.StatusTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.StatusTextBox.DefaultText = "";
-            this.StatusTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.StatusTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.StatusTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StatusTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StatusTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StatusTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.StatusTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StatusTextBox.Location = new System.Drawing.Point(423, 118);
-            this.StatusTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.StatusTextBox.Multiline = true;
-            this.StatusTextBox.Name = "StatusTextBox";
-            this.StatusTextBox.PasswordChar = '\0';
-            this.StatusTextBox.PlaceholderText = "";
-            this.StatusTextBox.SelectedText = "";
-            this.StatusTextBox.ShadowDecoration.BorderRadius = 11;
-            this.StatusTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.StatusTextBox.ShadowDecoration.Depth = 15;
-            this.StatusTextBox.ShadowDecoration.Enabled = true;
-            this.StatusTextBox.Size = new System.Drawing.Size(438, 314);
-            this.StatusTextBox.TabIndex = 2;
-            // 
             // FingerPrintEnrollment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(911, 602);
+            this.ClientSize = new System.Drawing.Size(810, 489);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FingerPrintEnrollment";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FingerPrintEnrollment";
@@ -253,24 +343,37 @@
             this.Load += new System.EventHandler(this.FingerPrintEnrollment_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            this.guna2Panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fingerImage)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.fourthStep.ResumeLayout(false);
+            this.thirdStep.ResumeLayout(false);
+            this.secondStep.ResumeLayout(false);
+            this.firstStep.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm borderlessFormAnimation;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox PersonalIDTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox PromptTextBox;
-        private System.Windows.Forms.Label StatusLabel;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2PictureBox fingerImage;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Timer CaptureTimer;
-        private Guna.UI2.WinForms.Guna2TextBox StatusTextBox;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2PictureBox fingerImage;
+        private System.Windows.Forms.Label PrompLabel;
+        private Guna.UI2.WinForms.Guna2ProgressBar progressLine;
+        public Guna.UI2.WinForms.Guna2Panel firstStep;
+        private System.Windows.Forms.Label firstStepLabel;
+        public Guna.UI2.WinForms.Guna2Panel secondStep;
+        private System.Windows.Forms.Label label2;
+        public Guna.UI2.WinForms.Guna2Panel thirdStep;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        public Guna.UI2.WinForms.Guna2Panel fourthStep;
+        private System.Windows.Forms.Label four;
+        private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.Label NameLabel;
+        private Guna.UI2.WinForms.Guna2Separator NameUnderline;
     }
 }

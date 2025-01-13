@@ -29,20 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BiometricAttendance));
             this.BiometricAttPanel = new System.Windows.Forms.Panel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.EmployeeViewScrollBar = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.AttendanceView = new ARIAR_PayrollSystem.UserControls.CustomFlowLayoutPanel();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.SearchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.PromptLabel = new System.Windows.Forms.Label();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.EmployeePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.AttendanceView = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.LoadingLabel = new System.Windows.Forms.Label();
-            this.ProgressCircle = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.DateLabel = new System.Windows.Forms.Label();
             this.TimeLabel = new System.Windows.Forms.Label();
@@ -52,17 +51,20 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.TimeOutPmButton = new Guna.UI2.WinForms.Guna2Button();
+            this.TimeInPmButton = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.TimeInAmButton = new Guna.UI2.WinForms.Guna2Button();
+            this.TimeOutAmButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.TimerProcess = new System.Windows.Forms.Timer(this.components);
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.BiometricAttPanel.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2Panel4.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeePictureBox)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -74,10 +76,10 @@
             // BiometricAttPanel
             // 
             this.BiometricAttPanel.AutoScroll = true;
-            this.BiometricAttPanel.BackColor = System.Drawing.Color.White;
+            this.BiometricAttPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.BiometricAttPanel.Controls.Add(this.guna2Panel4);
             this.BiometricAttPanel.Controls.Add(this.SearchBox);
             this.BiometricAttPanel.Controls.Add(this.guna2Panel5);
-            this.BiometricAttPanel.Controls.Add(this.guna2Panel4);
             this.BiometricAttPanel.Controls.Add(this.guna2Panel1);
             this.BiometricAttPanel.Controls.Add(this.tableLayoutPanel1);
             this.BiometricAttPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -87,6 +89,96 @@
             this.BiometricAttPanel.Size = new System.Drawing.Size(990, 749);
             this.BiometricAttPanel.TabIndex = 0;
             this.BiometricAttPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BiometricAttPanel_Paint);
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.BorderColor = System.Drawing.Color.LightSlateGray;
+            this.guna2Panel4.BorderRadius = 8;
+            this.guna2Panel4.Controls.Add(this.EmployeeViewScrollBar);
+            this.guna2Panel4.Controls.Add(this.guna2Panel6);
+            this.guna2Panel4.Controls.Add(this.AttendanceView);
+            this.guna2Panel4.FillColor = System.Drawing.Color.White;
+            this.guna2Panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Panel4.Location = new System.Drawing.Point(12, 326);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.guna2Panel4.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel4.ShadowDecoration.Depth = 15;
+            this.guna2Panel4.ShadowDecoration.Enabled = true;
+            this.guna2Panel4.Size = new System.Drawing.Size(435, 407);
+            this.guna2Panel4.TabIndex = 89;
+            this.guna2Panel4.UseTransparentBackground = true;
+            // 
+            // EmployeeViewScrollBar
+            // 
+            this.EmployeeViewScrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EmployeeViewScrollBar.BindingContainer = this.AttendanceView;
+            this.EmployeeViewScrollBar.BorderRadius = 5;
+            this.EmployeeViewScrollBar.FillColor = System.Drawing.Color.White;
+            this.EmployeeViewScrollBar.InUpdate = false;
+            this.EmployeeViewScrollBar.LargeChange = 10;
+            this.EmployeeViewScrollBar.Location = new System.Drawing.Point(422, 36);
+            this.EmployeeViewScrollBar.Margin = new System.Windows.Forms.Padding(0);
+            this.EmployeeViewScrollBar.MaximumSize = new System.Drawing.Size(12, 0);
+            this.EmployeeViewScrollBar.MinimumSize = new System.Drawing.Size(12, 0);
+            this.EmployeeViewScrollBar.Name = "EmployeeViewScrollBar";
+            this.EmployeeViewScrollBar.ScrollbarSize = 12;
+            this.EmployeeViewScrollBar.Size = new System.Drawing.Size(12, 0);
+            this.EmployeeViewScrollBar.TabIndex = 5;
+            this.EmployeeViewScrollBar.ThumbColor = System.Drawing.Color.SlateGray;
+            this.EmployeeViewScrollBar.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
+            // AttendanceView
+            // 
+            this.AttendanceView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AttendanceView.AutoScroll = true;
+            this.AttendanceView.BackColor = System.Drawing.Color.White;
+            this.AttendanceView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.AttendanceView.Location = new System.Drawing.Point(1, 36);
+            this.AttendanceView.Margin = new System.Windows.Forms.Padding(1);
+            this.AttendanceView.Name = "AttendanceView";
+            this.AttendanceView.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.AttendanceView.Size = new System.Drawing.Size(433, 369);
+            this.AttendanceView.TabIndex = 1;
+            this.AttendanceView.WrapContents = false;
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel6.BorderRadius = 8;
+            this.guna2Panel6.Controls.Add(this.label8);
+            this.guna2Panel6.CustomizableEdges.BottomLeft = false;
+            this.guna2Panel6.CustomizableEdges.BottomRight = false;
+            this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
+            this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(435, 36);
+            this.guna2Panel6.TabIndex = 6;
+            this.guna2Panel6.UseTransparentBackground = true;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.label8.Size = new System.Drawing.Size(435, 36);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Attendance Logs";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SearchBox
             // 
@@ -127,10 +219,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel5.BorderRadius = 8;
-            this.guna2Panel5.Controls.Add(this.PromptLabel);
+            this.guna2Panel5.Controls.Add(this.guna2Panel7);
             this.guna2Panel5.Controls.Add(this.NameLabel);
             this.guna2Panel5.Controls.Add(this.label6);
-            this.guna2Panel5.Controls.Add(this.pictureBox2);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Location = new System.Drawing.Point(462, 16);
             this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2);
@@ -143,17 +234,42 @@
             this.guna2Panel5.TabIndex = 11;
             this.guna2Panel5.UseTransparentBackground = true;
             // 
-            // PromptLabel
+            // guna2Panel7
             // 
-            this.PromptLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PromptLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.PromptLabel.Location = new System.Drawing.Point(103, 532);
-            this.PromptLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.PromptLabel.Name = "PromptLabel";
-            this.PromptLabel.Size = new System.Drawing.Size(314, 43);
-            this.PromptLabel.TabIndex = 1;
-            this.PromptLabel.Text = "AFTERNOON";
-            this.PromptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2Panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Panel7.BorderRadius = 8;
+            this.guna2Panel7.BorderThickness = 1;
+            this.guna2Panel7.Controls.Add(this.EmployeePictureBox);
+            this.guna2Panel7.FillColor = System.Drawing.Color.White;
+            this.guna2Panel7.Location = new System.Drawing.Point(152, 141);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Padding = new System.Windows.Forms.Padding(3);
+            this.guna2Panel7.ShadowDecoration.BorderRadius = 11;
+            this.guna2Panel7.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.guna2Panel7.ShadowDecoration.Depth = 15;
+            this.guna2Panel7.Size = new System.Drawing.Size(200, 200);
+            this.guna2Panel7.TabIndex = 95;
+            // 
+            // EmployeePictureBox
+            // 
+            this.EmployeePictureBox.BackColor = System.Drawing.Color.White;
+            this.EmployeePictureBox.BorderRadius = 5;
+            this.EmployeePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeePictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.ErrorImage")));
+            this.EmployeePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.Image")));
+            this.EmployeePictureBox.ImageRotate = 0F;
+            this.EmployeePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.InitialImage")));
+            this.EmployeePictureBox.Location = new System.Drawing.Point(3, 3);
+            this.EmployeePictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.EmployeePictureBox.Name = "EmployeePictureBox";
+            this.EmployeePictureBox.ShadowDecoration.BorderRadius = 11;
+            this.EmployeePictureBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.EmployeePictureBox.Size = new System.Drawing.Size(194, 194);
+            this.EmployeePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EmployeePictureBox.TabIndex = 11;
+            this.EmployeePictureBox.TabStop = false;
             // 
             // NameLabel
             // 
@@ -180,131 +296,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "SCAN NOW";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::ARIAR_PayrollSystem.Properties.Resources.Untitled_design__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(153, 149);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(193, 191);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.BorderRadius = 8;
-            this.guna2Panel4.Controls.Add(this.guna2VScrollBar1);
-            this.guna2Panel4.Controls.Add(this.guna2Separator1);
-            this.guna2Panel4.Controls.Add(this.LoadingLabel);
-            this.guna2Panel4.Controls.Add(this.ProgressCircle);
-            this.guna2Panel4.Controls.Add(this.AttendanceView);
-            this.guna2Panel4.Controls.Add(this.label3);
-            this.guna2Panel4.FillColor = System.Drawing.Color.White;
-            this.guna2Panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Panel4.Location = new System.Drawing.Point(12, 322);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.ShadowDecoration.BorderRadius = 11;
-            this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel4.ShadowDecoration.Depth = 15;
-            this.guna2Panel4.ShadowDecoration.Enabled = true;
-            this.guna2Panel4.Size = new System.Drawing.Size(435, 411);
-            this.guna2Panel4.TabIndex = 10;
-            this.guna2Panel4.UseTransparentBackground = true;
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.BindingContainer = this.AttendanceView;
-            this.guna2VScrollBar1.BorderRadius = 3;
-            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.White;
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(417, 41);
-            this.guna2VScrollBar1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 18;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 370);
-            this.guna2VScrollBar1.TabIndex = 19;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.SlateGray;
-            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
-            // 
-            // AttendanceView
-            // 
-            this.AttendanceView.AutoScroll = true;
-            this.AttendanceView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AttendanceView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.AttendanceView.Location = new System.Drawing.Point(0, 41);
-            this.AttendanceView.Margin = new System.Windows.Forms.Padding(0);
-            this.AttendanceView.Name = "AttendanceView";
-            this.AttendanceView.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.AttendanceView.Size = new System.Drawing.Size(435, 370);
-            this.AttendanceView.TabIndex = 18;
-            this.AttendanceView.Visible = false;
-            this.AttendanceView.WrapContents = false;
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.FillColor = System.Drawing.Color.SlateGray;
-            this.guna2Separator1.Location = new System.Drawing.Point(0, 35);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(435, 10);
-            this.guna2Separator1.TabIndex = 17;
-            this.guna2Separator1.UseTransparentBackground = true;
-            // 
-            // LoadingLabel
-            // 
-            this.LoadingLabel.BackColor = System.Drawing.Color.White;
-            this.LoadingLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.LoadingLabel.Location = new System.Drawing.Point(0, 226);
-            this.LoadingLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.LoadingLabel.Name = "LoadingLabel";
-            this.LoadingLabel.Size = new System.Drawing.Size(435, 36);
-            this.LoadingLabel.TabIndex = 21;
-            this.LoadingLabel.Text = "Loading attendance data...";
-            this.LoadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ProgressCircle
-            // 
-            this.ProgressCircle.Animated = true;
-            this.ProgressCircle.BackColor = System.Drawing.Color.Transparent;
-            this.ProgressCircle.EnsureVisible = true;
-            this.ProgressCircle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.ProgressCircle.FillThickness = 10;
-            this.ProgressCircle.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ProgressCircle.ForeColor = System.Drawing.Color.White;
-            this.ProgressCircle.Location = new System.Drawing.Point(187, 148);
-            this.ProgressCircle.Minimum = 0;
-            this.ProgressCircle.Name = "ProgressCircle";
-            this.ProgressCircle.ProgressColor = System.Drawing.Color.LightSeaGreen;
-            this.ProgressCircle.ProgressColor2 = System.Drawing.Color.LightSeaGreen;
-            this.ProgressCircle.ProgressThickness = 10;
-            this.ProgressCircle.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ProgressCircle.Size = new System.Drawing.Size(68, 68);
-            this.ProgressCircle.TabIndex = 20;
-            this.ProgressCircle.Text = "guna2CircleProgressBar1";
-            this.ProgressCircle.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
-            this.ProgressCircle.UseTransparentBackground = true;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(435, 41);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Attendance Log";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Panel1
             // 
@@ -429,8 +420,8 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.guna2Button4, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.guna2Button3, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.TimeOutPmButton, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.TimeInPmButton, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(223, 48);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -440,62 +431,64 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(213, 59);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // guna2Button4
+            // TimeOutPmButton
             // 
-            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.BorderRadius = 8;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button4.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.IndicateFocus = true;
-            this.guna2Button4.Location = new System.Drawing.Point(111, 5);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.BorderRadius = 11;
-            this.guna2Button4.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Button4.ShadowDecoration.Depth = 15;
-            this.guna2Button4.ShadowDecoration.Enabled = true;
-            this.guna2Button4.Size = new System.Drawing.Size(102, 54);
-            this.guna2Button4.TabIndex = 8;
-            this.guna2Button4.Text = "Time Out";
-            this.guna2Button4.UseTransparentBackground = true;
+            this.TimeOutPmButton.BackColor = System.Drawing.Color.Transparent;
+            this.TimeOutPmButton.BorderRadius = 8;
+            this.TimeOutPmButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TimeOutPmButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TimeOutPmButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TimeOutPmButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TimeOutPmButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TimeOutPmButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.TimeOutPmButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.TimeOutPmButton.ForeColor = System.Drawing.Color.White;
+            this.TimeOutPmButton.IndicateFocus = true;
+            this.TimeOutPmButton.Location = new System.Drawing.Point(111, 5);
+            this.TimeOutPmButton.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.TimeOutPmButton.Name = "TimeOutPmButton";
+            this.TimeOutPmButton.ShadowDecoration.BorderRadius = 11;
+            this.TimeOutPmButton.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.TimeOutPmButton.ShadowDecoration.Depth = 15;
+            this.TimeOutPmButton.ShadowDecoration.Enabled = true;
+            this.TimeOutPmButton.Size = new System.Drawing.Size(102, 54);
+            this.TimeOutPmButton.TabIndex = 8;
+            this.TimeOutPmButton.Text = "Time Out";
+            this.TimeOutPmButton.UseTransparentBackground = true;
+            this.TimeOutPmButton.Click += new System.EventHandler(this.TimeOutPmButton_Click);
             // 
-            // guna2Button3
+            // TimeInPmButton
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 8;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button3.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.IndicateFocus = true;
-            this.guna2Button3.Location = new System.Drawing.Point(0, 5);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.BorderRadius = 11;
-            this.guna2Button3.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Button3.ShadowDecoration.Depth = 15;
-            this.guna2Button3.ShadowDecoration.Enabled = true;
-            this.guna2Button3.Size = new System.Drawing.Size(101, 54);
-            this.guna2Button3.TabIndex = 7;
-            this.guna2Button3.Text = "Time In";
+            this.TimeInPmButton.BackColor = System.Drawing.Color.Transparent;
+            this.TimeInPmButton.BorderRadius = 8;
+            this.TimeInPmButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TimeInPmButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TimeInPmButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TimeInPmButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TimeInPmButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TimeInPmButton.FillColor = System.Drawing.Color.RoyalBlue;
+            this.TimeInPmButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.TimeInPmButton.ForeColor = System.Drawing.Color.White;
+            this.TimeInPmButton.IndicateFocus = true;
+            this.TimeInPmButton.Location = new System.Drawing.Point(0, 5);
+            this.TimeInPmButton.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.TimeInPmButton.Name = "TimeInPmButton";
+            this.TimeInPmButton.ShadowDecoration.BorderRadius = 11;
+            this.TimeInPmButton.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.TimeInPmButton.ShadowDecoration.Depth = 15;
+            this.TimeInPmButton.ShadowDecoration.Enabled = true;
+            this.TimeInPmButton.Size = new System.Drawing.Size(101, 54);
+            this.TimeInPmButton.TabIndex = 7;
+            this.TimeInPmButton.Text = "Time In";
+            this.TimeInPmButton.Click += new System.EventHandler(this.TimeInPmButton_Click);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.guna2Button1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.guna2Button2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.TimeInAmButton, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.TimeOutAmButton, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 48);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -506,55 +499,56 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(218, 59);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // guna2Button1
+            // TimeInAmButton
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 8;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button1.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.IndicateFocus = true;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 5);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.BorderRadius = 11;
-            this.guna2Button1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Button1.ShadowDecoration.Depth = 15;
-            this.guna2Button1.ShadowDecoration.Enabled = true;
-            this.guna2Button1.Size = new System.Drawing.Size(101, 54);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "Time In";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.TimeInAmButton.BackColor = System.Drawing.Color.Transparent;
+            this.TimeInAmButton.BorderRadius = 8;
+            this.TimeInAmButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TimeInAmButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TimeInAmButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TimeInAmButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TimeInAmButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TimeInAmButton.FillColor = System.Drawing.Color.RoyalBlue;
+            this.TimeInAmButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.TimeInAmButton.ForeColor = System.Drawing.Color.White;
+            this.TimeInAmButton.IndicateFocus = true;
+            this.TimeInAmButton.Location = new System.Drawing.Point(0, 5);
+            this.TimeInAmButton.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.TimeInAmButton.Name = "TimeInAmButton";
+            this.TimeInAmButton.ShadowDecoration.BorderRadius = 11;
+            this.TimeInAmButton.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.TimeInAmButton.ShadowDecoration.Depth = 15;
+            this.TimeInAmButton.ShadowDecoration.Enabled = true;
+            this.TimeInAmButton.Size = new System.Drawing.Size(101, 54);
+            this.TimeInAmButton.TabIndex = 6;
+            this.TimeInAmButton.Text = "Time In";
+            this.TimeInAmButton.Click += new System.EventHandler(this.TimeInAmButton_Click);
             // 
-            // guna2Button2
+            // TimeOutAmButton
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 8;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button2.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.IndicateFocus = true;
-            this.guna2Button2.Location = new System.Drawing.Point(111, 5);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.BorderRadius = 11;
-            this.guna2Button2.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Button2.ShadowDecoration.Depth = 15;
-            this.guna2Button2.ShadowDecoration.Enabled = true;
-            this.guna2Button2.Size = new System.Drawing.Size(102, 54);
-            this.guna2Button2.TabIndex = 7;
-            this.guna2Button2.Text = "Time Out";
-            this.guna2Button2.UseTransparentBackground = true;
+            this.TimeOutAmButton.BackColor = System.Drawing.Color.Transparent;
+            this.TimeOutAmButton.BorderRadius = 8;
+            this.TimeOutAmButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TimeOutAmButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TimeOutAmButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TimeOutAmButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TimeOutAmButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TimeOutAmButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.TimeOutAmButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.TimeOutAmButton.ForeColor = System.Drawing.Color.White;
+            this.TimeOutAmButton.IndicateFocus = true;
+            this.TimeOutAmButton.Location = new System.Drawing.Point(111, 5);
+            this.TimeOutAmButton.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.TimeOutAmButton.Name = "TimeOutAmButton";
+            this.TimeOutAmButton.ShadowDecoration.BorderRadius = 11;
+            this.TimeOutAmButton.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.TimeOutAmButton.ShadowDecoration.Depth = 15;
+            this.TimeOutAmButton.ShadowDecoration.Enabled = true;
+            this.TimeOutAmButton.Size = new System.Drawing.Size(102, 54);
+            this.TimeOutAmButton.TabIndex = 7;
+            this.TimeOutAmButton.Text = "Time Out";
+            this.TimeOutAmButton.UseTransparentBackground = true;
+            this.TimeOutAmButton.Click += new System.EventHandler(this.TimeOutAmButton_Click);
             // 
             // guna2Elipse1
             // 
@@ -564,6 +558,11 @@
             // 
             this.TimerProcess.Interval = 1000;
             this.TimerProcess.Tick += new System.EventHandler(this.TimerProcess_Tick);
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 10;
+            this.guna2Elipse2.TargetControl = this.AttendanceView;
             // 
             // BiometricAttendance
             // 
@@ -578,9 +577,11 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BiometricAttendance_FormClosing);
             this.Load += new System.EventHandler(this.BiometricAttendance_Load);
             this.BiometricAttPanel.ResumeLayout(false);
-            this.guna2Panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeePictureBox)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -596,10 +597,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         internal System.Windows.Forms.Panel BiometricAttPanel;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button TimeInAmButton;
+        private Guna.UI2.WinForms.Guna2Button TimeOutAmButton;
+        private Guna.UI2.WinForms.Guna2Button TimeOutPmButton;
+        private Guna.UI2.WinForms.Guna2Button TimeInPmButton;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.Label TimeLabel;
@@ -609,18 +610,17 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2TextBox SearchBox;
         private System.Windows.Forms.Timer TimerProcess;
-        private System.Windows.Forms.Label PromptLabel;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.FlowLayoutPanel AttendanceView;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
-        private System.Windows.Forms.Label LoadingLabel;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar ProgressCircle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2PictureBox EmployeePictureBox;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2VScrollBar EmployeeViewScrollBar;
+        private UserControls.CustomFlowLayoutPanel AttendanceView;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
     }
 }

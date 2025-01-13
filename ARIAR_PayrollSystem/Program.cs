@@ -18,7 +18,6 @@ namespace ARIAR_PayrollSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FingerPrintEnrollment());
             Application.Run(new MainForm());
 
             //Application.Run(new Login());

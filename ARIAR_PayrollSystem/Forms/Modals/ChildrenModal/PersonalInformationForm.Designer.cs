@@ -37,10 +37,9 @@
             this.LastnameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.DoBDatePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.FemaleOptions = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.FemaleOption = new Guna.UI2.WinForms.Guna2RadioButton();
             this.MaleOption = new Guna.UI2.WinForms.Guna2RadioButton();
             this.GenderOptions = new Guna.UI2.WinForms.Guna2Panel();
-            this.OtherOptions = new Guna.UI2.WinForms.Guna2RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.MaritalStatComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +47,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.EmployeePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.UploadButton = new Guna.UI2.WinForms.Guna2Button();
+            this.UploadImageButton = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.NextButton = new Guna.UI2.WinForms.Guna2Button();
@@ -60,10 +63,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.EmployeePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.UploadButton = new Guna.UI2.WinForms.Guna2Button();
-            this.UploadImageButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.SuffixTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.GenderOptions.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
@@ -109,7 +110,7 @@
             this.FirstnameTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.FirstnameTextBox.ShadowDecoration.Depth = 15;
             this.FirstnameTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.FirstnameTextBox.Size = new System.Drawing.Size(224, 42);
+            this.FirstnameTextBox.Size = new System.Drawing.Size(198, 42);
             this.FirstnameTextBox.TabIndex = 7;
             // 
             // label1
@@ -119,7 +120,7 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(291, 52);
+            this.label1.Location = new System.Drawing.Point(259, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 15);
@@ -141,7 +142,7 @@
             this.MiddlenameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.MiddlenameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.MiddlenameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MiddlenameTextBox.Location = new System.Drawing.Point(278, 69);
+            this.MiddlenameTextBox.Location = new System.Drawing.Point(246, 69);
             this.MiddlenameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MiddlenameTextBox.Name = "MiddlenameTextBox";
             this.MiddlenameTextBox.PasswordChar = '\0';
@@ -151,7 +152,7 @@
             this.MiddlenameTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.MiddlenameTextBox.ShadowDecoration.Depth = 15;
             this.MiddlenameTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.MiddlenameTextBox.Size = new System.Drawing.Size(224, 42);
+            this.MiddlenameTextBox.Size = new System.Drawing.Size(198, 42);
             this.MiddlenameTextBox.TabIndex = 9;
             // 
             // label2
@@ -161,7 +162,7 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label2.Location = new System.Drawing.Point(531, 52);
+            this.label2.Location = new System.Drawing.Point(471, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
@@ -183,7 +184,7 @@
             this.LastnameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.LastnameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.LastnameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LastnameTextBox.Location = new System.Drawing.Point(520, 69);
+            this.LastnameTextBox.Location = new System.Drawing.Point(460, 69);
             this.LastnameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LastnameTextBox.Name = "LastnameTextBox";
             this.LastnameTextBox.PasswordChar = '\0';
@@ -193,8 +194,9 @@
             this.LastnameTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.LastnameTextBox.ShadowDecoration.Depth = 15;
             this.LastnameTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.LastnameTextBox.Size = new System.Drawing.Size(224, 42);
+            this.LastnameTextBox.Size = new System.Drawing.Size(198, 42);
             this.LastnameTextBox.TabIndex = 11;
+            this.LastnameTextBox.TextChanged += new System.EventHandler(this.LastnameTextBox_TextChanged);
             // 
             // DoBDatePicker
             // 
@@ -236,23 +238,24 @@
             this.label5.Text = "Date of birth";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FemaleOptions
+            // FemaleOption
             // 
-            this.FemaleOptions.AutoSize = true;
-            this.FemaleOptions.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FemaleOptions.CheckedState.BorderThickness = 0;
-            this.FemaleOptions.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FemaleOptions.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.FemaleOptions.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FemaleOptions.Location = new System.Drawing.Point(139, 12);
-            this.FemaleOptions.Name = "FemaleOptions";
-            this.FemaleOptions.Size = new System.Drawing.Size(63, 19);
-            this.FemaleOptions.TabIndex = 18;
-            this.FemaleOptions.Text = "Female";
-            this.FemaleOptions.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.FemaleOptions.UncheckedState.BorderThickness = 2;
-            this.FemaleOptions.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.FemaleOptions.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.FemaleOption.AutoSize = true;
+            this.FemaleOption.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.FemaleOption.CheckedState.BorderThickness = 0;
+            this.FemaleOption.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.FemaleOption.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.FemaleOption.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FemaleOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.FemaleOption.Location = new System.Drawing.Point(196, 11);
+            this.FemaleOption.Name = "FemaleOption";
+            this.FemaleOption.Size = new System.Drawing.Size(70, 21);
+            this.FemaleOption.TabIndex = 18;
+            this.FemaleOption.Text = "Female";
+            this.FemaleOption.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.FemaleOption.UncheckedState.BorderThickness = 2;
+            this.FemaleOption.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.FemaleOption.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // MaleOption
             // 
@@ -261,10 +264,11 @@
             this.MaleOption.CheckedState.BorderThickness = 0;
             this.MaleOption.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.MaleOption.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.MaleOption.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.MaleOption.Location = new System.Drawing.Point(48, 12);
+            this.MaleOption.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaleOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.MaleOption.Location = new System.Drawing.Point(72, 11);
             this.MaleOption.Name = "MaleOption";
-            this.MaleOption.Size = new System.Drawing.Size(51, 19);
+            this.MaleOption.Size = new System.Drawing.Size(56, 21);
             this.MaleOption.TabIndex = 17;
             this.MaleOption.Text = "Male";
             this.MaleOption.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -278,33 +282,14 @@
             this.GenderOptions.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.GenderOptions.BorderRadius = 5;
             this.GenderOptions.BorderThickness = 1;
-            this.GenderOptions.Controls.Add(this.OtherOptions);
             this.GenderOptions.Controls.Add(this.MaleOption);
-            this.GenderOptions.Controls.Add(this.FemaleOptions);
+            this.GenderOptions.Controls.Add(this.FemaleOption);
             this.GenderOptions.FillColor = System.Drawing.Color.White;
             this.GenderOptions.Location = new System.Drawing.Point(405, 144);
             this.GenderOptions.Name = "GenderOptions";
             this.GenderOptions.Size = new System.Drawing.Size(339, 42);
             this.GenderOptions.TabIndex = 19;
             this.GenderOptions.UseTransparentBackground = true;
-            // 
-            // OtherOptions
-            // 
-            this.OtherOptions.AutoSize = true;
-            this.OtherOptions.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.OtherOptions.CheckedState.BorderThickness = 0;
-            this.OtherOptions.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.OtherOptions.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.OtherOptions.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.OtherOptions.Location = new System.Drawing.Point(242, 12);
-            this.OtherOptions.Name = "OtherOptions";
-            this.OtherOptions.Size = new System.Drawing.Size(55, 19);
-            this.OtherOptions.TabIndex = 19;
-            this.OtherOptions.Text = "Other";
-            this.OtherOptions.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.OtherOptions.UncheckedState.BorderThickness = 2;
-            this.OtherOptions.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.OtherOptions.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // label3
             // 
@@ -328,8 +313,8 @@
             this.MaritalStatComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MaritalStatComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.MaritalStatComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MaritalStatComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.MaritalStatComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.MaritalStatComboBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaritalStatComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.MaritalStatComboBox.IntegralHeight = false;
             this.MaritalStatComboBox.ItemHeight = 36;
             this.MaritalStatComboBox.Items.AddRange(new object[] {
@@ -343,6 +328,7 @@
             this.MaritalStatComboBox.Name = "MaritalStatComboBox";
             this.MaritalStatComboBox.Size = new System.Drawing.Size(352, 42);
             this.MaritalStatComboBox.TabIndex = 21;
+            this.MaritalStatComboBox.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label4
             // 
@@ -437,6 +423,102 @@
             this.guna2Panel7.Size = new System.Drawing.Size(140, 140);
             this.guna2Panel7.TabIndex = 17;
             // 
+            // EmployeePictureBox
+            // 
+            this.EmployeePictureBox.BackColor = System.Drawing.Color.White;
+            this.EmployeePictureBox.BorderRadius = 5;
+            this.EmployeePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeePictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.ErrorImage")));
+            this.EmployeePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.Image")));
+            this.EmployeePictureBox.ImageRotate = 0F;
+            this.EmployeePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.InitialImage")));
+            this.EmployeePictureBox.Location = new System.Drawing.Point(2, 2);
+            this.EmployeePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EmployeePictureBox.Name = "EmployeePictureBox";
+            this.EmployeePictureBox.ShadowDecoration.BorderRadius = 11;
+            this.EmployeePictureBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.EmployeePictureBox.Size = new System.Drawing.Size(136, 136);
+            this.EmployeePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EmployeePictureBox.TabIndex = 11;
+            this.EmployeePictureBox.TabStop = false;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.AnimatedGIF = true;
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.IndianRed;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = global::ARIAR_PayrollSystem.Properties.Resources.delete_bin_line;
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(18, 18);
+            this.guna2Button2.Location = new System.Drawing.Point(200, 122);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(6, 2, 10, 2);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(111, 37);
+            this.guna2Button2.TabIndex = 16;
+            this.guna2Button2.Text = "Delete";
+            this.guna2Button2.TextOffset = new System.Drawing.Point(8, 0);
+            this.guna2Button2.UseTransparentBackground = true;
+            // 
+            // UploadButton
+            // 
+            this.UploadButton.Animated = true;
+            this.UploadButton.AnimatedGIF = true;
+            this.UploadButton.BackColor = System.Drawing.Color.Transparent;
+            this.UploadButton.BorderRadius = 5;
+            this.UploadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UploadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UploadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UploadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UploadButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
+            this.UploadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UploadButton.ForeColor = System.Drawing.Color.White;
+            this.UploadButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.upload_line;
+            this.UploadButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.UploadButton.ImageSize = new System.Drawing.Size(18, 18);
+            this.UploadButton.Location = new System.Drawing.Point(200, 71);
+            this.UploadButton.Margin = new System.Windows.Forms.Padding(6, 2, 10, 2);
+            this.UploadButton.Name = "UploadButton";
+            this.UploadButton.Size = new System.Drawing.Size(111, 37);
+            this.UploadButton.TabIndex = 15;
+            this.UploadButton.Text = "Upload";
+            this.UploadButton.TextOffset = new System.Drawing.Point(8, 0);
+            this.UploadButton.UseTransparentBackground = true;
+            this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
+            // 
+            // UploadImageButton
+            // 
+            this.UploadImageButton.Animated = true;
+            this.UploadImageButton.AnimatedGIF = true;
+            this.UploadImageButton.BackColor = System.Drawing.Color.Transparent;
+            this.UploadImageButton.BorderRadius = 5;
+            this.UploadImageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UploadImageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UploadImageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UploadImageButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UploadImageButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
+            this.UploadImageButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UploadImageButton.ForeColor = System.Drawing.Color.White;
+            this.UploadImageButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.camera_3_line;
+            this.UploadImageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.UploadImageButton.ImageSize = new System.Drawing.Size(18, 18);
+            this.UploadImageButton.Location = new System.Drawing.Point(200, 19);
+            this.UploadImageButton.Margin = new System.Windows.Forms.Padding(6, 2, 10, 2);
+            this.UploadImageButton.Name = "UploadImageButton";
+            this.UploadImageButton.Size = new System.Drawing.Size(111, 37);
+            this.UploadImageButton.TabIndex = 14;
+            this.UploadImageButton.Text = "Camera";
+            this.UploadImageButton.TextOffset = new System.Drawing.Point(8, 0);
+            this.UploadImageButton.UseTransparentBackground = true;
+            this.UploadImageButton.Click += new System.EventHandler(this.UploadImageButton_Click);
+            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -473,7 +555,7 @@
             this.NextButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.NextButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.NextButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.NextButton.FillColor = System.Drawing.Color.SteelBlue;
+            this.NextButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(75)))), ((int)(((byte)(95)))));
             this.NextButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextButton.ForeColor = System.Drawing.Color.White;
             this.NextButton.Location = new System.Drawing.Point(623, 358);
@@ -571,7 +653,7 @@
             this.label12.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.IndianRed;
-            this.label12.Location = new System.Drawing.Point(591, 48);
+            this.label12.Location = new System.Drawing.Point(533, 48);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(17, 21);
@@ -609,100 +691,47 @@
             this.label14.Text = "*";
             this.label14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // EmployeePictureBox
+            // label15
             // 
-            this.EmployeePictureBox.BackColor = System.Drawing.Color.White;
-            this.EmployeePictureBox.BorderRadius = 5;
-            this.EmployeePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmployeePictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.ErrorImage")));
-            this.EmployeePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.Image")));
-            this.EmployeePictureBox.ImageRotate = 0F;
-            this.EmployeePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("EmployeePictureBox.InitialImage")));
-            this.EmployeePictureBox.Location = new System.Drawing.Point(2, 2);
-            this.EmployeePictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.EmployeePictureBox.Name = "EmployeePictureBox";
-            this.EmployeePictureBox.ShadowDecoration.BorderRadius = 11;
-            this.EmployeePictureBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.EmployeePictureBox.Size = new System.Drawing.Size(136, 136);
-            this.EmployeePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EmployeePictureBox.TabIndex = 11;
-            this.EmployeePictureBox.TabStop = false;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.label15.Location = new System.Drawing.Point(677, 54);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 15);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Suffix";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2Button2
+            // SuffixTextBox
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.AnimatedGIF = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.IndianRed;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::ARIAR_PayrollSystem.Properties.Resources.delete_bin_line;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(18, 18);
-            this.guna2Button2.Location = new System.Drawing.Point(200, 122);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(6, 2, 10, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(111, 37);
-            this.guna2Button2.TabIndex = 16;
-            this.guna2Button2.Text = "Delete";
-            this.guna2Button2.TextOffset = new System.Drawing.Point(8, 0);
-            this.guna2Button2.UseTransparentBackground = true;
-            // 
-            // UploadButton
-            // 
-            this.UploadButton.Animated = true;
-            this.UploadButton.AnimatedGIF = true;
-            this.UploadButton.BackColor = System.Drawing.Color.Transparent;
-            this.UploadButton.BorderRadius = 5;
-            this.UploadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UploadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UploadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UploadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UploadButton.FillColor = System.Drawing.Color.SteelBlue;
-            this.UploadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UploadButton.ForeColor = System.Drawing.Color.White;
-            this.UploadButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.upload_line;
-            this.UploadButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.UploadButton.ImageSize = new System.Drawing.Size(18, 18);
-            this.UploadButton.Location = new System.Drawing.Point(200, 71);
-            this.UploadButton.Margin = new System.Windows.Forms.Padding(6, 2, 10, 2);
-            this.UploadButton.Name = "UploadButton";
-            this.UploadButton.Size = new System.Drawing.Size(111, 37);
-            this.UploadButton.TabIndex = 15;
-            this.UploadButton.Text = "Upload";
-            this.UploadButton.TextOffset = new System.Drawing.Point(8, 0);
-            this.UploadButton.UseTransparentBackground = true;
-            this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
-            // 
-            // UploadImageButton
-            // 
-            this.UploadImageButton.Animated = true;
-            this.UploadImageButton.AnimatedGIF = true;
-            this.UploadImageButton.BackColor = System.Drawing.Color.Transparent;
-            this.UploadImageButton.BorderRadius = 5;
-            this.UploadImageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UploadImageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UploadImageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UploadImageButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UploadImageButton.FillColor = System.Drawing.Color.SteelBlue;
-            this.UploadImageButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UploadImageButton.ForeColor = System.Drawing.Color.White;
-            this.UploadImageButton.Image = global::ARIAR_PayrollSystem.Properties.Resources.camera_3_line;
-            this.UploadImageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.UploadImageButton.ImageSize = new System.Drawing.Size(18, 18);
-            this.UploadImageButton.Location = new System.Drawing.Point(200, 19);
-            this.UploadImageButton.Margin = new System.Windows.Forms.Padding(6, 2, 10, 2);
-            this.UploadImageButton.Name = "UploadImageButton";
-            this.UploadImageButton.Size = new System.Drawing.Size(111, 37);
-            this.UploadImageButton.TabIndex = 14;
-            this.UploadImageButton.Text = "Camera";
-            this.UploadImageButton.TextOffset = new System.Drawing.Point(8, 0);
-            this.UploadImageButton.UseTransparentBackground = true;
+            this.SuffixTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.SuffixTextBox.BorderRadius = 5;
+            this.SuffixTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SuffixTextBox.DefaultText = "";
+            this.SuffixTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SuffixTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SuffixTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SuffixTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SuffixTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SuffixTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.SuffixTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SuffixTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SuffixTextBox.Location = new System.Drawing.Point(675, 69);
+            this.SuffixTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SuffixTextBox.Name = "SuffixTextBox";
+            this.SuffixTextBox.PasswordChar = '\0';
+            this.SuffixTextBox.PlaceholderText = "e.g. Jr.";
+            this.SuffixTextBox.SelectedText = "";
+            this.SuffixTextBox.ShadowDecoration.BorderRadius = 11;
+            this.SuffixTextBox.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.SuffixTextBox.ShadowDecoration.Depth = 15;
+            this.SuffixTextBox.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
+            this.SuffixTextBox.Size = new System.Drawing.Size(69, 42);
+            this.SuffixTextBox.TabIndex = 37;
             // 
             // PersonalInformationForm
             // 
@@ -710,6 +739,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(772, 410);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.SuffixTextBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.guna2Separator1);
@@ -761,10 +792,9 @@
         private Guna.UI2.WinForms.Guna2TextBox LastnameTextBox;
         private Guna.UI2.WinForms.Guna2DateTimePicker DoBDatePicker;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2RadioButton FemaleOptions;
+        private Guna.UI2.WinForms.Guna2RadioButton FemaleOption;
         private Guna.UI2.WinForms.Guna2RadioButton MaleOption;
         private Guna.UI2.WinForms.Guna2Panel GenderOptions;
-        private Guna.UI2.WinForms.Guna2RadioButton OtherOptions;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ComboBox MaritalStatComboBox;
         private System.Windows.Forms.Label label4;
@@ -788,5 +818,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2TextBox SuffixTextBox;
     }
 }

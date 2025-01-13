@@ -11,12 +11,14 @@ using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ARIAR_PayrollSystem.Forms.Modals;
+using ARIAR_PayrollSystem.Models;
 
 namespace ARIAR_PayrollSystem.Helpers
 {
     public static class HttpHelper
     {
-        private static string _apiBasicUri = "http://localhost:2450";
+        private static string _apiBasicUri = "http://localhost:2410";
+        //private static string _apiBasicUri = "http://localhost:2450";
 
         public static void SetApiBasicUri(string value)
         {
@@ -31,6 +33,8 @@ namespace ARIAR_PayrollSystem.Helpers
             get { return accessToken; }
             private set { accessToken = value; }
         }
+
+        public static UserLoginDto UserData { get; set; }
 
 
         public static void SetAccessToken(string token)
@@ -118,6 +122,10 @@ namespace ARIAR_PayrollSystem.Helpers
                     new AuthenticationHeaderValue("Bearer", "");
                 httpClient.Timeout = TimeSpan.FromMinutes(10);
 
+                //test log
+                string fullUrl = new Uri(httpClient.BaseAddress, url).ToString();
+                Console.WriteLine($"Request URL: {fullUrl}");
+
                 var result = await httpClient.GetAsync(url);
 
                 result.EnsureSuccessStatusCode();
@@ -138,6 +146,8 @@ namespace ARIAR_PayrollSystem.Helpers
             }
 
         }
+
+
         public static async Task<T> DeleteAsync<T>(string url)
         {
 
@@ -174,6 +184,49 @@ namespace ARIAR_PayrollSystem.Helpers
 
         }
 
+        public static async Task<T> PutAsync<T, U>(string url, U contentValue)
+        {
+            var httpClient = new HttpClient();
+
+            try
+            {
+                httpClient.BaseAddress = new Uri(_apiBasicUri);
+                var serializedContent = JsonConvert.SerializeObject(contentValue);
+                Console.WriteLine(JsonConvert.SerializeObject(contentValue, Formatting.Indented));
+                Console.WriteLine("Serialized Content: " + serializedContent);
+                var content = new StringContent(serializedContent, Encoding.UTF8, "application/json");
+
+                httpClient.DefaultRequestHeaders.Add("AccessToken", accessToken);
+                httpClient.DefaultRequestHeaders.Add("secretKey", secretKey);
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", "");
+                httpClient.Timeout = TimeSpan.FromMinutes(10);
+
+                // Log the full request URL for debugging
+                string fullUrl = new Uri(httpClient.BaseAddress, url).ToString();
+                Console.WriteLine($"Request URL: {fullUrl}");
+
+                var result = await httpClient.PutAsync(url, content);
+
+                result.EnsureSuccessStatusCode();
+
+                string resultContentString = await result.Content.ReadAsStringAsync();
+                T resultContent = JsonConvert.DeserializeObject<T>(resultContentString);
+                return resultContent;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in PutAsync: {ex.Message}");
+                T resultContent = JsonConvert.DeserializeObject<T>("");
+                return resultContent;
+            }
+            finally
+            {
+                httpClient.Dispose();
+            }
+        }
+
     }
+
 
 }

@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,12 +22,14 @@ namespace ARIAR_PayrollSystem.UserControls
         private bool _currentMonth = false;
         private string _date;
         private LogCountDto _logCount;
-        public CalendarDayView()
+        private readonly MainForm _mainForm;
+        public CalendarDayView(MainForm mainForm)
         {
             InitializeComponent();
+            _mainForm = mainForm;
         }
 
-        public static void ShowCalendarDay(TableLayoutPanel viewParent, DateTime dateTime)
+        public static void ShowCalendarDay(MainForm mainForm, TableLayoutPanel viewParent, DateTime dateTime)
         {
             viewParent.Controls.Clear();
             viewParent.Visible = false;
@@ -44,7 +47,7 @@ namespace ARIAR_PayrollSystem.UserControls
             for (int cellIndex = 1; cellIndex <= 42; cellIndex++)
             {                
                 var days = startOfMonth.AddDays(-pastMonthDays);
-                var calendarDay = new CalendarDayView() { Dock = DockStyle.Fill };
+                var calendarDay = new CalendarDayView(mainForm) { Dock = DockStyle.Fill };
                 calendarDay.DayLabel.Text = days.Day.ToString("d");                    
 
                 calendarDay._date = days.Date.ToString("yyyy-MM-dd");
@@ -104,14 +107,31 @@ namespace ARIAR_PayrollSystem.UserControls
 
         private void Control_Click(object sender, EventArgs e)
         {
-            ToastNotify.Info(DateTime.Parse(_date).ToString("D"));
+            //ToastNotify.Info(DateTime.Parse(_date).ToString("D"));
+            var trueDate = DateTime.ParseExact(_date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            if (trueDate.Date.DayOfWeek == 0) return;
+
+
+            var attendanceModal = new AttendanceDateModal(_mainForm, _date);
+            ControlsHelper.ShowModal(_mainForm, attendanceModal);
+
+
+        }
+
+        public async void UpdateAttendanceLog(string date)
+        {
+            await GetAttendanceLog(date);
         }
 
         private async Task GetAttendanceLog(string date)
         {
             try
             {
-                var logs = await HttpHelper.GetAsync<ApiResponse<LogCountDto>>($"{ApiEndpointHelper.Attendance.GetLogCount}{date}");
+                var logs = await HttpHelper.GetAsync<ApiResponse<LogCountDto>>($"{ApiEndpoint.Attendance.GetLogCount}{date}");
+                
+                PresentCount.Visible = true;
+                LeaveCount.Visible = true;
+                AbsentCount.Visible = true;
 
                 if (logs.Data == null)
                 {

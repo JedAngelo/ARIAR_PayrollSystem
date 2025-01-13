@@ -1,7 +1,9 @@
 ﻿using ARIAR_PayrollSystem.Forms;
+using ARIAR_PayrollSystem.Forms.Modals;
 using ARIAR_PayrollSystem.Helpers;
 using ARIAR_PayrollSystem.Models;
 using Guna.UI2.WinForms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,22 +19,31 @@ namespace ARIAR_PayrollSystem.UserControls
     public partial class EmployeeView : UserControl
     {
         private Guid _personalId;
-        private const int anchorX = 100;
-        private int actionShowX;
-        private int actionHideIncrementX = 200;
-        private int actionHideX;
-        private bool isHidden = false;
+        private MainForm _mainForm;
+        private PersonalInformationDisplayDto _employeeInfo;
+        private bool _isActionsVisible = false;
+        private bool _isTransitioning = false;
 
-        public EmployeeView(String fullName, string contactNo, string address, byte[] employeePic, Guid personalId)
+        public EmployeeView(MainForm mainForm, PersonalInformationDisplayDto employeeInfo)
         {
+            _mainForm = mainForm;
+            _employeeInfo = employeeInfo;
             InitializeComponent();
-            Fullname.Text = fullName;
-            ContactNo.Text = contactNo;
-            Address.Text = address;
-            LoadEmployeePic(employeePic);
-            _personalId = personalId;
-            actionShowX = showActionButton.Location.X - anchorX;
-            actionHideX = actionShowX + actionHideIncrementX;
+            Fullname.Text = $"{_employeeInfo.FirstName} {(string.IsNullOrEmpty(_employeeInfo.MiddleName) ? "" : $"{_employeeInfo.MiddleName[0]}. ")}{_employeeInfo.LastName}";
+            PositionLabel.Text = _employeeInfo.PositionName;
+            EmailLabel.Text = _employeeInfo.Email;
+            ActiveLabel.Text = _employeeInfo.IsActive ? "ACTIVE" : "INACTIVE";
+            ActiveChip.FillColor = _employeeInfo.IsActive ? Color.DodgerBlue : Color.SlateGray;
+            //ContactNo.Text = contactNo;
+            //Address.Text = address;
+            if (_employeeInfo.EmployeeImage != null)
+            {
+                LoadEmployeePic(_employeeInfo.EmployeeImage);
+            }
+            _personalId = (Guid)_employeeInfo.PersonalId;
+            ActionsOptions.Visible = false;
+
+
 
 
         }
@@ -41,23 +52,38 @@ namespace ARIAR_PayrollSystem.UserControls
             await ControlsHelper.ConvertByteToImageCircleBoxAsync(pic, EmployeePic);
         }
 
-        public static async Task DataViewAsync(List<PersonalInformationDisplayDto> data, FlowLayoutPanel view)
+        public static async Task DataViewAsync(MainForm mainForm, List<PersonalInformationDisplayDto> data, FlowLayoutPanel view)
         {
-            view.Controls.Clear();
-
-            await Task.Run(() =>
+            try
             {
-                foreach (PersonalInformationDisplayDto employee in data)
-                {
-                    var fullname = $"{employee.FirstName} {(string.IsNullOrEmpty(employee.MiddleName) ? "" : $"{employee.MiddleName[0]}. ")}{employee.LastName}";
-                    var employeeView = new EmployeeView(fullname, employee.PhoneNumber, employee.Address, employee.EmployeeImage, (Guid)employee.PersonalId)
-                    {
-                        Width = view.ClientSize.Width - 15
-                    };
+                view.Controls.Clear();
 
-                    view.Invoke((MethodInvoker)(() => view.Controls.Add(employeeView)));
-                }
-            });
+                var employeeViewList = new List<Control>();
+
+                await Task.Run(() =>
+                {
+                    foreach (PersonalInformationDisplayDto employee in data)
+                    {
+                        var employeeView = new EmployeeView(mainForm, employee)
+                        {
+                            Width = view.ClientSize.Width - 13
+                        };
+                        //view.Invoke((Action)(() => view.Controls.Add(employeeView)));
+                        //view.Controls.Add(employeeView);
+
+                        employeeViewList.Add(employeeView);
+
+                    }
+                });
+                view.Invoke((Action)(() => view.Controls.AddRange(employeeViewList.ToArray())));
+
+                //view.Controls.AddRange(employeeViewList.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
 
@@ -66,52 +92,96 @@ namespace ARIAR_PayrollSystem.UserControls
             ToastNotify.Info(_personalId.ToString());
         }
 
-        private void showActions_Tick(object sender, EventArgs e)
+      
+
+    
+        //private void EmployeeView_SizeChanged(object sender, EventArgs e)
+        //{
+        //    actionShowX = showActionButton.Location.X - anchorX;
+        //    actionHideX = actionShowX + actionHideIncrementX;
+        //}
+
+       
+
+       
+
+
+        private void MainView_MouseEnter(object sender, EventArgs e)
         {
-            var x = ActionsOptions.Location.X;
-            if (x == actionShowX)
+            MainView.FillColor = Color.Gainsboro;
+        }
+
+        private void MainView_MouseLeave(object sender, EventArgs e)
+        {
+            MainView.FillColor = Color.White;
+        }
+
+        private void ViewButton_Click(object sender, EventArgs e)
+        {
+            EmployeeInformationView employeeView = new EmployeeInformationView(_employeeInfo);
+            ControlsHelper.ShowModal(_mainForm, employeeView);
+        }
+
+        private async void EditButton_Click(object sender, EventArgs e)
+        {
+            try
             {
-                Console.WriteLine("else check");
-                hideActionButton.Visible = true;
-                showActions.Stop();
+                var _employeeRaw = await HttpHelper.GetAsync<ApiResponse<PersonalInformationDto>>(ApiEndpoint.Employee.GetPersonalInfoRaw + _personalId);
+
+                if (_employeeRaw == null) throw new Exception($"{this.Name}: Employee Information is Null");
+                
+                if (_employeeRaw.isSuccess)
+                {
+                    Console.WriteLine(JsonConvert.SerializeObject(_employeeRaw.Data, Formatting.Indented));
+                    EmployeeCanvasModal employeeCanvas = new EmployeeCanvasModal(_employeeRaw.Data);
+                    ControlsHelper.ShowModal(_mainForm, employeeCanvas);
+                }
+
             }
-            
-            x = Math.Max(x - 15, actionShowX);
-            ActionsOptions.Location = new Point(x, ActionsOptions.Location.Y);
-           
-        }
-
-        private void showActionButton_Click(object sender, EventArgs e)
-        {
-            ActionsOptions.Visible = true;
-            showActions.Start();
-        }
-
-        private void EmployeeView_SizeChanged(object sender, EventArgs e)
-        {
-            actionShowX = showActionButton.Location.X - anchorX;
-            actionHideX = actionShowX + actionHideIncrementX;
-        }
-
-        private void hideActions_Tick(object sender, EventArgs e)
-        {
-            var x = ActionsOptions.Location.X;
-            if (x == actionHideX)
+            catch (Exception ex)
             {
-                Console.WriteLine("else check");
-                ActionsOptions.Visible = false;
-                hideActions.Stop();
+                Console.WriteLine(ex);
+                throw;
             }
-            
-            x = Math.Min(x + 15, actionHideX);
-            ActionsOptions.Location = new Point(x, ActionsOptions.Location.Y);
-        
+        }
+        private void ToggleButtonsVisibility(bool show)
+        {
+            ExportButton.Visible = show;
+            EditButton.Visible = show;
+            ViewButton.Visible = show;
+            DeleteButton.Visible = show;
+        }
+
+
+        private async void ToggleActionsVisibility()
+        {
+            if (_isTransitioning) return; // Prevent concurrent toggling
+            _isTransitioning = true;
+            MainView.SuspendLayout(); // Prevent layout updates until we are done
+
+
+            _isActionsVisible = !_isActionsVisible;
+            ActionsOptions.Visible = _isActionsVisible; //toggle action panel
+            await Task.Delay(100);
+            ToggleButtonsVisibility(_isActionsVisible); // toggle visibility of buttons in the panel.
+
+            MainView.ResumeLayout(true);  // Update the layout
+            _isTransitioning = false;
+        }
+
+        private void ActionsButton_Click(object sender, EventArgs e)
+        {
+            ToggleActionsVisibility();
         }
 
         private void hideActionButton_Click(object sender, EventArgs e)
         {
-            hideActions.Start();
-            hideActionButton.Visible = false;
+            ToggleActionsVisibility();
+        }
+
+        private void EmployeeView_SizeChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Table size docked to fill");
         }
     }
 }

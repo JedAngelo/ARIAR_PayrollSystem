@@ -29,39 +29,36 @@ namespace ARIAR_PayrollSystem.UserControls
             await ControlsHelper.ConvertByteToImageAsync(picByte, EmployeePic);
         }
 
-        public static async Task DataViewAsync(List<AttendanceDataLog> data, FlowLayoutPanel view)
+        public static async Task DataViewAsync(List<AttendanceDisplayDto> data, FlowLayoutPanel view)
         {
             view.Controls.Clear();
+
+            var logViewList = new List<AttendanceLogView>();
+
             await Task.Run(() =>
             {
-                foreach(AttendanceDataLog attendance in data)
+                foreach(AttendanceDisplayDto attendance in data)
                 {
                     var logView = new AttendanceLogView(attendance.Name, attendance.Log, attendance.Type, attendance.EmployeeImage)
                     {
-                        Width = view.ClientSize.Width - 10 
+                        Width = view.ClientSize.Width - 13
                     };
-
-                    view.Invoke((MethodInvoker)(() => view.Controls.Add(logView)));
+                    logViewList.Add(logView);
                 }
+                view.BeginInvoke((Action)(() => view.Controls.AddRange(logViewList.ToArray())));
             });
         }
-        public static async Task DataViewAddAsync(AttendanceDataLog data, FlowLayoutPanel view)
+        public static async Task DataViewAddAsync(AttendanceDisplayDto data, FlowLayoutPanel view)
         {
             await Task.Run(() =>
             {
                 
                 var logView = new AttendanceLogView(data.Name, data.Log, data.Type, data.EmployeeImage)
                 {
-                    Width = view.ClientSize.Width - 10
+                    Width = view.ClientSize.Width - 13
                 };
 
-                if (view.Controls.Count > 4)
-                {
-                    logView.Width -= 15;                    
-                }
-
-
-                view.Invoke((MethodInvoker)(() => view.Controls.Add(logView)));
+                view.Invoke((Action)(() => view.Controls.Add(logView)));
             });
         }
     }

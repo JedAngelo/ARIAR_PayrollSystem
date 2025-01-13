@@ -26,7 +26,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         private List<Fmd> preenrollmentFmds;
         private int count;
         public MainForm _mainForm;
-        private readonly Employee _employee;
+        private readonly PersonalInformationDisplayDto _employee;
 
 
 
@@ -34,14 +34,18 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         // Connection string to your database
         //private string connectionString = "YourConnectionStringHere";
 
-        public FingerPrintEnrollment(MainForm mainForm, Employee employee)
+        public FingerPrintEnrollment(MainForm mainForm, PersonalInformationDisplayDto employee)
         {
             InitializeComponent();
             preenrollmentFmds = new List<Fmd>();
             count = 0;
             _mainForm = mainForm;
             _employee = employee;
-            PersonalIDTextBox.Text = _employee.Fullname;
+            NameLabel.Text = $"{_employee.FirstName} {(string.IsNullOrEmpty(_employee.MiddleName) ? "" : $"{_employee.MiddleName[0]}. ")}{_employee.LastName}";
+            NameUnderline.Width = NameLabel.Width;
+
+
+
             //InitCapturer();
         }
 
@@ -54,17 +58,17 @@ namespace ARIAR_PayrollSystem.Forms.Modals
         }
         protected void SetPrompt(string prompt)
         {
-            Invoke((Action)(() => PromptTextBox.Text = prompt));
+            Invoke((Action)(() => PrompLabel.Text = prompt));
         }
 
         protected void SetStatus(string status)
         {
-            Invoke((Action)(() => StatusLabel.Text = status));
+            Invoke((Action)(() => ToastNotify.Info(status)));
         }
 
         protected void MakeReport(string message)
         {
-            Invoke((Action)(() => StatusTextBox.Text += message));
+            Invoke((Action)(() => Console.WriteLine(message)));
         }
 
 
@@ -85,10 +89,11 @@ namespace ARIAR_PayrollSystem.Forms.Modals
                     RecordDate = DateTime.Now,
                 };
 
-                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiEndpointHelper.Biometric.AddBiometric, empployeeBiometric);
+                var _result = await HttpHelper.PostAsync<ApiResponse<string>, dynamic>(ApiEndpoint.Biometric.AddBiometric, empployeeBiometric);
                 if (_result.isSuccess)
                 {
                     GunaMessage.Info(_result.Data, "INFO");
+                    Invoke((Action)(() => this.Close()));
                 }
                 else
                 {
@@ -116,21 +121,24 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             try
             {
 
-                if(PersonalIDTextBox.Text == "")
-                {
-                    SetStatus("No Personal ID or Personal ID does not exist!");
-                    return;
-                }
                 // Check capture quality and throw an error if bad.
                 if (!_mainForm.CheckCaptureResult(captureResult)) return;
 
                 count++;
 
+                if (count <= 4)
+                {
+                    if (count > 1) progressLine.Value++;
+                    if (count == 1) firstStep.FillColor = Color.FromArgb(255, 188, 1);
+                }
+
+
+
                 DataResult<Fmd> resultConversion = FeatureExtraction.CreateFmdFromFid(captureResult.Data, Constants.Formats.Fmd.ANSI);
 
                 // Update the report and prompt on the UI thread
                 MakeReport($"A finger was captured. \r\nCount: {count}\r\n");
-                DrawPicture(_mainForm.ConvertToBitmap(captureResult));
+                //DrawPicture(_mainForm.ConvertToBitmap(captureResult));
 
                 if (resultConversion.ResultCode != Constants.ResultCode.DP_SUCCESS)
                 {
@@ -139,14 +147,14 @@ namespace ARIAR_PayrollSystem.Forms.Modals
 
                 preenrollmentFmds.Add(resultConversion.Data);
 
-                if (count >= 4)
+                if (count >= 3)
                 {
                     DataResult<Fmd> resultEnrollment = Enrollment.CreateEnrollmentFmd(Constants.Formats.Fmd.ANSI, preenrollmentFmds);
 
                     if (resultEnrollment.ResultCode == Constants.ResultCode.DP_SUCCESS)
                     {
                         MakeReport("An enrollment FMD was successfully created.\r\n");
-                        SetPrompt("Place a finger on the reader.");
+                        SetPrompt("Fingerprint scan complete.");
                         preenrollmentFmds.Clear();
                         count = 0;
                         await SaveFingerprintEnrollment(resultEnrollment.Data);
@@ -156,14 +164,30 @@ namespace ARIAR_PayrollSystem.Forms.Modals
                     else if (resultEnrollment.ResultCode == Constants.ResultCode.DP_ENROLLMENT_INVALID_SET)
                     {
                         MakeReport("Enrollment was unsuccessful. Please try again.");
-                        SetPrompt("Place a finger on the reader.");
+                        SetPrompt("Start scanning when you're ready, just place your finger on the scanner.");
                         preenrollmentFmds.Clear();
                         count = 0;
                         return;
                     }
                 }
 
-                SetPrompt("Now place the same finger on the reader.");
+                switch (count)
+                {
+                    case 1:
+                        SetPrompt($"Now place the same finger on the scanner again for the 2nd time.");
+                        break;
+                    case 2:
+                        SetPrompt($"Now place the same finger on the scanner again for the 3rd time.");
+                        break;
+                    case 3:
+                        SetPrompt($"Now place the same finger on the scanner again for the last time.");
+                        break;
+                    default:
+                        SetPrompt($"Now place the same finger on the scanner again.");
+                        break;
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -189,7 +213,7 @@ namespace ARIAR_PayrollSystem.Forms.Modals
 
             count = 0;
             preenrollmentFmds = new List<Fmd>();
-            SetPrompt("Place a finger on the scanner");
+            SetPrompt("Start scanning when you're ready, just place your finger on the scanner.");
             if (!_mainForm.OpenReader())
             {
                 //SetStatus("No fingerprint scanner found.");
@@ -203,12 +227,6 @@ namespace ARIAR_PayrollSystem.Forms.Modals
 
         }
 
-        private void StartCapture()
-        {
-            
-        }
-
-
         private void StopCapture()
         {
             // Clear any temporary data
@@ -216,14 +234,41 @@ namespace ARIAR_PayrollSystem.Forms.Modals
             count = 0; // Reset the count of captured fingerprints
 
             // Optionally, you might want to reset any UI elements
-            PromptTextBox.Clear();
-            StatusLabel.Text = string.Empty;
+            PrompLabel.Text = "Exiting...";
             fingerImage.Image = null; // Clear the displayed fingerprint image//StopCapture();
 
         }
         private void FingerPrintEnrollment_FormClosing(object sender, FormClosingEventArgs e)
         {
             _mainForm.CancelCaptureAndCloseReader(this.OnCaptured);
+        }
+
+        private void PersonalIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressLine_ValueChanged(object sender, EventArgs e)
+        {
+            switch (progressLine.Value)
+            {
+                case 0:
+                    firstStep.FillColor = Color.White;
+                    secondStep.FillColor = Color.White;
+                    thirdStep.FillColor = Color.White;
+                    return;
+                case 1:
+                    secondStep.FillColor = Color.FromArgb(255, 188, 1);
+                    return;
+                case 2:
+                    thirdStep.FillColor = Color.FromArgb(255, 188, 1);
+                    return;
+                case 3:
+                    fourthStep.FillColor = Color.FromArgb(255, 188, 1);
+                    return;
+            }
+
+
         }
     }
 }

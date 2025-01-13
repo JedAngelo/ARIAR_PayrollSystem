@@ -28,130 +28,237 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ContactNo = new System.Windows.Forms.Label();
-            this.EmployeePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ParentView = new Guna.UI2.WinForms.Guna2Panel();
+            this.ColumnView = new System.Windows.Forms.TableLayoutPanel();
+            this.NetLabel = new System.Windows.Forms.Label();
+            this.TotalDeductionLabel = new System.Windows.Forms.Label();
+            this.PhilhealthLabel = new System.Windows.Forms.Label();
+            this.PagibigLabel = new System.Windows.Forms.Label();
+            this.SssLabel = new System.Windows.Forms.Label();
+            this.GrossLabel = new System.Windows.Forms.Label();
+            this.DailyLabel = new System.Windows.Forms.Label();
+            this.WorkDaysLabel = new System.Windows.Forms.Label();
+            this.TopView = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Fullname = new System.Windows.Forms.Label();
-            this.Address = new System.Windows.Forms.Label();
-            this.EmployeeSeperator = new Guna.UI2.WinForms.Guna2Separator();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel1.SuspendLayout();
+            this.EmployeePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ParentView.SuspendLayout();
+            this.ColumnView.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeePic)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // ParentView
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.SlateGray;
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Controls.Add(this.ContactNo);
-            this.guna2Panel1.Controls.Add(this.EmployeePic);
-            this.guna2Panel1.Controls.Add(this.Fullname);
-            this.guna2Panel1.Controls.Add(this.EmployeeSeperator);
-            this.guna2Panel1.Controls.Add(this.Address);
-            this.guna2Panel1.Controls.Add(this.label11);
-            this.guna2Panel1.Controls.Add(this.label10);
-            this.guna2Panel1.Controls.Add(this.label9);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.label7);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(5, 5);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
-            this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
-            this.guna2Panel1.ShadowDecoration.Depth = 15;
-            this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.Size = new System.Drawing.Size(944, 75);
-            this.guna2Panel1.TabIndex = 1;
-            this.guna2Panel1.UseTransparentBackground = true;
+            this.ParentView.BackColor = System.Drawing.Color.Transparent;
+            this.ParentView.BorderColor = System.Drawing.Color.SlateGray;
+            this.ParentView.BorderRadius = 10;
+            this.ParentView.Controls.Add(this.ColumnView);
+            this.ParentView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ParentView.FillColor = System.Drawing.Color.White;
+            this.ParentView.Location = new System.Drawing.Point(10, 3);
+            this.ParentView.Margin = new System.Windows.Forms.Padding(0);
+            this.ParentView.Name = "ParentView";
+            this.ParentView.ShadowDecoration.BorderRadius = 15;
+            this.ParentView.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.ParentView.ShadowDecoration.Depth = 15;
+            this.ParentView.Size = new System.Drawing.Size(1236, 47);
+            this.ParentView.TabIndex = 1;
+            this.ParentView.UseTransparentBackground = true;
             // 
-            // label1
+            // ColumnView
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(270, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "6.5";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ColumnView.ColumnCount = 9;
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.86597F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.24549F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.89091F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.717F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.89091F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.89091F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.89091F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.89091F));
+            this.ColumnView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.717F));
+            this.ColumnView.Controls.Add(this.panel1, 0, 0);
+            this.ColumnView.Controls.Add(this.NetLabel, 8, 0);
+            this.ColumnView.Controls.Add(this.TotalDeductionLabel, 7, 0);
+            this.ColumnView.Controls.Add(this.PhilhealthLabel, 6, 0);
+            this.ColumnView.Controls.Add(this.PagibigLabel, 5, 0);
+            this.ColumnView.Controls.Add(this.SssLabel, 4, 0);
+            this.ColumnView.Controls.Add(this.GrossLabel, 3, 0);
+            this.ColumnView.Controls.Add(this.DailyLabel, 2, 0);
+            this.ColumnView.Controls.Add(this.WorkDaysLabel, 1, 0);
+            this.ColumnView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ColumnView.Location = new System.Drawing.Point(0, 0);
+            this.ColumnView.Margin = new System.Windows.Forms.Padding(0);
+            this.ColumnView.Name = "ColumnView";
+            this.ColumnView.RowCount = 1;
+            this.ColumnView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ColumnView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.ColumnView.Size = new System.Drawing.Size(1236, 47);
+            this.ColumnView.TabIndex = 19;
+            this.ColumnView.Click += new System.EventHandler(this.View_Click);
             // 
-            // label11
+            // NetLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label11.Location = new System.Drawing.Point(751, 28);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 21);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "₱200.00";
+            this.NetLabel.BackColor = System.Drawing.Color.Transparent;
+            this.NetLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NetLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NetLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.NetLabel.Location = new System.Drawing.Point(1102, 5);
+            this.NetLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.NetLabel.Name = "NetLabel";
+            this.NetLabel.Size = new System.Drawing.Size(129, 37);
+            this.NetLabel.TabIndex = 9;
+            this.NetLabel.Text = "---";
+            this.NetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NetLabel.Click += new System.EventHandler(this.View_Click);
             // 
-            // label10
+            // TotalDeductionLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label10.Location = new System.Drawing.Point(558, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 21);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "₱200.00";
+            this.TotalDeductionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TotalDeductionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TotalDeductionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalDeductionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.TotalDeductionLabel.Location = new System.Drawing.Point(993, 5);
+            this.TotalDeductionLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.TotalDeductionLabel.Name = "TotalDeductionLabel";
+            this.TotalDeductionLabel.Size = new System.Drawing.Size(99, 37);
+            this.TotalDeductionLabel.TabIndex = 8;
+            this.TotalDeductionLabel.Text = "---";
+            this.TotalDeductionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TotalDeductionLabel.Click += new System.EventHandler(this.View_Click);
             // 
-            // label9
+            // PhilhealthLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label9.Location = new System.Drawing.Point(663, 28);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 21);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "₱200.00";
+            this.PhilhealthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PhilhealthLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PhilhealthLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhilhealthLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.PhilhealthLabel.Location = new System.Drawing.Point(884, 5);
+            this.PhilhealthLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.PhilhealthLabel.Name = "PhilhealthLabel";
+            this.PhilhealthLabel.Size = new System.Drawing.Size(99, 37);
+            this.PhilhealthLabel.TabIndex = 7;
+            this.PhilhealthLabel.Text = "---";
+            this.PhilhealthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PhilhealthLabel.Click += new System.EventHandler(this.View_Click);
             // 
-            // label8
+            // PagibigLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label8.Location = new System.Drawing.Point(458, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 21);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "₱200.00";
+            this.PagibigLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PagibigLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PagibigLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PagibigLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.PagibigLabel.Location = new System.Drawing.Point(775, 5);
+            this.PagibigLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.PagibigLabel.Name = "PagibigLabel";
+            this.PagibigLabel.Size = new System.Drawing.Size(99, 37);
+            this.PagibigLabel.TabIndex = 6;
+            this.PagibigLabel.Text = "---";
+            this.PagibigLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PagibigLabel.Click += new System.EventHandler(this.View_Click);
             // 
-            // label7
+            // SssLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label7.Location = new System.Drawing.Point(358, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 21);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "₱200.00";
+            this.SssLabel.BackColor = System.Drawing.Color.Transparent;
+            this.SssLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SssLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SssLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.SssLabel.Location = new System.Drawing.Point(666, 5);
+            this.SssLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.SssLabel.Name = "SssLabel";
+            this.SssLabel.Size = new System.Drawing.Size(99, 37);
+            this.SssLabel.TabIndex = 5;
+            this.SssLabel.Text = "---";
+            this.SssLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SssLabel.Click += new System.EventHandler(this.View_Click);
             // 
-            // ContactNo
+            // GrossLabel
             // 
-            this.ContactNo.AutoSize = true;
-            this.ContactNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContactNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ContactNo.Location = new System.Drawing.Point(66, 34);
-            this.ContactNo.Name = "ContactNo";
-            this.ContactNo.Size = new System.Drawing.Size(68, 13);
-            this.ContactNo.TabIndex = 31;
-            this.ContactNo.Text = "DEVELOPER";
+            this.GrossLabel.BackColor = System.Drawing.Color.Transparent;
+            this.GrossLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GrossLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrossLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.GrossLabel.Location = new System.Drawing.Point(534, 5);
+            this.GrossLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.GrossLabel.Name = "GrossLabel";
+            this.GrossLabel.Size = new System.Drawing.Size(122, 37);
+            this.GrossLabel.TabIndex = 4;
+            this.GrossLabel.Text = "---";
+            this.GrossLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GrossLabel.Click += new System.EventHandler(this.View_Click);
+            // 
+            // DailyLabel
+            // 
+            this.DailyLabel.BackColor = System.Drawing.Color.Transparent;
+            this.DailyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DailyLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DailyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.DailyLabel.Location = new System.Drawing.Point(425, 5);
+            this.DailyLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.DailyLabel.Name = "DailyLabel";
+            this.DailyLabel.Size = new System.Drawing.Size(99, 37);
+            this.DailyLabel.TabIndex = 3;
+            this.DailyLabel.Text = "---";
+            this.DailyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DailyLabel.Click += new System.EventHandler(this.View_Click);
+            // 
+            // WorkDaysLabel
+            // 
+            this.WorkDaysLabel.BackColor = System.Drawing.Color.Transparent;
+            this.WorkDaysLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkDaysLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkDaysLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.WorkDaysLabel.Location = new System.Drawing.Point(324, 5);
+            this.WorkDaysLabel.Margin = new System.Windows.Forms.Padding(5);
+            this.WorkDaysLabel.Name = "WorkDaysLabel";
+            this.WorkDaysLabel.Size = new System.Drawing.Size(91, 37);
+            this.WorkDaysLabel.TabIndex = 2;
+            this.WorkDaysLabel.Text = "---";
+            this.WorkDaysLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WorkDaysLabel.Click += new System.EventHandler(this.View_Click);
+            // 
+            // TopView
+            // 
+            this.TopView.BackColor = System.Drawing.Color.Transparent;
+            this.TopView.BorderColor = System.Drawing.Color.SlateGray;
+            this.TopView.BorderRadius = 10;
+            this.TopView.BorderThickness = 1;
+            this.TopView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TopView.Location = new System.Drawing.Point(10, 3);
+            this.TopView.Margin = new System.Windows.Forms.Padding(0);
+            this.TopView.Name = "TopView";
+            this.TopView.ShadowDecoration.BorderRadius = 15;
+            this.TopView.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
+            this.TopView.ShadowDecoration.Depth = 15;
+            this.TopView.Size = new System.Drawing.Size(1236, 47);
+            this.TopView.TabIndex = 20;
+            this.TopView.UseTransparentBackground = true;
+            this.TopView.Click += new System.EventHandler(this.View_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Fullname);
+            this.panel1.Controls.Add(this.EmployeePic);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(313, 41);
+            this.panel1.TabIndex = 97;
+            // 
+            // Fullname
+            // 
+            this.Fullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Fullname.AutoSize = true;
+            this.Fullname.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fullname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.Fullname.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Fullname.Location = new System.Drawing.Point(43, 14);
+            this.Fullname.Name = "Fullname";
+            this.Fullname.Size = new System.Drawing.Size(107, 15);
+            this.Fullname.TabIndex = 7;
+            this.Fullname.Text = "Jed Angelo M. Tan";
             // 
             // EmployeePic
             // 
@@ -159,69 +266,33 @@
             this.EmployeePic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.EmployeePic.Image = global::ARIAR_PayrollSystem.Properties.Resources.account_circle_fill;
             this.EmployeePic.ImageRotate = 0F;
-            this.EmployeePic.Location = new System.Drawing.Point(15, 14);
+            this.EmployeePic.Location = new System.Drawing.Point(5, 5);
             this.EmployeePic.Name = "EmployeePic";
             this.EmployeePic.ShadowDecoration.BorderRadius = 11;
             this.EmployeePic.ShadowDecoration.Color = System.Drawing.Color.SlateGray;
             this.EmployeePic.ShadowDecoration.Depth = 15;
             this.EmployeePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.EmployeePic.Size = new System.Drawing.Size(45, 45);
+            this.EmployeePic.Size = new System.Drawing.Size(30, 30);
             this.EmployeePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EmployeePic.TabIndex = 29;
+            this.EmployeePic.TabIndex = 6;
             this.EmployeePic.TabStop = false;
             this.EmployeePic.UseTransparentBackground = true;
-            // 
-            // Fullname
-            // 
-            this.Fullname.AutoSize = true;
-            this.Fullname.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fullname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.Fullname.Location = new System.Drawing.Point(66, 10);
-            this.Fullname.Name = "Fullname";
-            this.Fullname.Size = new System.Drawing.Size(123, 17);
-            this.Fullname.TabIndex = 30;
-            this.Fullname.Text = "Jed Angelo M. Tan";
-            // 
-            // Address
-            // 
-            this.Address.AutoSize = true;
-            this.Address.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.Address.Location = new System.Drawing.Point(66, 50);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(57, 13);
-            this.Address.TabIndex = 32;
-            this.Address.Text = "REGULAR";
-            // 
-            // EmployeeSeperator
-            // 
-            this.EmployeeSeperator.BackColor = System.Drawing.Color.Transparent;
-            this.EmployeeSeperator.Location = new System.Drawing.Point(66, 25);
-            this.EmployeeSeperator.Name = "EmployeeSeperator";
-            this.EmployeeSeperator.Size = new System.Drawing.Size(123, 10);
-            this.EmployeeSeperator.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label2.Location = new System.Drawing.Point(853, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 21);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "₱200.00";
             // 
             // PayrollView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.guna2Panel1);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.TopView);
+            this.Controls.Add(this.ParentView);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.Name = "PayrollView";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(954, 85);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.Padding = new System.Windows.Forms.Padding(10, 3, 15, 3);
+            this.Size = new System.Drawing.Size(1261, 53);
+            this.ParentView.ResumeLayout(false);
+            this.ColumnView.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeePic)).EndInit();
             this.ResumeLayout(false);
 
@@ -229,18 +300,19 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label ContactNo;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox EmployeePic;
+        private Guna.UI2.WinForms.Guna2Panel ParentView;
+        private System.Windows.Forms.TableLayoutPanel ColumnView;
+        private System.Windows.Forms.Label NetLabel;
+        private System.Windows.Forms.Label TotalDeductionLabel;
+        private System.Windows.Forms.Label PhilhealthLabel;
+        private System.Windows.Forms.Label PagibigLabel;
+        private System.Windows.Forms.Label SssLabel;
+        private System.Windows.Forms.Label GrossLabel;
+        private System.Windows.Forms.Label DailyLabel;
+        private System.Windows.Forms.Label WorkDaysLabel;
+        private Guna.UI2.WinForms.Guna2Panel TopView;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Fullname;
-        private System.Windows.Forms.Label Address;
-        private Guna.UI2.WinForms.Guna2Separator EmployeeSeperator;
-        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox EmployeePic;
     }
 }

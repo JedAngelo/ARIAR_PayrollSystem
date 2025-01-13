@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="EmployeeSort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAQJJREFUOE+t
+        k8ENgkAQRTmQcPdGDbRh4oUObEI5WQDdWIIVGK9ebMEGPOJ/ZjEz7EAkkeRFd5z/ZJeh2B3avxAWYRiG
+        jaii3yLCogSNuIiTKKOeKVkhSa6C6yV+krmFAkhu4iGe4p4+kS1u0y3U3AvuZiuQIAC+N7Z3iluouU5w
+        0ISPohTc6eL2wqJCyBB1plaJje2zhMUk4pysaC/OIpRlBaA5hfam1gnkte0dyQojCriBTCK2u04ECn0P
+        WnDwiPiDz0OxvS44Rc1ICNsxYDQYkd72uuAUNfOkENjh5JwQublywQgF2BYyXheuTAJuMYeCo4wXOZzw
+        rDCHBOsHcj1t8QYX5ilrRRCf6gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="guna2Elipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
