@@ -1,0 +1,1331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2800833C-C47B-46C1-A116-789373F0B276}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PayrollSystem</RootNamespace>
+    <AssemblyName>PayrollSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <Nullable>enable</Nullable>
+    <LangVersion>8.0</LangVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PayrollSystem.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B1DEBBC27EA8DA3CAA448B6F984A3D0A07EB4D1E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ARIAR_PayrollSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PayrollSystem.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DPCtlUruNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\DigitalPersona\U.are.U SDK\Windows\Lib\.NET\DPCtlUruNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DPUruNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <HintPath>..\packages\DPUruNet.1.0.0.1\lib\DPUruNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Portable.System.DateTimeOnly, Version=8.0.1.0, Culture=neutral, PublicKeyToken=16fb7a27ac3b9689, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.System.DateTimeOnly.8.0.1\lib\net462\Portable.System.DateTimeOnly.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backup\EmployeeInformationViewBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\EmployeeInformationViewBackup.Designer.cs">
+      <DependentUpon>EmployeeInformationViewBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\UserControls\EmployeeViewBackup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backup\UserControls\EmployeeViewBackup.Designer.cs">
+      <DependentUpon>EmployeeViewBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\UserControls\PayrollViewBackup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backup\UserControls\PayrollViewBackup.Designer.cs">
+      <DependentUpon>PayrollViewBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AddLeaveModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AddLeaveModal.Designer.cs">
+      <DependentUpon>AddLeaveModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AttendanceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AttendanceManagement.Designer.cs">
+      <DependentUpon>AttendanceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BiometricAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BiometricAttendance.Designer.cs">
+      <DependentUpon>BiometricAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChildrenForm\EmployeeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChildrenForm\EmployeeDetails.Designer.cs">
+      <DependentUpon>EmployeeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeInformation.Designer.cs">
+      <DependentUpon>EmployeeInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance.Designer.cs">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AddAttendanceModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AddAttendanceModal.Designer.cs">
+      <DependentUpon>AddAttendanceModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AnotherTestMF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AnotherTestMF.Designer.cs">
+      <DependentUpon>AnotherTestMF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ApiSwitcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ApiSwitcher.Designer.cs">
+      <DependentUpon>ApiSwitcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AttendanceLogModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AttendanceLogModal.Designer.cs">
+      <DependentUpon>AttendanceLogModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AttendanceDateModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AttendanceDateModal.Designer.cs">
+      <DependentUpon>AttendanceDateModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\AttendanceModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\AttendanceModal.Designer.cs">
+      <DependentUpon>AttendanceModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\ContactInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\ContactInformationForm.Designer.cs">
+      <DependentUpon>ContactInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\EmploymentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\EmploymentDetailsForm.Designer.cs">
+      <DependentUpon>EmploymentDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ChildrenModal\PersonalInformationForm.Designer.cs">
+      <DependentUpon>PersonalInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\Component1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\Component1.Designer.cs">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ConsoleLogsModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ConsoleLogsModal.Designer.cs">
+      <DependentUpon>ConsoleLogsModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\DateRangeModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\DateRangeModal.Designer.cs">
+      <DependentUpon>DateRangeModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeBiometricsModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeBiometricsModal.Designer.cs">
+      <DependentUpon>EmployeeBiometricsModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeCanvasModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeCanvasModal.Designer.cs">
+      <DependentUpon>EmployeeCanvasModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeInformationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\EmployeeInformationView.Designer.cs">
+      <DependentUpon>EmployeeInformationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\FingerPrintEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\FingerPrintEnrollment.Designer.cs">
+      <DependentUpon>FingerPrintEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\GunaMessage.cs" />
+    <Compile Include="Forms\Modals\ModalHelpers\ModalHelper.cs" />
+    <Compile Include="Forms\Modals\PayrollPeriodSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\PayrollPeriodSelector.Designer.cs">
+      <DependentUpon>PayrollPeriodSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\PayrollDetailsModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\PayrollDetailsModal.Designer.cs">
+      <DependentUpon>PayrollDetailsModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\PayslipReportModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\PayslipReportModal.Designer.cs">
+      <DependentUpon>PayslipReportModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\PayslipsModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\PayslipsModal.Designer.cs">
+      <DependentUpon>PayslipsModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\PersonalInformationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\PersonalInformationView.Designer.cs">
+      <DependentUpon>PersonalInformationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\ReportModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\ReportModal.Designer.cs">
+      <DependentUpon>ReportModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\SetFilterModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\SetFilterModal.Designer.cs">
+      <DependentUpon>SetFilterModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\TestModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\TestModal.Designer.cs">
+      <DependentUpon>TestModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\UpdateAttendanceModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\UpdateAttendanceModal.Designer.cs">
+      <DependentUpon>UpdateAttendanceModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\UserModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\UserModal.Designer.cs">
+      <DependentUpon>UserModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\UserUpdateModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\UserUpdateModal.Designer.cs">
+      <DependentUpon>UserUpdateModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OverlayForm.Designer.cs">
+      <DependentUpon>OverlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PayrollCalclulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PayrollCalclulation.Designer.cs">
+      <DependentUpon>PayrollCalclulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modals\PositionModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modals\PositionModal.Designer.cs">
+      <DependentUpon>PositionModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SystemMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SystemMaintenance.Designer.cs">
+      <DependentUpon>SystemMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ToastNotify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToastNotify.Designer.cs">
+      <DependentUpon>ToastNotify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApiEndpoint.cs" />
+    <Compile Include="Helpers\ControlsHelper.cs" />
+    <Compile Include="Helpers\HttpHelper.cs" />
+    <Compile Include="Helpers\SidebarHelper.cs" />
+    <Compile Include="Helpers\Switcher.cs" />
+    <Compile Include="Helpers\TabcontrolHelper.cs" />
+    <Compile Include="Models\ApiResponse.cs" />
+    <Compile Include="Models\AttendanceDto.cs" />
+    <Compile Include="Models\AttendanceDisplayDto.cs" />
+    <Compile Include="Models\ContactInformationDto.cs" />
+    <Compile Include="Models\DateRangeDto.cs" />
+    <Compile Include="Models\DeleteEmployeeDto.cs" />
+    <Compile Include="Models\EmployeeBiometricDisplayDto.cs" />
+    <Compile Include="Models\EmployeeBiometricsDto.cs" />
+    <Compile Include="Models\EmployeeMonthlyReportDto.cs" />
+    <Compile Include="Models\EmploymentDetailDto.cs" />
+    <Compile Include="Models\IdDateDto.cs" />
+    <Compile Include="Models\LeaveDto.cs" />
+    <Compile Include="Models\LogCountDto.cs" />
+    <Compile Include="Models\LoginModelDto.cs" />
+    <Compile Include="Models\PayrollDto.cs" />
+    <Compile Include="Models\PayslipDto.cs" />
+    <Compile Include="Models\PermissionDto.cs" />
+    <Compile Include="Models\PersonalInformationDisplayDto.cs" />
+    <Compile Include="Models\PersonalInformationDto.cs" />
+    <Compile Include="Models\PositionDisplayDto.cs" />
+    <Compile Include="Models\PositionDto.cs" />
+    <Compile Include="Models\RegisterModelDto.cs" />
+    <Compile Include="Models\SystemSettingsDto.cs" />
+    <Compile Include="Models\TotalMonthlyReportDto.cs" />
+    <Compile Include="Models\TotalMonthlyReportFlat.cs" />
+    <Compile Include="Models\TotalYearlyReport.cs" />
+    <Compile Include="Models\UserDto.cs" />
+    <Compile Include="Models\UserLoginDto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EmployeeDetailsTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\EmployeeDetailsTest.Designer.cs">
+      <DependentUpon>EmployeeDetailsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendanceMonthlyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendanceMonthlyView.Designer.cs">
+      <DependentUpon>AttendanceMonthlyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeBiometricsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeBiometricsView.Designer.cs">
+      <DependentUpon>EmployeeBiometricsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView4.Designer.cs">
+      <DependentUpon>EmployeeShortView4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView3.Designer.cs">
+      <DependentUpon>EmployeeShortView3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView2.Designer.cs">
+      <DependentUpon>EmployeeShortView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Guna2TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaritalStatusDropdownView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaritalStatusDropdownView.Designer.cs">
+      <DependentUpon>MaritalStatusDropdownView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendanceLogView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendanceLogView.Designer.cs">
+      <DependentUpon>AttendanceLogView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarDayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalendarDayView.Designer.cs">
+      <DependentUpon>CalendarDayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeAttendanceLogView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeAttendanceLogView.Designer.cs">
+      <DependentUpon>EmployeeAttendanceLogView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeShortView.Designer.cs">
+      <DependentUpon>EmployeeShortView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeView.Designer.cs">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FingerprintListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FingerprintListView.Designer.cs">
+      <DependentUpon>FingerprintListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ActiveDropdownView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ActiveDropdownView.Designer.cs">
+      <DependentUpon>ActiveDropdownView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PayrollView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PayrollView.Designer.cs">
+      <DependentUpon>PayrollView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GenderDropdownView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\GenderDropdownView.Designer.cs">
+      <DependentUpon>GenderDropdownView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PositionDropdownView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PositionDropdownView.Designer.cs">
+      <DependentUpon>PositionDropdownView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PositionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PositionView.Designer.cs">
+      <DependentUpon>PositionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SearchBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SearchBar.Designer.cs">
+      <DependentUpon>SearchBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TestForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserView.Designer.cs">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WaitScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\WaitScreen.Designer.cs">
+      <DependentUpon>WaitScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkLogView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkLogView.Designer.cs">
+      <DependentUpon>WorkLogView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Backup\EmployeeInformationViewBackup.resx">
+      <DependentUpon>EmployeeInformationViewBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\UserControls\EmployeeViewBackup.resx">
+      <DependentUpon>EmployeeViewBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\UserControls\PayrollViewBackup.resx">
+      <DependentUpon>PayrollViewBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AddLeaveModal.resx">
+      <DependentUpon>AddLeaveModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AttendanceManagement.resx">
+      <DependentUpon>AttendanceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BiometricAttendance.resx">
+      <DependentUpon>BiometricAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChildrenForm\EmployeeDetails.resx">
+      <DependentUpon>EmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeInformation.resx">
+      <DependentUpon>EmployeeInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance.resx">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AddAttendanceModal.resx">
+      <DependentUpon>AddAttendanceModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AnotherTestMF.resx">
+      <DependentUpon>AnotherTestMF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ApiSwitcher.resx">
+      <DependentUpon>ApiSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AttendanceLogModal.resx">
+      <DependentUpon>AttendanceLogModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AttendanceDateModal.resx">
+      <DependentUpon>AttendanceDateModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\AttendanceModal.resx">
+      <DependentUpon>AttendanceModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ChildrenModal\ContactInformationForm.resx">
+      <DependentUpon>ContactInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ChildrenModal\EmploymentDetailsForm.resx">
+      <DependentUpon>EmploymentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ChildrenModal\PersonalInformationForm.resx">
+      <DependentUpon>PersonalInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\Component1.resx">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ConsoleLogsModal.resx">
+      <DependentUpon>ConsoleLogsModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\DateRangeModal.resx">
+      <DependentUpon>DateRangeModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\EmployeeBiometricsModal.resx">
+      <DependentUpon>EmployeeBiometricsModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\EmployeeCanvasModal.resx">
+      <DependentUpon>EmployeeCanvasModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\EmployeeInformationView.resx">
+      <DependentUpon>EmployeeInformationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\FingerPrintEnrollment.resx">
+      <DependentUpon>FingerPrintEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\PayrollPeriodSelector.resx">
+      <DependentUpon>PayrollPeriodSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\PayslipReportModal.resx">
+      <DependentUpon>PayslipReportModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\PayslipsModal.resx">
+      <DependentUpon>PayslipsModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\PayrollDetailsModal.resx">
+      <DependentUpon>PayrollDetailsModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\PersonalInformationView.resx">
+      <DependentUpon>PersonalInformationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\ReportModal.resx">
+      <DependentUpon>ReportModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\SetFilterModal.resx">
+      <DependentUpon>SetFilterModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\TestModal.resx">
+      <DependentUpon>TestModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\UpdateAttendanceModal.resx">
+      <DependentUpon>UpdateAttendanceModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\UserModal.resx">
+      <DependentUpon>UserModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\UserUpdateModal.resx">
+      <DependentUpon>UserUpdateModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OverlayForm.resx">
+      <DependentUpon>OverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PayrollCalclulation.resx">
+      <DependentUpon>PayrollCalclulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modals\PositionModal.resx">
+      <DependentUpon>PositionModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SystemMaintenance.resx">
+      <DependentUpon>SystemMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToastNotify.resx">
+      <DependentUpon>ToastNotify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Reports\AttendanceLog.rdlc" />
+    <EmbeddedResource Include="Reports\PayslipTemplate.rdlc" />
+    <EmbeddedResource Include="Reports\MonthlyPayrollReport.rdlc" />
+    <EmbeddedResource Include="Tests\EmployeeDetailsTest.resx">
+      <DependentUpon>EmployeeDetailsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AttendanceMonthlyView.resx">
+      <DependentUpon>AttendanceMonthlyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeBiometricsView.resx">
+      <DependentUpon>EmployeeBiometricsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeShortView4.resx">
+      <DependentUpon>EmployeeShortView4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeShortView3.resx">
+      <DependentUpon>EmployeeShortView3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeShortView2.resx">
+      <DependentUpon>EmployeeShortView2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MaritalStatusDropdownView.resx">
+      <DependentUpon>MaritalStatusDropdownView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AttendanceLogView.resx">
+      <DependentUpon>AttendanceLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CalendarDayView.resx">
+      <DependentUpon>CalendarDayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CustomTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeAttendanceLogView.resx">
+      <DependentUpon>EmployeeAttendanceLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeShortView.resx">
+      <DependentUpon>EmployeeShortView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeView.resx">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FingerprintListView.resx">
+      <DependentUpon>FingerprintListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ActiveDropdownView.resx">
+      <DependentUpon>ActiveDropdownView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PayrollView.resx">
+      <DependentUpon>PayrollView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\GenderDropdownView.resx">
+      <DependentUpon>GenderDropdownView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PositionDropdownView.resx">
+      <DependentUpon>PositionDropdownView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PositionView.resx">
+      <DependentUpon>PositionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SearchBar.resx">
+      <DependentUpon>SearchBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserView.resx">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\WaitScreen.resx">
+      <DependentUpon>WaitScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\WorkLogView.resx">
+      <DependentUpon>WorkLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="appsettings.json" />
+    <None Include="ARIAR_PayrollSystem.Models.AttendanceDto.datasource" />
+    <None Include="ARIAR_PayrollSystem.Models.PayrollDto.datasource" />
+    <None Include="ARIAR_PayrollSystem.Models.PayslipDto.datasource" />
+    <None Include="ARIAR_PayrollSystem.Models.TotalMonthlyReportDto.datasource" />
+    <None Include="ARIAR_PayrollSystem.Models.TotalMonthlyReportFlat.datasource" />
+    <None Include="ARIAR_PayrollSystem_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_logo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculate_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\description_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\task_check_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location_away_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right_arrow_dark_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHECK_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled design %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard_arrow_right_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_logo_alternative.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_logo_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config_logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_logo_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_logo_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-line %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_logo.png" />
+    <None Include="Resources\exit_logo_big.png" />
+    <None Include="Resources\user-line.png" />
+    <None Include="Resources\user-3-line.png" />
+    <None Include="Resources\user-3-fill.png" />
+    <None Include="Resources\user-3-fill %281%29.png" />
+    <None Include="Resources\lock-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-circle-fill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error-warning-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payroll_logo%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-s-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-double-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-double-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-s-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-double-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-s-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-s-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-double-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-fill%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-fill%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-lens-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-3-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-bin-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-pin-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-s-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-s-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_clock_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-circle-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-circle-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-4-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint%281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-drop-down-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-s-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter-3-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date-range-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-2-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound-module-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-circle-fill1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-line%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-schedule-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-schedule-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-dollar-circle-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-dollar-circle-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\article-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\article-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-2-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-settings-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-settings-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-3-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-3-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-box-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-asc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort-desc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swap_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time-line%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draft-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-event-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-bin-line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint-2-line %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-add-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-2-line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project%281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01384d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01384d%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01384d%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAYROLL SYSTEM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAYROLL SYSTEM%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAYROLL SYSTEM%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAYROLL SYSTEM%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAYROLL SYSTEM%284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAYROLL SYSTEM%285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AR-AR%281%29.ico" />
+    <Content Include="AR-AR%282%29.ico" />
+    <Content Include="AR-AR%284%29.ico" />
+    <Content Include="AR-AR_2_-removebg-preview.ico" />
+    <Content Include="PayrollSystem.ico" />
+    <Content Include="Untitled design.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
