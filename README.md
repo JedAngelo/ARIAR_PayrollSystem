@@ -126,3 +126,8 @@ Upon first launch, you will be presented with a login screen.
 *   **Navigation:** Once logged in, use the sidebar menu to navigate between different modules (Employee, Attendance, Work Logs, Payroll, Reports, Maintenance).
 *   **Biometrics:** Connect a DigitalPersona fingerprint reader. The system will detect it and enable biometric attendance scanning.
 *   **API Configuration (F12):** Press `F12` on the login screen or within the `MainForm` to open the API Switcher modal, allowing you to quickly change the API URI without editing the JSON file.
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE)
