@@ -44,7 +44,6 @@ The ARIAR_PayrollSystem is a feature-rich desktop application built with C# and 
         *   Configure Text-to-Speech (TTS) voice (male/female).
     *   Manage user accounts (create, update, delete users and their permissions).
     *   Manage job positions (create, update, delete positions).
-*   **Data Backup:** Functionality to trigger data backup (details depend on backend implementation).
 *   **Intuitive User Interface:** Modern and responsive design built with Guna.UI2.WinForms.
 
 ## Technologies Used
