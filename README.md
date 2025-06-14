@@ -127,6 +127,18 @@ Upon first launch, you will be presented with a login screen.
 *   **Biometrics:** Connect a DigitalPersona fingerprint reader. The system will detect it and enable biometric attendance scanning.
 *   **API Configuration (F12):** Press `F12` on the login screen or within the `MainForm` to open the API Switcher modal, allowing you to quickly change the API URI without editing the JSON file.
 
+## Screenshots 
+### Data shown are not real and only for testing purpose
+![Screenshot of the system](./Screenshots/Login%20Page.png)
+![Screenshot of the system](./Screenshots/Sorted%20By%20Active%20Status.png)
+![Screenshot of the system](./Screenshots/Add%20Employee%20Form.png)
+![Screenshot of the system](./Screenshots/Filters.png)
+![Screenshot of the system](./Screenshots/Employee%20Attendances.png)
+![Screenshot of the system](./Screenshots/Work%20Logs.png)
+![Screenshot of the system](./Screenshots/Payroll%20Tab.png)
+![Screenshot of the system](./Screenshots/Maintenance%20Tab.png)
+![Screenshot of the system](./Screenshots/Positions%20Management.png)
+![Screenshot of the system](./Screenshots/User%20Management.png)
 
 ## License
 
